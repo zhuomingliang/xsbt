@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>APIUtil.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="keyword">package</span> xsbt.api
+
+	<span class="keyword">import</span> xsbti.api._
+	<span class="keyword">import</span> scala.collection.mutable.HashSet
+
+<span class="keyword">object</span> <a title="object xsbt.api.APIUtil" id="17780">APIUtil</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">val</span> <a title="(xsbti.api.Modifiers) =&gt; Byte" id="87750">modifiersToByte</a> = <span class="delimiter">(</span>m: <a href="xsbti/api/Modifiers.java.html#19219" title="xsbti.api.Modifiers">Modifiers</a><span class="delimiter">)</span> =&gt; <span class="delimiter">{</span>
+			<span class="keyword">import</span> <a href="#87758" title="xsbti.api.Modifiers">m</a>._
+		<span class="keyword">def</span> <a title="(b: Boolean,bit: Int)Int" id="87772">x</a><span class="delimiter">(</span><a title="Boolean" id="87773">b</a>: <span title="Boolean">Boolean</span>, <a title="Int" id="87774">bit</a>: <span title="Int">Int</span><span class="delimiter">)</span> = <span title="Int" class="keyword">if</span><span class="delimiter">(</span><a href="#87773" title="Boolean">b</a><span class="delimiter">)</span> <span title="(x$1: Int)Int" class="int">1</span> &lt;&lt; <a href="#87774" title="Int">bit</a> <span class="keyword">else</span> <span title="Int(0)" class="int">0</span>
+		<span class="delimiter">(</span> <a href="#87772" title="(b: Boolean,bit: Int)Int">x</a><span title="(x$1: Int)Int" class="delimiter">(</span><a href="xsbti/api/Modifiers.java.html#87764" title="()Boolean">isAbstract</a>, <span title="Int(0)" class="int">0</span><span class="delimiter">)</span> <span title="(x$1: Int)Int">|</span> <a href="#87772" title="(b: Boolean,bit: Int)Int">x</a><span class="delimiter">(</span><a href="xsbti/api/Modifiers.java.html#87765" title="()Boolean">isOverride</a>, <span title="Int(1)" class="int">1</span><span class="delimiter">)</span> <span title="(x$1: Int)Int">|</span> <a href="#87772" title="(b: Boolean,bit: Int)Int">x</a><span class="delimiter">(</span><a href="xsbti/api/Modifiers.java.html#87766" title="()Boolean">isFinal</a>, <span title="Int(2)" class="int">2</span><span class="delimiter">)</span> <span title="(x$1: Int)Int">|</span> <a href="#87772" title="(b: Boolean,bit: Int)Int">x</a><span class="delimiter">(</span><a href="xsbti/api/Modifiers.java.html#87767" title="()Boolean">isSealed</a>, <span title="Int(3)" class="int">3</span><span class="delimiter">)</span> <span title="(x$1: Int)Int">|</span> <a href="#87772" title="(b: Boolean,bit: Int)Int">x</a><span class="delimiter">(</span><a href="xsbti/api/Modifiers.java.html#87768" title="()Boolean">isImplicit</a>, <span title="Int(4)" class="int">4</span><span class="delimiter">)</span> | <a href="#87772" title="(b: Boolean,bit: Int)Int">x</a><span class="delimiter">(</span><a href="xsbti/api/Modifiers.java.html#87769" title="()Boolean">isLazy</a>, <span title="Int(5)" class="int">5</span><span class="delimiter">)</span> <span class="delimiter">)</span>.<span title="=&gt; Byte">toByte</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">val</span> <a title="(Byte) =&gt; xsbti.api.Modifiers" id="87752">byteToModifiers</a> = <span class="delimiter">(</span>b: <span title="Byte">Byte</span><span class="delimiter">)</span> =&gt; <span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(bit: Int)Boolean" id="87825">x</a><span class="delimiter">(</span><a title="Int" id="87826">bit</a>: <span title="Int">Int</span><span class="delimiter">)</span> = <span title="(x$1: Int)Boolean" class="delimiter">(</span><a href="#87824" title="(x$1: Int)Int">b</a> &amp; <span class="delimiter">(</span><span title="(x$1: Int)Int" class="int">1</span> &lt;&lt; <a href="#87826" title="Int">bit</a><span class="delimiter">)</span><span class="delimiter">)</span> != <span title="Int(0)" class="int">0</span>
+		<span title="xsbti.api.Modifiers" class="keyword">new</span> <a href="xsbti/api/Modifiers.java.html#19219" title="xsbti.api.Modifiers">Modifiers</a><span class="delimiter">(</span> <a href="#87825" title="(bit: Int)Boolean">x</a><span class="delimiter">(</span><span title="Int(0)" class="int">0</span><span class="delimiter">)</span>, <a href="#87825" title="(bit: Int)Boolean">x</a><span class="delimiter">(</span><span title="Int(1)" class="int">1</span><span class="delimiter">)</span>, <a href="#87825" title="(bit: Int)Boolean">x</a><span class="delimiter">(</span><span title="Int(2)" class="int">2</span><span class="delimiter">)</span>, <a href="#87825" title="(bit: Int)Boolean">x</a><span class="delimiter">(</span><span title="Int(3)" class="int">3</span><span class="delimiter">)</span>, <a href="#87825" title="(bit: Int)Boolean">x</a><span class="delimiter">(</span><span title="Int(4)" class="int">4</span><span class="delimiter">)</span>, <a href="#87825" title="(bit: Int)Boolean">x</a><span class="delimiter">(</span><span title="Int(5)" class="int">5</span><span class="delimiter">)</span> <span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+
+	<span class="keyword">def</span> <a title="(s: xsbti.api.Source)Boolean" id="87754">verifyTypeParameters</a><span class="delimiter">(</span><a title="xsbti.api.Source" id="87857">s</a>: <a href="xsbti/api/Source.java.html#19273" title="xsbti.api.Source">Source</a><span class="delimiter">)</span>: <span title="Boolean">Boolean</span> =
+	<span class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="xsbt.api.APIUtil.CheckTypeParameters" id="87865">check</a> = <span title="xsbt.api.APIUtil.CheckTypeParameters" class="keyword">new</span> <a href="#87755" title="xsbt.api.APIUtil.CheckTypeParameters">CheckTypeParameters</a>
+		<span class="keyword">val</span> <a title="List[Int]" id="87866">invalid</a> = <a href="#87929" title="(s: xsbti.api.Source)List[Int]">check</a><span class="delimiter">(</span><a href="#87857" title="xsbti.api.Source">s</a><span class="delimiter">)</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><span title="=&gt; Boolean">!</span><a href="#87866" title="List[Int]">invalid</a>.<span title="=&gt; Boolean">isEmpty</span><span class="delimiter">)</span> <span title="(x: Any)Unit">println</span><span class="delimiter">(</span><span title="(x$1: Any)java.lang.String" class="string">&quot;References to undefined type parameters: &quot;</span> + <a href="#87866" title="List[Int]">invalid</a>.<span title="(sep: String)String">mkString</span><span class="delimiter">(</span><span title="java.lang.String(&quot;, &quot;)" class="string">&quot;, &quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+		<a href="#87866" title="List[Int]">invalid</a>.<span title="=&gt; Boolean">isEmpty</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">private</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">class</span> <a title="class CheckTypeParameters extends xsbt.api.Visit with ScalaObject" id="87755">CheckTypeParameters</a> <span title="ScalaObject" class="keyword">extends</span> <a href="Visit.scala.html#18412" title="xsbt.api.Visit">Visit</a>
+	<span class="delimiter">{</span>
+		<span class="keyword">private</span> <span class="keyword">val</span> <a title="scala.collection.mutable.HashSet[Int]" id="87925">defined</a> = <span title="scala.collection.mutable.HashSet[Int]" class="keyword">new</span> <span title="scala.collection.mutable.HashSet[Int]">HashSet</span><span class="delimiter">[</span>Int<span class="delimiter">]</span>
+		<span class="keyword">private</span> <span class="keyword">val</span> <a title="scala.collection.mutable.HashSet[Int]" id="87927">referenced</a> = <span title="scala.collection.mutable.HashSet[Int]" class="keyword">new</span> <span title="scala.collection.mutable.HashSet[Int]">HashSet</span><span class="delimiter">[</span>Int<span class="delimiter">]</span>
+		<span class="keyword">def</span> <a title="(s: xsbti.api.Source)List[Int]" id="87929">apply</a><span class="delimiter">(</span><a title="xsbti.api.Source" id="87933">s</a>: <a href="xsbti/api/Source.java.html#19273" title="xsbti.api.Source">Source</a><span class="delimiter">)</span>: <span title="List[Int]">List</span><span class="delimiter">[</span>Int<span class="delimiter">]</span> =
+		<span class="delimiter">{</span>
+			<span class="keyword">super</span>.<a href="Visit.scala.html#87870" title="(s: xsbti.api.Source)Unit">visit</a><span class="delimiter">(</span><a href="#87933" title="xsbti.api.Source">s</a><span class="delimiter">)</span>
+			<span class="delimiter">(</span><a href="#87927" title="(p: (Int) =&gt; Boolean)scala.collection.mutable.HashSet[Int]">referenced</a> filterNot <a href="#87925" title="=&gt; scala.collection.mutable.HashSet[Int]">defined</a><span class="delimiter">)</span>.<span title="=&gt; List[Int]">toList</span>
+		<span class="delimiter">}</span>
+		<span class="keyword">override</span> <span class="keyword">def</span> <a title="(parameter: xsbti.api.TypeParameter)Unit" id="87930">visitTypeParameter</a><span class="delimiter">(</span><a title="xsbti.api.TypeParameter" id="88192">parameter</a>: <a href="xsbti/api/TypeParameter.java.html#19300" title="xsbti.api.TypeParameter">TypeParameter</a><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<a href="#87925" title="(elem: Int)CheckTypeParameters.this.defined.type">defined</a> += <a href="#88192" title="xsbti.api.TypeParameter">parameter</a>.<a href="xsbti/api/TypeParameter.java.html#88203" title="()Int">id</a>
+			<span class="keyword">super</span>.<a href="Visit.scala.html#87899" title="(parameter: xsbti.api.TypeParameter)Unit">visitTypeParameter</a><span class="delimiter">(</span><a href="#88192" title="xsbti.api.TypeParameter">parameter</a><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+		<span class="keyword">override</span> <span class="keyword">def</span> <a title="(ref: xsbti.api.ParameterRef)Unit" id="87931">visitParameterRef</a><span class="delimiter">(</span><a title="xsbti.api.ParameterRef" id="88235">ref</a>: <a href="xsbti/api/ParameterRef.java.html#19237" title="xsbti.api.ParameterRef">ParameterRef</a><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<a href="#87927" title="(elem: Int)CheckTypeParameters.this.referenced.type">referenced</a> += <a href="#88235" title="xsbti.api.ParameterRef">ref</a>.<a href="xsbti/api/ParameterRef.java.html#88245" title="()Int">id</a>
+			<span class="keyword">super</span>.<a href="Visit.scala.html#87907" title="(p: xsbti.api.ParameterRef)Unit">visitParameterRef</a><span class="delimiter">(</span><a href="#88235" title="xsbti.api.ParameterRef">ref</a><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

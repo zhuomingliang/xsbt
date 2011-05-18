@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>ScaladocInterface.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2008, 2009 Mark Harrah
+ */</span>
+<span class="keyword">package</span> xsbt
+
+	<span class="keyword">import</span> xsbti.Logger
+	<span class="keyword">import</span> <a href="Log.scala.html#17499" title="object xsbt.Log">Log</a>.debug
+
+<span class="keyword">class</span> <a title="class ScaladocInterface extends java.lang.Object with ScalaObject" id="17546">ScaladocInterface</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="(args: Array[String],log: xsbti.Logger,delegate: xsbti.Reporter)Unit" id="153058">run</a><span class="delimiter">(</span><a title="Array[String]" id="153061">args</a>: <span title="Array[String]">Array</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <a title="xsbti.Logger" id="153062">log</a>: <a href="xsbti/Logger.java.html#18500" title="xsbti.Logger">Logger</a>, <a title="xsbti.Reporter" id="153063">delegate</a>: xsbti.<a href="xsbti/Reporter.java.html#18518" title="xsbti.Reporter">Reporter</a><span class="delimiter">)</span> = <span class="delimiter">(</span><span title="xsbt.Runner" class="keyword">new</span> <a href="#17543" title="xsbt.Runner">Runner</a><span class="delimiter">(</span><a href="#153061" title="Array[String]">args</a>, <a href="#153062" title="xsbti.Logger">log</a>, <a href="#153063" title="xsbti.Reporter">delegate</a><span class="delimiter">)</span><span class="delimiter">)</span>.<a href="#153083" title="()Unit">run</a>
+<span class="delimiter">}</span>
+<span class="keyword">private</span> <span class="keyword">class</span> <a title="class Runner extends java.lang.Object with ScalaObject" id="17543">Runner</a><span title="ScalaObject" class="delimiter">(</span><a title="Array[String]" id="153086">args</a>: <span title="Array[String]">Array</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <a title="xsbti.Logger" id="153087">log</a>: <a href="xsbti/Logger.java.html#18500" title="xsbti.Logger">Logger</a>, <a title="xsbti.Reporter" id="153088">delegate</a>: xsbti.<a href="xsbti/Reporter.java.html#18518" title="xsbti.Reporter">Reporter</a><span class="delimiter">)</span>
+<span class="delimiter">{</span>
+	<span class="keyword">import</span> scala.tools.nsc.<span class="delimiter">{</span>doc, Global, reporters<span class="delimiter">}</span>
+	<span class="keyword">import</span> reporters.Reporter
+	<span class="keyword">val</span> <a title="scala.tools.nsc.doc.Settings" id="153075">docSettings</a>: doc.<span title="scala.tools.nsc.doc.Settings">Settings</span> = <span title="scala.tools.nsc.doc.Settings" class="keyword">new</span> doc.<span title="scala.tools.nsc.doc.Settings">Settings</span><span class="delimiter">(</span><a href="Log.scala.html#17499" title="object xsbt.Log">Log</a>.<a href="Log.scala.html#144046" title="(log: xsbti.Logger)(String) =&gt; Unit">settingsError</a><span class="delimiter">(</span><a href="#153087" title="xsbti.Logger">log</a><span class="delimiter">)</span><span class="delimiter">)</span>
+	<span class="keyword">val</span> <a title="scala.tools.nsc.CompilerCommand" id="153077">command</a> = <a href="Command.scala.html#143942" title="(arguments: List[String],settings: scala.tools.nsc.Settings)scala.tools.nsc.CompilerCommand">Command</a><span class="delimiter">(</span><a href="#153086" title="(xs: Array[String])scala.collection.mutable.ArrayOps[String]">args</a>.<span title="=&gt; List[String]">toList</span>, <a href="#153075" title="=&gt; scala.tools.nsc.doc.Settings">docSettings</a><span class="delimiter">)</span>
+	<span class="keyword">val</span> <a title="xsbt.DelegatingReporter" id="153079">reporter</a> = <a href="DelegatingReporter.scala.html#144395" title="(settings: scala.tools.nsc.Settings,delegate: xsbti.Reporter)xsbt.DelegatingReporter">DelegatingReporter</a><span class="delimiter">(</span><a href="#153075" title="=&gt; scala.tools.nsc.doc.Settings">docSettings</a>, <a href="#153088" title="xsbti.Reporter">delegate</a><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="=&gt; Boolean" id="153081">noErrors</a> = <span title="(x$1: Boolean)Boolean">!</span><a href="#153079" title="=&gt; xsbt.DelegatingReporter">reporter</a>.<a href="DelegatingReporter.scala.html#144414" title="=&gt; Boolean">hasErrors</a> &amp;&amp; <a href="#153077" title="=&gt; scala.tools.nsc.CompilerCommand">command</a>.<span title="=&gt; Boolean">ok</span>
+
+	<span class="keyword">import</span> forScope._
+	<span class="keyword">def</span> <a title="()Unit" id="153083">run</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<a href="Log.scala.html#144045" title="(log: xsbti.Logger,msg: =&gt; String)Unit">debug</a><span class="delimiter">(</span><a href="#153087" title="xsbti.Logger">log</a>, <span title="(x$1: Any)java.lang.String" class="string">&quot;Calling Scaladoc with arguments:\n\t&quot;</span> + <a href="#153086" title="(xs: Array[String])scala.collection.mutable.ArrayOps[String]">args</a>.<span title="(sep: String)String">mkString</span><span class="delimiter">(</span><span title="java.lang.String(&quot;\012\011&quot;)" class="string">&quot;\n\t&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#153081" title="=&gt; Boolean">noErrors</a><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">import</span> doc._ <span class="comment">// 2.8 trunk and Beta1-RC4 have doc.DocFactory.  For other Scala versions, the next line creates forScope.DocFactory</span>
+			<span class="keyword">val</span> <a title="scala.tools.nsc.doc.DocFactory" id="153869">processor</a> = <span title="scala.tools.nsc.doc.DocFactory" class="keyword">new</span> <span title="scala.tools.nsc.doc.DocFactory">DocFactory</span><span class="delimiter">(</span><a href="#153079" title="=&gt; xsbt.DelegatingReporter">reporter</a>, <a href="#153075" title="=&gt; scala.tools.nsc.doc.Settings">docSettings</a><span class="delimiter">)</span>
+			<a href="#153869" title="scala.tools.nsc.doc.DocFactory">processor</a>.<span title="(files: List[String])Unit">document</span><span class="delimiter">(</span><a href="#153077" title="=&gt; scala.tools.nsc.CompilerCommand">command</a>.<span title="=&gt; List[String]">files</span><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+		<a href="#153079" title="=&gt; xsbt.DelegatingReporter">reporter</a>.<a href="DelegatingReporter.scala.html#144407" title="()Unit">printSummary</a><span class="delimiter">(</span><span class="delimiter">)</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><span title="=&gt; Boolean">!</span><a href="#153081" title="=&gt; Boolean">noErrors</a><span class="delimiter">)</span> <span title="Nothing" class="keyword">throw</span> <span title="xsbt.InterfaceCompileFailed" class="keyword">new</span> <a href="CompilerInterface.scala.html#17486" title="xsbt.InterfaceCompileFailed">InterfaceCompileFailed</a><span class="delimiter">(</span><a href="#153086" title="Array[String]">args</a>, <a href="#153079" title="=&gt; xsbt.DelegatingReporter">reporter</a>.<a href="DelegatingReporter.scala.html#144416" title="=&gt; Array[xsbti.Problem]">problems</a>, <span title="java.lang.String(&quot;Scaladoc generation failed&quot;)" class="string">&quot;Scaladoc generation failed&quot;</span><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+
+	<span class="keyword">object</span> <a title="object Runner.this.forScope" id="153084">forScope</a>
+	<span class="delimiter">{</span>
+		<span class="keyword">class</span> <a title="class DocFactory extends java.lang.Object with ScalaObject" id="153498">DocFactory</a><span title="ScalaObject" class="delimiter">(</span><a title="scala.tools.nsc.reporters.Reporter" id="153905">reporter</a>: <span title="scala.tools.nsc.reporters.Reporter">Reporter</span>, <a title="scala.tools.nsc.doc.Settings" id="153906">docSettings</a>: doc.<span title="scala.tools.nsc.doc.Settings">Settings</span><span class="delimiter">)</span> <span class="comment">// 2.7 compatibility</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">object</span> <a title="object DocFactory.this.compiler" id="153899">compiler</a> <span title="ScalaObject" class="keyword">extends</span> <span title="scala.tools.nsc.Global">Global</span><span class="delimiter">(</span><a href="#153077" title="=&gt; scala.tools.nsc.CompilerCommand">command</a>.<span title="=&gt; scala.tools.nsc.Settings">settings</span>, <a href="#153905" title="scala.tools.nsc.reporters.Reporter">reporter</a><span class="delimiter">)</span>
+			<span class="delimiter">{</span>
+				<span class="keyword">override</span> <span class="keyword">def</span> <a title="=&gt; Boolean" id="153909">onlyPresentation</a> = <span title="Boolean(true)" class="keyword">true</span>
+				<span class="keyword">class</span> <a title="class DefaultDocDriver extends java.lang.Object with ScalaObject" id="153910">DefaultDocDriver</a>  <span class="comment">// 2.8 source compatibility</span>
+				<span class="delimiter">{</span>
+					<span title="(assertion: Boolean)Unit">assert</span><span class="delimiter">(</span><span title="Boolean(false)" class="keyword">false</span><span class="delimiter">)</span>
+					<span class="keyword">def</span> <a title="(units: Iterator[xsbt.Runner.forScope.DocFactory.compiler.CompilationUnit])Unit" id="153922">process</a><span class="delimiter">(</span><a title="Iterator[xsbt.Runner.forScope.DocFactory.compiler.CompilationUnit]" id="153928">units</a>: <span title="Iterator[xsbt.Runner.forScope.DocFactory.compiler.CompilationUnit]">Iterator</span><span class="delimiter">[</span>CompilationUnit<span class="delimiter">]</span><span class="delimiter">)</span> = <span title="(msg: String)Unit">error</span><span class="delimiter">(</span><span title="java.lang.String(&quot;for 2.8 compatibility only&quot;)" class="string">&quot;for 2.8 compatibility only&quot;</span><span class="delimiter">)</span>
+				<span class="delimiter">}</span>
+			<span class="delimiter">}</span>
+			<span class="keyword">def</span> <a title="(ignore: Seq[String])Unit" id="153901">document</a><span class="delimiter">(</span><a title="Seq[String]" id="153932">ignore</a>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span><span class="delimiter">)</span>
+			<span class="delimiter">{</span>
+				<span class="keyword">import</span> compiler._
+				<span class="keyword">val</span> <a title="DocFactory.this.compiler.Run" id="153935">run</a> = <span title="DocFactory.this.compiler.Run" class="keyword">new</span> <a href="#153899" title="DocFactory.this.compiler.Run">Run</a>
+				<a href="#153935" title="(filenames: List[String])Unit">run</a> compile <a href="#153077" title="=&gt; scala.tools.nsc.CompilerCommand">command</a>.<span title="=&gt; List[String]">files</span>
+
+				<span class="keyword">val</span> <a title="&lt;refinement&gt; extends DocFactory.this.compiler.DefaultDocDriver" id="153936">generator</a> =
+				<span class="delimiter">{</span>
+					<span class="keyword">import</span> doc._
+					<a href="#153940" title="DocFactory.this.compiler.DefaultDocDriver{lazy val global: DocFactory.this.compiler.type; lazy val settings: scala.tools.nsc.doc.Settings}" class="keyword">new</a> <a href="#153910" title="anonymous class $anon extends DocFactory.this.compiler.DefaultDocDriver" id="153940">DefaultDocDriver</a>
+					<span class="delimiter">{</span>
+						<span class="keyword">lazy</span> <span class="keyword">val</span> <a title="DocFactory.this.compiler.type" id="153943">global</a>: compiler.<span class="keyword">type</span> = <a href="#153899" title="object DocFactory.this.compiler">compiler</a>
+						<span class="keyword">lazy</span> <span class="keyword">val</span> <a title="scala.tools.nsc.doc.Settings" id="153945">settings</a> = <a href="#153906" title="scala.tools.nsc.doc.Settings">docSettings</a>
+					<span class="delimiter">}</span>
+				<span class="delimiter">}</span>
+				<a href="#153936" title="&lt;refinement&gt; extends DocFactory.this.compiler.DefaultDocDriver">generator</a>.<a href="#153922" title="(units: Iterator[DocFactory.this.compiler.CompilationUnit])Unit">process</a><span class="delimiter">(</span><a href="#153935" title="DocFactory.this.compiler.Run">run</a>.<span title="=&gt; Iterator[DocFactory.this.compiler.CompilationUnit]">units</span><span class="delimiter">)</span>
+			<span class="delimiter">}</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

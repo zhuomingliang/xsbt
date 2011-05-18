@@ -1,0 +1,3114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>sbt.Keys</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../lib/jquery.js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="package.html" class="extype" name="sbt">sbt</a></p>
+
+      <div id="definition">
+        <img src="../lib/object_big.png" />
+        <h1>Keys</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Keys</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"><div class="block">
+            linear super types: AnyRef, <span class="extype" name="scala.Any">Any</span>
+          </div></div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          <div id="order">
+                <span class="filtertype">Ordering</span>
+                <ol><li class="alpha in">Alphabetic</li><li class="inherit out">By inheritance</li></ol>
+              </div>
+          <div id="ancestors">
+                <span class="filtertype">Inherited</span>
+                <ol><li class="hideall">Hide All</li><li class="showall">Show all</li></ol>
+                <ol id="linearization"><li class="in" name="sbt.Keys">Keys</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="sbt.Keys#Classpath">
+      <a id="Classpath:Classpath"></a>
+      <h4 class="signature">
+      <span class="kind">type</span>
+      <span class="symbol">
+        <span class="name">Classpath</span>
+        
+        
+        <span class="result"> = <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Attributed.html" class="extype" name="sbt.Attributed">Attributed</a>[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#Streams">
+      <a id="Streams:Streams"></a>
+      <h4 class="signature">
+      <span class="kind">type</span>
+      <span class="symbol">
+        <span class="name">Streams</span>
+        
+        
+        <span class="result"> = <a href="std/Streams.html" class="extype" name="sbt.std.Streams">Streams</a>[sbt.Project.ScopedKey[_]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#TaskStreams">
+      <a id="TaskStreams:TaskStreams"></a>
+      <h4 class="signature">
+      <span class="kind">type</span>
+      <span class="symbol">
+        <span class="name">TaskStreams</span>
+        
+        
+        <span class="result"> = <a href="std/TaskStreams.html" class="extype" name="sbt.std.TaskStreams">TaskStreams</a>[sbt.Project.ScopedKey[_]]</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="scala.AnyRef#!=">
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#!=">
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the receiver object is equivalent to the argument; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef###">
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">##</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef → Any
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$asInstanceOf">
+      <a id="$asInstanceOf[T0]():T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$isInstanceOf">
+      <a id="$isInstanceOf[T0]():Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#==">
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#==">
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#TraceValues">
+      <a id="TraceValues:String"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">TraceValues</span>
+        
+        
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#aggregate">
+      <a id="aggregate:SettingKey[Aggregation]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">aggregate</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="Aggregation.html" class="extype" name="sbt.Aggregation">Aggregation</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#allDependencies">
+      <a id="allDependencies:TaskKey[Seq[ModuleID]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">allDependencies</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#analysis">
+      <a id="analysis:AttributeKey[Analysis]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">analysis</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<a href="inc/Analysis.html" class="extype" name="sbt.inc.Analysis">Analysis</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#appConfiguration">
+      <a id="appConfiguration:SettingKey[AppConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">appConfiguration</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="../xsbti/AppConfiguration.html" class="extype" name="xsbti.AppConfiguration">AppConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#artifact">
+      <a id="artifact:SettingKey[Artifact]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">artifact</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#artifactClassifier">
+      <a id="artifactClassifier:SettingKey[Option[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">artifactClassifier</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#artifactName">
+      <a id="artifactName:SettingKey[(String, ModuleID, Artifact) ⇒ String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">artifactName</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[(String, <a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>, <a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>) ⇒ String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#artifactPath">
+      <a id="artifactPath:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">artifactPath</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#artifacts">
+      <a id="artifacts:SettingKey[Seq[Artifact]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">artifacts</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#asInstanceOf">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to cast the receiver object to be of type <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to cast the receiver object to be of type <code>T0</code>.</p><p>Note that the success of a cast at runtime is modulo Scala's erasure semantics.  Therefore the expression<code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at runtime, while the expression<code>List(1).asInstanceOf[List[String]]</code> will not.  In the latter example, because the type argument is erased as
+part of compilation it is not possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#autoCompilerPlugins">
+      <a id="autoCompilerPlugins:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">autoCompilerPlugins</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#autoUpdate">
+      <a id="autoUpdate:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">autoUpdate</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#baseDirectory">
+      <a id="baseDirectory:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">baseDirectory</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#buildStructure">
+      <a id="buildStructure:TaskKey[BuildStructure]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">buildStructure</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="Load$$BuildStructure.html" class="extype" name="sbt.Load.BuildStructure">BuildStructure</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#cacheDirectory">
+      <a id="cacheDirectory:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">cacheDirectory</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#checksums">
+      <a id="checksums:SettingKey[Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">checksums</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#classDirectory">
+      <a id="classDirectory:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">classDirectory</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#classpathConfiguration">
+      <a id="classpathConfiguration:SettingKey[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">classpathConfiguration</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#classpathFilter">
+      <a id="classpathFilter:SettingKey[FileFilter]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">classpathFilter</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="FileFilter.html" class="extype" name="sbt.FileFilter">FileFilter</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#classpathOptions">
+      <a id="classpathOptions:SettingKey[ClasspathOptions]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">classpathOptions</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="ClasspathOptions.html" class="extype" name="sbt.ClasspathOptions">ClasspathOptions</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#classpathTypes">
+      <a id="classpathTypes:SettingKey[Set[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">classpathTypes</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Set[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#clean">
+      <a id="clean:TaskKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">clean</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#cleanFiles">
+      <a id="cleanFiles:SettingKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">cleanFiles</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#cleanKeepFiles">
+      <a id="cleanKeepFiles:SettingKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">cleanKeepFiles</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#clone">
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">clone</span>
+        
+        <span class="params">()</span>
+        <span class="result">: AnyRef</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method creates and returns a copy of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method creates and returns a copy of the receiver object.</p><p>The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#commands">
+      <a id="commands:SettingKey[Seq[Command]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">commands</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="Command.html" class="extype" name="sbt.Command">Command</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#compile">
+      <a id="compile:TaskKey[Analysis]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">compile</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="inc/Analysis.html" class="extype" name="sbt.inc.Analysis">Analysis</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#compileInputs">
+      <a id="compileInputs:TaskKey[Inputs]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">compileInputs</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="Compiler$$Inputs.html" class="extype" name="sbt.Compiler.Inputs">Inputs</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#compileOrder">
+      <a id="compileOrder:SettingKey[Value]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">compileOrder</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Enumeration.Value">Value</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#compilers">
+      <a id="compilers:TaskKey[Compilers]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">compilers</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="Compiler$$Compilers.html" class="extype" name="sbt.Compiler.Compilers">Compilers</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#configuration">
+      <a id="configuration:SettingKey[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">configuration</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#console">
+      <a id="console:TaskKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">console</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#consoleProject">
+      <a id="consoleProject:TaskKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">consoleProject</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#consoleQuick">
+      <a id="consoleQuick:TaskKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">consoleQuick</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#copyResources">
+      <a id="copyResources:TaskKey[Seq[(File, File)]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">copyResources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[(<span class="extype" name="java.io.File">File</span>, <span class="extype" name="java.io.File">File</span>)]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#credentials">
+      <a id="credentials:TaskKey[Seq[Credentials]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">credentials</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="Credentials.html" class="extype" name="sbt.Credentials">Credentials</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#crossPaths">
+      <a id="crossPaths:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">crossPaths</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#crossScalaVersions">
+      <a id="crossScalaVersions:SettingKey[Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">crossScalaVersions</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#crossTarget">
+      <a id="crossTarget:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">crossTarget</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#defaultConfiguration">
+      <a id="defaultConfiguration:SettingKey[Option[Configuration]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">defaultConfiguration</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#defaultConfigurationMapping">
+      <a id="defaultConfigurationMapping:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">defaultConfigurationMapping</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#defaultExcludes">
+      <a id="defaultExcludes:SettingKey[FileFilter]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">defaultExcludes</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="FileFilter.html" class="extype" name="sbt.FileFilter">FileFilter</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#definedSbtPlugins">
+      <a id="definedSbtPlugins:TaskKey[Set[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">definedSbtPlugins</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Set[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#definedTests">
+      <a id="definedTests:TaskKey[Seq[TestDefinition]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">definedTests</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="TestDefinition.html" class="extype" name="sbt.TestDefinition">TestDefinition</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#deliver">
+      <a id="deliver:TaskKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">deliver</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#deliverConfiguration">
+      <a id="deliverConfiguration:TaskKey[DeliverConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">deliverConfiguration</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="DeliverConfiguration.html" class="extype" name="sbt.DeliverConfiguration">DeliverConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#deliverLocal">
+      <a id="deliverLocal:TaskKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">deliverLocal</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#deliverLocalConfiguration">
+      <a id="deliverLocalConfiguration:TaskKey[DeliverConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">deliverLocalConfiguration</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="DeliverConfiguration.html" class="extype" name="sbt.DeliverConfiguration">DeliverConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#dependencyClasspath">
+      <a id="dependencyClasspath:TaskKey[Classpath]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">dependencyClasspath</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Classpath]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#discoveredMainClasses">
+      <a id="discoveredMainClasses:TaskKey[Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">discoveredMainClasses</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#doc">
+      <a id="doc:TaskKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">doc</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#docDirectory">
+      <a id="docDirectory:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">docDirectory</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#dummy">
+      <a id="dummy[T](String,String):(TaskKey[T], Task[T])"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">dummy</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="name">name: String</span>, <span name="description">description: String</span>)</span>
+        <span class="result">: (<a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[T], <a href="Task.html" class="extype" name="sbt.Task">Task</a>[T])</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#dummyState">
+      <a id="dummyState:Task[State]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">dummyState</span>
+        
+        
+        <span class="result">: <a href="Task.html" class="extype" name="sbt.Task">Task</a>[<a href="State.html" class="extype" name="sbt.State">State</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#dummyStreamsManager">
+      <a id="dummyStreamsManager:Task[Streams]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">dummyStreamsManager</span>
+        
+        
+        <span class="result">: <a href="Task.html" class="extype" name="sbt.Task">Task</a>[Streams]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#dummyTask">
+      <a id="dummyTask[T](String):Task[T]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">dummyTask</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="name">name: String</span>)</span>
+        <span class="result">: <a href="Task.html" class="extype" name="sbt.Task">Task</a>[T]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#eq">
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">eq</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p><p>The <code>eq</code> method implements an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence relation] on
+non-null instances of <code>AnyRef</code>:
+ * It is reflexive: for any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(x)</code> returns <code>true</code>.
+ * It is symmetric: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, <code>x.eq(y)</code> returns <code>true</code> if and
+   only if <code>y.eq(x)</code> returns <code>true</code>.
+ * It is transitive: for any non-null instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.eq(y)</code> returns <code>true</code>   and <code>y.eq(z)</code> returns <code>true</code>, then <code>x.eq(z)</code> returns <code>true</code>.</p><p>Additionally, the <code>eq</code> method has three other properties.
+ * It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+   <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.
+ * For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.
+ * <code>null.eq(null)</code> returns <code>true</code>.</p><p>When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#equals">
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p><p>The default implementations of this method is an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence
+relation]:
+ * It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.
+ * It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.
+ * It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</p><p>If you override this method, you should verify that your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to override <code>hashCode</code> to ensure that objects
+that are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same 
+scala.Int
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#executeTests">
+      <a id="executeTests:TaskKey[()]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">executeTests</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[()]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#externalDependencyClasspath">
+      <a id="externalDependencyClasspath:TaskKey[Classpath]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">externalDependencyClasspath</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Classpath]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#externalResolvers">
+      <a id="externalResolvers:TaskKey[Seq[Resolver]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">externalResolvers</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="Resolver.html" class="extype" name="sbt.Resolver">Resolver</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#finalize">
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">finalize</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p><p>The details of when and if the <code>finalize</code> method are invoked, as well as the interaction between <code>finalize</code>and non-local returns and exceptions, are all platform dependent.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#fork">
+      <a id="fork:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">fork</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#fullClasspath">
+      <a id="fullClasspath:TaskKey[Classpath]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">fullClasspath</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Classpath]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#fullResolvers">
+      <a id="fullResolvers:TaskKey[Seq[Resolver]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">fullResolvers</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="Resolver.html" class="extype" name="sbt.Resolver">Resolver</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#getClass">
+      <a id="getClass():java.lang.Class[_]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getClass</span>
+        
+        <span class="params">()</span>
+        <span class="result">: java.lang.Class[_]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a representation that corresponds to the dynamic class of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a representation that corresponds to the dynamic class of the receiver object.</p><p>The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#hashCode">
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a hash code value for the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a hash code value for the object.</p><p>The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#historyPath">
+      <a id="historyPath:SettingKey[Option[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">historyPath</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#initialCommands">
+      <a id="initialCommands:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">initialCommands</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#initialize">
+      <a id="initialize:SettingKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">initialize</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#internalConfigurationMap">
+      <a id="internalConfigurationMap:SettingKey[(Configuration) ⇒ Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">internalConfigurationMap</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[(<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>) ⇒ <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#internalDependencyClasspath">
+      <a id="internalDependencyClasspath:TaskKey[Classpath]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">internalDependencyClasspath</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Classpath]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#isDummy">
+      <a id="isDummy(sbt.Task[_]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isDummy</span>
+        
+        <span class="params">(<span name="t">t: sbt.Task[_]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#isDummyTask">
+      <a id="isDummyTask:AttributeKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">isDummyTask</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#isInstanceOf">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p><p>Note that the test result of the test is modulo Scala's erasure semantics.  Therefore the expression<code>1.isInstanceOf[String]</code> will return <code>false</code>, while the expression <code>List(1).isInstanceOf[List[String]]</code> will
+return <code>true</code>.  In the latter example, because the type argument is erased as part of compilation it is not
+possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#isModule">
+      <a id="isModule:AttributeKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">isModule</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivyConfiguration">
+      <a id="ivyConfiguration:TaskKey[IvyConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivyConfiguration</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="IvyConfiguration.html" class="extype" name="sbt.IvyConfiguration">IvyConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivyConfigurations">
+      <a id="ivyConfigurations:SettingKey[Seq[Configuration]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivyConfigurations</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivyLoggingLevel">
+      <a id="ivyLoggingLevel:SettingKey[Value]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivyLoggingLevel</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Enumeration.Value">Value</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivyModule">
+      <a id="ivyModule:TaskKey[Module]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivyModule</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="IvySbt$Module.html" class="extype" name="sbt.IvySbt.Module">Module</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivyPaths">
+      <a id="ivyPaths:SettingKey[IvyPaths]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivyPaths</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="IvyPaths.html" class="extype" name="sbt.IvyPaths">IvyPaths</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivySbt">
+      <a id="ivySbt:TaskKey[IvySbt]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivySbt</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="IvySbt.html" class="extype" name="sbt.IvySbt">IvySbt</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivyScala">
+      <a id="ivyScala:SettingKey[Option[IvyScala]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivyScala</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[<a href="IvyScala.html" class="extype" name="sbt.IvyScala">IvyScala</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivyValidate">
+      <a id="ivyValidate:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivyValidate</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#ivyXML">
+      <a id="ivyXML:SettingKey[NodeSeq]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">ivyXML</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.xml.NodeSeq">NodeSeq</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#javaHome">
+      <a id="javaHome:SettingKey[Option[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">javaHome</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#javaOptions">
+      <a id="javaOptions:SettingKey[Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">javaOptions</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#javaSource">
+      <a id="javaSource:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">javaSource</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#javacOptions">
+      <a id="javacOptions:SettingKey[Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">javacOptions</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#libraryDependencies">
+      <a id="libraryDependencies:SettingKey[Seq[ModuleID]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">libraryDependencies</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#loadedTestFrameworks">
+      <a id="loadedTestFrameworks:TaskKey[Map[TestFramework, Framework]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">loadedTestFrameworks</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Map[<a href="TestFramework.html" class="extype" name="sbt.TestFramework">TestFramework</a>, <span class="extype" name="org.scalatools.testing.Framework">Framework</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#logBuffered">
+      <a id="logBuffered:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">logBuffered</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#logLevel">
+      <a id="logLevel:SettingKey[Value]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">logLevel</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Enumeration.Value">Value</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#logManager">
+      <a id="logManager:SettingKey[LogManager]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">logManager</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="LogManager.html" class="extype" name="sbt.LogManager">LogManager</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#logged">
+      <a id="logged:AttributeKey[Logger]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">logged</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<a href="Logger.html" class="extype" name="sbt.Logger">Logger</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#mainClass">
+      <a id="mainClass:TaskKey[Option[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">mainClass</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Option">Option</span>[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#makePom">
+      <a id="makePom:TaskKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">makePom</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#makePomConfiguration">
+      <a id="makePomConfiguration:SettingKey[MakePomConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">makePomConfiguration</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="MakePomConfiguration.html" class="extype" name="sbt.MakePomConfiguration">MakePomConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#managedClasspath">
+      <a id="managedClasspath:TaskKey[Classpath]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">managedClasspath</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Classpath]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#managedDirectory">
+      <a id="managedDirectory:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">managedDirectory</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#managedResourceDirectories">
+      <a id="managedResourceDirectories:SettingKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">managedResourceDirectories</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#managedResources">
+      <a id="managedResources:TaskKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">managedResources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#managedSourceDirectories">
+      <a id="managedSourceDirectories:SettingKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">managedSourceDirectories</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#managedSources">
+      <a id="managedSources:TaskKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">managedSources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#mappings">
+      <a id="mappings:TaskKey[Seq[(File, String)]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">mappings</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[(<span class="extype" name="java.io.File">File</span>, String)]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#maxErrors">
+      <a id="maxErrors:SettingKey[Int]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">maxErrors</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#moduleConfigurations">
+      <a id="moduleConfigurations:SettingKey[Seq[ModuleConfiguration]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">moduleConfigurations</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="ModuleConfiguration.html" class="extype" name="sbt.ModuleConfiguration">ModuleConfiguration</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#moduleID">
+      <a id="moduleID:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">moduleID</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#moduleSettings">
+      <a id="moduleSettings:TaskKey[ModuleSettings]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">moduleSettings</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="ModuleSettings.html" class="extype" name="sbt.ModuleSettings">ModuleSettings</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#name">
+      <a id="name:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">name</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#ne">
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">ne</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the argument is not a reference to the receiver object; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#normalizedName">
+      <a id="normalizedName:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">normalizedName</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notify">
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notify</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notifyAll">
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notifyAll</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#offline">
+      <a id="offline:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">offline</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#onLoad">
+      <a id="onLoad:SettingKey[(State) ⇒ State]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">onLoad</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[(<a href="State.html" class="extype" name="sbt.State">State</a>) ⇒ <a href="State.html" class="extype" name="sbt.State">State</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#onUnload">
+      <a id="onUnload:SettingKey[(State) ⇒ State]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">onUnload</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[(<a href="State.html" class="extype" name="sbt.State">State</a>) ⇒ <a href="State.html" class="extype" name="sbt.State">State</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#organization">
+      <a id="organization:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">organization</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#otherResolvers">
+      <a id="otherResolvers:SettingKey[Seq[Resolver]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">otherResolvers</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="Resolver.html" class="extype" name="sbt.Resolver">Resolver</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#outputStrategy">
+      <a id="outputStrategy:SettingKey[Option[OutputStrategy]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">outputStrategy</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[<a href="OutputStrategy.html" class="extype" name="sbt.OutputStrategy">OutputStrategy</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#packageBin">
+      <a id="packageBin:TaskKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">packageBin</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#packageConfiguration">
+      <a id="packageConfiguration:TaskKey[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">packageConfiguration</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="Package$$Configuration.html" class="extype" name="sbt.Package.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#packageDoc">
+      <a id="packageDoc:TaskKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">packageDoc</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#packageOptions">
+      <a id="packageOptions:TaskKey[Seq[PackageOption]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">packageOptions</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="PackageOption.html" class="extype" name="sbt.PackageOption">PackageOption</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#packageSrc">
+      <a id="packageSrc:TaskKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">packageSrc</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#packagedArtifact">
+      <a id="packagedArtifact:TaskKey[(Artifact, File)]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">packagedArtifact</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[(<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>, <span class="extype" name="java.io.File">File</span>)]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#packagedArtifacts">
+      <a id="packagedArtifacts:TaskKey[Map[Artifact, File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">packagedArtifacts</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Map[<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>, <span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#persistLogLevel">
+      <a id="persistLogLevel:SettingKey[Value]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">persistLogLevel</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Enumeration.Value">Value</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#persistTraceLevel">
+      <a id="persistTraceLevel:SettingKey[Int]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">persistTraceLevel</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#pollInterval">
+      <a id="pollInterval:SettingKey[Int]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">pollInterval</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#pomExtra">
+      <a id="pomExtra:SettingKey[NodeSeq]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">pomExtra</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.xml.NodeSeq">NodeSeq</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#pomIncludeRepository">
+      <a id="pomIncludeRepository:SettingKey[(MavenRepository) ⇒ Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">pomIncludeRepository</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[(<a href="MavenRepository.html" class="extype" name="sbt.MavenRepository">MavenRepository</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#pomPostProcess">
+      <a id="pomPostProcess:SettingKey[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">pomPostProcess</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#products">
+      <a id="products:TaskKey[Classpath]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">products</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Classpath]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#projectCommand">
+      <a id="projectCommand:AttributeKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">projectCommand</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#projectDependencies">
+      <a id="projectDependencies:TaskKey[Seq[ModuleID]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">projectDependencies</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#projectDescriptors">
+      <a id="projectDescriptors:TaskKey[Map[ModuleRevisionId, ModuleDescriptor]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">projectDescriptors</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Map[<span class="extype" name="org.apache.ivy.core.module.id.ModuleRevisionId">ModuleRevisionId</span>, <span class="extype" name="org.apache.ivy.core.module.descriptor.ModuleDescriptor">ModuleDescriptor</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#projectID">
+      <a id="projectID:SettingKey[ModuleID]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">projectID</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#projectResolver">
+      <a id="projectResolver:TaskKey[Resolver]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">projectResolver</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="Resolver.html" class="extype" name="sbt.Resolver">Resolver</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#publish">
+      <a id="publish:TaskKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">publish</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#publishArtifact">
+      <a id="publishArtifact:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">publishArtifact</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#publishConfiguration">
+      <a id="publishConfiguration:TaskKey[PublishConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">publishConfiguration</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="PublishConfiguration.html" class="extype" name="sbt.PublishConfiguration">PublishConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#publishLocal">
+      <a id="publishLocal:TaskKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">publishLocal</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#publishLocalConfiguration">
+      <a id="publishLocalConfiguration:TaskKey[PublishConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">publishLocalConfiguration</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="PublishConfiguration.html" class="extype" name="sbt.PublishConfiguration">PublishConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#publishMavenStyle">
+      <a id="publishMavenStyle:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">publishMavenStyle</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#publishTo">
+      <a id="publishTo:SettingKey[Option[Resolver]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">publishTo</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[<a href="Resolver.html" class="extype" name="sbt.Resolver">Resolver</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#resolvedScoped">
+      <a id="resolvedScoped:SettingKey[sbt.Project.ScopedKey[_]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">resolvedScoped</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[sbt.Project.ScopedKey[_]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#resolvers">
+      <a id="resolvers:SettingKey[Seq[Resolver]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">resolvers</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="Resolver.html" class="extype" name="sbt.Resolver">Resolver</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#resourceDirectories">
+      <a id="resourceDirectories:SettingKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">resourceDirectories</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#resourceDirectory">
+      <a id="resourceDirectory:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">resourceDirectory</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#resourceGenerators">
+      <a id="resourceGenerators:SettingKey[Seq[Task[Seq[File]]]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">resourceGenerators</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="Task.html" class="extype" name="sbt.Task">Task</a>[Seq[<span class="extype" name="java.io.File">File</span>]]]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#resourceManaged">
+      <a id="resourceManaged:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">resourceManaged</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#resources">
+      <a id="resources:TaskKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">resources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#retrieveConfiguration">
+      <a id="retrieveConfiguration:SettingKey[Option[RetrieveConfiguration]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">retrieveConfiguration</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[<a href="RetrieveConfiguration.html" class="extype" name="sbt.RetrieveConfiguration">RetrieveConfiguration</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#retrieveManaged">
+      <a id="retrieveManaged:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">retrieveManaged</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#retrievePattern">
+      <a id="retrievePattern:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">retrievePattern</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#run">
+      <a id="run:InputKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">run</span>
+        
+        
+        <span class="result">: <a href="InputKey.html" class="extype" name="sbt.InputKey">InputKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#runBefore">
+      <a id="runBefore:AttributeKey[Seq[sbt.Task[_]]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">runBefore</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Task[_]]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#runMain">
+      <a id="runMain:InputKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">runMain</span>
+        
+        
+        <span class="result">: <a href="InputKey.html" class="extype" name="sbt.InputKey">InputKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#runner">
+      <a id="runner:SettingKey[ScalaRun]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">runner</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="ScalaRun.html" class="extype" name="sbt.ScalaRun">ScalaRun</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sbtDependency">
+      <a id="sbtDependency:SettingKey[ModuleID]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sbtDependency</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sbtPlugin">
+      <a id="sbtPlugin:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sbtPlugin</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sbtResolver">
+      <a id="sbtResolver:SettingKey[Resolver]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sbtResolver</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="Resolver.html" class="extype" name="sbt.Resolver">Resolver</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#scalaHome">
+      <a id="scalaHome:SettingKey[Option[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">scalaHome</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#scalaInstance">
+      <a id="scalaInstance:SettingKey[ScalaInstance]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">scalaInstance</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="ScalaInstance.html" class="extype" name="sbt.ScalaInstance">ScalaInstance</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#scalaSource">
+      <a id="scalaSource:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">scalaSource</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#scalaVersion">
+      <a id="scalaVersion:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">scalaVersion</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#scalacOptions">
+      <a id="scalacOptions:TaskKey[Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">scalacOptions</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#scaladocOptions">
+      <a id="scaladocOptions:TaskKey[Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">scaladocOptions</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#selectMainClass">
+      <a id="selectMainClass:TaskKey[Option[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">selectMainClass</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Option">Option</span>[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sessionSettings">
+      <a id="sessionSettings:AttributeKey[SessionSettings]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sessionSettings</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<a href="SessionSettings.html" class="extype" name="sbt.SessionSettings">SessionSettings</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#settings">
+      <a id="settings:TaskKey[Settings[Scope]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">settings</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#shellPrompt">
+      <a id="shellPrompt:SettingKey[(State) ⇒ String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">shellPrompt</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[(<a href="State.html" class="extype" name="sbt.State">State</a>) ⇒ String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#showSuccess">
+      <a id="showSuccess:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">showSuccess</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#showTiming">
+      <a id="showTiming:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">showTiming</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sourceDirectories">
+      <a id="sourceDirectories:SettingKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sourceDirectories</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sourceDirectory">
+      <a id="sourceDirectory:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sourceDirectory</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sourceFilter">
+      <a id="sourceFilter:SettingKey[FileFilter]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sourceFilter</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="FileFilter.html" class="extype" name="sbt.FileFilter">FileFilter</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sourceGenerators">
+      <a id="sourceGenerators:SettingKey[Seq[Task[Seq[File]]]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sourceGenerators</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="Task.html" class="extype" name="sbt.Task">Task</a>[Seq[<span class="extype" name="java.io.File">File</span>]]]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sourceManaged">
+      <a id="sourceManaged:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sourceManaged</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#sources">
+      <a id="sources:TaskKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">sources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#state">
+      <a id="state:TaskKey[State]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">state</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="State.html" class="extype" name="sbt.State">State</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#stateBuildStructure">
+      <a id="stateBuildStructure:AttributeKey[BuildStructure]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">stateBuildStructure</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<a href="Load$$BuildStructure.html" class="extype" name="sbt.Load.BuildStructure">BuildStructure</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#streams">
+      <a id="streams:TaskKey[TaskStreams]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">streams</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[TaskStreams]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#streamsManager">
+      <a id="streamsManager:TaskKey[Streams]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">streamsManager</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Streams]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#synchronized">
+      <a id="synchronized[T0](T0):T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">synchronized</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">(<span name="arg0">arg0: T0</span>)</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#target">
+      <a id="target:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">target</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#taskDefinitionKey">
+      <a id="taskDefinitionKey:AttributeKey[sbt.Project.ScopedKey[_]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">taskDefinitionKey</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[sbt.Project.ScopedKey[_]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#test">
+      <a id="test:TaskKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">test</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#testFrameworks">
+      <a id="testFrameworks:SettingKey[Seq[TestFramework]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">testFrameworks</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<a href="TestFramework.html" class="extype" name="sbt.TestFramework">TestFramework</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#testListeners">
+      <a id="testListeners:TaskKey[Seq[TestReportListener]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">testListeners</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="TestReportListener.html" class="extype" name="sbt.TestReportListener">TestReportListener</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#testLoader">
+      <a id="testLoader:TaskKey[ClassLoader]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">testLoader</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#testOnly">
+      <a id="testOnly:InputKey[Unit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">testOnly</span>
+        
+        
+        <span class="result">: <a href="InputKey.html" class="extype" name="sbt.InputKey">InputKey</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#testOptions">
+      <a id="testOptions:TaskKey[Seq[TestOption]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">testOptions</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<a href="TestOption.html" class="extype" name="sbt.TestOption">TestOption</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#thisProject">
+      <a id="thisProject:SettingKey[ResolvedProject]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">thisProject</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="ResolvedProject.html" class="extype" name="sbt.ResolvedProject">ResolvedProject</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#thisProjectRef">
+      <a id="thisProjectRef:SettingKey[ProjectRef]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">thisProjectRef</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#timingFormat">
+      <a id="timingFormat:SettingKey[DateFormat]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">timingFormat</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.text.DateFormat">DateFormat</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#toString">
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a string representation of the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a string representation of the object.</p><p>The default representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string representation of the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#traceLevel">
+      <a id="traceLevel:SettingKey[Int]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">traceLevel</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#transitiveClassifiers">
+      <a id="transitiveClassifiers:SettingKey[Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">transitiveClassifiers</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#trapExit">
+      <a id="trapExit:SettingKey[Boolean]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">trapExit</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#triggeredBy">
+      <a id="triggeredBy:AttributeKey[Seq[sbt.Task[_]]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">triggeredBy</span>
+        
+        
+        <span class="result">: <a href="AttributeKey.html" class="extype" name="sbt.AttributeKey">AttributeKey</a>[<span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Task[_]]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#unmanagedBase">
+      <a id="unmanagedBase:SettingKey[File]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">unmanagedBase</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#unmanagedClasspath">
+      <a id="unmanagedClasspath:TaskKey[Classpath]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">unmanagedClasspath</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Classpath]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#unmanagedJars">
+      <a id="unmanagedJars:TaskKey[Classpath]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">unmanagedJars</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Classpath]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#unmanagedResourceDirectories">
+      <a id="unmanagedResourceDirectories:SettingKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">unmanagedResourceDirectories</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#unmanagedResources">
+      <a id="unmanagedResources:TaskKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">unmanagedResources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#unmanagedSourceDirectories">
+      <a id="unmanagedSourceDirectories:SettingKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">unmanagedSourceDirectories</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#unmanagedSources">
+      <a id="unmanagedSources:TaskKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">unmanagedSources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#update">
+      <a id="update:TaskKey[UpdateReport]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">update</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#updateClassifiers">
+      <a id="updateClassifiers:TaskKey[UpdateReport]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">updateClassifiers</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#updateConfiguration">
+      <a id="updateConfiguration:SettingKey[UpdateConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">updateConfiguration</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="UpdateConfiguration.html" class="extype" name="sbt.UpdateConfiguration">UpdateConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#updateSbtClassifiers">
+      <a id="updateSbtClassifiers:TaskKey[UpdateReport]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">updateSbtClassifiers</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[<a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#version">
+      <a id="version:SettingKey[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">version</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#watch">
+      <a id="watch:SettingKey[Watched]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">watch</span>
+        
+        
+        <span class="result">: <a href="SettingKey.html" class="extype" name="sbt.SettingKey">SettingKey</a>[<a href="Watched.html" class="extype" name="sbt.Watched">Watched</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#watchSources">
+      <a id="watchSources:TaskKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">watchSources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Keys#watchTransitiveSources">
+      <a id="watchTransitiveSources:TaskKey[Seq[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">watchTransitiveSources</span>
+        
+        
+        <span class="result">: <a href="TaskKey.html" class="extype" name="sbt.TaskKey">TaskKey</a>[Seq[<span class="extype" name="java.io.File">File</span>]]</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from AnyRef</h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

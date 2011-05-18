@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>BufferedLogger.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2008, 2009, 2010 Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+
+	<span class="keyword">import</span> scala.collection.mutable.ListBuffer
+
+<span class="comment">/** A logger that can buffer the logging done on it and then can flush the buffer
+* to the delegate logger provided in the constructor.  Use 'startRecording' to
+* start buffering and then 'play' from to flush the buffer to the backing logger.
+*  The logging level set at the time a message is originally logged is used, not
+* the level at the time 'play' is called.
+*
+* This class assumes that it is the only client of the delegate logger.
+* */</span>
+<span class="keyword">class</span> <a title="class BufferedLogger extends sbt.BasicLogger with ScalaObject" id="9210">BufferedLogger</a><span title="ScalaObject" class="delimiter">(</span><a title="sbt.AbstractLogger" id="294427">delegate</a>: <a href="Logger.scala.html#9174" title="sbt.AbstractLogger">AbstractLogger</a><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="BasicLogger.scala.html#9177" title="sbt.BasicLogger">BasicLogger</a>
+<span class="delimiter">{</span>
+	<span class="keyword">private</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">val</span> <a title="scala.collection.mutable.ListBuffer[sbt.LogEvent]" id="294404">buffer</a> = <span title="scala.collection.mutable.ListBuffer[sbt.LogEvent]" class="keyword">new</span> <span title="scala.collection.mutable.ListBuffer[sbt.LogEvent]">ListBuffer</span><span class="delimiter">[</span>LogEvent<span class="delimiter">]</span>
+	<span class="keyword">private</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">var</span> <a title="Boolean" id="294405">recording</a> = <span title="Boolean(false)" class="keyword">false</span>
+
+	<span class="comment">/** Enables buffering. */</span>
+	<span class="keyword">def</span> <a title="()Unit" id="294406">record</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#9210" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span> <a href="#294405" title="Boolean">recording</a> = <span title="Boolean(true)" class="keyword">true</span> <span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="[T](f: =&gt; T)T" id="294407">buffer</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="294409">T</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="=&gt; T" id="544322">f</a>: =&gt; T<span class="delimiter">)</span>: <a href="#294409" title="T">T</a> = <a href="#9210" title="(x$1: T)T">synchronized</a> <span class="delimiter">{</span>
+		<a href="#294406" title="()Unit">record</a><span class="delimiter">(</span><span class="delimiter">)</span>
+		<span class="keyword">try</span> <span class="delimiter">{</span> <a href="#544322" title="=&gt; T">f</a> <span class="delimiter">}</span>
+		<span class="keyword">finally</span> <span class="delimiter">{</span> <a href="#294413" title="()Unit">stopQuietly</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="[T](f: =&gt; T)T" id="294410">bufferQuietly</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="294412">T</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="=&gt; T" id="544331">f</a>: =&gt; T<span class="delimiter">)</span>: <a href="#294412" title="T">T</a> = <a href="#9210" title="(x$1: T)T">synchronized</a> <span class="delimiter">{</span>
+		<a href="#294406" title="()Unit">record</a><span class="delimiter">(</span><span class="delimiter">)</span>
+		<span class="keyword">try</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">val</span> <a title="T" id="544337">result</a> = <a href="#544331" title="=&gt; T">f</a>
+			<a href="#294415" title="()Unit">clear</a><span class="delimiter">(</span><span class="delimiter">)</span>
+			<a href="#544337" title="T">result</a>
+		<span class="delimiter">}</span>
+		<span class="keyword">catch</span> <span class="delimiter">{</span> <span title="Nothing" class="keyword">case</span> <a title="java.lang.Throwable" id="544340">e</a> =&gt; <a href="#294413" title="()Unit">stopQuietly</a><span class="delimiter">(</span><span class="delimiter">)</span>; <span title="Nothing" class="keyword">throw</span> <a href="#544340" title="java.lang.Throwable">e</a> <span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="()Unit" id="294413">stopQuietly</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#9210" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span> <span class="keyword">try</span> <span class="delimiter">{</span> <a href="#294416" title="()Unit">stop</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">}</span> <span class="keyword">catch</span> <span class="delimiter">{</span> <span title="Unit" class="keyword">case</span> <a title="Exception" id="490249">e</a>: <span title="Exception">Exception</span> =&gt; <span title="Unit" class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">}</span> <span class="delimiter">}</span>
+
+	<span class="comment">/** Flushes the buffer to the delegate logger.  This method calls logAll on the delegate
+	* so that the messages are written consecutively. The buffer is cleared in the process. */</span>
+	<span class="keyword">def</span> <a title="()Unit" id="294414">play</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#9210" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span> <a href="#294427" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#250264" title="(events: Seq[sbt.LogEvent])Unit">logAll</a><span class="delimiter">(</span><a href="#294404" title="scala.collection.mutable.ListBuffer[sbt.LogEvent]">buffer</a>.<span title="=&gt; List[sbt.LogEvent]">readOnly</span><span class="delimiter">)</span>; <a href="#294404" title="scala.collection.mutable.ListBuffer[sbt.LogEvent]">buffer</a>.<span title="()Unit">clear</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="comment">/** Clears buffered events and disables buffering. */</span>
+	<span class="keyword">def</span> <a title="()Unit" id="294415">clear</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#9210" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span> <a href="#294404" title="scala.collection.mutable.ListBuffer[sbt.LogEvent]">buffer</a>.<span title="()Unit">clear</span><span class="delimiter">(</span><span class="delimiter">)</span>; <a href="#294405" title="Boolean">recording</a> = <span title="Boolean(false)" class="keyword">false</span> <span class="delimiter">}</span>
+	<span class="comment">/** Plays buffered events and disables buffering. */</span>
+	<span class="keyword">def</span> <a title="()Unit" id="294416">stop</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#9210" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span> <a href="#294414" title="()Unit">play</a><span class="delimiter">(</span><span class="delimiter">)</span>; <a href="#294415" title="()Unit">clear</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">}</span>
+
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(newLevel: sbt.Level.Value)Unit" id="294417">setLevel</a><span class="delimiter">(</span><a title="sbt.Level.Value" id="544461">newLevel</a>: Level.<span title="sbt.Level.Value">Value</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#9210" title="(x$1: Any)Any">synchronized</a> <span title="Unit" class="delimiter">{</span>
+		<span class="keyword">super</span>.<a href="BasicLogger.scala.html#250279" title="(newLevel: sbt.Level.Value)Unit">setLevel</a><span class="delimiter">(</span><a href="#544461" title="sbt.Level.Value">newLevel</a><span class="delimiter">)</span>
+		<span title="Any" class="keyword">if</span><span class="delimiter">(</span><a href="#294405" title="Boolean">recording</a><span class="delimiter">)</span>
+			<a href="#294404" title="(x: sbt.LogEvent)BufferedLogger.this.buffer.type">buffer</a> += <span title="sbt.SetLevel" class="keyword">new</span> <a href="LogEvent.scala.html#9312" title="sbt.SetLevel">SetLevel</a><span class="delimiter">(</span><a href="#544461" title="sbt.Level.Value">newLevel</a><span class="delimiter">)</span>
+		<span class="keyword">else</span>
+			<a href="#294427" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#250256" title="(newLevel: sbt.Level.Value)Unit">setLevel</a><span class="delimiter">(</span><a href="#544461" title="sbt.Level.Value">newLevel</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(flag: Boolean)Unit" id="294418">setSuccessEnabled</a><span class="delimiter">(</span><a title="Boolean" id="544531">flag</a>: <span title="Boolean">Boolean</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#9210" title="(x$1: Any)Any">synchronized</a> <span title="Unit" class="delimiter">{</span>
+		<span class="keyword">super</span>.<a href="BasicLogger.scala.html#250277" title="(flag: Boolean)Unit">setSuccessEnabled</a><span class="delimiter">(</span><a href="#544531" title="Boolean">flag</a><span class="delimiter">)</span>
+		<span title="Any" class="keyword">if</span><span class="delimiter">(</span><a href="#294405" title="Boolean">recording</a><span class="delimiter">)</span>
+			<a href="#294404" title="(x: sbt.LogEvent)BufferedLogger.this.buffer.type">buffer</a> += <span title="sbt.SetSuccess" class="keyword">new</span> <a href="LogEvent.scala.html#9315" title="sbt.SetSuccess">SetSuccess</a><span class="delimiter">(</span><a href="#544531" title="Boolean">flag</a><span class="delimiter">)</span>
+		<span class="keyword">else</span>
+			<a href="#294427" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#250261" title="(flag: Boolean)Unit">setSuccessEnabled</a><span class="delimiter">(</span><a href="#544531" title="Boolean">flag</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(level: Int)Unit" id="294419">setTrace</a><span class="delimiter">(</span><a title="Int" id="544558">level</a>: <span title="Int">Int</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#9210" title="(x$1: Any)Any">synchronized</a> <span title="Unit" class="delimiter">{</span>
+		<span class="keyword">super</span>.<a href="BasicLogger.scala.html#250280" title="(level: Int)Unit">setTrace</a><span class="delimiter">(</span><a href="#544558" title="Int">level</a><span class="delimiter">)</span>
+		<span title="Any" class="keyword">if</span><span class="delimiter">(</span><a href="#294405" title="Boolean">recording</a><span class="delimiter">)</span>
+			<a href="#294404" title="(x: sbt.LogEvent)BufferedLogger.this.buffer.type">buffer</a> += <span title="sbt.SetTrace" class="keyword">new</span> <a href="LogEvent.scala.html#9318" title="sbt.SetTrace">SetTrace</a><span class="delimiter">(</span><a href="#544558" title="Int">level</a><span class="delimiter">)</span>
+		<span class="keyword">else</span>
+			<a href="#294427" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#250257" title="(flag: Int)Unit">setTrace</a><span class="delimiter">(</span><a href="#544558" title="Int">level</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+
+	<span class="keyword">def</span> <a title="(t: =&gt; Throwable)Unit" id="294420">trace</a><span class="delimiter">(</span><a title="=&gt; Throwable" id="544585">t</a>: =&gt; Throwable<span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<a href="#294426" title="(condition: =&gt; Boolean,appendIfBuffered: =&gt; sbt.LogEvent,doUnbuffered: (sbt.AbstractLogger) =&gt; Unit)Unit">doBufferableIf</a><span class="delimiter">(</span><a href="Logger.scala.html#250259" title="=&gt; Boolean">traceEnabled</a>, <span title="sbt.Trace" class="keyword">new</span> <a href="LogEvent.scala.html#9336" title="sbt.Trace">Trace</a><span class="delimiter">(</span><a href="#544585" title="=&gt; Throwable">t</a><span class="delimiter">)</span>, <a href="#544607" title="sbt.AbstractLogger">_</a>.<a href="Logger.scala.html#55132" title="(t: =&gt; Throwable)Unit">trace</a><span class="delimiter">(</span><a href="#544585" title="=&gt; Throwable">t</a><span class="delimiter">)</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="(message: =&gt; String)Unit" id="294421">success</a><span class="delimiter">(</span><a title="=&gt; String" id="544614">message</a>: =&gt; String<span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<a href="#294425" title="(level: sbt.Level.Value,appendIfBuffered: =&gt; sbt.LogEvent,doUnbuffered: (sbt.AbstractLogger) =&gt; Unit)Unit">doBufferable</a><span class="delimiter">(</span><a href="Level.scala.html#9262" title="object sbt.Level">Level</a>.<a href="Level.scala.html#85294" title="=&gt; sbt.Level.Value">Info</a>, <span title="sbt.Success" class="keyword">new</span> <a href="LogEvent.scala.html#9333" title="sbt.Success">Success</a><span class="delimiter">(</span><a href="#544614" title="=&gt; String">message</a><span class="delimiter">)</span>, <a href="#544627" title="sbt.AbstractLogger">_</a>.<a href="Logger.scala.html#55133" title="(message: =&gt; String)Unit">success</a><span class="delimiter">(</span><a href="#544614" title="=&gt; String">message</a><span class="delimiter">)</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="(level: sbt.Level.Value,message: =&gt; String)Unit" id="294422">log</a><span class="delimiter">(</span><a title="sbt.Level.Value" id="544630">level</a>: Level.<span title="sbt.Level.Value">Value</span>, <a title="=&gt; String" id="544631">message</a>: =&gt; String<span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<a href="#294425" title="(level: sbt.Level.Value,appendIfBuffered: =&gt; sbt.LogEvent,doUnbuffered: (sbt.AbstractLogger) =&gt; Unit)Unit">doBufferable</a><span class="delimiter">(</span><a href="#544630" title="sbt.Level.Value">level</a>, <span title="sbt.Log" class="keyword">new</span> <a href="LogEvent.scala.html#9264" title="sbt.Log">Log</a><span class="delimiter">(</span><a href="#544630" title="sbt.Level.Value">level</a>, <a href="#544631" title="=&gt; String">message</a><span class="delimiter">)</span>, <a href="#544648" title="sbt.AbstractLogger">_</a>.<a href="Logger.scala.html#55134" title="(level: sbt.Level.Value,message: =&gt; String)Unit">log</a><span class="delimiter">(</span><a href="#544630" title="sbt.Level.Value">level</a>, <a href="#544631" title="=&gt; String">message</a><span class="delimiter">)</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="(events: Seq[sbt.LogEvent])Unit" id="294423">logAll</a><span class="delimiter">(</span><a title="Seq[sbt.LogEvent]" id="544700">events</a>: <span title="Seq[sbt.LogEvent]">Seq</span><span class="delimiter">[</span>LogEvent<span class="delimiter">]</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#9210" title="(x$1: Any)Any">synchronized</a> <span title="Unit" class="delimiter">{</span>
+		<span title="Any" class="keyword">if</span><span class="delimiter">(</span><a href="#294405" title="Boolean">recording</a><span class="delimiter">)</span>
+			<a href="#294404" title="(xs: scala.collection.TraversableOnce[sbt.LogEvent])BufferedLogger.this.buffer.type">buffer</a> ++= <a href="#544700" title="Seq[sbt.LogEvent]">events</a>
+		<span class="keyword">else</span>
+			<a href="#294427" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#250264" title="(events: Seq[sbt.LogEvent])Unit">logAll</a><span class="delimiter">(</span><a href="#544700" title="Seq[sbt.LogEvent]">events</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="(event: sbt.ControlEvent.Value,message: =&gt; String)Unit" id="294424">control</a><span class="delimiter">(</span><a title="sbt.ControlEvent.Value" id="544723">event</a>: ControlEvent.<span title="sbt.ControlEvent.Value">Value</span>, <a title="=&gt; String" id="544724">message</a>: =&gt; String<span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<a href="#294425" title="(level: sbt.Level.Value,appendIfBuffered: =&gt; sbt.LogEvent,doUnbuffered: (sbt.AbstractLogger) =&gt; Unit)Unit">doBufferable</a><span class="delimiter">(</span><a href="Level.scala.html#9262" title="object sbt.Level">Level</a>.<a href="Level.scala.html#85294" title="=&gt; sbt.Level.Value">Info</a>, <span title="sbt.ControlEvent" class="keyword">new</span> <a href="LogEvent.scala.html#9240" title="sbt.ControlEvent">ControlEvent</a><span class="delimiter">(</span><a href="#544723" title="sbt.ControlEvent.Value">event</a>, <a href="#544724" title="=&gt; String">message</a><span class="delimiter">)</span>, <a href="#544747" title="sbt.AbstractLogger">_</a>.<a href="Logger.scala.html#250263" title="(event: sbt.ControlEvent.Value,message: =&gt; String)Unit">control</a><span class="delimiter">(</span><a href="#544723" title="sbt.ControlEvent.Value">event</a>, <a href="#544724" title="=&gt; String">message</a><span class="delimiter">)</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(level: sbt.Level.Value,appendIfBuffered: =&gt; sbt.LogEvent,doUnbuffered: (sbt.AbstractLogger) =&gt; Unit)Unit" id="294425">doBufferable</a><span class="delimiter">(</span><a title="sbt.Level.Value" id="544616">level</a>: Level.<span title="sbt.Level.Value">Value</span>, <a title="=&gt; sbt.LogEvent" id="544617">appendIfBuffered</a>: =&gt; LogEvent, <a title="(sbt.AbstractLogger) =&gt; Unit" id="544618">doUnbuffered</a>: AbstractLogger =&gt; Unit<span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<a href="#294426" title="(condition: =&gt; Boolean,appendIfBuffered: =&gt; sbt.LogEvent,doUnbuffered: (sbt.AbstractLogger) =&gt; Unit)Unit">doBufferableIf</a><span class="delimiter">(</span><a href="Logger.scala.html#250262" title="(level: sbt.Level.Value)Boolean">atLevel</a><span class="delimiter">(</span><a href="#544616" title="sbt.Level.Value">level</a><span class="delimiter">)</span>, <a href="#544617" title="=&gt; sbt.LogEvent">appendIfBuffered</a>, <a href="#544618" title="(sbt.AbstractLogger) =&gt; Unit">doUnbuffered</a><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(condition: =&gt; Boolean,appendIfBuffered: =&gt; sbt.LogEvent,doUnbuffered: (sbt.AbstractLogger) =&gt; Unit)Unit" id="294426">doBufferableIf</a><span class="delimiter">(</span><a title="=&gt; Boolean" id="544588">condition</a>: =&gt; Boolean, <a title="=&gt; sbt.LogEvent" id="544589">appendIfBuffered</a>: =&gt; LogEvent, <a title="(sbt.AbstractLogger) =&gt; Unit" id="544590">doUnbuffered</a>: AbstractLogger =&gt; Unit<span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#9210" title="(x$1: Any)Any">synchronized</a> <span title="Unit" class="delimiter">{</span>
+		<span title="Any" class="keyword">if</span><span class="delimiter">(</span><a href="#544588" title="=&gt; Boolean">condition</a><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<span title="Any" class="keyword">if</span><span class="delimiter">(</span><a href="#294405" title="Boolean">recording</a><span class="delimiter">)</span>
+				<a href="#294404" title="(x: sbt.LogEvent)BufferedLogger.this.buffer.type">buffer</a> += <a href="#544589" title="=&gt; sbt.LogEvent">appendIfBuffered</a>
+			<span class="keyword">else</span>
+				<a href="#544590" title="(v1: sbt.AbstractLogger)Unit">doUnbuffered</a><span class="delimiter">(</span><a href="#294427" title="sbt.AbstractLogger">delegate</a><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

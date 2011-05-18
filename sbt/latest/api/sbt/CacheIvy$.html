@@ -1,0 +1,1260 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>sbt.CacheIvy</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../lib/jquery.js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="package.html" class="extype" name="sbt">sbt</a></p>
+
+      <div id="definition">
+        <img src="../lib/object_big.png" />
+        <h1>CacheIvy</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">CacheIvy</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"><div class="comment cmt"><p>InputCaches for IvyConfiguration, ModuleSettings, and UpdateConfiguration
+The InputCaches for a basic data structure is built in two parts.
+Given the data structure:
+  Data[A,B,C, ...]
+1) Define a conversion from Data to the HList A :+: B :+: C :+: ... :+: HNil,
+   excluding any members that should not be considered for caching
+2) In theory, 1) would be enough and wrapHL would generate InputCache[Data] as long
+   as all of InputCache[A], InputCache[B], ... exist.  However, if any of these child
+   InputCaches are constructed using wrapHL, you get a diverging implicit error.  (I
+   believe scalac is generating this error as specified, but that the implicits would
+   be valid and not be infinite.  This might take some effort to come up with a new rule
+   that allows this)
+3) So, we need to explicitly define the intermediate implicits.  The general approach is:</p><pre>
+     object LN {
+       ... Data =&gt; HList conversions ...
+     }
+     import LN._
+     implicit dataCache: InputCache[Data] = wrapHL
+
+     object L(N-1) ...
+</pre><p>   Each Data in LN only uses implicits from L(N-1).
+   This way, higher levels (higher N) cannot see the HList conversions of subcomponents but can
+   use the explicitly defined subcomponent implicits and there is no divergence.
+4) Ideally, diverging implicits could be relaxed so that the ... = wrapIn lines could be removed.</p></div><div class="block">
+            linear super types: AnyRef, <span class="extype" name="scala.Any">Any</span>
+          </div>
+            
+            
+            
+          </div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          <div id="order">
+                <span class="filtertype">Ordering</span>
+                <ol><li class="alpha in">Alphabetic</li><li class="inherit out">By inheritance</li></ol>
+              </div>
+          <div id="ancestors">
+                <span class="filtertype">Inherited</span>
+                <ol><li class="hideall">Hide All</li><li class="showall">Show all</li></ol>
+                <ol id="linearization"><li class="in" name="sbt.CacheIvy">CacheIvy</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        
+
+        
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="scala.AnyRef#!=">
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#!=">
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the receiver object is equivalent to the argument; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef###">
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">##</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef → Any
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$asInstanceOf">
+      <a id="$asInstanceOf[T0]():T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$isInstanceOf">
+      <a id="$isInstanceOf[T0]():Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#==">
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#==">
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy.L1">
+      <a id="L1:L1"></a>
+      <h4 class="signature"><a href="CacheIvy$$L1$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">L1</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy.L2">
+      <a id="L2:L2"></a>
+      <h4 class="signature"><a href="CacheIvy$$L2$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">L2</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy.L3">
+      <a id="L3:L3"></a>
+      <h4 class="signature"><a href="CacheIvy$$L3$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">L3</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy.L4">
+      <a id="L4:L4"></a>
+      <h4 class="signature"><a href="CacheIvy$$L4$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">L4</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy.L5">
+      <a id="L5:L5"></a>
+      <h4 class="signature"><a href="CacheIvy$$L5$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">L5</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#artifactFormat">
+      <a id="artifactFormat(Format[String],Format[Seq[Configuration]],Format[Configuration],Format[Option[URL]]):Format[Artifact]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">artifactFormat</span>
+        
+        <span class="params">(<span class="implicit">implicit </span><span name="sf">sf: <span class="extype" name="sbinary.Format">Format</span>[String]</span>, <span name="of">of: <span class="extype" name="sbinary.Format">Format</span>[Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]]</span>, <span name="cf">cf: <span class="extype" name="sbinary.Format">Format</span>[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>, <span name="uf">uf: <span class="extype" name="sbinary.Format">Format</span>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.net.URL">URL</span>]]</span>)</span>
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#artifactIC">
+      <a id="artifactIC:InputCache[Artifact]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">artifactIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#asInstanceOf">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to cast the receiver object to be of type <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to cast the receiver object to be of type <code>T0</code>.</p><p>Note that the success of a cast at runtime is modulo Scala's erasure semantics.  Therefore the expression<code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at runtime, while the expression<code>List(1).asInstanceOf[List[String]]</code> will not.  In the latter example, because the type argument is erased as
+part of compilation it is not possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#authIC">
+      <a id="authIC:InputCache[SshAuthentication]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">authIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="RepositoryHelpers$$SshAuthentication.html" class="extype" name="sbt.RepositoryHelpers.SshAuthentication">SshAuthentication</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#classpathFormat">
+      <a id="classpathFormat:Format[Map[String, Seq[File]]]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">classpathFormat</span>
+        
+        
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[Map[String, Seq[<span class="extype" name="java.io.File">File</span>]]]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#clone">
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">clone</span>
+        
+        <span class="params">()</span>
+        <span class="result">: AnyRef</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method creates and returns a copy of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method creates and returns a copy of the receiver object.</p><p>The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#confIC">
+      <a id="confIC:InputCache[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">confIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#confReportFormat">
+      <a id="confReportFormat(Format[ModuleID],Format[ModuleReport]):Format[ConfigurationReport]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">confReportFormat</span>
+        
+        <span class="params">(<span class="implicit">implicit </span><span name="mf">mf: <span class="extype" name="sbinary.Format">Format</span>[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>, <span name="mr">mr: <span class="extype" name="sbinary.Format">Format</span>[<a href="ModuleReport.html" class="extype" name="sbt.ModuleReport">ModuleReport</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="ConfigurationReport.html" class="extype" name="sbt.ConfigurationReport">ConfigurationReport</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#configurationFormat">
+      <a id="configurationFormat(Format[String]):Format[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">configurationFormat</span>
+        
+        <span class="params">(<span class="implicit">implicit </span><span name="sf">sf: <span class="extype" name="sbinary.Format">Format</span>[String]</span>)</span>
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#connectionIC">
+      <a id="connectionIC:InputCache[SshConnection]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">connectionIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="RepositoryHelpers$$SshConnection.html" class="extype" name="sbt.RepositoryHelpers.SshConnection">SshConnection</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#emptyIC">
+      <a id="emptyIC:InputCache[EmptyConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">emptyIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="EmptyConfiguration.html" class="extype" name="sbt.EmptyConfiguration">EmptyConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#eq">
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">eq</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p><p>The <code>eq</code> method implements an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence relation] on
+non-null instances of <code>AnyRef</code>:
+ * It is reflexive: for any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(x)</code> returns <code>true</code>.
+ * It is symmetric: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, <code>x.eq(y)</code> returns <code>true</code> if and
+   only if <code>y.eq(x)</code> returns <code>true</code>.
+ * It is transitive: for any non-null instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.eq(y)</code> returns <code>true</code>   and <code>y.eq(z)</code> returns <code>true</code>, then <code>x.eq(z)</code> returns <code>true</code>.</p><p>Additionally, the <code>eq</code> method has three other properties.
+ * It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+   <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.
+ * For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.
+ * <code>null.eq(null)</code> returns <code>true</code>.</p><p>When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#equals">
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p><p>The default implementations of this method is an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence
+relation]:
+ * It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.
+ * It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.
+ * It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</p><p>If you override this method, you should verify that your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to override <code>hashCode</code> to ensure that objects
+that are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same 
+scala.Int
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#extIvyIC">
+      <a id="extIvyIC:InputCache[ExternalIvyConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">extIvyIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="ExternalIvyConfiguration.html" class="extype" name="sbt.ExternalIvyConfiguration">ExternalIvyConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#fileConfIC">
+      <a id="fileConfIC:InputCache[FileConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">fileConfIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="RepositoryHelpers$$FileConfiguration.html" class="extype" name="sbt.RepositoryHelpers.FileConfiguration">FileConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#finalize">
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">finalize</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p><p>The details of when and if the <code>finalize</code> method are invoked, as well as the interaction between <code>finalize</code>and non-local returns and exceptions, are all platform dependent.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#getClass">
+      <a id="getClass():java.lang.Class[_]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getClass</span>
+        
+        <span class="params">()</span>
+        <span class="result">: java.lang.Class[_]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a representation that corresponds to the dynamic class of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a representation that corresponds to the dynamic class of the receiver object.</p><p>The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#hashCode">
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a hash code value for the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a hash code value for the object.</p><p>The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#inlineIC">
+      <a id="inlineIC:InputCache[InlineConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">inlineIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="InlineConfiguration.html" class="extype" name="sbt.InlineConfiguration">InlineConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#inlineIvyIC">
+      <a id="inlineIvyIC:InputCache[InlineIvyConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">inlineIvyIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="InlineIvyConfiguration.html" class="extype" name="sbt.InlineIvyConfiguration">InlineIvyConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#isInstanceOf">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p><p>Note that the test result of the test is modulo Scala's erasure semantics.  Therefore the expression<code>1.isInstanceOf[String]</code> will return <code>false</code>, while the expression <code>List(1).isInstanceOf[List[String]]</code> will
+return <code>true</code>.  In the latter example, because the type argument is erased as part of compilation it is not
+possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#ivyConfigurationIC">
+      <a id="ivyConfigurationIC:InputCache[IvyConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">ivyConfigurationIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="IvyConfiguration.html" class="extype" name="sbt.IvyConfiguration">IvyConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#ivyFileIC">
+      <a id="ivyFileIC:InputCache[IvyFileConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">ivyFileIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="IvyFileConfiguration.html" class="extype" name="sbt.IvyFileConfiguration">IvyFileConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#ivyPathsIC">
+      <a id="ivyPathsIC:InputCache[IvyPaths]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">ivyPathsIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="IvyPaths.html" class="extype" name="sbt.IvyPaths">IvyPaths</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#ivyScalaIC">
+      <a id="ivyScalaIC:InputCache[IvyScala]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">ivyScalaIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="IvyScala.html" class="extype" name="sbt.IvyScala">IvyScala</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#javaNet1IC">
+      <a id="javaNet1IC:InputCache[JavaNet1Repository]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">javaNet1IC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="JavaNet1Repository.html" class="extype" name="sbt.JavaNet1Repository">JavaNet1Repository</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#moduleConfIC">
+      <a id="moduleConfIC:InputCache[ModuleConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">moduleConfIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="ModuleConfiguration.html" class="extype" name="sbt.ModuleConfiguration">ModuleConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#moduleIC">
+      <a id="moduleIC:InputCache[ModuleID]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">moduleIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#moduleIDFormat">
+      <a id="moduleIDFormat(Format[String],Format[Artifact],Format[Boolean]):Format[ModuleID]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">moduleIDFormat</span>
+        
+        <span class="params">(<span class="implicit">implicit </span><span name="sf">sf: <span class="extype" name="sbinary.Format">Format</span>[String]</span>, <span name="af">af: <span class="extype" name="sbinary.Format">Format</span>[<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>]</span>, <span name="bf">bf: <span class="extype" name="sbinary.Format">Format</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>)</span>
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#moduleReportFormat">
+      <a id="moduleReportFormat(Format[Artifact],Format[File],Format[ModuleID]):Format[ModuleReport]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">moduleReportFormat</span>
+        
+        <span class="params">(<span class="implicit">implicit </span><span name="f">f: <span class="extype" name="sbinary.Format">Format</span>[<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>]</span>, <span name="ff">ff: <span class="extype" name="sbinary.Format">Format</span>[<span class="extype" name="java.io.File">File</span>]</span>, <span name="mid">mid: <span class="extype" name="sbinary.Format">Format</span>[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="ModuleReport.html" class="extype" name="sbt.ModuleReport">ModuleReport</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#moduleSettingsIC">
+      <a id="moduleSettingsIC:InputCache[ModuleSettings]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">moduleSettingsIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="ModuleSettings.html" class="extype" name="sbt.ModuleSettings">ModuleSettings</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#names">
+      <a id="names(Iterable[Configuration]):Set[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">names</span>
+        
+        <span class="params">(<span name="s">s: Iterable[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>)</span>
+        <span class="result">: Set[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#ne">
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">ne</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the argument is not a reference to the receiver object; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notify">
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notify</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notifyAll">
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notifyAll</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#password">
+      <a id="password(Option[String]):Array[Byte]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">password</span>
+        
+        <span class="params">(<span name="s">s: <span class="extype" name="scala.Option">Option</span>[String]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#patternsIC">
+      <a id="patternsIC:InputCache[Patterns]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">patternsIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="Patterns.html" class="extype" name="sbt.Patterns">Patterns</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#pomIC">
+      <a id="pomIC:InputCache[PomConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">pomIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="PomConfiguration.html" class="extype" name="sbt.PomConfiguration">PomConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#resolverIC">
+      <a id="resolverIC:InputCache[Resolver]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">resolverIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="Resolver.html" class="extype" name="sbt.Resolver">Resolver</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#retrieveIC">
+      <a id="retrieveIC:InputCache[RetrieveConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">retrieveIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="RetrieveConfiguration.html" class="extype" name="sbt.RetrieveConfiguration">RetrieveConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#synchronized">
+      <a id="synchronized[T0](T0):T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">synchronized</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">(<span name="arg0">arg0: T0</span>)</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#toString">
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a string representation of the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a string representation of the object.</p><p>The default representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string representation of the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#updateConfIC">
+      <a id="updateConfIC:InputCache[UpdateConfiguration]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">updateConfIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="UpdateConfiguration.html" class="extype" name="sbt.UpdateConfiguration">UpdateConfiguration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#updateIC">
+      <a id="updateIC:InputCache[$colon$plus$colon[IvyConfiguration, $colon$plus$colon[ModuleSettings, $colon$plus$colon[UpdateConfiguration, HNil]]]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">updateIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[$colon$plus$colon[<a href="IvyConfiguration.html" class="extype" name="sbt.IvyConfiguration">IvyConfiguration</a>, $colon$plus$colon[<a href="ModuleSettings.html" class="extype" name="sbt.ModuleSettings">ModuleSettings</a>, $colon$plus$colon[<a href="UpdateConfiguration.html" class="extype" name="sbt.UpdateConfiguration">UpdateConfiguration</a>, <a href="HNil.html" class="extype" name="sbt.HNil">HNil</a>]]]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#updateReportF">
+      <a id="updateReportF:Format[UpdateReport]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">updateReportF</span>
+        
+        
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#updateReportFormat">
+      <a id="updateReportFormat(Format[String],Format[ConfigurationReport]):Format[UpdateReport]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">updateReportFormat</span>
+        
+        <span class="params">(<span class="implicit">implicit </span><span name="m">m: <span class="extype" name="sbinary.Format">Format</span>[String]</span>, <span name="cr">cr: <span class="extype" name="sbinary.Format">Format</span>[<a href="ConfigurationReport.html" class="extype" name="sbt.ConfigurationReport">ConfigurationReport</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#wrapHL">
+      <a id="wrapHL[W, H, T&lt;:HList]((W) ⇒ $colon$plus$colon[H, T],InputCache[$colon$plus$colon[H, T]]):InputCache[W]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">wrapHL</span>
+        <span class="tparams">[<span name="W">W</span>, <span name="H">H</span>, <span name="T">T &lt;: <a href="HList.html" class="extype" name="sbt.HList">HList</a></span>]</span>
+        <span class="params">(<span class="implicit">implicit </span><span name="f">f: (W) ⇒ $colon$plus$colon[H, T]</span>, <span name="cache">cache: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[$colon$plus$colon[H, T]]</span>)</span>
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[W]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li></ol>
+            </div>
+
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from AnyRef</h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

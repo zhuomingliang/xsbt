@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>Result.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2010 Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+
+<span class="comment">// used instead of Either[Incomplete, T] for type inference</span>
+
+<span class="comment">/** Result of completely evaluating a task.*/</span>
+<span class="keyword">sealed</span> <span class="keyword">trait</span> <a title="trait Result[+T] extends java.lang.Object" id="9582">Result</a><span class="delimiter">[</span>+<a title="&gt;: Nothing &lt;: Any" id="20067">T</a><span class="delimiter">]</span>
+<span title="java.lang.Object" class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="=&gt; Either[sbt.Incomplete,T]" id="249910">toEither</a>: <span title="Either[sbt.Incomplete,T]">Either</span><span class="delimiter">[</span>Incomplete, T<span class="delimiter">]</span>
+<span class="delimiter">}</span>
+<span class="comment">/** Indicates the task did not complete normally and so it does not have a value.*/</span>
+<span class="keyword">final</span> case <span class="keyword">class</span> <a title="class Inc extends java.lang.Object with sbt.Result[Nothing] with ScalaObject with Product" id="483502">Inc</a><span title="ScalaObject" class="delimiter">(</span><a title="=&gt; sbt.Incomplete" id="480047">cause</a>: <a href="Incomplete.scala.html#9567" title="sbt.Incomplete">Incomplete</a><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="#9582" title="sbt.Result[Nothing]">Result</a><span class="delimiter">[</span>Nothing<span class="delimiter">]</span>
+<span class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="=&gt; Either[sbt.Incomplete,Nothing]" id="250355">toEither</a>: <span title="Either[sbt.Incomplete,Nothing]">Either</span><span class="delimiter">[</span>Incomplete, Nothing<span class="delimiter">]</span> = <span title="(a: sbt.Incomplete)Left[sbt.Incomplete,Nothing]">Left</span><span class="delimiter">(</span><a href="#480047" title="=&gt; sbt.Incomplete">cause</a><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+<span class="comment">/** Indicates the task completed normally and produced the given `value`.*/</span>
+<span class="keyword">final</span> case <span class="keyword">class</span> <a title="class Value[+T] extends java.lang.Object with sbt.Result[T] with ScalaObject with Product" id="483498">Value</a><span class="delimiter">[</span>+<a title="&gt;: Nothing &lt;: Any" id="250314">T</a><span class="delimiter">]</span><span title="ScalaObject" class="delimiter">(</span><a title="[T]T" id="367656">value</a>: <a href="#250314" title="T">T</a><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="#9582" title="sbt.Result[T]">Result</a><span class="delimiter">[</span>T<span class="delimiter">]</span>
+<span class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="=&gt; Either[sbt.Incomplete,T]" id="250319">toEither</a>: <span title="Either[sbt.Incomplete,T]">Either</span><span class="delimiter">[</span>Incomplete, T<span class="delimiter">]</span> = <span title="(b: T)Right[Nothing,T]">Right</span><span class="delimiter">(</span><a href="#367656" title="=&gt; T">value</a><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+
+<span class="keyword">object</span> <a title="object sbt.Result" id="9583">Result</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">type</span> <a title="[X]X" id="324070">Id</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="324071">X</a><span class="delimiter">]</span> = <a href="#324071" title="X">X</a>
+	<span class="keyword">val</span> <a title="&lt;refinement&gt; extends java.lang.Object with sbt.~&gt;[sbt.Result,sbt.Result.Id]" id="324072">tryValue</a> = <a href="#483416" title="java.lang.Object with sbt.~&gt;[sbt.Result,sbt.Result.Id]" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with sbt.~&gt;[sbt.Result,sbt.Result.Id]" id="483416" class="delimiter">(</a>Result <a href="TypeFunctions.scala.html#9663" title="sbt.~&gt;[sbt.Result,sbt.Result.Id]">~&gt;</a> Id<span class="delimiter">)</span> <span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="[T](r: sbt.Result[T])T" id="483418">apply</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="483420">T</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="sbt.Result[T]" id="483421">r</a>: <a href="#9582" title="sbt.Result[T]">Result</a><span class="delimiter">[</span>T<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#483420" title="T">T</a> =
+			<a href="#483421" title="sbt.Result[T]">r</a> <span title="T" class="keyword">match</span> <span class="delimiter">{</span>
+				<span title="T" class="keyword">case</span> Value<span class="delimiter">(</span><a title="T" id="483433">v</a><span class="delimiter">)</span> =&gt; <a href="#483433" title="T">v</a>
+				<span title="Nothing" class="keyword">case</span> Inc<span class="delimiter">(</span><a title="sbt.Incomplete" id="483435">i</a><span class="delimiter">)</span> =&gt; <span title="Nothing" class="keyword">throw</span> <a href="#483435" title="sbt.Incomplete">i</a>
+			<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="[S](r: Seq[sbt.Result[Unit]],v: sbt.Result[S])S" id="324074">tryValues</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="324076">S</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="Seq[sbt.Result[Unit]]" id="483456">r</a>: <span title="Seq[sbt.Result[Unit]]">Seq</span><span class="delimiter">[</span>Result<span class="delimiter">[</span>Unit<span class="delimiter">]</span><span class="delimiter">]</span>, <a title="sbt.Result[S]" id="483457">v</a>: <a href="#9582" title="sbt.Result[S]">Result</a><span class="delimiter">[</span>S<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#324076" title="S">S</a> =
+	<span class="delimiter">{</span>
+		<a href="#483456" title="(f: (sbt.Result[Unit]) =&gt; sbt.Result.Id[Unit])Unit">r</a> foreach <a href="TypeFunctions.scala.html#240586" title="[T](a: sbt.Result[T])sbt.Result.Id[T]">tryValue</a><a href="#483475" title="(a: sbt.Result[Unit])sbt.Result.Id[Unit]" class="delimiter">[</a><span title="Unit">Unit</span><span class="delimiter">]</span>
+		<a href="TypeFunctions.scala.html#240586" title="[T](a: sbt.Result[T])sbt.Result.Id[T]">tryValue</a><span title="(a: sbt.Result[S])sbt.Result.Id[S]" class="delimiter">[</span><a href="#324076" title="S">S</a><span class="delimiter">]</span><span class="delimiter">(</span><a href="#483457" title="sbt.Result[S]">v</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">implicit</span> <span class="keyword">def</span> <a title="[T](e: Either[sbt.Incomplete,T])sbt.Result[T]" id="324077">fromEither</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="324079">T</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="Either[sbt.Incomplete,T]" id="324080">e</a>: <span title="Either[sbt.Incomplete,T]">Either</span><span class="delimiter">[</span>Incomplete, T<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#9582" title="sbt.Result[T]">Result</a><span class="delimiter">[</span>T<span class="delimiter">]</span> = <a href="#324080" title="Either[sbt.Incomplete,T]">e</a> <span title="sbt.Result[T]" class="keyword">match</span> <span class="delimiter">{</span>
+		<span title="sbt.Inc" class="keyword">case</span> Left<span class="delimiter">(</span><a title="sbt.Incomplete" id="483483">i</a><span class="delimiter">)</span> =&gt; <a href="#483502" title="(cause: sbt.Incomplete)sbt.Inc">Inc</a><span class="delimiter">(</span><a href="#483483" title="sbt.Incomplete">i</a><span class="delimiter">)</span>
+		<span title="sbt.Value[T]" class="keyword">case</span> Right<span class="delimiter">(</span><a title="T" id="483488">v</a><span class="delimiter">)</span> =&gt; <a href="#483498" title="(value: T)sbt.Value[T]">Value</a><span class="delimiter">(</span><a href="#483488" title="T">v</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

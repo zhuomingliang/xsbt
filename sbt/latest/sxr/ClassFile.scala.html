@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>ClassFile.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2009 Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+<span class="keyword">package</span> classfile
+
+<span class="keyword">import</span> <a href="#20485" title="object sbt.classfile.Constants">Constants</a>._
+<span class="keyword">import</span> java.io.File
+
+<span class="keyword">private</span><span class="delimiter">[</span>sbt<span class="delimiter">]</span> <span class="keyword">trait</span> <a title="trait ClassFile extends java.lang.Object" id="20472">ClassFile</a>
+<span title="java.lang.Object" class="delimiter">{</span>
+	<span class="keyword">val</span> <a title="=&gt; Int" id="490615">majorVersion</a>: <span title="Int">Int</span>
+	<span class="keyword">val</span> <a title="=&gt; Int" id="490616">minorVersion</a>: <span title="Int">Int</span>
+	<span class="keyword">val</span> <a title="=&gt; String" id="490617">fileName</a>: <span title="String">String</span>
+	<span class="keyword">val</span> <a title="=&gt; String" id="490618">className</a>: <span title="String">String</span>
+	<span class="keyword">val</span> <a title="=&gt; String" id="490619">superClassName</a>: <span title="String">String</span>
+	<span class="keyword">val</span> <a title="=&gt; Array[String]" id="490620">interfaceNames</a>: <span title="Array[String]">Array</span><span class="delimiter">[</span>String<span class="delimiter">]</span>
+	<span class="keyword">val</span> <a title="=&gt; Int" id="490621">accessFlags</a>: <span title="Int">Int</span>
+	<span class="keyword">val</span> <a title="=&gt; Array[sbt.classfile.Constant]" id="490622">constantPool</a>: <span title="Array[sbt.classfile.Constant]">Array</span><span class="delimiter">[</span>Constant<span class="delimiter">]</span>
+	<span class="keyword">val</span> <a title="=&gt; Array[sbt.classfile.FieldOrMethodInfo]" id="490623">fields</a>: <span title="Array[sbt.classfile.FieldOrMethodInfo]">Array</span><span class="delimiter">[</span>FieldOrMethodInfo<span class="delimiter">]</span>
+	<span class="keyword">val</span> <a title="=&gt; Array[sbt.classfile.FieldOrMethodInfo]" id="490624">methods</a>: <span title="Array[sbt.classfile.FieldOrMethodInfo]">Array</span><span class="delimiter">[</span>FieldOrMethodInfo<span class="delimiter">]</span>
+	<span class="keyword">val</span> <a title="=&gt; Array[sbt.classfile.AttributeInfo]" id="490625">attributes</a>: <span title="Array[sbt.classfile.AttributeInfo]">Array</span><span class="delimiter">[</span>AttributeInfo<span class="delimiter">]</span>
+	<span class="keyword">val</span> <a title="=&gt; Option[String]" id="490626">sourceFile</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span>
+	<span class="keyword">def</span> <a title="=&gt; Set[String]" id="490627">types</a>: <span title="Set[String]">Set</span><span class="delimiter">[</span>String<span class="delimiter">]</span>
+	<span class="keyword">def</span> <a title="(a: sbt.classfile.AttributeInfo)String" id="490628">stringValue</a><span class="delimiter">(</span><a title="sbt.classfile.AttributeInfo" id="493792">a</a>: <a href="#494369" title="sbt.classfile.AttributeInfo">AttributeInfo</a><span class="delimiter">)</span>: <span title="String">String</span>
+<span class="delimiter">}</span>
+
+<span class="keyword">private</span><span class="delimiter">[</span>sbt<span class="delimiter">]</span> <span class="keyword">final</span> case <span class="keyword">class</span> <a title="class Constant extends java.lang.Object with NotNull with ScalaObject with Product" id="494360">Constant</a><span title="ScalaObject" class="delimiter">(</span><a title="=&gt; Byte" id="494348">tag</a>: <span title="Byte">Byte</span>, <a title="=&gt; Int" id="494349">nameIndex</a>: <span title="Int">Int</span>, <a title="=&gt; Int" id="494350">typeIndex</a>: <span title="Int">Int</span>, <a title="=&gt; Option[AnyRef]" id="494351">value</a>: <span title="Option[AnyRef]">Option</span><span class="delimiter">[</span>AnyRef<span class="delimiter">]</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="NotNull">NotNull</span>
+<span class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="(tag: Byte,nameIndex: Int,typeIndex: Int)sbt.classfile.Constant" id="493817" class="keyword">this</a><span class="delimiter">(</span><a title="Byte" id="493835">tag</a>: <span title="Byte">Byte</span>, <a title="Int" id="493836">nameIndex</a>: <span title="Int">Int</span>, <a title="Int" id="493837">typeIndex</a>: <span title="Int">Int</span><span class="delimiter">)</span> = <a href="#494360" title="Constant.this.type" class="keyword">this</a><span class="delimiter">(</span><a href="#493835" title="Byte">tag</a>, <a href="#493836" title="Int">nameIndex</a>, <a href="#493837" title="Int">typeIndex</a>, <span title="object None">None</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="(tag: Byte,nameIndex: Int)sbt.classfile.Constant" id="493818" class="keyword">this</a><span class="delimiter">(</span><a title="Byte" id="493845">tag</a>: <span title="Byte">Byte</span>, <a title="Int" id="493846">nameIndex</a>: <span title="Int">Int</span><span class="delimiter">)</span> = <a href="#493817" title="(tag: Byte,nameIndex: Int,typeIndex: Int)sbt.classfile.Constant" class="keyword">this</a><span class="delimiter">(</span><a href="#493845" title="Byte">tag</a>, <a href="#493846" title="Int">nameIndex</a>, <span title="Int(-1)">-</span><span class="int">1</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="(tag: Byte,value: AnyRef)sbt.classfile.Constant" id="493819" class="keyword">this</a><span class="delimiter">(</span><a title="Byte" id="493843">tag</a>: <span title="Byte">Byte</span>, <a title="AnyRef" id="493844">value</a>: <span title="AnyRef">AnyRef</span><span class="delimiter">)</span> = <a href="#494360" title="Constant.this.type" class="keyword">this</a><span class="delimiter">(</span><a href="#493843" title="Byte">tag</a>, <span title="Int(-1)">-</span><span class="int">1</span>, <span title="Int(-1)">-</span><span class="int">1</span>, <span title="(x: AnyRef)Some[AnyRef]">Some</span><span class="delimiter">(</span><a href="#493844" title="AnyRef">value</a><span class="delimiter">)</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="=&gt; Boolean" id="493820">wide</a> = <a href="#494348" title="(x$1: Int)Boolean">tag</a> <span title="(x$1: Boolean)Boolean">==</span> <span title="Int(5)">ConstantLong</span> || <a href="#494348" title="(x$1: Int)Boolean">tag</a> == <span title="Int(6)">ConstantDouble</span>
+<span class="delimiter">}</span>
+<span class="keyword">private</span><span class="delimiter">[</span>sbt<span class="delimiter">]</span> <span class="keyword">final</span> case <span class="keyword">class</span> <a title="class FieldOrMethodInfo extends java.lang.Object with NotNull with ScalaObject with Product" id="494344">FieldOrMethodInfo</a><span title="ScalaObject" class="delimiter">(</span><a title="=&gt; Int" id="494334">accessFlags</a>: <span title="Int">Int</span>, <a title="=&gt; Option[String]" id="494335">name</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <a title="=&gt; Option[String]" id="494336">descriptor</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <a title="=&gt; IndexedSeq[sbt.classfile.AttributeInfo]" id="494337">attributes</a>: <span title="IndexedSeq[sbt.classfile.AttributeInfo]">IndexedSeq</span><span class="delimiter">[</span>AttributeInfo<span class="delimiter">]</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="NotNull">NotNull</span>
+<span class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="=&gt; Boolean" id="494008">isStatic</a> = <span title="(x$1: Int)Boolean" class="delimiter">(</span><a href="#494334" title="(x$1: Int)Int">accessFlags</a>&amp;<span title="Int(8)">ACC_STATIC</span><span class="delimiter">)</span>== <span title="Int(8)">ACC_STATIC</span>
+	<span class="keyword">def</span> <a title="=&gt; Boolean" id="494009">isPublic</a> = <span title="(x$1: Int)Boolean" class="delimiter">(</span><a href="#494334" title="(x$1: Int)Int">accessFlags</a>&amp;<span title="Int(1)">ACC_PUBLIC</span><span class="delimiter">)</span>==<span title="Int(1)">ACC_PUBLIC</span>
+	<span class="keyword">def</span> <a title="=&gt; Boolean" id="494010">isMain</a> = <a href="#494009" title="(x$1: Boolean)Boolean">isPublic</a> <span title="(x$1: Boolean)Boolean">&amp;&amp;</span> <a href="#494008" title="=&gt; Boolean">isStatic</a> &amp;&amp; <a href="#494336" title="=&gt; Option[String]">descriptor</a>.<span title="(p: (String) =&gt; Boolean)Option[String]">filter</span><span class="delimiter">(</span><a href="#494056" title="(x$1: AnyRef)Boolean">_</a> == <span title="java.lang.String(&quot;([Ljava/lang/String;)V&quot;)" class="string">&quot;([Ljava/lang/String;)V&quot;</span><span class="delimiter">)</span>.<span title="=&gt; Boolean">isDefined</span>
+<span class="delimiter">}</span>
+<span class="keyword">private</span><span class="delimiter">[</span>sbt<span class="delimiter">]</span> <span class="keyword">final</span> case <span class="keyword">class</span> <a title="class AttributeInfo extends java.lang.Object with NotNull with ScalaObject with Product" id="494369">AttributeInfo</a><span title="ScalaObject" class="delimiter">(</span><a title="=&gt; Option[String]" id="494363">name</a>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <a title="=&gt; Array[Byte]" id="494364">value</a>: <span title="Array[Byte]">Array</span><span class="delimiter">[</span>Byte<span class="delimiter">]</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="NotNull">NotNull</span>
+<span class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="(s: String)Boolean" id="493800">isNamed</a><span class="delimiter">(</span><a title="String" id="494235">s</a>: <span title="String">String</span><span class="delimiter">)</span> = <a href="#494363" title="=&gt; Option[String]">name</a>.<span title="(p: (String) =&gt; Boolean)Option[String]">filter</span><span class="delimiter">(</span><a href="#494235" title="(x$1: AnyRef)Boolean">s</a> == <a href="#494240" title="String">_</a><span class="delimiter">)</span>.<span title="=&gt; Boolean">isDefined</span>
+	<span class="keyword">def</span> <a title="=&gt; Boolean" id="493801">isSignature</a> = <a href="#493800" title="(s: String)Boolean">isNamed</a><span class="delimiter">(</span><span title="java.lang.String(&quot;Signature&quot;)" class="string">&quot;Signature&quot;</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="=&gt; Boolean" id="493802">isSourceFile</a> = <a href="#493800" title="(s: String)Boolean">isNamed</a><span class="delimiter">(</span><span title="java.lang.String(&quot;SourceFile&quot;)" class="string">&quot;SourceFile&quot;</span><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+<span class="keyword">private</span><span class="delimiter">[</span>sbt<span class="delimiter">]</span> <span class="keyword">object</span> <a title="object sbt.classfile.Constants" id="20485">Constants</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(8)" id="490582">ACC_STATIC</a> = <span title="Int(8)" class="int">0x0008</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(1)" id="490584">ACC_PUBLIC</a> = <span title="Int(1)" class="int">0x0001</span>
+
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(-889275714)" id="490586">JavaMagic</a> = <span title="Int(-889275714)" class="int">0xCAFEBABE</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(1)" id="490588">ConstantUTF8</a> = <span title="Int(1)" class="int">1</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(2)" id="490590">ConstantUnicode</a> = <span title="Int(2)" class="int">2</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(3)" id="490592">ConstantInteger</a> = <span title="Int(3)" class="int">3</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(4)" id="490594">ConstantFloat</a> = <span title="Int(4)" class="int">4</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(5)" id="490596">ConstantLong</a> = <span title="Int(5)" class="int">5</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(6)" id="490598">ConstantDouble</a> = <span title="Int(6)" class="int">6</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(7)" id="490600">ConstantClass</a> = <span title="Int(7)" class="int">7</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(8)" id="490602">ConstantString</a> = <span title="Int(8)" class="int">8</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(9)" id="490604">ConstantField</a> = <span title="Int(9)" class="int">9</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(10)" id="490606">ConstantMethod</a> = <span title="Int(10)" class="int">10</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(11)" id="490608">ConstantInterfaceMethod</a> = <span title="Int(11)" class="int">11</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Int(12)" id="490610">ConstantNameAndType</a> = <span title="Int(12)" class="int">12</span>
+	<span class="keyword">final</span> <span class="keyword">val</span> <a title="Char('L')" id="490612">ClassDescriptor</a> = <span title="Char('L')" class="char">'L'</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

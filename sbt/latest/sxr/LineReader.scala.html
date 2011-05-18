@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>LineReader.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2008, 2009  Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+
+	<span class="keyword">import</span> jline.<span class="delimiter">{</span>Completor, ConsoleReader<span class="delimiter">}</span>
+	<span class="keyword">import</span> java.io.File
+	<span class="keyword">import</span> complete.Parser
+	
+<span class="keyword">abstract</span> <span class="keyword">class</span> <a title="class JLine extends java.lang.Object with sbt.LineReader with ScalaObject" id="11235">JLine</a> <span title="ScalaObject" class="keyword">extends</span> <a href="#11238" title="sbt.LineReader">LineReader</a>
+<span class="delimiter">{</span>
+	<span class="keyword">protected</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">val</span> <a title="=&gt; jline.ConsoleReader" id="294901">reader</a>: <span title="jline.ConsoleReader">ConsoleReader</span>
+	<span class="keyword">def</span> <a title="(prompt: String)Option[java.lang.String]" id="294902">readLine</a><span class="delimiter">(</span><a title="String" id="294907">prompt</a>: <span title="String">String</span><span class="delimiter">)</span> = <a href="#11236" title="object sbt.JLine">JLine</a>.<a href="#294918" title="(action: =&gt; Option[java.lang.String])Option[java.lang.String]">withJLine</a> <span class="delimiter">{</span> <a href="#294903" title="(prompt: String)Option[java.lang.String]">unsynchronizedReadLine</a><span class="delimiter">(</span><a href="#294907" title="String">prompt</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="keyword">private</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">def</span> <a title="(prompt: String)Option[java.lang.String]" id="294903">unsynchronizedReadLine</a><span class="delimiter">(</span><a title="String" id="294930">prompt</a>: <span title="String">String</span><span class="delimiter">)</span> =
+		<a href="#294901" title="=&gt; jline.ConsoleReader">reader</a>.<span title="(x$1: java.lang.String)java.lang.String">readLine</span><span class="delimiter">(</span><a href="#294930" title="String">prompt</a><span class="delimiter">)</span> <span title="Option[java.lang.String]" class="keyword">match</span>
+		<span class="delimiter">{</span>
+			<span title="None.type" class="keyword">case</span> <span title="Null(null)" class="keyword">null</span> =&gt; <span title="object None">None</span>
+			<span title="Some[java.lang.String]" class="keyword">case</span> <a title="java.lang.String" id="296193">x</a> =&gt; <span title="(x: java.lang.String)Some[java.lang.String]">Some</span><span class="delimiter">(</span><a href="#296193" title="java.lang.String">x</a>.<span title="()java.lang.String">trim</span><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+<span class="keyword">private</span> <span class="keyword">object</span> <a title="object sbt.JLine" id="11236">JLine</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="=&gt; jline.Terminal" id="294912">terminal</a> = jline.<span title="object jline.Terminal">Terminal</span>.<span title="()jline.Terminal">getTerminal</span>
+	<span class="keyword">def</span> <a title="()Unit" id="294913">resetTerminal</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#294914" title="(f: (jline.Terminal) =&gt; Unit)Unit">withTerminal</a> <span class="delimiter">{</span> <a title="jline.Terminal" id="521112">_</a> =&gt; jline.<span title="object jline.Terminal">Terminal</span>.<span title="()Unit">resetTerminal</span> <span class="delimiter">}</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="[T](f: (jline.Terminal) =&gt; T)T" id="294914">withTerminal</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="294916">T</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="(jline.Terminal) =&gt; T" id="521106">f</a>: jline.Terminal =&gt; T<span class="delimiter">)</span>: <a href="#294916" title="T">T</a> =
+		<span title="(x$1: T)T">synchronized</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">val</span> <a title="jline.Terminal" id="521118">t</a> = <a href="#294912" title="=&gt; jline.Terminal">terminal</a>
+			<a href="#521118" title="jline.Terminal">t</a>.<span title="(x$1: T)T">synchronized</span> <span class="delimiter">{</span> <a href="#521106" title="(v1: jline.Terminal)T">f</a><span class="delimiter">(</span><a href="#521118" title="jline.Terminal">t</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+		<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="()jline.ConsoleReader" id="294917">createReader</a><span class="delimiter">(</span><span class="delimiter">)</span> =
+		<a href="#294914" title="(f: (jline.Terminal) =&gt; jline.ConsoleReader)jline.ConsoleReader">withTerminal</a> <span class="delimiter">{</span> <a title="jline.Terminal" id="521132">t</a> =&gt;
+			<span class="keyword">val</span> <a title="jline.ConsoleReader" id="521133">cr</a> = <span title="jline.ConsoleReader" class="keyword">new</span> <span title="jline.ConsoleReader">ConsoleReader</span>
+			<a href="#521132" title="jline.Terminal">t</a>.<span title="()Unit">enableEcho</span><span class="delimiter">(</span><span class="delimiter">)</span>
+			<a href="#521133" title="jline.ConsoleReader">cr</a>.<span title="(x$1: Boolean)Unit">setBellEnabled</span><span class="delimiter">(</span><span title="Boolean(false)" class="keyword">false</span><span class="delimiter">)</span>
+			<a href="#521133" title="jline.ConsoleReader">cr</a>
+		<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="[T](action: =&gt; T)T" id="294918">withJLine</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="294920">T</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="=&gt; T" id="294925">action</a>: =&gt; T<span class="delimiter">)</span>: <a href="#294920" title="T">T</a> =
+		<a href="#294914" title="(f: (jline.Terminal) =&gt; T)T">withTerminal</a> <span class="delimiter">{</span> <a title="jline.Terminal" id="521144">t</a> =&gt;
+			<a href="#521144" title="jline.Terminal">t</a>.<span title="()Unit">disableEcho</span><span class="delimiter">(</span><span class="delimiter">)</span>
+			<span class="keyword">try</span> <span class="delimiter">{</span> <a href="#294925" title="=&gt; T">action</a> <span class="delimiter">}</span>
+			<span class="keyword">finally</span> <span class="delimiter">{</span> <a href="#521144" title="jline.Terminal">t</a>.<span title="()Unit">enableEcho</span><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">}</span>
+		<span class="delimiter">}</span>
+	<span class="keyword">private</span><span class="delimiter">[</span>sbt<span class="delimiter">]</span> <span class="keyword">def</span> <a title="(cr: jline.ConsoleReader,historyPath: Option[java.io.File])Unit" id="294921">initializeHistory</a><span class="delimiter">(</span><a title="jline.ConsoleReader" id="521149">cr</a>: <span title="jline.ConsoleReader">ConsoleReader</span>, <a title="Option[java.io.File]" id="521150">historyPath</a>: <span title="Option[java.io.File]">Option</span><span class="delimiter">[</span>File<span class="delimiter">]</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<span class="keyword">for</span><span class="delimiter">(</span><a title="java.io.File" id="521156">historyLocation</a> &lt;- <a href="#521150" title="(f: (java.io.File) =&gt; Either[Throwable,Unit])Unit">historyPath</a><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">val</span> <a title="java.io.File" id="521157">historyFile</a> = <a href="#521156" title="java.io.File">historyLocation</a>.<span title="()java.io.File">getAbsoluteFile</span>
+			<a href="ErrorHandling.scala.html#10780" title="object sbt.ErrorHandling">ErrorHandling</a>.<a href="ErrorHandling.scala.html#51445" title="(f: =&gt; Unit)Either[Throwable,Unit]">wideConvert</a>
+			<span class="delimiter">{</span>
+				<a href="#521157" title="java.io.File">historyFile</a>.<span title="()java.io.File">getParentFile</span>.<span title="()Boolean">mkdirs</span><span class="delimiter">(</span><span class="delimiter">)</span>
+				<span class="keyword">val</span> <a title="jline.History" id="521161">history</a> = <a href="#521149" title="jline.ConsoleReader">cr</a>.<span title="()jline.History">getHistory</span>
+				<a href="#521161" title="jline.History">history</a>.<span title="(x$1: Int)Unit">setMaxSize</span><span class="delimiter">(</span><a href="#294923" title="=&gt; Int">MaxHistorySize</a><span class="delimiter">)</span>
+				<a href="#521161" title="jline.History">history</a>.<span title="(x$1: java.io.File)Unit">setHistoryFile</span><span class="delimiter">(</span><a href="#521157" title="java.io.File">historyFile</a><span class="delimiter">)</span>
+			<span class="delimiter">}</span>
+		<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="(historyPath: Option[java.io.File])sbt.SimpleReader" id="294922">simple</a><span class="delimiter">(</span><a title="Option[java.io.File]" id="521201">historyPath</a>: <span title="Option[java.io.File]">Option</span><span class="delimiter">[</span>File<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#11244" title="sbt.SimpleReader">SimpleReader</a> = <span title="sbt.SimpleReader" class="keyword">new</span> <a href="#11244" title="sbt.SimpleReader">SimpleReader</a><span class="delimiter">(</span><a href="#521201" title="Option[java.io.File]">historyPath</a><span class="delimiter">)</span>
+	<span class="keyword">val</span> <a title="Int" id="294923">MaxHistorySize</a> = <span title="Int(500)" class="int">500</span>
+<span class="delimiter">}</span>
+
+<span class="keyword">trait</span> <a title="trait LineReader extends java.lang.Object" id="11238">LineReader</a>
+<span title="java.lang.Object" class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="(prompt: String)Option[String]" id="294899">readLine</a><span class="delimiter">(</span><a title="String" id="294909">prompt</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="Option[String]">Option</span><span class="delimiter">[</span>String<span class="delimiter">]</span>
+<span class="delimiter">}</span>
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class FullReader extends sbt.JLine with ScalaObject" id="11211">FullReader</a><span title="ScalaObject" class="delimiter">(</span><a title="Option[java.io.File]" id="342921">historyPath</a>: <span title="Option[java.io.File]">Option</span><span class="delimiter">[</span>File<span class="delimiter">]</span>, <a title="sbt.complete.Parser[_]" id="342922">complete</a>: <a href="Parser.scala.html#21180" title="sbt.complete.Parser[_]">Parser</a><span class="delimiter">[</span>_<span class="delimiter">]</span><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="#11235" title="sbt.JLine">JLine</a>
+<span class="delimiter">{</span>
+	<span class="keyword">protected</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">val</span> <a title="jline.ConsoleReader" id="342919">reader</a> =
+	<span class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="jline.ConsoleReader" id="521214">cr</a> = <span title="jline.ConsoleReader" class="keyword">new</span> <span title="jline.ConsoleReader">ConsoleReader</span>
+		<a href="#521214" title="jline.ConsoleReader">cr</a>.<span title="(x$1: Boolean)Unit">setBellEnabled</span><span class="delimiter">(</span><span title="Boolean(false)" class="keyword">false</span><span class="delimiter">)</span>
+		<a href="#11236" title="object sbt.JLine">JLine</a>.<a href="#294921" title="(cr: jline.ConsoleReader,historyPath: Option[java.io.File])Unit">initializeHistory</a><span class="delimiter">(</span><a href="#521214" title="jline.ConsoleReader">cr</a>, <a href="#342921" title="Option[java.io.File]">historyPath</a><span class="delimiter">)</span>
+		sbt.complete.<a href="JLineCompletion.scala.html#21079" title="object sbt.complete.JLineCompletion">JLineCompletion</a>.<a href="JLineCompletion.scala.html#520315" title="(reader: jline.ConsoleReader,parser: sbt.complete.Parser[_])Unit">installCustomCompletor</a><span class="delimiter">(</span><a href="#521214" title="jline.ConsoleReader">cr</a>, <a href="#342922" title="sbt.complete.Parser[_]">complete</a><span class="delimiter">)</span>
+		<a href="#521214" title="jline.ConsoleReader">cr</a>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+
+<span class="keyword">class</span> <a title="class SimpleReader extends sbt.JLine with ScalaObject" id="11244">SimpleReader</a> <span title="ScalaObject" class="keyword">private</span><span class="delimiter">[</span>sbt<span class="delimiter">]</span> <span class="delimiter">(</span><a title="Option[java.io.File]" id="521208">historyPath</a>: <span title="Option[java.io.File]">Option</span><span class="delimiter">[</span>File<span class="delimiter">]</span><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="#11235" title="sbt.JLine">JLine</a>
+<span class="delimiter">{</span>
+	<span class="keyword">protected</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">val</span> <a title="jline.ConsoleReader" id="521206">reader</a> = <a href="#11236" title="object sbt.JLine">JLine</a>.<a href="#294917" title="()jline.ConsoleReader">createReader</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<a href="#11236" title="object sbt.JLine">JLine</a>.<a href="#294921" title="(cr: jline.ConsoleReader,historyPath: Option[java.io.File])Unit">initializeHistory</a><span class="delimiter">(</span><a href="#521206" title="=&gt; jline.ConsoleReader">reader</a>, <a href="#521208" title="Option[java.io.File]">historyPath</a><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+<span class="keyword">object</span> <a title="object sbt.SimpleReader" id="11245">SimpleReader</a> <span title="ScalaObject" class="keyword">extends</span> <a href="#11235" title="sbt.JLine">JLine</a>
+<span class="delimiter">{</span>
+	<span class="keyword">protected</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">val</span> <a title="jline.ConsoleReader" id="294905">reader</a> = <a href="#11236" title="object sbt.JLine">JLine</a>.<a href="#294917" title="()jline.ConsoleReader">createReader</a><span class="delimiter">(</span><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>
