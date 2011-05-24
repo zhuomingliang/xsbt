@@ -61,7 +61,19 @@
 
         <div class="types members" id="types">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" data-isabs="false" name="sbt.ClassToAPI.Defs">
+              <ol><li visbl="pub" data-isabs="false" name="sbt.ClassToAPI#ClassMap">
+      <a id="ClassMap:ClassMap"></a>
+      <h4 class="signature">
+      <span class="kind">type</span>
+      <span class="symbol">
+        <span class="name">ClassMap</span>
+        
+        
+        <span class="result"> = <span class="extype" name="scala.collection.mutable.Map">Map</span>[String, Seq[<a href="../xsbti/api/ClassLike.html" class="extype" name="xsbti.api.ClassLike">ClassLike</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.ClassToAPI.Defs">
       <a id="Defs:Defs"></a>
       <h4 class="signature"><a href="ClassToAPI$$Defs.html">
       <span class="kind">case class</span>
@@ -1044,14 +1056,14 @@ possible to check whether the contents of the list are of the requested typed.
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.ClassToAPI#structure">
-      <a id="structure(Class[_],Option[String]):(Option[Structure], Structure)"></a>
+      <a id="structure(Class[_],Option[String],ClassMap):(Structure, Structure)"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">structure</span>
         
-        <span class="params">(<span name="c">c: Class[_]</span>, <span name="enclPkg">enclPkg: <span class="extype" name="scala.Option">Option</span>[String]</span>)</span>
-        <span class="result">: (<span class="extype" name="scala.Option">Option</span>[<a href="../xsbti/api/Structure.html" class="extype" name="xsbti.api.Structure">Structure</a>], <a href="../xsbti/api/Structure.html" class="extype" name="xsbti.api.Structure">Structure</a>)</span>
+        <span class="params">(<span name="c">c: Class[_]</span>, <span name="enclPkg">enclPkg: <span class="extype" name="scala.Option">Option</span>[String]</span>, <span name="cmap">cmap: ClassMap</span>)</span>
+        <span class="result">: (<a href="../xsbti/api/Structure.html" class="extype" name="xsbti.api.Structure">Structure</a>, <a href="../xsbti/api/Structure.html" class="extype" name="xsbti.api.Structure">Structure</a>)</span>
       </span>
       </h4>
       
@@ -1075,13 +1087,25 @@ possible to check whether the contents of the list are of the requested typed.
         </div></div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.ClassToAPI#toDefinitions">
-      <a id="toDefinitions(Class[_]):Seq[ClassLike]"></a>
+      <a id="toDefinitions(ClassMap)(Class[_]):Seq[ClassLike]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">toDefinitions</span>
         
-        <span class="params">(<span name="c">c: Class[_]</span>)</span>
+        <span class="params">(<span name="cmap">cmap: ClassMap</span>)</span><span class="params">(<span name="c">c: Class[_]</span>)</span>
+        <span class="result">: Seq[<a href="../xsbti/api/ClassLike.html" class="extype" name="xsbti.api.ClassLike">ClassLike</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.ClassToAPI#toDefinitions0">
+      <a id="toDefinitions0(Class[_],ClassMap):Seq[ClassLike]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toDefinitions0</span>
+        
+        <span class="params">(<span name="c">c: Class[_]</span>, <span name="cmap">cmap: ClassMap</span>)</span>
         <span class="result">: Seq[<a href="../xsbti/api/ClassLike.html" class="extype" name="xsbti.api.ClassLike">ClassLike</a>]</span>
       </span>
       </h4>

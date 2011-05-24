@@ -14,11 +14,12 @@
 
 <span class="keyword">import</span> java.io.File;
 
-public interface <a title="object xsbti.ComponentProvider" id="59957">ComponentProvider</a>
+public interface <a title="object xsbti.ComponentProvider" id="60004">ComponentProvider</a>
 <span class="delimiter">{</span>
-	public File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="(componentID: java.lang.String)Array[java.io.File]" id="59958">component</a><span class="delimiter">(</span>String <a title="java.lang.String" id="193724">componentID</a><span class="delimiter">)</span>;
-	public void <a title="(componentID: java.lang.String,components: Array[java.io.File])Unit" id="59959">defineComponent</a><span class="delimiter">(</span>String <a title="java.lang.String" id="59961">componentID</a>, File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[java.io.File]" id="59962">components</a><span class="delimiter">)</span>;
-	public File <a title="()java.io.File" id="59960">lockFile</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="(componentID: java.lang.String)Array[java.io.File]" id="60005">component</a><span class="delimiter">(</span>String <a title="java.lang.String" id="193803">componentID</a><span class="delimiter">)</span>;
+	public void <a title="(componentID: java.lang.String,components: Array[java.io.File])Unit" id="60006">defineComponent</a><span class="delimiter">(</span>String <a title="java.lang.String" id="60008">componentID</a>, File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[java.io.File]" id="60009">components</a><span class="delimiter">)</span>;
+	 <span class="comment">// null if locking disabled</span>
+	public File <a title="()java.io.File" id="60007">lockFile</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 <span class="delimiter">}</span>
         </pre>
     </body>

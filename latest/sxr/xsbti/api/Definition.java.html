@@ -14,7 +14,7 @@
 
 <span class="keyword">import</span> java.util.Arrays;
 <span class="keyword">import</span> java.util.List;
-public <span class="keyword">class</span> <a title="object xsbti.api.Definition" id="19192">Definition</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
+public <span class="keyword">class</span> <a title="object xsbti.api.Definition" id="19238">Definition</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
 	public Definition<span class="delimiter">(</span>String name, Access access, Modifiers modifiers, Annotation<span class="delimiter">[</span><span class="delimiter">]</span> annotations<span class="delimiter">)</span>
 	<span class="delimiter">{</span>
@@ -23,27 +23,27 @@ public <span class="keyword">class</span> <a title="object xsbti.api.Definition"
 		<span class="keyword">this</span>.modifiers = modifiers;
 		<span class="keyword">this</span>.annotations = annotations;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> String <a title="java.lang.String" id="88424">name</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Access.java.html#19171" title="xsbti.api.Access">Access</a> <a title="xsbti.api.Access" id="88425">access</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Modifiers.java.html#19219" title="xsbti.api.Modifiers">Modifiers</a> <a title="xsbti.api.Modifiers" id="88426">modifiers</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Annotation.java.html#19177" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Annotation]" id="88427">annotations</a>;
-	public <span class="keyword">final</span> String <a title="()java.lang.String" id="88428">name</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> String <a title="java.lang.String" id="88473">name</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Access.java.html#19217" title="xsbti.api.Access">Access</a> <a title="xsbti.api.Access" id="88474">access</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Modifiers.java.html#19265" title="xsbti.api.Modifiers">Modifiers</a> <a title="xsbti.api.Modifiers" id="88475">modifiers</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Annotation.java.html#19223" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Annotation]" id="88476">annotations</a>;
+	public <span class="keyword">final</span> String <a title="()java.lang.String" id="88477">name</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> name;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Access.java.html#19171" title="xsbti.api.Access">Access</a> <a title="()xsbti.api.Access" id="88429">access</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Access.java.html#19217" title="xsbti.api.Access">Access</a> <a title="()xsbti.api.Access" id="88478">access</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> access;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Modifiers.java.html#19219" title="xsbti.api.Modifiers">Modifiers</a> <a title="()xsbti.api.Modifiers" id="88430">modifiers</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Modifiers.java.html#19265" title="xsbti.api.Modifiers">Modifiers</a> <a title="()xsbti.api.Modifiers" id="88479">modifiers</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> modifiers;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Annotation.java.html#19177" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Annotation]" id="88431">annotations</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Annotation.java.html#19223" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Annotation]" id="88480">annotations</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> annotations;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="88432">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public String <a title="()java.lang.String" id="88481">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="string">&quot;Definition(&quot;</span> + <span class="string">&quot;name: &quot;</span> + name<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;access: &quot;</span> + access<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;modifiers: &quot;</span> + modifiers<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;annotations: &quot;</span> + Arrays.toString<span class="delimiter">(</span>annotations<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>

@@ -14,24 +14,24 @@
 
 <span class="keyword">import</span> java.util.Arrays;
 <span class="keyword">import</span> java.util.List;
-public <span class="keyword">class</span> <a title="object xsbti.api.Source" id="19273">Source</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
+public <span class="keyword">class</span> <a title="object xsbti.api.Source" id="19319">Source</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
-	public Source<a href="#19273" title="xsbti.api.Source" class="delimiter">(</a><a href="Package.java.html#19222" title="xsbti.api.Package">Package</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Package]" id="88872">packages</a>, <a href="Definition.java.html#19192" title="xsbti.api.Definition">Definition</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Definition]" id="88873">definitions</a><span class="delimiter">)</span>
+	public Source<a href="#19319" title="xsbti.api.Source" class="delimiter">(</a><a href="Package.java.html#19268" title="xsbti.api.Package">Package</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Package]" id="88936">packages</a>, <a href="Definition.java.html#19238" title="xsbti.api.Definition">Definition</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Definition]" id="88937">definitions</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">this</span>.packages = packages;
 		<span class="keyword">this</span>.definitions = definitions;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Package.java.html#19222" title="xsbti.api.Package">Package</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Package]" id="87860">packages</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Definition.java.html#19192" title="xsbti.api.Definition">Definition</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Definition]" id="87861">definitions</a>;
-	public <span class="keyword">final</span> <a href="Package.java.html#19222" title="xsbti.api.Package">Package</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Package]" id="87862">packages</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Package.java.html#19268" title="xsbti.api.Package">Package</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Package]" id="87907">packages</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Definition.java.html#19238" title="xsbti.api.Definition">Definition</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Definition]" id="87908">definitions</a>;
+	public <span class="keyword">final</span> <a href="Package.java.html#19268" title="xsbti.api.Package">Package</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Package]" id="87909">packages</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> packages;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Definition.java.html#19192" title="xsbti.api.Definition">Definition</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Definition]" id="87863">definitions</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Definition.java.html#19238" title="xsbti.api.Definition">Definition</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Definition]" id="87910">definitions</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> definitions;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="87864">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public String <a title="()java.lang.String" id="87911">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="string">&quot;Source(&quot;</span> + <span class="string">&quot;packages: &quot;</span> + Arrays.toString<span class="delimiter">(</span>packages<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;definitions: &quot;</span> + Arrays.toString<span class="delimiter">(</span>definitions<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>

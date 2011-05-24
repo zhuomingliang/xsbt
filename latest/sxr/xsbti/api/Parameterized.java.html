@@ -14,24 +14,24 @@
 
 <span class="keyword">import</span> java.util.Arrays;
 <span class="keyword">import</span> java.util.List;
-public <span class="keyword">class</span> <a title="object xsbti.api.Parameterized" id="19225">Parameterized</a> <span class="keyword">extends</span> <a href="SimpleType.java.html#19267" title="xsbti.api.SimpleType">SimpleType</a> 
+public <span class="keyword">class</span> <a title="object xsbti.api.Parameterized" id="19271">Parameterized</a> <span class="keyword">extends</span> <a href="SimpleType.java.html#19313" title="xsbti.api.SimpleType">SimpleType</a> 
 <span class="delimiter">{</span>
-	public Parameterized<a href="#19225" title="xsbti.api.Parameterized" class="delimiter">(</a><a href="SimpleType.java.html#19267" title="xsbti.api.SimpleType">SimpleType</a> <a title="xsbti.api.SimpleType" id="93765">baseType</a>, <a href="Type.java.html#19288" title="xsbti.api.Type">Type</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Type]" id="93766">typeArguments</a><span class="delimiter">)</span>
+	public Parameterized<a href="#19271" title="xsbti.api.Parameterized" class="delimiter">(</a><a href="SimpleType.java.html#19313" title="xsbti.api.SimpleType">SimpleType</a> <a title="xsbti.api.SimpleType" id="93844">baseType</a>, <a href="Type.java.html#19334" title="xsbti.api.Type">Type</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Type]" id="93845">typeArguments</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">this</span>.baseType = baseType;
 		<span class="keyword">this</span>.typeArguments = typeArguments;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="SimpleType.java.html#19267" title="xsbti.api.SimpleType">SimpleType</a> <a title="xsbti.api.SimpleType" id="93760">baseType</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#19288" title="xsbti.api.Type">Type</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Type]" id="93761">typeArguments</a>;
-	public <span class="keyword">final</span> <a href="SimpleType.java.html#19267" title="xsbti.api.SimpleType">SimpleType</a> <a title="()xsbti.api.SimpleType" id="93762">baseType</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="SimpleType.java.html#19313" title="xsbti.api.SimpleType">SimpleType</a> <a title="xsbti.api.SimpleType" id="93839">baseType</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#19334" title="xsbti.api.Type">Type</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Type]" id="93840">typeArguments</a>;
+	public <span class="keyword">final</span> <a href="SimpleType.java.html#19313" title="xsbti.api.SimpleType">SimpleType</a> <a title="()xsbti.api.SimpleType" id="93841">baseType</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> baseType;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Type.java.html#19288" title="xsbti.api.Type">Type</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Type]" id="93763">typeArguments</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Type.java.html#19334" title="xsbti.api.Type">Type</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Type]" id="93842">typeArguments</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> typeArguments;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="93764">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public String <a title="()java.lang.String" id="93843">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="string">&quot;Parameterized(&quot;</span> + <span class="string">&quot;baseType: &quot;</span> + baseType<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;typeArguments: &quot;</span> + Arrays.toString<span class="delimiter">(</span>typeArguments<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>
