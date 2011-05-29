@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>SeparatedCache.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2009 Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+
+<span class="keyword">import</span> <a href="Types.scala.html#14010" title="object sbt.Types">Types</a>.:+:
+<span class="keyword">import</span> sbinary.<span class="delimiter">{</span>DefaultProtocol, Format, Input, Output =&gt; Out<span class="delimiter">}</span>
+<span class="keyword">import</span> <span title="object sbinary.DefaultProtocol">DefaultProtocol</span>.ByteFormat
+<span class="keyword">import</span> java.io.<span class="delimiter">{</span>File, InputStream, OutputStream<span class="delimiter">}</span>
+
+<span class="keyword">trait</span> <a title="trait InputCache[I] extends java.lang.Object" id="15035">InputCache</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="16032">I</a><span class="delimiter">]</span>
+<span title="java.lang.Object" class="delimiter">{</span>
+	<span class="keyword">type</span> <a title="&gt;: Nothing &lt;: Any" id="25718">Internal</a>
+	<span class="keyword">def</span> <a title="(i: I)InputCache.this.Internal" id="25719">convert</a><span class="delimiter">(</span><a title="I" id="25736">i</a>: <a href="#16032" title="I">I</a><span class="delimiter">)</span>: <a href="#25718" title="InputCache.this.Internal">Internal</a>
+	<span class="keyword">def</span> <a title="(from: sbinary.Input)InputCache.this.Internal" id="25720">read</a><span class="delimiter">(</span><a title="sbinary.Input" id="25744">from</a>: <span title="sbinary.Input">Input</span><span class="delimiter">)</span>: <a href="#25718" title="InputCache.this.Internal">Internal</a>
+	<span class="keyword">def</span> <a title="(to: sbinary.Output, j: InputCache.this.Internal)Unit" id="25721">write</a><span class="delimiter">(</span><a title="sbinary.Output" id="25784">to</a>: <span title="sbinary.Output">Out</span>, <a title="InputCache.this.Internal" id="25785">j</a>: <a href="#25718" title="InputCache.this.Internal">Internal</a><span class="delimiter">)</span>: <span title="Unit">Unit</span>
+	<span class="keyword">def</span> <a title="=&gt; Equiv[InputCache.this.Internal]" id="25722">equiv</a>: <span title="Equiv[InputCache.this.Internal]">Equiv</span><span class="delimiter">[</span>Internal<span class="delimiter">]</span>
+<span class="delimiter">}</span>
+<span class="keyword">object</span> <a title="object sbt.InputCache" id="15036">InputCache</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">implicit</span> <span class="keyword">def</span> <a title="[I](implicit fmt: sbinary.Format[I], implicit eqv: Equiv[I])sbt.InputCache[I]" id="26398">basicInputCache</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="26400">I</a><span class="delimiter">]</span><span class="delimiter">(</span><span class="keyword">implicit</span> <a title="sbinary.Format[I]" id="26401">fmt</a>: <span title="sbinary.Format[I]">Format</span><span class="delimiter">[</span>I<span class="delimiter">]</span>, <a title="Equiv[I]" id="26402">eqv</a>: <span title="Equiv[I]">Equiv</span><span class="delimiter">[</span>I<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#15035" title="sbt.InputCache[I]">InputCache</a><span class="delimiter">[</span>I<span class="delimiter">]</span> =
+		<a href="#59447" title="java.lang.Object with sbt.InputCache[I]" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with sbt.InputCache[I]" id="59447">InputCache</a><span class="delimiter">[</span>I<span class="delimiter">]</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">type</span> <a title="I" id="59451">Internal</a> = <a href="#26400" title="I">I</a>
+			<span class="keyword">def</span> <a title="(i: I)I" id="59452">convert</a><span class="delimiter">(</span><a title="I" id="59456">i</a>: <a href="#26400" title="I">I</a><span class="delimiter">)</span> = <a href="#59456" title="I">i</a>
+			<span class="keyword">def</span> <a title="(from: sbinary.Input)I" id="59453">read</a><span class="delimiter">(</span><a title="sbinary.Input" id="59460">from</a>: <span title="sbinary.Input">Input</span><span class="delimiter">)</span>: <a href="#26400" title="I">I</a> = <a href="#26401" title="sbinary.Format[I]">fmt</a>.<span title="(in: sbinary.Input)I">reads</span><span class="delimiter">(</span><a href="#59460" title="sbinary.Input">from</a><span class="delimiter">)</span>
+			<span class="keyword">def</span> <a title="(to: sbinary.Output, i: I)Unit" id="59454">write</a><span class="delimiter">(</span><a title="sbinary.Output" id="59462">to</a>: <span title="sbinary.Output">Out</span>, <a title="I" id="59463">i</a>: <a href="#26400" title="I">I</a><span class="delimiter">)</span> = <a href="#26401" title="sbinary.Format[I]">fmt</a>.<span title="(out: sbinary.Output, value: I)Unit">writes</span><span class="delimiter">(</span><a href="#59462" title="sbinary.Output">to</a>, <a href="#59463" title="I">i</a><span class="delimiter">)</span>
+			<span class="keyword">def</span> <a title="=&gt; Equiv[I]" id="59455">equiv</a> = <a href="#26402" title="Equiv[I]">eqv</a>
+		<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+
+<span class="keyword">class</span> <a title="class BasicCache[I, O] extends java.lang.Object with sbt.Cache[I,O] with ScalaObject" id="14825">BasicCache</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="16033">I</a>,<a title="&gt;: Nothing &lt;: Any" id="16034">O</a><span class="delimiter">]</span><a href="#14825" title="ScalaObject" class="delimiter">(</a><span class="keyword">implicit</span> <a title="sbt.InputCache[I]" id="26371">input</a>: <a href="#15035" title="sbt.InputCache[I]">InputCache</a><span class="delimiter">[</span>I<span class="delimiter">]</span>, <a title="sbinary.Format[O]" id="26372">outFormat</a>: <span title="sbinary.Format[O]">Format</span><span class="delimiter">[</span>O<span class="delimiter">]</span><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="Cache.scala.html#14903" title="sbt.Cache[I,O]">Cache</a><span class="delimiter">[</span>I,O<span class="delimiter">]</span>
+<span class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="(file: java.io.File)(in: I)Either[O,(O) =&gt; Unit]" id="26366">apply</a><span class="delimiter">(</span><a title="java.io.File" id="59483">file</a>: <span title="java.io.File">File</span><span class="delimiter">)</span><span class="delimiter">(</span><a title="I" id="59484">in</a>: <a href="#16033" title="I">I</a><span class="delimiter">)</span> =
+	<span class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="BasicCache.this.input.Internal" id="59488">j</a> = <a href="#26371" title="sbt.InputCache[I]">input</a>.<a href="#25719" title="(i: I)BasicCache.this.input.Internal">convert</a><span class="delimiter">(</span><a href="#59484" title="I">in</a><span class="delimiter">)</span>
+		<span class="keyword">try</span> <span class="delimiter">{</span> <a href="#26367" title="(file: java.io.File, in: BasicCache.this.input.Internal)Product with Serializable with Either[O,(O) =&gt; Unit]">applyImpl</a><span class="delimiter">(</span><a href="#59483" title="java.io.File">file</a>, <a href="#59488" title="BasicCache.this.input.Internal">j</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+		<span class="keyword">catch</span> <span class="delimiter">{</span> <span class="keyword">case</span> <a title="Right[Nothing,(O) =&gt; Unit]" id="60075">e</a>: <span title="Exception">Exception</span> =&gt; <span title="(b: (O) =&gt; Unit)Right[Nothing,(O) =&gt; Unit]">Right</span><span class="delimiter">(</span><a href="#26368" title="(file: java.io.File)(in: BasicCache.this.input.Internal)(O) =&gt; Unit">update</a><span class="delimiter">(</span><a href="#59483" title="java.io.File">file</a><span class="delimiter">)</span><span class="delimiter">(</span><a href="#59488" title="BasicCache.this.input.Internal">j</a><span class="delimiter">)</span><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">protected</span> <span class="keyword">def</span> <a title="(file: java.io.File, in: BasicCache.this.input.Internal)Product with Serializable with Either[O,(O) =&gt; Unit]" id="26367">applyImpl</a><span class="delimiter">(</span><a title="java.io.File" id="59491">file</a>: <span title="java.io.File">File</span>, <a title="BasicCache.this.input.Internal" id="59492">in</a>: input.<a href="#25718" title="BasicCache.this.input.Internal">Internal</a><span class="delimiter">)</span> =
+	<span class="delimiter">{</span>
+		<a href="Using.scala.html#13551" title="object sbt.Using">Using</a>.<a href="Using.scala.html#59507" title="(src: java.io.File)(f: (java.io.BufferedInputStream) =&gt; Product with Serializable with Either[O,(O) =&gt; Unit])Product with Serializable with Either[O,(O) =&gt; Unit]">fileInputStream</a><span class="delimiter">(</span><a href="#59491" title="java.io.File">file</a><span class="delimiter">)</span> <span class="delimiter">{</span> <a title="java.io.BufferedInputStream" id="59745">stream</a> =&gt;
+			<span class="keyword">val</span> <a title="BasicCache.this.input.Internal" id="59746">previousIn</a> = <a href="#26371" title="sbt.InputCache[I]">input</a>.<a href="#25720" title="(from: sbinary.Input)BasicCache.this.input.Internal">read</a><span class="delimiter">(</span><a href="#59745" title="implicit sbinary.Input.javaInputToInput : (x: java.io.InputStream)sbinary.JavaInput">stream</a><span class="delimiter">)</span>
+			<span title="&lt;none&gt; extends Product with Serializable with Either[O,(O) =&gt; Unit]" class="keyword">if</span><span class="delimiter">(</span><a href="#26371" title="sbt.InputCache[I]">input</a>.<a href="#25722" title="=&gt; Equiv[BasicCache.this.input.Internal]">equiv</a>.<span title="(x: BasicCache.this.input.Internal, y: BasicCache.this.input.Internal)Boolean">equiv</span><span class="delimiter">(</span><a href="#59492" title="BasicCache.this.input.Internal">in</a>, <a href="#59746" title="BasicCache.this.input.Internal">previousIn</a><span class="delimiter">)</span><span class="delimiter">)</span>
+				<span title="(a: O)Left[O,Nothing]">Left</span><span class="delimiter">(</span><a href="#26372" title="sbinary.Format[O]">outFormat</a>.<span title="(in: sbinary.Input)O">reads</span><span class="delimiter">(</span><a href="#59745" title="implicit sbinary.Input.javaInputToInput : (x: java.io.InputStream)sbinary.JavaInput">stream</a><span class="delimiter">)</span><span class="delimiter">)</span>
+			<span class="keyword">else</span>
+				<span title="(b: (O) =&gt; Unit)Right[Nothing,(O) =&gt; Unit]">Right</span><span class="delimiter">(</span><a href="#26368" title="(file: java.io.File)(in: BasicCache.this.input.Internal)(O) =&gt; Unit">update</a><span class="delimiter">(</span><a href="#59491" title="java.io.File">file</a><span class="delimiter">)</span><span class="delimiter">(</span><a href="#59492" title="BasicCache.this.input.Internal">in</a><span class="delimiter">)</span><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">protected</span> <span class="keyword">def</span> <a title="(file: java.io.File)(in: BasicCache.this.input.Internal)(O) =&gt; Unit" id="26368">update</a><span class="delimiter">(</span><a title="java.io.File" id="59774">file</a>: <span title="java.io.File">File</span><span class="delimiter">)</span><span class="delimiter">(</span><a title="BasicCache.this.input.Internal" id="59775">in</a>: input.<a href="#25718" title="BasicCache.this.input.Internal">Internal</a><span class="delimiter">)</span> = <span class="delimiter">(</span>out: <a href="#16034" title="O">O</a><span class="delimiter">)</span> =&gt;
+	<span class="delimiter">{</span>
+		<a href="Using.scala.html#13551" title="object sbt.Using">Using</a>.<a href="Using.scala.html#40565" title="(append: Boolean)sbt.OpenFile[java.io.BufferedOutputStream]">fileOutputStream</a><a href="Using.scala.html#59507" title="(src: java.io.File)(f: (java.io.BufferedOutputStream) =&gt; Unit)Unit" class="delimiter">(</a><span title="Boolean(false)" class="keyword">false</span><span class="delimiter">)</span><span class="delimiter">(</span><a href="#59774" title="java.io.File">file</a><span class="delimiter">)</span> <span class="delimiter">{</span> <a title="java.io.BufferedOutputStream" id="60032">stream</a> =&gt;
+			<a href="#26371" title="sbt.InputCache[I]">input</a>.<a href="#25721" title="(to: sbinary.Output, j: BasicCache.this.input.Internal)Unit">write</a><span class="delimiter">(</span><a href="#60032" title="implicit sbinary.Output.javaOutputToOutput : (x: java.io.OutputStream)sbinary.JavaOutput">stream</a>, <a href="#59775" title="BasicCache.this.input.Internal">in</a><span class="delimiter">)</span>
+			<a href="#26372" title="sbinary.Format[O]">outFormat</a>.<span title="(out: sbinary.Output, value: O)Unit">writes</span><span class="delimiter">(</span><a href="#60032" title="implicit sbinary.Output.javaOutputToOutput : (x: java.io.OutputStream)sbinary.JavaOutput">stream</a>, <a href="#59779" title="O">out</a><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

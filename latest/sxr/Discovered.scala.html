@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>Discovered.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2010 Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+<span class="keyword">package</span> compiler
+
+<span class="keyword">final</span> case <span class="keyword">class</span> <a title="class Discovered extends java.lang.Object with ScalaObject with Product with Serializable" id="121365">Discovered</a><a href="#121365" title="ScalaObject" class="delimiter">(</a><a title="Set[String]" id="121453">baseClasses</a>: <span title="Set[String]">Set</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <a title="Set[String]" id="121454">annotations</a>: <span title="Set[String]">Set</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <a title="Boolean" id="121455">hasMain</a>: <span title="Boolean">Boolean</span>, <a title="Boolean" id="121456">isModule</a>: <span title="Boolean">Boolean</span><span class="delimiter">)</span>
+<span class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="=&gt; Boolean" id="121309">isEmpty</a> = <a href="#121453" title="=&gt; Set[String]">baseClasses</a>.<span title="=&gt; Boolean">isEmpty</span> <span title="(x: Boolean)Boolean">&amp;&amp;</span> <a href="#121454" title="=&gt; Set[String]">annotations</a>.<span title="=&gt; Boolean">isEmpty</span>
+<span class="delimiter">}</span>
+<span class="keyword">object</span> <a title="object sbt.compiler.Discovered" id="121459">Discovered</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="=&gt; sbt.compiler.Discovered" id="121364">empty</a> = <span title="sbt.compiler.Discovered" class="keyword">new</span> <a href="#121365" title="sbt.compiler.Discovered">Discovered</a><span class="delimiter">(</span><span title="=&gt; scala.collection.immutable.Set.type">Set</span>.<span title="scala.collection.immutable.Set[String]">empty</span>, <span title="=&gt; scala.collection.immutable.Set.type">Set</span>.<span title="scala.collection.immutable.Set[String]">empty</span>, <span title="Boolean(false)" class="keyword">false</span>, <span title="Boolean(false)" class="keyword">false</span><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

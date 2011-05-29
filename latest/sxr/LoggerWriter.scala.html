@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>LoggerWriter.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2008, 2009, 2010 Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+
+<span class="comment">/** Provides a `java.io.Writer` interface to a `Logger`.  Content is line-buffered and logged at `level`.
+* A line is delimited by `nl`, which is by default the platform line separator.*/</span>
+<span class="keyword">class</span> <a title="class LoggerWriter extends java.io.Writer with ScalaObject" id="8387">LoggerWriter</a><a href="#8387" title="ScalaObject" class="delimiter">(</a><a title="sbt.Logger" id="98268">delegate</a>: <a href="Logger.scala.html#8381" title="sbt.Logger">Logger</a>, <a title="sbt.Level.Value" id="98269">level</a>: Level.<span title="sbt.Level.Value">Value</span>, <a title="String" id="98270">nl</a>: <span title="String">String</span><span class="delimiter">)</span> <span class="keyword">extends</span> java.io.<span title="java.io.Writer">Writer</span>
+<span class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="(delegate: sbt.Logger, level: sbt.Level.Value)sbt.LoggerWriter" id="98144" class="keyword">this</a><span class="delimiter">(</span><a title="sbt.Logger" id="98153">delegate</a>: <a href="Logger.scala.html#8381" title="sbt.Logger">Logger</a>, <a title="sbt.Level.Value" id="98154">level</a>: Level.<span title="sbt.Level.Value">Value</span><span class="delimiter">)</span> = <a href="#8387" title="LoggerWriter.this.type" class="keyword">this</a><span class="delimiter">(</span><a href="#98153" title="sbt.Logger">delegate</a>, <a href="#98154" title="sbt.Level.Value">level</a>, <span title="object java.lang.System">System</span>.<span title="(x$1: java.lang.String)java.lang.String">getProperty</span><span class="delimiter">(</span><span title="java.lang.String(&quot;line.separator&quot;)" class="string">&quot;line.separator&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+	
+	<span class="keyword">private</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">val</span> <a title="StringBuilder" id="98145">buffer</a> = <span title="()StringBuilder" class="keyword">new</span> <span title="StringBuilder">StringBuilder</span>
+
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()Unit" id="98146">close</a><span class="delimiter">(</span><span class="delimiter">)</span> = <a href="#98147" title="()Unit">flush</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()Unit" id="98147">flush</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<a href="#8387" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span>
+			<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#98145" title="StringBuilder">buffer</a>.<span title="=&gt; Int">length</span> <span title="(x: Int)Boolean">&gt;</span> <span title="Int(0)" class="int">0</span><span class="delimiter">)</span>
+			<span class="delimiter">{</span>
+				<a href="#98150" title="(s: String)Unit">log</a><span class="delimiter">(</span><a href="#98145" title="StringBuilder">buffer</a>.<span title="()java.lang.String">toString</span><span class="delimiter">)</span>
+				<a href="#98145" title="StringBuilder">buffer</a>.<span title="()Unit">clear</span><span class="delimiter">(</span><span class="delimiter">)</span>
+			<span class="delimiter">}</span>
+		<span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(content: Array[Char], offset: Int, length: Int)Unit" id="98148">write</a><span class="delimiter">(</span><a title="Array[Char]" id="1403422">content</a>: <span title="Array[Char]">Array</span><span class="delimiter">[</span>Char<span class="delimiter">]</span>, <a title="Int" id="1403423">offset</a>: <span title="Int">Int</span>, <a title="Int" id="1403424">length</a>: <span title="Int">Int</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<a href="#8387" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span>
+			<a href="#98145" title="StringBuilder">buffer</a>.<span title="(xs: Array[Char], offset: Int, len: Int)StringBuilder">appendAll</span><span class="delimiter">(</span><a href="#1403422" title="Array[Char]">content</a>, <a href="#1403423" title="Int">offset</a>, <a href="#1403424" title="Int">length</a><span class="delimiter">)</span>
+			<a href="#98149" title="()Unit">process</a><span class="delimiter">(</span><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+
+	<span class="keyword">private</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">def</span> <a title="()Unit" id="98149">process</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="Int" id="1403501">i</a> = <a href="#98145" title="StringBuilder">buffer</a>.<span title="(str: String)Int">indexOf</span><span class="delimiter">(</span><a href="#98270" title="String">nl</a><span class="delimiter">)</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#1403501" title="Int">i</a> <span title="(x: Int)Boolean">&gt;=</span> <span title="Int(0)" class="int">0</span><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<a href="#98150" title="(s: String)Unit">log</a><span class="delimiter">(</span><a href="#98145" title="StringBuilder">buffer</a>.<span title="(start: Int, end: Int)String">substring</span><span class="delimiter">(</span><span title="Int(0)" class="int">0</span>, <a href="#1403501" title="Int">i</a><span class="delimiter">)</span><span class="delimiter">)</span>
+			<a href="#98145" title="StringBuilder">buffer</a>.<span title="(start: Int, end: Int)StringBuilder">delete</span><span class="delimiter">(</span><span title="Int(0)" class="int">0</span>, <a href="#1403501" title="Int">i</a> <span title="(x: Int)Int">+</span> <a href="#98270" title="String">nl</a>.<span title="()Int">length</span><span class="delimiter">)</span>
+			<a href="#98149" title="()Unit">process</a><span class="delimiter">(</span><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">private</span><span class="delimiter">[</span><span class="keyword">this</span><span class="delimiter">]</span> <span class="keyword">def</span> <a title="(s: String)Unit" id="98150">log</a><span class="delimiter">(</span><a title="String" id="1403415">s</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="Unit">Unit</span>  =  <a href="#98268" title="sbt.Logger">delegate</a>.<a href="Logger.scala.html#62990" title="(level: sbt.Level.Value, message: =&gt; String)Unit">log</a><span class="delimiter">(</span><a href="#98269" title="sbt.Level.Value">level</a>, <a href="#1403415" title="String">s</a><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

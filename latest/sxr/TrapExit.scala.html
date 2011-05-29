@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>TrapExit.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2008 Mark Harrah
+ *
+ * Partially based on exit trapping in Nailgun by Pete Kirkham,
+ * copyright 2004, Martian Software, Inc
+ * licensed under Apache 2.0 License.
+ */</span>
+<span class="keyword">package</span> sbt
+
+<span class="keyword">import</span> scala.collection.Set
+<span class="keyword">import</span> scala.reflect.Manifest
+
+<span class="comment">/** This provides functionality to catch System.exit calls to prevent the JVM from terminating.
+* This is useful for executing user code that may call System.exit, but actually exiting is
+* undesirable.  This file handles the call to exit by disposing all top-level windows and interrupting
+* all user started threads.  It does not stop the threads and does not call shutdown hooks.  It is
+* therefore inappropriate to use this with code that requires shutdown hooks or creates threads that
+* do not terminate.  This category of code should only be called by forking the JVM. */</span>
+<span class="keyword">object</span> <a title="object sbt.TrapExit" id="12744">TrapExit</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="comment">/** Executes the given thunk in a context where System.exit(code) throws
+	* a custom SecurityException, which is then caught and the exit code returned.
+	* Otherwise, 0 is returned.  No other exceptions are handled by this method.*/</span>
+	<span class="keyword">def</span> <a title="(execute: =&gt; Unit, log: sbt.Logger)Int" id="1340846">apply</a><span class="delimiter">(</span><a title="=&gt; Unit" id="1340865">execute</a>: =&gt; Unit, <a title="sbt.Logger" id="1340866">log</a>: <a href="Logger.scala.html#8381" title="sbt.Logger">Logger</a><span class="delimiter">)</span>: <span title="Int">Int</span> =
+	<span class="delimiter">{</span>
+		<a href="#1340866" title="sbt.Logger">log</a>.<a href="Logger.scala.html#62983" title="(message: =&gt; String)Unit">debug</a><span class="delimiter">(</span><span title="java.lang.String(&quot;Starting sandboxed run...&quot;)" class="string">&quot;Starting sandboxed run...&quot;</span><span class="delimiter">)</span>
+		
+		<span class="comment">/** Take a snapshot of the threads that existed before execution in order to determine
+		* the threads that were created by 'execute'.*/</span>
+		<span class="keyword">val</span> <a title="scala.collection.Set[java.lang.Thread]" id="1341173">originalThreads</a> = <a href="#1340855" title="=&gt; scala.collection.Set[java.lang.Thread]">allThreads</a>
+		<span class="keyword">val</span> <a title="sbt.ExitCode" id="1341174">code</a> = <span title="sbt.ExitCode" class="keyword">new</span> <a href="#12563" title="sbt.ExitCode">ExitCode</a>
+		<span class="keyword">def</span> <a title="=&gt; Unit" id="1341175">executeMain</a> =
+			<span class="keyword">try</span> <span class="delimiter">{</span> <a href="#1340865" title="=&gt; Unit">execute</a> <span class="delimiter">}</span>
+			<span class="keyword">catch</span>
+			<span class="delimiter">{</span>
+				<span class="keyword">case</span> <a title="Nothing" id="1341193">e</a>: <a href="#12764" title="sbt.TrapExitSecurityException">TrapExitSecurityException</a> =&gt; <span title="Nothing" class="keyword">throw</span> <a href="#1341193" title="sbt.TrapExitSecurityException">e</a>
+				<span class="keyword">case</span> <a title="Nothing" id="1341219">x</a> =&gt;
+					<a href="#1341174" title="sbt.ExitCode">code</a>.<a href="#1341190" title="(c: Int)Unit">set</a><span class="delimiter">(</span><span title="Int(1)" class="int">1</span><span class="delimiter">)</span> <span class="comment">//exceptions in the main thread cause the exit code to be 1</span>
+					<span title="Nothing" class="keyword">throw</span> <a href="#1341219" title="java.lang.Throwable">x</a>
+			<span class="delimiter">}</span>
+		<span class="keyword">val</span> <a title="sbt.TrapExit.ExitThreadGroup" id="1341176">customThreadGroup</a> = <span title="sbt.TrapExit.ExitThreadGroup" class="keyword">new</span> <a href="#1340864" title="sbt.TrapExit.ExitThreadGroup">ExitThreadGroup</a><span class="delimiter">(</span><span title="sbt.TrapExit.ExitHandler" class="keyword">new</span> <a href="#1340863" title="sbt.TrapExit.ExitHandler">ExitHandler</a><span class="delimiter">(</span><span title="object java.lang.Thread">Thread</span>.<span title="()java.lang.Thread.UncaughtExceptionHandler">getDefaultUncaughtExceptionHandler</span>, <a href="#1341173" title="scala.collection.Set[java.lang.Thread]">originalThreads</a>, <a href="#1341174" title="sbt.ExitCode">code</a>, <a href="#1340866" title="sbt.Logger">log</a><span class="delimiter">)</span><span class="delimiter">)</span>
+		<span class="keyword">val</span> <a title="java.lang.Thread" id="1341177">executionThread</a> = <a href="#1341307" title="java.lang.Thread" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Thread" id="1341307">Thread</a><span class="delimiter">(</span><a href="#1341176" title="sbt.TrapExit.ExitThreadGroup">customThreadGroup</a>, <span title="java.lang.String(&quot;run-main&quot;)" class="string">&quot;run-main&quot;</span><span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">override</span> <span class="keyword">def</span> <a title="()Unit" id="1341309">run</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span> <a href="#1341175" title="=&gt; Unit">executeMain</a> <span class="delimiter">}</span> <span class="delimiter">}</span>
+		
+		<span class="keyword">val</span> <a title="java.lang.SecurityManager" id="1341178">originalSecurityManager</a> = <span title="object java.lang.System">System</span>.<span title="()java.lang.SecurityManager">getSecurityManager</span>
+		<span class="keyword">try</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">val</span> <a title="sbt.TrapExitSecurityManager" id="1341412">newSecurityManager</a> = <span title="sbt.TrapExitSecurityManager" class="keyword">new</span> <a href="#12770" title="sbt.TrapExitSecurityManager">TrapExitSecurityManager</a><span class="delimiter">(</span><a href="#1341178" title="java.lang.SecurityManager">originalSecurityManager</a>, <a href="#1341176" title="sbt.TrapExit.ExitThreadGroup">customThreadGroup</a><span class="delimiter">)</span>
+			<span title="object java.lang.System">System</span>.<span title="(x$1: java.lang.SecurityManager)Unit">setSecurityManager</span><span class="delimiter">(</span><a href="#1341412" title="sbt.TrapExitSecurityManager">newSecurityManager</a><span class="delimiter">)</span>
+
+			<a href="#1341177" title="java.lang.Thread">executionThread</a>.<span title="()Unit">start</span><span class="delimiter">(</span><span class="delimiter">)</span>
+
+			<a href="#1340866" title="sbt.Logger">log</a>.<a href="Logger.scala.html#62983" title="(message: =&gt; String)Unit">debug</a><span class="delimiter">(</span><span title="java.lang.String(&quot;Waiting for threads to exit or System.exit to be called.&quot;)" class="string">&quot;Waiting for threads to exit or System.exit to be called.&quot;</span><span class="delimiter">)</span>
+			<a href="#1340847" title="(originalThreads: scala.collection.Set[java.lang.Thread], log: sbt.Logger)Unit">waitForExit</a><span class="delimiter">(</span><a href="#1341173" title="scala.collection.Set[java.lang.Thread]">originalThreads</a>, <a href="#1340866" title="sbt.Logger">log</a><span class="delimiter">)</span>
+			<a href="#1340866" title="sbt.Logger">log</a>.<a href="Logger.scala.html#62983" title="(message: =&gt; String)Unit">debug</a><span class="delimiter">(</span><span title="java.lang.String(&quot;Interrupting remaining threads (should be all daemons).&quot;)" class="string">&quot;Interrupting remaining threads (should be all daemons).&quot;</span><span class="delimiter">)</span>
+			<a href="#1340860" title="(originalThreads: scala.collection.Set[java.lang.Thread])Unit">interruptAll</a><span class="delimiter">(</span><a href="#1341173" title="scala.collection.Set[java.lang.Thread]">originalThreads</a><span class="delimiter">)</span> <span class="comment">// should only be daemon threads left now</span>
+			<a href="#1340866" title="sbt.Logger">log</a>.<a href="Logger.scala.html#62983" title="(message: =&gt; String)Unit">debug</a><span class="delimiter">(</span><span title="java.lang.String(&quot;Sandboxed run complete..&quot;)" class="string">&quot;Sandboxed run complete..&quot;</span><span class="delimiter">)</span>
+			<a href="#1341174" title="sbt.ExitCode">code</a>.<a href="#1341191" title="=&gt; Option[Int]">value</a>.<span title="(default: =&gt; Int)Int">getOrElse</span><span class="delimiter">(</span><span title="Int(0)" class="int">0</span><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+		<span class="keyword">finally</span> <span class="delimiter">{</span> <span title="object java.lang.System">System</span>.<span title="(x$1: java.lang.SecurityManager)Unit">setSecurityManager</span><span class="delimiter">(</span><a href="#1341178" title="java.lang.SecurityManager">originalSecurityManager</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	 <span class="comment">// wait for all non-daemon threads to terminate</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(originalThreads: scala.collection.Set[java.lang.Thread], log: sbt.Logger)Unit" id="1340847">waitForExit</a><span class="delimiter">(</span><a title="scala.collection.Set[java.lang.Thread]" id="1341434">originalThreads</a>: <span title="scala.collection.Set[java.lang.Thread]">Set</span><span class="delimiter">[</span>Thread<span class="delimiter">]</span>, <a title="sbt.Logger" id="1341435">log</a>: <a href="Logger.scala.html#8381" title="sbt.Logger">Logger</a><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span class="keyword">var</span> <a title="Boolean" id="1341460">daemonsOnly</a> = <span title="Boolean(true)" class="keyword">true</span>
+		<a href="#1340857" title="(ignoreThreads: scala.collection.Set[java.lang.Thread], process: (java.lang.Thread) =&gt; Unit)Unit">processThreads</a><span class="delimiter">(</span><a href="#1341434" title="scala.collection.Set[java.lang.Thread]">originalThreads</a>, <a title="java.lang.Thread" id="1341465">thread</a> =&gt;
+			<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><span title="=&gt; Boolean">!</span><a href="#1341465" title="java.lang.Thread">thread</a>.<span title="()Boolean">isDaemon</span><span class="delimiter">)</span>
+			<span class="delimiter">{</span>
+				<a href="#1341460" title="Boolean">daemonsOnly</a> = <span title="Boolean(false)" class="keyword">false</span>
+				<a href="#1340848" title="(thread: java.lang.Thread, log: sbt.Logger)Unit">waitOnThread</a><span class="delimiter">(</span><a href="#1341465" title="java.lang.Thread">thread</a>, <a href="#1341435" title="sbt.Logger">log</a><span class="delimiter">)</span>
+			<span class="delimiter">}</span>
+		<span class="delimiter">)</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><span title="=&gt; Boolean">!</span><a href="#1341460" title="Boolean">daemonsOnly</a><span class="delimiter">)</span>
+			<a href="#1340847" title="(originalThreads: scala.collection.Set[java.lang.Thread], log: sbt.Logger)Unit">waitForExit</a><span class="delimiter">(</span><a href="#1341434" title="scala.collection.Set[java.lang.Thread]">originalThreads</a>, <a href="#1341435" title="sbt.Logger">log</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="comment">/** Waits for the given thread to exit. */</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(thread: java.lang.Thread, log: sbt.Logger)Unit" id="1340848">waitOnThread</a><span class="delimiter">(</span><a title="java.lang.Thread" id="1341467">thread</a>: <span title="java.lang.Thread">Thread</span>, <a title="sbt.Logger" id="1341468">log</a>: <a href="Logger.scala.html#8381" title="sbt.Logger">Logger</a><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<a href="#1341468" title="sbt.Logger">log</a>.<a href="Logger.scala.html#62983" title="(message: =&gt; String)Unit">debug</a><span class="delimiter">(</span><span title="java.lang.String(&quot;Waiting for thread &quot;)" class="string">&quot;Waiting for thread &quot;</span> <span title="(x$1: Any)java.lang.String">+</span> <a href="#1341467" title="java.lang.Thread">thread</a>.<span title="()java.lang.String">getName</span> <span title="(x$1: Any)java.lang.String">+</span> <span title="java.lang.String(&quot; to exit&quot;)" class="string">&quot; to exit&quot;</span><span class="delimiter">)</span>
+		<a href="#1341467" title="java.lang.Thread">thread</a>.<span title="()Unit">join</span>
+		<a href="#1341468" title="sbt.Logger">log</a>.<a href="Logger.scala.html#62983" title="(message: =&gt; String)Unit">debug</a><span class="delimiter">(</span><span title="java.lang.String(&quot;\011Thread &quot;)" class="string">&quot;\tThread &quot;</span> <span title="(x$1: Any)java.lang.String">+</span> <a href="#1341467" title="java.lang.Thread">thread</a>.<span title="()java.lang.String">getName</span> <span title="(x$1: Any)java.lang.String">+</span> <span title="java.lang.String(&quot; exited.&quot;)" class="string">&quot; exited.&quot;</span><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="comment">/** Returns the exit code of the System.exit that caused the given Exception, or rethrows the exception
+	* if its cause was not calling System.exit.*/</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(e: Throwable)Int" id="1340849">exitCode</a><span class="delimiter">(</span><a title="Throwable" id="1341492">e</a>: <span title="Throwable">Throwable</span><span class="delimiter">)</span> =
+		<a href="#1340850" title="[CauseType &lt;: Throwable, T](e: Throwable)(withType: (CauseType) =&gt; T)(notType: (Throwable) =&gt; T)(implicit mf: scala.reflect.Manifest[CauseType])T">withCause</a><span title="(e: Throwable)(withType: (sbt.TrapExitSecurityException) =&gt; Int)(notType: (Throwable) =&gt; Int)(implicit mf: scala.reflect.Manifest[sbt.TrapExitSecurityException])Int" class="delimiter">[</span><a href="#12764" title="sbt.TrapExitSecurityException">TrapExitSecurityException</a>, <span title="Int">Int</span><span class="delimiter">]</span><span class="delimiter">(</span><a href="#1341492" title="Throwable">e</a><span class="delimiter">)</span>
+			<span class="delimiter">{</span><a title="sbt.TrapExitSecurityException" id="1341508">exited</a> =&gt; <a href="#1341508" title="sbt.TrapExitSecurityException">exited</a>.<a href="#1345562" title="=&gt; Int">exitCode</a><span class="delimiter">}</span>
+			<span title="(clazz: Class[_])scala.reflect.Manifest[sbt.TrapExitSecurityException]" class="delimiter">{</span><a title="Throwable" id="1341511">other</a> =&gt; <span title="Nothing" class="keyword">throw</span> <a href="#1341511" title="Throwable">other</a><span class="delimiter">}</span>
+	<span class="comment">/** Recurses into the causes of the given exception looking for a cause of type CauseType.  If one is found, `withType` is called with that cause.
+	*  If not, `notType` is called with the root cause.*/</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="[CauseType &lt;: Throwable, T](e: Throwable)(withType: (CauseType) =&gt; T)(notType: (Throwable) =&gt; T)(implicit mf: scala.reflect.Manifest[CauseType])T" id="1340850">withCause</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Throwable" id="1340853">CauseType</a> &lt;: Throwable, <a title="&gt;: Nothing &lt;: Any" id="1340854">T</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="Throwable" id="1341495">e</a>: <span title="Throwable">Throwable</span><span class="delimiter">)</span><span class="delimiter">(</span><a title="(CauseType) =&gt; T" id="1341496">withType</a>: CauseType =&gt; T<span class="delimiter">)</span><span class="delimiter">(</span><a title="(Throwable) =&gt; T" id="1341497">notType</a>: Throwable =&gt; T<span class="delimiter">)</span><span class="delimiter">(</span><span class="keyword">implicit</span> <a title="scala.reflect.Manifest[CauseType]" id="1341498">mf</a>: <span title="scala.reflect.Manifest[CauseType]">Manifest</span><span class="delimiter">[</span>CauseType<span class="delimiter">]</span><span class="delimiter">)</span>: <a href="#1340854" title="T">T</a> =
+	<span class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="java.lang.Class[_]" id="1341526">clazz</a> = <a href="#1341498" title="scala.reflect.Manifest[CauseType]">mf</a>.<span title="=&gt; java.lang.Class[_]">erasure</span>
+		<span title="T" class="keyword">if</span><span class="delimiter">(</span><a href="#1341526" title="java.lang.Class[_]">clazz</a>.<span title="(x$1: Any)Boolean">isInstance</span><span class="delimiter">(</span><a href="#1341495" title="Throwable">e</a><span class="delimiter">)</span><span class="delimiter">)</span>
+			<a href="#1341496" title="(v1: CauseType)T">withType</a><span class="delimiter">(</span><a href="#1341495" title="Throwable">e</a>.<span title="[T0]=&gt; T0">asInstanceOf</span><span title="CauseType" class="delimiter">[</span><a href="#1340853" title="CauseType">CauseType</a><span class="delimiter">]</span><span class="delimiter">)</span>
+		<span class="keyword">else</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">val</span> <a title="java.lang.Throwable" id="1341532">cause</a> = <a href="#1341495" title="Throwable">e</a>.<span title="()java.lang.Throwable">getCause</span>
+			<span title="T" class="keyword">if</span><span class="delimiter">(</span><a href="#1341532" title="java.lang.Throwable">cause</a> <span title="(x$1: AnyRef)Boolean">==</span> <span title="Null(null)" class="keyword">null</span><span class="delimiter">)</span>
+				<a href="#1341497" title="(v1: Throwable)T">notType</a><span class="delimiter">(</span><a href="#1341495" title="Throwable">e</a><span class="delimiter">)</span>
+			<span class="keyword">else</span>
+				<a href="#1340850" title="(e: Throwable)(withType: (CauseType) =&gt; T)(notType: (Throwable) =&gt; T)(implicit mf: scala.reflect.Manifest[CauseType])T">withCause</a><span class="delimiter">(</span><a href="#1341532" title="java.lang.Throwable">cause</a><span class="delimiter">)</span><span class="delimiter">(</span><a href="#1341496" title="(CauseType) =&gt; T">withType</a><span class="delimiter">)</span><span class="delimiter">(</span><a href="#1341497" title="(Throwable) =&gt; T">notType</a><span class="delimiter">)</span><span class="delimiter">(</span><a href="#1341498" title="scala.reflect.Manifest[CauseType]">mf</a><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	
+	<span class="comment">/** Returns all threads that are not in the 'system' thread group and are not the AWT implementation
+	* thread (AWT-XAWT, AWT-Windows, ...)*/</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="=&gt; scala.collection.Set[java.lang.Thread]" id="1340855">allThreads</a>: <span title="scala.collection.Set[java.lang.Thread]">Set</span><span class="delimiter">[</span>Thread<span class="delimiter">]</span> =
+	<span class="delimiter">{</span>
+		<span class="keyword">import</span> collection.<span title="object scala.collection.JavaConversions">JavaConversions</span>._
+		<span title="object java.lang.Thread">Thread</span>.<span title="()java.util.Map[java.lang.Thread,Array[java.lang.StackTraceElement]]">getAllStackTraces</span>.<span title="(s: java.util.Set[java.lang.Thread])scala.collection.mutable.Set[java.lang.Thread]">keySet</span>.<span title="(p: (java.lang.Thread) =&gt; Boolean)scala.collection.mutable.Set[java.lang.Thread]">filter</span><span class="delimiter">(</span><a title="java.lang.Thread" id="1341799">thread</a> =&gt; <span title="=&gt; Boolean">!</span><a href="#1340856" title="(t: java.lang.Thread)Boolean">isSystemThread</a><span class="delimiter">(</span><a href="#1341799" title="java.lang.Thread">thread</a><span class="delimiter">)</span><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="comment">/** Returns true if the given thread is in the 'system' thread group and is an AWT thread other than
+	* AWT-EventQueue or AWT-Shutdown.*/</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(t: java.lang.Thread)Boolean" id="1340856">isSystemThread</a><span class="delimiter">(</span><a title="java.lang.Thread" id="1341800">t</a>: <span title="java.lang.Thread">Thread</span><span class="delimiter">)</span> =
+	<span class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="java.lang.String" id="1341803">name</a> = <a href="#1341800" title="java.lang.Thread">t</a>.<span title="()java.lang.String">getName</span>
+		<span title="Boolean" class="keyword">if</span><span class="delimiter">(</span><a href="#1341803" title="java.lang.String">name</a>.<span title="(x$1: java.lang.String)Boolean">startsWith</span><span class="delimiter">(</span><span title="java.lang.String(&quot;AWT-&quot;)" class="string">&quot;AWT-&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+			<span title="=&gt; Boolean">!</span><span class="delimiter">(</span><a href="#1341803" title="java.lang.String">name</a>.<span title="(x$1: java.lang.String)Boolean">startsWith</span><span class="delimiter">(</span><span title="java.lang.String(&quot;AWT-EventQueue&quot;)" class="string">&quot;AWT-EventQueue&quot;</span><span class="delimiter">)</span> <span title="(x: Boolean)Boolean">||</span> <a href="#1341803" title="java.lang.String">name</a>.<span title="(x$1: java.lang.String)Boolean">startsWith</span><span class="delimiter">(</span><span title="java.lang.String(&quot;AWT-Shutdown&quot;)" class="string">&quot;AWT-Shutdown&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+		<span class="keyword">else</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">val</span> <a title="java.lang.ThreadGroup" id="1341815">group</a> = <a href="#1341800" title="java.lang.Thread">t</a>.<span title="()java.lang.ThreadGroup">getThreadGroup</span>
+			<span class="delimiter">(</span><a href="#1341815" title="java.lang.ThreadGroup">group</a> <span title="(x$1: AnyRef)Boolean">!=</span> <span title="Null(null)" class="keyword">null</span><span class="delimiter">)</span> <span title="(x: Boolean)Boolean">&amp;&amp;</span> <span class="delimiter">(</span><a href="#1341815" title="java.lang.ThreadGroup">group</a>.<span title="()java.lang.String">getName</span> <span title="(x$1: AnyRef)Boolean">==</span> <span title="java.lang.String(&quot;system&quot;)" class="string">&quot;system&quot;</span><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="comment">/** Calls the provided function for each thread in the system as provided by the 
+	* allThreads function except those in ignoreThreads.*/</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(ignoreThreads: scala.collection.Set[java.lang.Thread], process: (java.lang.Thread) =&gt; Unit)Unit" id="1340857">processThreads</a><span class="delimiter">(</span><a title="scala.collection.Set[java.lang.Thread]" id="1341461">ignoreThreads</a>: <span title="scala.collection.Set[java.lang.Thread]">Set</span><span class="delimiter">[</span>Thread<span class="delimiter">]</span>, <a title="(java.lang.Thread) =&gt; Unit" id="1341462">process</a>: Thread =&gt; Unit<span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<a href="#1340855" title="=&gt; scala.collection.Set[java.lang.Thread]">allThreads</a>.<span title="(p: (java.lang.Thread) =&gt; Boolean)scala.collection.Set[java.lang.Thread]">filter</span><span class="delimiter">(</span><a title="java.lang.Thread" id="1341853">thread</a> =&gt; <span title="=&gt; Boolean">!</span><a href="#1341461" title="scala.collection.Set[java.lang.Thread]">ignoreThreads</a>.<span title="(elem: java.lang.Thread)Boolean">contains</span><span class="delimiter">(</span><a href="#1341853" title="java.lang.Thread">thread</a><span class="delimiter">)</span><span class="delimiter">)</span>.<span title="(f: (java.lang.Thread) =&gt; Unit)Unit">foreach</span><span class="delimiter">(</span><a href="#1341462" title="(java.lang.Thread) =&gt; Unit">process</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="comment">/** Handles System.exit by disposing all frames and calling interrupt on all user threads */</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(originalThreads: scala.collection.Set[java.lang.Thread])Unit" id="1340858">stopAll</a><span class="delimiter">(</span><a title="scala.collection.Set[java.lang.Thread]" id="1341877">originalThreads</a>: <span title="scala.collection.Set[java.lang.Thread]">Set</span><span class="delimiter">[</span>Thread<span class="delimiter">]</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<a href="#1340859" title="()Unit">disposeAllFrames</a><span class="delimiter">(</span><span class="delimiter">)</span>
+		<a href="#1340860" title="(originalThreads: scala.collection.Set[java.lang.Thread])Unit">interruptAll</a><span class="delimiter">(</span><a href="#1341877" title="scala.collection.Set[java.lang.Thread]">originalThreads</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="()Unit" id="1340859">disposeAllFrames</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="Array[java.awt.Frame]" id="1341882">allFrames</a> = java.awt.<span title="object java.awt.Frame">Frame</span>.<span title="()Array[java.awt.Frame]">getFrames</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#1341882" title="Array[java.awt.Frame]">allFrames</a>.<span title="=&gt; Int">length</span> <span title="(x: Int)Boolean">&gt;</span> <span title="Int(0)" class="int">0</span><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<a href="#1341882" title="(xs: Array[java.awt.Frame])scala.collection.mutable.ArrayOps[java.awt.Frame]">allFrames</a>.<span title="(f: (java.awt.Frame) =&gt; Unit)Unit">foreach</span><span class="delimiter">(</span><a href="#1345218" title="java.awt.Frame">_</a>.<span title="()Unit">dispose</span><span class="delimiter">)</span> <span class="comment">// dispose all top-level windows, which will cause the AWT-EventQueue-* threads to exit</span>
+			<span title="object java.lang.Thread">Thread</span>.<span title="(x$1: Long)Unit">sleep</span><span class="delimiter">(</span><span title="Long(2000L)" class="int">2000</span><span class="delimiter">)</span> <span class="comment">// AWT Thread doesn't exit immediately, so wait to interrupt it</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="comment">// interrupt all threads that appear to have been started by the user</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(originalThreads: scala.collection.Set[java.lang.Thread])Unit" id="1340860">interruptAll</a><span class="delimiter">(</span><a title="scala.collection.Set[java.lang.Thread]" id="1341443">originalThreads</a>: <span title="scala.collection.Set[java.lang.Thread]">Set</span><span class="delimiter">[</span>Thread<span class="delimiter">]</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> =
+		<a href="#1340857" title="(ignoreThreads: scala.collection.Set[java.lang.Thread], process: (java.lang.Thread) =&gt; Unit)Unit">processThreads</a><span class="delimiter">(</span><a href="#1341443" title="scala.collection.Set[java.lang.Thread]">originalThreads</a>, <a href="#1340861" title="(thread: java.lang.Thread)Unit">safeInterrupt</a><span class="delimiter">)</span>
+	<span class="comment">// interrupts the given thread, but first replaces the exception handler so that the InterruptedException is not printed</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(thread: java.lang.Thread)Unit" id="1340861">safeInterrupt</a><span class="delimiter">(</span><a title="java.lang.Thread" id="1345225">thread</a>: <span title="java.lang.Thread">Thread</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><span title="=&gt; Boolean">!</span><a href="#1345225" title="java.lang.Thread">thread</a>.<span title="()java.lang.String">getName</span>.<span title="(x$1: java.lang.String)Boolean">startsWith</span><span class="delimiter">(</span><span title="java.lang.String(&quot;AWT-&quot;)" class="string">&quot;AWT-&quot;</span><span class="delimiter">)</span><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<a href="#1345225" title="java.lang.Thread">thread</a>.<span title="(x$1: java.lang.Thread.UncaughtExceptionHandler)Unit">setUncaughtExceptionHandler</span><span class="delimiter">(</span><span title="sbt.TrapExit.TrapInterrupt" class="keyword">new</span> <a href="#1340862" title="sbt.TrapExit.TrapInterrupt">TrapInterrupt</a><span class="delimiter">(</span><a href="#1345225" title="java.lang.Thread">thread</a>.<span title="()java.lang.Thread.UncaughtExceptionHandler">getUncaughtExceptionHandler</span><span class="delimiter">)</span><span class="delimiter">)</span>
+			<a href="#1345225" title="java.lang.Thread">thread</a>.<span title="()Unit">interrupt</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="comment">// an uncaught exception handler that swallows InterruptedExceptions and otherwise defers to originalHandler</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">class</span> <a title="class TrapInterrupt extends java.lang.Object with java.lang.Thread.UncaughtExceptionHandler with ScalaObject" id="1340862">TrapInterrupt</a><a href="#1340862" title="ScalaObject" class="delimiter">(</a><a title="java.lang.Thread.UncaughtExceptionHandler" id="1345239">originalHandler</a>: Thread.<span title="java.lang.Thread.UncaughtExceptionHandler">UncaughtExceptionHandler</span><span class="delimiter">)</span> <span class="keyword">extends</span> Thread.<span title="java.lang.Thread.UncaughtExceptionHandler">UncaughtExceptionHandler</span>
+	<span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(thread: java.lang.Thread, e: Throwable)Unit" id="1345238">uncaughtException</a><span class="delimiter">(</span><a title="java.lang.Thread" id="1345248">thread</a>: <span title="java.lang.Thread">Thread</span>, <a title="Throwable" id="1345249">e</a>: <span title="Throwable">Throwable</span><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<a href="#1340850" title="[CauseType &lt;: Throwable, T](e: Throwable)(withType: (CauseType) =&gt; T)(notType: (Throwable) =&gt; T)(implicit mf: scala.reflect.Manifest[CauseType])T">withCause</a><span title="(e: Throwable)(withType: (java.lang.InterruptedException) =&gt; Unit)(notType: (Throwable) =&gt; Unit)(implicit mf: scala.reflect.Manifest[java.lang.InterruptedException])Unit" class="delimiter">[</span><span title="java.lang.InterruptedException">InterruptedException</span>, <span title="Unit">Unit</span><span class="delimiter">]</span><span class="delimiter">(</span><a href="#1345249" title="Throwable">e</a><span class="delimiter">)</span>
+				<span class="delimiter">{</span><a title="java.lang.InterruptedException" id="1345263">interrupted</a> =&gt; <span title="Unit" class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">}</span>
+				<span title="(clazz: Class[_])scala.reflect.Manifest[java.lang.InterruptedException]" class="delimiter">{</span><a title="Throwable" id="1345266">other</a> =&gt; <a href="#1345239" title="java.lang.Thread.UncaughtExceptionHandler">originalHandler</a>.<span title="(x$1: java.lang.Thread, x$2: java.lang.Throwable)Unit">uncaughtException</span><span class="delimiter">(</span><a href="#1345248" title="java.lang.Thread">thread</a>, <a href="#1345249" title="Throwable">e</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+			<a href="#1345248" title="java.lang.Thread">thread</a>.<span title="(x$1: java.lang.Thread.UncaughtExceptionHandler)Unit">setUncaughtExceptionHandler</span><span class="delimiter">(</span><a href="#1345239" title="java.lang.Thread.UncaughtExceptionHandler">originalHandler</a><span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="comment">/** An uncaught exception handler that delegates to the original uncaught exception handler except when
+	* the cause was a call to System.exit (which generated a SecurityException)*/</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">class</span> <a title="class ExitHandler extends java.lang.Object with java.lang.Thread.UncaughtExceptionHandler with ScalaObject" id="1340863">ExitHandler</a><a href="#1340863" title="ScalaObject" class="delimiter">(</a><a title="java.lang.Thread.UncaughtExceptionHandler" id="1341300">originalHandler</a>: Thread.<span title="java.lang.Thread.UncaughtExceptionHandler">UncaughtExceptionHandler</span>, <a title="scala.collection.Set[java.lang.Thread]" id="1341301">originalThreads</a>: <span title="scala.collection.Set[java.lang.Thread]">Set</span><span class="delimiter">[</span>Thread<span class="delimiter">]</span>, <a title="sbt.ExitCode" id="1341302">codeHolder</a>: <a href="#12563" title="sbt.ExitCode">ExitCode</a>, <a title="sbt.Logger" id="1341303">log</a>: <a href="Logger.scala.html#8381" title="sbt.Logger">Logger</a><span class="delimiter">)</span> <span class="keyword">extends</span> Thread.<span title="java.lang.Thread.UncaughtExceptionHandler">UncaughtExceptionHandler</span>
+	<span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(t: java.lang.Thread, e: Throwable)Unit" id="1341299">uncaughtException</a><span class="delimiter">(</span><a title="java.lang.Thread" id="1345294">t</a>: <span title="java.lang.Thread">Thread</span>, <a title="Throwable" id="1345295">e</a>: <span title="Throwable">Throwable</span><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<span class="keyword">try</span>
+			<span class="delimiter">{</span>
+				<a href="#1341302" title="sbt.ExitCode">codeHolder</a>.<a href="#1341190" title="(c: Int)Unit">set</a><span class="delimiter">(</span><a href="#1340849" title="(e: Throwable)Int">exitCode</a><span class="delimiter">(</span><a href="#1345295" title="Throwable">e</a><span class="delimiter">)</span><span class="delimiter">)</span> <span class="comment">// will rethrow e if it was not because of a call to System.exit</span>
+				<a href="#1340858" title="(originalThreads: scala.collection.Set[java.lang.Thread])Unit">stopAll</a><span class="delimiter">(</span><a href="#1341301" title="scala.collection.Set[java.lang.Thread]">originalThreads</a><span class="delimiter">)</span>
+			<span class="delimiter">}</span>
+			<span class="keyword">catch</span>
+			<span class="delimiter">{</span>
+				<span class="keyword">case</span> <span title="Unit">_</span> =&gt;
+					<a href="#1341303" title="sbt.Logger">log</a>.<a href="Logger.scala.html#62988" title="(t: =&gt; Throwable)Unit">trace</a><span class="delimiter">(</span><a href="#1345295" title="Throwable">e</a><span class="delimiter">)</span>
+					<a href="#1341300" title="java.lang.Thread.UncaughtExceptionHandler">originalHandler</a>.<span title="(x$1: java.lang.Thread, x$2: java.lang.Throwable)Unit">uncaughtException</span><span class="delimiter">(</span><a href="#1345294" title="java.lang.Thread">t</a>, <a href="#1345295" title="Throwable">e</a><span class="delimiter">)</span>
+			<span class="delimiter">}</span>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">class</span> <a title="class ExitThreadGroup extends java.lang.ThreadGroup with ScalaObject" id="1340864">ExitThreadGroup</a><a href="#1340864" title="ScalaObject" class="delimiter">(</a><a title="java.lang.Thread.UncaughtExceptionHandler" id="1341289">handler</a>: Thread.<span title="java.lang.Thread.UncaughtExceptionHandler">UncaughtExceptionHandler</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="java.lang.ThreadGroup">ThreadGroup</span><span class="delimiter">(</span><span title="java.lang.String(&quot;trap.exit&quot;)" class="string">&quot;trap.exit&quot;</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span class="keyword">override</span> <span class="keyword">def</span> <a title="(t: java.lang.Thread, e: Throwable)Unit" id="1341285">uncaughtException</a><span class="delimiter">(</span><a title="java.lang.Thread" id="1345314">t</a>: <span title="java.lang.Thread">Thread</span>, <a title="Throwable" id="1345315">e</a>: <span title="Throwable">Throwable</span><span class="delimiter">)</span> = <a href="#1341289" title="java.lang.Thread.UncaughtExceptionHandler">handler</a>.<span title="(x$1: java.lang.Thread, x$2: java.lang.Throwable)Unit">uncaughtException</span><span class="delimiter">(</span><a href="#1345314" title="java.lang.Thread">t</a>, <a href="#1345315" title="Throwable">e</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">class</span> <a title="class ExitCode extends java.lang.Object with NotNull with ScalaObject" id="12563">ExitCode</a> <a href="#12563" title="ScalaObject" class="keyword">extends</a> <span title="NotNull">NotNull</span>
+<span class="delimiter">{</span>
+	<span class="keyword">private</span> <span class="keyword">var</span> <a title="Option[Int]" id="1341188">code</a>: <span title="Option[Int]">Option</span><span class="delimiter">[</span>Int<span class="delimiter">]</span> = <span title="object None">None</span>
+	<span class="keyword">def</span> <a title="(c: Int)Unit" id="1341190">set</a><span class="delimiter">(</span><a title="Int" id="1341220">c</a>: <span title="Int">Int</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#12563" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span> <a href="#1341188" title="(x$1: Option[Int])Unit">code</a> = <a href="#1341188" title="=&gt; Option[Int]">code</a> <span title="(alternative: =&gt; Option[Int])Option[Int]">orElse</span> <span title="(x: Int)Some[Int]">Some</span><span class="delimiter">(</span><a href="#1341220" title="Int">c</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="=&gt; Option[Int]" id="1341191">value</a>: <span title="Option[Int]">Option</span><span class="delimiter">[</span>Int<span class="delimiter">]</span> = <a href="#12563" title="(x$1: Option[Int])Option[Int]">synchronized</a> <span class="delimiter">{</span> <a href="#1341188" title="=&gt; Option[Int]">code</a> <span class="delimiter">}</span>
+<span class="delimiter">}</span>
+<span class="comment">///////  These two classes are based on similar classes in Nailgun</span>
+<span class="comment">/** A custom SecurityManager to disallow System.exit. */</span>
+<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">class</span> <a title="class TrapExitSecurityManager extends java.lang.SecurityManager with ScalaObject" id="12770">TrapExitSecurityManager</a><a href="#12770" title="ScalaObject" class="delimiter">(</a><a title="java.lang.SecurityManager" id="1341424">delegateManager</a>: <span title="java.lang.SecurityManager">SecurityManager</span>, <a title="java.lang.ThreadGroup" id="1341425">group</a>: <span title="java.lang.ThreadGroup">ThreadGroup</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="java.lang.SecurityManager">SecurityManager</span>
+<span class="delimiter">{</span>
+	<span class="keyword">import</span> java.security.Permission
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(status: Int)Unit" id="1341419">checkExit</a><span class="delimiter">(</span><a title="Int" id="1345358">status</a>: <span title="Int">Int</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="Array[java.lang.StackTraceElement]" id="1345394">stack</a> = <span title="object java.lang.Thread">Thread</span>.<span title="()java.lang.Thread">currentThread</span>.<span title="()Array[java.lang.StackTraceElement]">getStackTrace</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#1345394" title="Array[java.lang.StackTraceElement]">stack</a> <span title="(x$1: AnyRef)Boolean">==</span> <span title="Null(null)" class="keyword">null</span> <span title="(x: Boolean)Boolean">||</span> <a href="#1345394" title="(xs: Array[java.lang.StackTraceElement])scala.collection.mutable.ArrayOps[java.lang.StackTraceElement]">stack</a>.<span title="(p: (java.lang.StackTraceElement) =&gt; Boolean)Boolean">exists</span><span class="delimiter">(</span><a href="#1341420" title="(element: java.lang.StackTraceElement)Boolean">isRealExit</a><span class="delimiter">)</span><span class="delimiter">)</span>
+			<span title="Nothing" class="keyword">throw</span> <span title="sbt.TrapExitSecurityException" class="keyword">new</span> <a href="#12764" title="sbt.TrapExitSecurityException">TrapExitSecurityException</a><span class="delimiter">(</span><a href="#1345358" title="Int">status</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="comment">/** This ensures that only actual calls to exit are trapped and not just calls to check if exit is allowed.*/</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="(element: java.lang.StackTraceElement)Boolean" id="1341420">isRealExit</a><span class="delimiter">(</span><a title="java.lang.StackTraceElement" id="1345555">element</a>: <span title="java.lang.StackTraceElement">StackTraceElement</span><span class="delimiter">)</span>: <span title="Boolean">Boolean</span> =
+		<a href="#1345555" title="java.lang.StackTraceElement">element</a>.<span title="()java.lang.String">getClassName</span> <span title="(x$1: AnyRef)Boolean">==</span> <span title="java.lang.String(&quot;java.lang.Runtime&quot;)" class="string">&quot;java.lang.Runtime&quot;</span> <span title="(x: Boolean)Boolean">&amp;&amp;</span> <a href="#1345555" title="java.lang.StackTraceElement">element</a>.<span title="()java.lang.String">getMethodName</span> <span title="(x$1: AnyRef)Boolean">==</span> <span title="java.lang.String(&quot;exit&quot;)" class="string">&quot;exit&quot;</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(perm: java.security.Permission)Unit" id="1341421">checkPermission</a><span class="delimiter">(</span><a title="java.security.Permission" id="1345362">perm</a>: <span title="java.security.Permission">Permission</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#1341424" title="java.lang.SecurityManager">delegateManager</a> <span title="(x$1: AnyRef)Boolean">!=</span> <span title="Null(null)" class="keyword">null</span><span class="delimiter">)</span>
+			<a href="#1341424" title="java.lang.SecurityManager">delegateManager</a>.<span title="(x$1: java.security.Permission)Unit">checkPermission</span><span class="delimiter">(</span><a href="#1345362" title="java.security.Permission">perm</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(perm: java.security.Permission, context: AnyRef)Unit" id="1341422">checkPermission</a><span class="delimiter">(</span><a title="java.security.Permission" id="1345380">perm</a>: <span title="java.security.Permission">Permission</span>, <a title="AnyRef" id="1345381">context</a>: <span title="AnyRef">AnyRef</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#1341424" title="java.lang.SecurityManager">delegateManager</a> <span title="(x$1: AnyRef)Boolean">!=</span> <span title="Null(null)" class="keyword">null</span><span class="delimiter">)</span>
+			<a href="#1341424" title="java.lang.SecurityManager">delegateManager</a>.<span title="(x$1: java.security.Permission, x$2: Any)Unit">checkPermission</span><span class="delimiter">(</span><a href="#1345380" title="java.security.Permission">perm</a>, <a href="#1345381" title="AnyRef">context</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()java.lang.ThreadGroup" id="1341423">getThreadGroup</a> = <a href="#1341425" title="java.lang.ThreadGroup">group</a>
+<span class="delimiter">}</span>
+<span class="comment">/** A custom SecurityException that tries not to be caught.*/</span>
+<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">class</span> <a title="class TrapExitSecurityException extends java.lang.SecurityException with ScalaObject" id="12764">TrapExitSecurityException</a><a href="#12764" title="ScalaObject" class="delimiter">(</a><span class="keyword">val</span> <a title="Int" id="1345562">exitCode</a>: <span title="Int">Int</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="java.lang.SecurityException">SecurityException</span>
+<span class="delimiter">{</span>
+	<span class="keyword">private</span> <span class="keyword">var</span> <a title="Boolean" id="1341207">accessAllowed</a> = <span title="Boolean(false)" class="keyword">false</span>
+	<span class="keyword">def</span> <a title="=&gt; Unit" id="1341209">allowAccess</a>
+	<span class="delimiter">{</span>
+		<a href="#1341207" title="(x$1: Boolean)Unit">accessAllowed</a> = <span title="Boolean(true)" class="keyword">true</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()Unit" id="1341210">printStackTrace</a> = <a href="#1341216" title="(f: =&gt; Unit)Unit">ifAccessAllowed</a><span class="delimiter">(</span><a href="#12764" title="sbt.TrapExitSecurityException" class="keyword">super</a>.<span title="()Unit">printStackTrace</span><span class="delimiter">)</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()java.lang.String" id="1341211">toString</a> = <a href="#1341216" title="(f: =&gt; java.lang.String)java.lang.String">ifAccessAllowed</a><span class="delimiter">(</span><a href="#12764" title="sbt.TrapExitSecurityException" class="keyword">super</a>.<span title="()java.lang.String">toString</span><span class="delimiter">)</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()java.lang.Throwable" id="1341212">getCause</a> = <a href="#1341216" title="(f: =&gt; java.lang.Throwable)java.lang.Throwable">ifAccessAllowed</a><span class="delimiter">(</span><a href="#12764" title="sbt.TrapExitSecurityException" class="keyword">super</a>.<span title="()java.lang.Throwable">getCause</span><span class="delimiter">)</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()java.lang.String" id="1341213">getMessage</a> = <a href="#1341216" title="(f: =&gt; java.lang.String)java.lang.String">ifAccessAllowed</a><span class="delimiter">(</span><a href="#12764" title="sbt.TrapExitSecurityException" class="keyword">super</a>.<span title="()java.lang.String">getMessage</span><span class="delimiter">)</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()java.lang.Throwable" id="1341214">fillInStackTrace</a> = <a href="#1341216" title="(f: =&gt; java.lang.Throwable)java.lang.Throwable">ifAccessAllowed</a><span class="delimiter">(</span><a href="#12764" title="sbt.TrapExitSecurityException" class="keyword">super</a>.<span title="()java.lang.Throwable">fillInStackTrace</span><span class="delimiter">)</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="()java.lang.String" id="1341215">getLocalizedMessage</a> = <a href="#1341216" title="(f: =&gt; java.lang.String)java.lang.String">ifAccessAllowed</a><span class="delimiter">(</span><a href="#12764" title="sbt.TrapExitSecurityException" class="keyword">super</a>.<span title="()java.lang.String">getLocalizedMessage</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">def</span> <a title="[T](f: =&gt; T)T" id="1341216">ifAccessAllowed</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="1341218">T</a><span class="delimiter">]</span><span class="delimiter">(</span><a title="=&gt; T" id="1345612">f</a>: =&gt; T<span class="delimiter">)</span>: <a href="#1341218" title="T">T</a> =
+	<span class="delimiter">{</span>
+		<span title="T" class="keyword">if</span><span class="delimiter">(</span><a href="#1341207" title="=&gt; Boolean">accessAllowed</a><span class="delimiter">)</span>
+			<a href="#1345612" title="=&gt; T">f</a>
+		<span class="keyword">else</span>
+			<span title="Nothing" class="keyword">throw</span> <a href="#12764" title="sbt.TrapExitSecurityException" class="keyword">this</a>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>
