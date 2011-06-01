@@ -5,31 +5,32 @@
           <title>sbt.classpath</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../lib/template.css" />
+      <link href="../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
       <script type="text/javascript" src="../../lib/jquery.js"></script>
       <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="value">
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="../package.html" class="extype" name="sbt">sbt</a></p>
+
       <div id="definition">
         <img src="../../lib/package_big.png" />
-        <p id="owner"><a name="sbt" class="extype" href="../package.html">sbt</a></p>
         <h1>classpath</h1>
       </div>
 
       <h4 class="signature" id="signature">
       <span class="kind">package</span>
-      <span class="symbol"> 
+      <span class="symbol">
         <span class="name">classpath</span>
+        
         
         
       </span>
       </h4>
-      
-          <div class="fullcommenttop" id="comment"></div>
-        
+      <div class="fullcomment" id="comment"></div>
 
       <div id="template">
 
@@ -39,7 +40,11 @@
           
           <div id="visbl">
               <span class="filtertype">Visibility</span>
-              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
             </div>
         </div>
 
@@ -47,177 +52,205 @@
 
         <div class="types members" id="types">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="sbt.classpath.ClassFilter" data-isabs="true">
+              <ol><li visbl="pub" data-isabs="true" name="sbt.classpath.ClassFilter">
       <a id="ClassFilter:ClassFilter"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ClassFilter.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ClassFilter.html"><span class="name">ClassFilter</span></a>
+      <span class="symbol">
+        <span class="name">ClassFilter</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.classpath.DifferentLoaders" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.DifferentLoaders">
       <a id="DifferentLoaders:DifferentLoaders"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="DifferentLoaders.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="DifferentLoaders.html"><span class="name">DifferentLoaders</span></a>
+      <span class="symbol">
+        <span class="name">DifferentLoaders</span>
+        
         
         <span class="result"> extends ClassNotFoundException</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.classpath.DualEnumeration" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.DualEnumeration">
       <a id="DualEnumeration:DualEnumeration[T]"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="DualEnumeration.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="DualEnumeration.html"><span class="name">DualEnumeration</span></a>
+      <span class="symbol">
+        <span class="name">DualEnumeration</span>
         <span class="tparams">[<span name="T">T</span>]</span>
+        
         <span class="result"> extends Enumeration[T]</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.classpath.DualLoader" data-isabs="false">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.DualLoader">
       <a id="DualLoader:DualLoader"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="DualLoader.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="DualLoader.html"><span class="name">DualLoader</span></a>
+      <span class="symbol">
+        <span class="name">DualLoader</span>
+        
         
         <span class="result"> extends ClassLoader</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.classpath.ExcludePackagesFilter" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.ExcludePackagesFilter">
       <a id="ExcludePackagesFilter:ExcludePackagesFilter"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ExcludePackagesFilter.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="ExcludePackagesFilter.html"><span class="name">ExcludePackagesFilter</span></a>
+      <span class="symbol">
+        <span class="name">ExcludePackagesFilter</span>
+        
         
         <span class="result"> extends PackageFilter</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.classpath.FilteredLoader" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.FilteredLoader">
       <a id="FilteredLoader:FilteredLoader"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="FilteredLoader.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="FilteredLoader.html"><span class="name">FilteredLoader</span></a>
+      <span class="symbol">
+        <span class="name">FilteredLoader</span>
+        
         
         <span class="result"> extends ClassLoader</span>
       </span>
-      </h4>
+      </a></h4>
       <p class="comment cmt">Delegates class loading to <code>parent</code> for all classes included by <code>filter</code>.</p>
-    </li><li visbl="pub" name="sbt.classpath.FixedResources" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="sbt.classpath.FixedResources">
       <a id="FixedResources:FixedResources"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="FixedResources.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="FixedResources.html"><span class="name">FixedResources</span></a>
+      <span class="symbol">
+        <span class="name">FixedResources</span>
+        
         
         <span class="result"> extends ClassLoader</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.classpath.IncludePackagesFilter" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.IncludePackagesFilter">
       <a id="IncludePackagesFilter:IncludePackagesFilter"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="IncludePackagesFilter.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="IncludePackagesFilter.html"><span class="name">IncludePackagesFilter</span></a>
+      <span class="symbol">
+        <span class="name">IncludePackagesFilter</span>
+        
         
         <span class="result"> extends PackageFilter</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.classpath.LoaderBase" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="sbt.classpath.LoaderBase">
       <a id="LoaderBase:LoaderBase"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="LoaderBase.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="LoaderBase.html"><span class="name">LoaderBase</span></a>
+      <span class="symbol">
+        <span class="name">LoaderBase</span>
+        
         
         <span class="result"> extends URLClassLoader</span>
       </span>
-      </h4>
+      </a></h4>
       <p class="comment cmt">This is a starting point for defining a custom ClassLoader.</p>
-    </li><li visbl="pub" name="sbt.classpath.NullLoader" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.NullLoader">
       <a id="NullLoader:NullLoader"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="NullLoader.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="NullLoader.html"><span class="name">NullLoader</span></a>
+      <span class="symbol">
+        <span class="name">NullLoader</span>
+        
         
         <span class="result"> extends ClassLoader</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.classpath.PackageFilter" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="sbt.classpath.PackageFilter">
       <a id="PackageFilter:PackageFilter"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="PackageFilter.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="PackageFilter.html"><span class="name">PackageFilter</span></a>
+      <span class="symbol">
+        <span class="name">PackageFilter</span>
+        
         
         <span class="result"> extends ClassFilter</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
-    </li><li visbl="pub" name="sbt.classpath.RawResources" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: abstract 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="sbt.classpath.RawResources">
       <a id="RawResources:RawResources"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="RawResources.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="RawResources.html"><span class="name">RawResources</span></a>
+      <span class="symbol">
+        <span class="name">RawResources</span>
+        
         
         <span class="result"> extends ClassLoader with FixedResources</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.classpath.SelfFirstLoader" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.SelfFirstLoader">
       <a id="SelfFirstLoader:SelfFirstLoader"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="SelfFirstLoader.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="SelfFirstLoader.html"><span class="name">SelfFirstLoader</span></a>
+      <span class="symbol">
+        <span class="name">SelfFirstLoader</span>
+        
         
         <span class="result"> extends LoaderBase</span>
       </span>
-      </h4>
+      </a></h4>
       <p class="comment cmt">Searches self first before delegating to the parent.</p>
     </li></ol>
             </div>
-        
-        
 
         <div class="values members" id="values">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="sbt.classpath.ClasspathUtilities" data-isabs="false">
+              <ol><li visbl="pub" data-isabs="false" name="sbt.classpath.ClasspathUtilities">
       <a id="ClasspathUtilities:ClasspathUtilities"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ClasspathUtilities$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="ClasspathUtilities$.html"><span class="name">ClasspathUtilities</span></a>
+      <span class="symbol">
+        <span class="name">ClasspathUtilities</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.classpath.RawURL" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.classpath.RawURL">
       <a id="RawURL:RawURL"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="RawURL$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="RawURL$.html"><span class="name">RawURL</span></a>
+      <span class="symbol">
+        <span class="name">RawURL</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
     </li></ol>
             </div>

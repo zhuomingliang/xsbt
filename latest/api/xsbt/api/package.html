@@ -5,31 +5,32 @@
           <title>xsbt.api</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../lib/template.css" />
+      <link href="../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
       <script type="text/javascript" src="../../lib/jquery.js"></script>
       <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="value">
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="../package.html" class="extype" name="xsbt">xsbt</a></p>
+
       <div id="definition">
         <img src="../../lib/package_big.png" />
-        <p id="owner"><a name="xsbt" class="extype" href="../package.html">xsbt</a></p>
         <h1>api</h1>
       </div>
 
       <h4 class="signature" id="signature">
       <span class="kind">package</span>
-      <span class="symbol"> 
+      <span class="symbol">
         <span class="name">api</span>
+        
         
         
       </span>
       </h4>
-      
-          <div class="fullcommenttop" id="comment"></div>
-        
+      <div class="fullcomment" id="comment"></div>
 
       <div id="template">
 
@@ -39,7 +40,11 @@
           
           <div id="visbl">
               <span class="filtertype">Visibility</span>
-              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
             </div>
         </div>
 
@@ -47,331 +52,373 @@
 
         <div class="types members" id="types">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="xsbt.api.APIFormats" data-isabs="true">
+              <ol><li visbl="pub" data-isabs="true" name="xsbt.api.APIFormats">
       <a id="APIFormats:APIFormats"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="APIFormats.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="APIFormats.html"><span class="name">APIFormats</span></a>
+      <span class="symbol">
+        <span class="name">APIFormats</span>
+        
         
         <span class="result"> extends FormatExtra</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.DefaultAPIFormats" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.DefaultAPIFormats">
       <a id="DefaultAPIFormats:DefaultAPIFormats"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="DefaultAPIFormats.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="DefaultAPIFormats.html"><span class="name">DefaultAPIFormats</span></a>
+      <span class="symbol">
+        <span class="name">DefaultAPIFormats</span>
+        
         
         <span class="result"> extends APIFormats</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.FormatExtra" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.FormatExtra">
       <a id="FormatExtra:FormatExtra"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="FormatExtra.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="FormatExtra.html"><span class="name">FormatExtra</span></a>
+      <span class="symbol">
+        <span class="name">FormatExtra</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.InputWrapperStream" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.InputWrapperStream">
       <a id="InputWrapperStream:InputWrapperStream"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="InputWrapperStream.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="InputWrapperStream.html"><span class="name">InputWrapperStream</span></a>
+      <span class="symbol">
+        <span class="name">InputWrapperStream</span>
+        
         
         <span class="result"> extends InputStream</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="xsbt.api.NameChanges" data-isabs="false">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.NameChanges">
       <a id="NameChanges:NameChanges"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="NameChanges.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="NameChanges.html"><span class="name">NameChanges</span></a>
+      <span class="symbol">
+        <span class="name">NameChanges</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.OutputWrapperStream" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.OutputWrapperStream">
       <a id="OutputWrapperStream:OutputWrapperStream"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="OutputWrapperStream.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="OutputWrapperStream.html"><span class="name">OutputWrapperStream</span></a>
+      <span class="symbol">
+        <span class="name">OutputWrapperStream</span>
+        
         
         <span class="result"> extends OutputStream</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="xsbt.api.References" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.References">
       <a id="References:References"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="References.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="References.html"><span class="name">References</span></a>
+      <span class="symbol">
+        <span class="name">References</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.SameAPI" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI">
       <a id="SameAPI:SameAPI"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="SameAPI.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="SameAPI.html"><span class="name">SameAPI</span></a>
+      <span class="symbol">
+        <span class="name">SameAPI</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       <p class="comment cmt">Used to implement API equality.</p>
-    </li><li visbl="pub" name="xsbt.api.Show" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.Show">
       <a id="Show:Show[A]"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Show.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="Show.html"><span class="name">Show</span></a>
+      <span class="symbol">
+        <span class="name">Show</span>
         <span class="tparams">[<span name="A">A</span>]</span>
+        
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowBase" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowBase">
       <a id="ShowBase:ShowBase"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowBase.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowBase.html"><span class="name">ShowBase</span></a>
+      <span class="symbol">
+        <span class="name">ShowBase</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowBasicTypes" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowBasicTypes">
       <a id="ShowBasicTypes:ShowBasicTypes"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowBasicTypes.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowBasicTypes.html"><span class="name">ShowBasicTypes</span></a>
+      <span class="symbol">
+        <span class="name">ShowBasicTypes</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowDefinition" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowDefinition">
       <a id="ShowDefinition:ShowDefinition"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowDefinition.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowDefinition.html"><span class="name">ShowDefinition</span></a>
+      <span class="symbol">
+        <span class="name">ShowDefinition</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowDefinitions" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowDefinitions">
       <a id="ShowDefinitions:ShowDefinitions"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowDefinitions.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowDefinitions.html"><span class="name">ShowDefinitions</span></a>
+      <span class="symbol">
+        <span class="name">ShowDefinitions</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowLazy" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.ShowLazy">
       <a id="ShowLazy:ShowLazy[A]"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowLazy.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="ShowLazy.html"><span class="name">ShowLazy</span></a>
+      <span class="symbol">
+        <span class="name">ShowLazy</span>
         <span class="tparams">[<span name="A">A</span>]</span>
+        
         <span class="result"> extends Show[A]</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="xsbt.api.ShowPath" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowPath">
       <a id="ShowPath:ShowPath"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowPath.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowPath.html"><span class="name">ShowPath</span></a>
+      <span class="symbol">
+        <span class="name">ShowPath</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowType" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowType">
       <a id="ShowType:ShowType"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowType.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowType.html"><span class="name">ShowType</span></a>
+      <span class="symbol">
+        <span class="name">ShowType</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowTypeParameters" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowTypeParameters">
       <a id="ShowTypeParameters:ShowTypeParameters"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowTypeParameters.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowTypeParameters.html"><span class="name">ShowTypeParameters</span></a>
+      <span class="symbol">
+        <span class="name">ShowTypeParameters</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowTypes" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowTypes">
       <a id="ShowTypes:ShowTypes"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowTypes.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowTypes.html"><span class="name">ShowTypes</span></a>
+      <span class="symbol">
+        <span class="name">ShowTypes</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ShowValueParameters" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="xsbt.api.ShowValueParameters">
       <a id="ShowValueParameters:ShowValueParameters"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowValueParameters.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ShowValueParameters.html"><span class="name">ShowValueParameters</span></a>
+      <span class="symbol">
+        <span class="name">ShowValueParameters</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.Visit" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.Visit">
       <a id="Visit:Visit"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Visit.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="Visit.html"><span class="name">Visit</span></a>
+      <span class="symbol">
+        <span class="name">Visit</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
     </li></ol>
             </div>
-        
-        
 
         <div class="values members" id="values">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="xsbt.api.APIUtil" data-isabs="false">
+              <ol><li visbl="pub" data-isabs="false" name="xsbt.api.APIUtil">
       <a id="APIUtil:APIUtil"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="APIUtil$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="APIUtil$.html"><span class="name">APIUtil</span></a>
+      <span class="symbol">
+        <span class="name">APIUtil</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.DefaultShowAPI" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.DefaultShowAPI">
       <a id="DefaultShowAPI:DefaultShowAPI"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="DefaultShowAPI$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="DefaultShowAPI$.html"><span class="name">DefaultShowAPI</span></a>
+      <span class="symbol">
+        <span class="name">DefaultShowAPI</span>
+        
         
         <span class="result"> extends ShowBase with ShowBasicTypes with ShowValueParameters</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.New" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.New">
       <a id="New:New"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="New$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="New$.html"><span class="name">New</span></a>
+      <span class="symbol">
+        <span class="name">New</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.ParseType" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.ParseType">
       <a id="ParseType:ParseType"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ParseType$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="ParseType$.html"><span class="name">ParseType</span></a>
+      <span class="symbol">
+        <span class="name">ParseType</span>
+        
         
         <span class="result"> extends RegexParsers with PackratParsers</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.SameAPI" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI">
       <a id="SameAPI:SameAPI"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="SameAPI$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="SameAPI$.html"><span class="name">SameAPI</span></a>
+      <span class="symbol">
+        <span class="name">SameAPI</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       <p class="comment cmt">Checks the API of two source files for equality.</p>
-    </li><li visbl="pub" name="xsbt.api.ShowAPI" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.ShowAPI">
       <a id="ShowAPI:ShowAPI"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ShowAPI$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="ShowAPI$.html"><span class="name">ShowAPI</span></a>
+      <span class="symbol">
+        <span class="name">ShowAPI</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.SourceFormat" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SourceFormat">
       <a id="SourceFormat:SourceFormat"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="SourceFormat$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="SourceFormat$.html"><span class="name">SourceFormat</span></a>
+      <span class="symbol">
+        <span class="name">SourceFormat</span>
+        
         
         <span class="result"> extends Format[Source]</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.TagTypeVariables" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.TagTypeVariables">
       <a id="TagTypeVariables:TagTypeVariables"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="TagTypeVariables$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="TagTypeVariables$.html"><span class="name">TagTypeVariables</span></a>
+      <span class="symbol">
+        <span class="name">TagTypeVariables</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="xsbt.api.TopLevel" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.TopLevel">
       <a id="TopLevel:TopLevel"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="TopLevel$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="TopLevel$.html"><span class="name">TopLevel</span></a>
+      <span class="symbol">
+        <span class="name">TopLevel</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
     </li></ol>
             </div>

@@ -5,31 +5,32 @@
           <title>sbt.inc</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../lib/template.css" />
+      <link href="../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
       <script type="text/javascript" src="../../lib/jquery.js"></script>
       <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="value">
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="../package.html" class="extype" name="sbt">sbt</a></p>
+
       <div id="definition">
         <img src="../../lib/package_big.png" />
-        <p id="owner"><a name="sbt" class="extype" href="../package.html">sbt</a></p>
         <h1>inc</h1>
       </div>
 
       <h4 class="signature" id="signature">
       <span class="kind">package</span>
-      <span class="symbol"> 
+      <span class="symbol">
         <span class="name">inc</span>
+        
         
         
       </span>
       </h4>
-      
-          <div class="fullcommenttop" id="comment"></div>
-        
+      <div class="fullcomment" id="comment"></div>
 
       <div id="template">
 
@@ -39,7 +40,11 @@
           
           <div id="visbl">
               <span class="filtertype">Visibility</span>
-              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
             </div>
         </div>
 
@@ -47,320 +52,396 @@
 
         <div class="types members" id="types">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="sbt.inc.APIChanges" data-isabs="false">
+              <ol><li visbl="pub" data-isabs="false" name="sbt.inc.APIChanges">
       <a id="APIChanges:APIChanges[T]"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="APIChanges.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="APIChanges.html"><span class="name">APIChanges</span></a>
+      <span class="symbol">
+        <span class="name">APIChanges</span>
         <span class="tparams">[<span name="T">T</span>]</span>
+        
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.APIs" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.APIs">
       <a id="APIs:APIs"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="APIs.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="APIs.html"><span class="name">APIs</span></a>
+      <span class="symbol">
+        <span class="name">APIs</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Added" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Added">
       <a id="Added:Added"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Added.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="Added.html"><span class="name">Added</span></a>
+      <span class="symbol">
+        <span class="name">Added</span>
+        
         
         <span class="result"> extends Change</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.Analysis" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.Analysis">
       <a id="Analysis:Analysis"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Analysis.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="Analysis.html"><span class="name">Analysis</span></a>
+      <span class="symbol">
+        <span class="name">Analysis</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.AnalysisStore" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.AnalysisStore">
       <a id="AnalysisStore:AnalysisStore"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="AnalysisStore.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="AnalysisStore.html"><span class="name">AnalysisStore</span></a>
+      <span class="symbol">
+        <span class="name">AnalysisStore</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Change" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.Change">
       <a id="Change:Change"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Change.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="Change.html"><span class="name">Change</span></a>
+      <span class="symbol">
+        <span class="name">Change</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed abstract </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.Changes" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed abstract 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.Changes">
       <a id="Changes:Changes[A]"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Changes.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="Changes.html"><span class="name">Changes</span></a>
+      <span class="symbol">
+        <span class="name">Changes</span>
         <span class="tparams">[<span name="A">A</span>]</span>
+        
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Exists" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Exists">
       <a id="Exists:Exists"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Exists.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="Exists.html"><span class="name">Exists</span></a>
+      <span class="symbol">
+        <span class="name">Exists</span>
+        
         
         <span class="result"> extends Stamp</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.Hash" data-isabs="false">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Hash">
       <a id="Hash:Hash"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Hash.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="Hash.html"><span class="name">Hash</span></a>
+      <span class="symbol">
+        <span class="name">Hash</span>
+        
         
         <span class="result"> extends Stamp</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.InitialChanges" data-isabs="false">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.InitialChanges">
       <a id="InitialChanges:InitialChanges"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="InitialChanges.html">
       <span class="kind">case class</span>
-      <span class="symbol"> 
-        <a href="InitialChanges.html"><span class="name">InitialChanges</span></a>
+      <span class="symbol">
+        <span class="name">InitialChanges</span>
         
-        <span class="params">(<span name="internalSrc">internalSrc: Changes[File]</span>, <span name="removedProducts">removedProducts: Set[File]</span>, <span name="binaryDeps">binaryDeps: Set[File]</span>, <span name="external">external: APIChanges[String]</span>)</span><span class="result"> extends Product with Serializable</span>
+        <span class="params">(<span name="internalSrc">internalSrc: Changes[File]</span>, <span name="removedProducts">removedProducts: Set[File]</span>, <span name="binaryDeps">binaryDeps: Set[File]</span>, <span name="external">external: APIChanges[String]</span>)</span>
+        <span class="result"> extends Product</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.LastModified" data-isabs="false">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.LastModified">
       <a id="LastModified:LastModified"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="LastModified.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="LastModified.html"><span class="name">LastModified</span></a>
+      <span class="symbol">
+        <span class="name">LastModified</span>
+        
         
         <span class="result"> extends Stamp</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.Modified" data-isabs="false">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Modified">
       <a id="Modified:Modified"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Modified.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="Modified.html"><span class="name">Modified</span></a>
+      <span class="symbol">
+        <span class="name">Modified</span>
+        
         
         <span class="result"> extends Change</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.ReadStamps" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.ReadStamps">
       <a id="ReadStamps:ReadStamps"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="ReadStamps.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ReadStamps.html"><span class="name">ReadStamps</span></a>
+      <span class="symbol">
+        <span class="name">ReadStamps</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Relations" data-isabs="true">
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.Relations">
       <a id="Relations:Relations"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Relations.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="Relations.html"><span class="name">Relations</span></a>
+      <span class="symbol">
+        <span class="name">Relations</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Removed" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Removed">
       <a id="Removed:Removed"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Removed.html">
       <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="Removed.html"><span class="name">Removed</span></a>
+      <span class="symbol">
+        <span class="name">Removed</span>
+        
         
         <span class="result"> extends Change</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.Stamp" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.Stamp">
       <a id="Stamp:Stamp"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Stamp.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="Stamp.html"><span class="name">Stamp</span></a>
+      <span class="symbol">
+        <span class="name">Stamp</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
-    </li><li visbl="pub" name="sbt.inc.Stamps" data-isabs="true">
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="sbt.inc.Stamps">
       <a id="Stamps:Stamps"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Stamps.html">
       <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="Stamps.html"><span class="name">Stamps</span></a>
+      <span class="symbol">
+        <span class="name">Stamps</span>
+        
         
         <span class="result"> extends ReadStamps</span>
       </span>
-      </h4>
+      </a></h4>
       <p class="comment cmt">Provides information about files as they were at a specific time.</p>
     </li></ol>
             </div>
-        
-        
 
         <div class="values members" id="values">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" name="sbt.inc.APIs" data-isabs="false">
+              <ol><li visbl="pub" data-isabs="false" name="sbt.inc.APIs">
       <a id="APIs:APIs"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="APIs$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="APIs$.html"><span class="name">APIs</span></a>
+      <span class="symbol">
+        <span class="name">APIs</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Analysis" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Analysis">
       <a id="Analysis:Analysis"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Analysis$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="Analysis$.html"><span class="name">Analysis</span></a>
+      <span class="symbol">
+        <span class="name">Analysis</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.AnalysisFormats" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.AnalysisFormats">
       <a id="AnalysisFormats:AnalysisFormats"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="AnalysisFormats$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="AnalysisFormats$.html"><span class="name">AnalysisFormats</span></a>
+      <span class="symbol">
+        <span class="name">AnalysisFormats</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.AnalysisStore" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.AnalysisStore">
       <a id="AnalysisStore:AnalysisStore"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="AnalysisStore$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="AnalysisStore$.html"><span class="name">AnalysisStore</span></a>
+      <span class="symbol">
+        <span class="name">AnalysisStore</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.FileBasedStore" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.FileBasedStore">
       <a id="FileBasedStore:FileBasedStore"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="FileBasedStore$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="FileBasedStore$.html"><span class="name">FileBasedStore</span></a>
+      <span class="symbol">
+        <span class="name">FileBasedStore</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Incremental" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Incremental">
       <a id="Incremental:Incremental"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Incremental$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="Incremental$.html"><span class="name">Incremental</span></a>
+      <span class="symbol">
+        <span class="name">Incremental</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.IncrementalCompile" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.IncrementalCompile">
       <a id="IncrementalCompile:IncrementalCompile"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="IncrementalCompile$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="IncrementalCompile$.html"><span class="name">IncrementalCompile</span></a>
+      <span class="symbol">
+        <span class="name">IncrementalCompile</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Locate" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Locate">
       <a id="Locate:Locate"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Locate$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="Locate$.html"><span class="name">Locate</span></a>
+      <span class="symbol">
+        <span class="name">Locate</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Relations" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Relations">
       <a id="Relations:Relations"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Relations$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="Relations$.html"><span class="name">Relations</span></a>
+      <span class="symbol">
+        <span class="name">Relations</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Stamp" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Stamp">
       <a id="Stamp:Stamp"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Stamp$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="Stamp$.html"><span class="name">Stamp</span></a>
+      <span class="symbol">
+        <span class="name">Stamp</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
-    </li><li visbl="pub" name="sbt.inc.Stamps" data-isabs="false">
+    </li><li visbl="pub" data-isabs="false" name="sbt.inc.Stamps">
       <a id="Stamps:Stamps"></a>
-      <h4 class="signature">
+      <h4 class="signature"><a href="Stamps$.html">
       <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="Stamps$.html"><span class="name">Stamps</span></a>
+      <span class="symbol">
+        <span class="name">Stamps</span>
+        
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </h4>
+      </a></h4>
       
     </li></ol>
             </div>

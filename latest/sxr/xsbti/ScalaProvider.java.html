@@ -15,22 +15,22 @@
 <span class="keyword">import</span> java.io.File;
 
 <span class="comment">/** Provides access to the jars and classes for a particular version of Scala.*/</span>
-public interface <a title="object xsbti.ScalaProvider" id="289256">ScalaProvider</a>
+public interface <a title="object xsbti.ScalaProvider" id="236695">ScalaProvider</a>
 <span class="delimiter">{</span>
-	public <a href="Launcher.java.html#17603" title="xsbti.Launcher">Launcher</a> <a title="()xsbti.Launcher" id="289257">launcher</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public <a href="Launcher.java.html#18580" title="xsbti.Launcher">Launcher</a> <a title="()xsbti.Launcher" id="236696">launcher</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">/** The version of Scala this instance provides.*/</span>
-	public String <a title="()java.lang.String" id="289258">version</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public String <a title="()java.lang.String" id="236697">version</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 
 	<span class="comment">/** A ClassLoader that loads the classes from scala-library.jar and scala-compiler.jar.*/</span>
-	public ClassLoader <a title="()java.lang.ClassLoader" id="289259">loader</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public ClassLoader <a title="()java.lang.ClassLoader" id="236698">loader</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">/** Returns the scala-library.jar and scala-compiler.jar for this version of Scala. */</span>
-	public File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[java.io.File]" id="289260">jars</a><span class="delimiter">(</span><span class="delimiter">)</span>;
-	public File <a title="()java.io.File" id="289261">libraryJar</a><span class="delimiter">(</span><span class="delimiter">)</span>;
-	public File <a title="()java.io.File" id="289262">compilerJar</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[java.io.File]" id="236699">jars</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public File <a title="()java.io.File" id="236700">libraryJar</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public File <a title="()java.io.File" id="236701">compilerJar</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">/** Creates an application provider that will use 'loader()' as the parent ClassLoader for
 	* the application given by 'id'.  This method will retrieve the application if it has not already
 	* been retrieved.*/</span>
-	public <a href="AppProvider.java.html#17588" title="xsbti.AppProvider">AppProvider</a> <a title="(id: xsbti.ApplicationID)xsbti.AppProvider" id="289263">app</a><span class="delimiter">(</span><a href="ApplicationID.java.html#17582" title="xsbti.ApplicationID">ApplicationID</a> <a title="xsbti.ApplicationID" id="1408784">id</a><span class="delimiter">)</span>;
+	public <a href="AppProvider.java.html#18565" title="xsbti.AppProvider">AppProvider</a> <a title="(id: xsbti.ApplicationID)xsbti.AppProvider" id="236702">app</a><span class="delimiter">(</span><a href="ApplicationID.java.html#18559" title="xsbti.ApplicationID">ApplicationID</a> <a title="xsbti.ApplicationID" id="664407">id</a><span class="delimiter">)</span>;
 <span class="delimiter">}</span>
         </pre>
     </body>
