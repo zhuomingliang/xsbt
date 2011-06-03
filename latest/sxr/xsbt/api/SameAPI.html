@@ -1,0 +1,1477 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>xsbt.api.SameAPI</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="type" onload="windowTitle();">
+
+      <p id="owner"><a href="../package.html" class="extype" name="xsbt">xsbt</a>.<a href="package.html" class="extype" name="xsbt.api">api</a></p>
+
+      <div id="definition">
+        <img src="../../lib/class_big.png" />
+        <h1>SameAPI</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SameAPI</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"><div class="comment cmt"><p>Used to implement API equality.  All comparisons must be done between constructs in source files <code>a</code> and <code>b</code>.  For example, when doing:<code>sameDefinitions(as, bs)</code>, <code>as</code> must be definitions from source file <code>a</code> and <code>bs</code> must be definitions from source file <code>b</code>.  This is in order
+to properly handle type parameters, which must be computed for each source file and then referenced during comparison.</p><p>If <code>includePrivate</code> is true, <code>private</code> and <code>private[this]</code> members are included in the comparison.  Otherwise, those members are excluded.</p></div><div class="block">
+            go to: <a href="SameAPI$.html">companion</a>
+          </div><div class="block">
+            linear super types: AnyRef, <span class="extype" name="scala.Any">Any</span>
+          </div>
+            
+            
+            
+          </div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          <div id="order">
+                <span class="filtertype">Ordering</span>
+                <ol><li class="alpha in">Alphabetic</li><li class="inherit out">By inheritance</li></ol>
+              </div>
+          <div id="ancestors">
+                <span class="filtertype">Inherited</span>
+                <ol><li class="hideall">Hide All</li><li class="showall">Show all</li></ol>
+                <ol id="linearization"><li class="in" name="xsbt.api.SameAPI">SameAPI</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#this">
+      <a id="this:SameAPI"></a>
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">SameAPI</span>
+        
+        <span class="params">(<span name="tagsA">tagsA: TypeVars</span>, <span name="tagsB">tagsB: TypeVars</span>, <span name="includePrivate">includePrivate: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="includeParamNames">includeParamNames: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
+        
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="scala.AnyRef#!=">
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#!=">
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the receiver object is equivalent to the argument; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef###">
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">##</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef → Any
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$asInstanceOf">
+      <a id="$asInstanceOf[T0]():T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$isInstanceOf">
+      <a id="$isInstanceOf[T0]():Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#==">
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#==">
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#argumentMap">
+      <a id="argumentMap(Seq[AnnotationArgument]):Map[String, String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">argumentMap</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/AnnotationArgument.html" class="extype" name="xsbti.api.AnnotationArgument">AnnotationArgument</a>]</span>)</span>
+        <span class="result">: Map[String, String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#asInstanceOf">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to cast the receiver object to be of type <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to cast the receiver object to be of type <code>T0</code>.</p><p>Note that the success of a cast at runtime is modulo Scala's erasure semantics.  Therefore the expression<code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at runtime, while the expression<code>List(1).asInstanceOf[List[String]]</code> will not.  In the latter example, because the type argument is erased as
+part of compilation it is not possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#bitSet">
+      <a id="bitSet(Modifiers):BitSet"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">bitSet</span>
+        
+        <span class="params">(<span name="m">m: <a href="../../xsbti/api/Modifiers.html" class="extype" name="xsbti.api.Modifiers">Modifiers</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.collection.immutable.BitSet">BitSet</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#check">
+      <a id="check(SourceAPI,SourceAPI):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">check</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/SourceAPI.html" class="extype" name="xsbti.api.SourceAPI">SourceAPI</a></span>, <span name="b">b: <a href="../../xsbti/api/SourceAPI.html" class="extype" name="xsbti.api.SourceAPI">SourceAPI</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns true if source <code>a</code> has the same API as source <code>b</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns true if source <code>a</code> has the same API as source <code>b</code>.</p></div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#clone">
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">clone</span>
+        
+        <span class="params">()</span>
+        <span class="result">: AnyRef</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method creates and returns a copy of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method creates and returns a copy of the receiver object.</p><p>The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#debug">
+      <a id="debug(Boolean,⇒ String):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">debug</span>
+        
+        <span class="params">(<span name="flag">flag: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ String</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#differentCategory">
+      <a id="differentCategory(String,AnyRef,AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">differentCategory</span>
+        
+        <span class="params">(<span name="label">label: String</span>, <span name="a">a: AnyRef</span>, <span name="b">b: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#eq">
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">eq</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p><p>The <code>eq</code> method implements an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence relation] on
+non-null instances of <code>AnyRef</code>:
+ * It is reflexive: for any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(x)</code> returns <code>true</code>.
+ * It is symmetric: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, <code>x.eq(y)</code> returns <code>true</code> if and
+   only if <code>y.eq(x)</code> returns <code>true</code>.
+ * It is transitive: for any non-null instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.eq(y)</code> returns <code>true</code>   and <code>y.eq(z)</code> returns <code>true</code>, then <code>x.eq(z)</code> returns <code>true</code>.</p><p>Additionally, the <code>eq</code> method has three other properties.
+ * It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+   <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.
+ * For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.
+ * <code>null.eq(null)</code> returns <code>true</code>.</p><p>When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#equals">
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p><p>The default implementations of this method is an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence
+relation]:
+ * It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.
+ * It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.
+ * It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</p><p>If you override this method, you should verify that your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to override <code>hashCode</code> to ensure that objects
+that are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same 
+scala.Int
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#filterDefinitions">
+      <a id="filterDefinitions(Seq[Definition],Boolean):Seq[Definition]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">filterDefinitions</span>
+        
+        <span class="params">(<span name="d">d: Seq[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]</span>, <span name="topLevel">topLevel: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
+        <span class="result">: Seq[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Removes definitions that should not be considered for API equality.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Removes definitions that should not be considered for API equality.
+All top-level definitions are always considered: 'private' only means package-private.
+Other definitions are considered if they are not qualified with 'private[this]' or 'private'.</p></div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#finalize">
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">finalize</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p><p>The details of when and if the <code>finalize</code> method are invoked, as well as the interaction between <code>finalize</code>and non-local returns and exceptions, are all platform dependent.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#getClass">
+      <a id="getClass():java.lang.Class[_]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getClass</span>
+        
+        <span class="params">()</span>
+        <span class="result">: java.lang.Class[_]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a representation that corresponds to the dynamic class of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a representation that corresponds to the dynamic class of the receiver object.</p><p>The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#hashCode">
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a hash code value for the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a hash code value for the object.</p><p>The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#isInstanceOf">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p><p>Note that the test result of the test is modulo Scala's erasure semantics.  Therefore the expression<code>1.isInstanceOf[String]</code> will return <code>false</code>, while the expression <code>List(1).isInstanceOf[List[String]]</code> will
+return <code>true</code>.  In the latter example, because the type argument is erased as part of compilation it is not
+possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#isNonPrivate">
+      <a id="isNonPrivate(Access):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isNonPrivate</span>
+        
+        <span class="params">(<span name="access">access: <a href="../../xsbti/api/Access.html" class="extype" name="xsbti.api.Access">Access</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns false if the <code>access</code> is <code>Private</code> and qualified, true otherwise.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns false if the <code>access</code> is <code>Private</code> and qualified, true otherwise.</p></div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#isNonPrivate">
+      <a id="isNonPrivate(Definition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isNonPrivate</span>
+        
+        <span class="params">(<span name="d">d: <a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#ne">
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">ne</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the argument is not a reference to the receiver object; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notify">
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notify</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notifyAll">
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notifyAll</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#packages">
+      <a id="packages(SourceAPI):Set[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">packages</span>
+        
+        <span class="params">(<span name="s">s: <a href="../../xsbti/api/SourceAPI.html" class="extype" name="xsbti.api.SourceAPI">SourceAPI</a></span>)</span>
+        <span class="result">: Set[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameAccess">
+      <a id="sameAccess(Access,Access):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameAccess</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Access.html" class="extype" name="xsbti.api.Access">Access</a></span>, <span name="b">b: <a href="../../xsbti/api/Access.html" class="extype" name="xsbti.api.Access">Access</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameAliasSpecificAPI">
+      <a id="sameAliasSpecificAPI(TypeAlias,TypeAlias):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameAliasSpecificAPI</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/TypeAlias.html" class="extype" name="xsbti.api.TypeAlias">TypeAlias</a></span>, <span name="b">b: <a href="../../xsbti/api/TypeAlias.html" class="extype" name="xsbti.api.TypeAlias">TypeAlias</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameAnnotatedType">
+      <a id="sameAnnotatedType(Annotated,Annotated):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameAnnotatedType</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Annotated.html" class="extype" name="xsbti.api.Annotated">Annotated</a></span>, <span name="b">b: <a href="../../xsbti/api/Annotated.html" class="extype" name="xsbti.api.Annotated">Annotated</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameAnnotation">
+      <a id="sameAnnotation(Annotation,Annotation):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameAnnotation</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Annotation.html" class="extype" name="xsbti.api.Annotation">Annotation</a></span>, <span name="b">b: <a href="../../xsbti/api/Annotation.html" class="extype" name="xsbti.api.Annotation">Annotation</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameAnnotationArguments">
+      <a id="sameAnnotationArguments(Seq[AnnotationArgument],Seq[AnnotationArgument]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameAnnotationArguments</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/AnnotationArgument.html" class="extype" name="xsbti.api.AnnotationArgument">AnnotationArgument</a>]</span>, <span name="b">b: Seq[<a href="../../xsbti/api/AnnotationArgument.html" class="extype" name="xsbti.api.AnnotationArgument">AnnotationArgument</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameAnnotations">
+      <a id="sameAnnotations(Seq[Annotation],Seq[Annotation]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameAnnotations</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/Annotation.html" class="extype" name="xsbti.api.Annotation">Annotation</a>]</span>, <span name="b">b: Seq[<a href="../../xsbti/api/Annotation.html" class="extype" name="xsbti.api.Annotation">Annotation</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameClassLikeSpecificAPI">
+      <a id="sameClassLikeSpecificAPI(ClassLike,ClassLike):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameClassLikeSpecificAPI</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/ClassLike.html" class="extype" name="xsbti.api.ClassLike">ClassLike</a></span>, <span name="b">b: <a href="../../xsbti/api/ClassLike.html" class="extype" name="xsbti.api.ClassLike">ClassLike</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameConstantType">
+      <a id="sameConstantType(Constant,Constant):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameConstantType</span>
+        
+        <span class="params">(<span name="ca">ca: <a href="../../xsbti/api/Constant.html" class="extype" name="xsbti.api.Constant">Constant</a></span>, <span name="cb">cb: <a href="../../xsbti/api/Constant.html" class="extype" name="xsbti.api.Constant">Constant</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDeclarationSpecificAPI">
+      <a id="sameDeclarationSpecificAPI(TypeDeclaration,TypeDeclaration):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDeclarationSpecificAPI</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/TypeDeclaration.html" class="extype" name="xsbti.api.TypeDeclaration">TypeDeclaration</a></span>, <span name="b">b: <a href="../../xsbti/api/TypeDeclaration.html" class="extype" name="xsbti.api.TypeDeclaration">TypeDeclaration</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDefSpecificAPI">
+      <a id="sameDefSpecificAPI(Def,Def):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDefSpecificAPI</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Def.html" class="extype" name="xsbti.api.Def">Def</a></span>, <span name="b">b: <a href="../../xsbti/api/Def.html" class="extype" name="xsbti.api.Def">Def</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDefinitionContent">
+      <a id="sameDefinitionContent(Definition,Definition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDefinitionContent</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a></span>, <span name="b">b: <a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Checks that the two definitions are the same, other than their name.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Checks that the two definitions are the same, other than their name.</p></div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDefinitionContentDirect">
+      <a id="sameDefinitionContentDirect(Definition,Definition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDefinitionContentDirect</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a></span>, <span name="b">b: <a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDefinitionSpecificAPI">
+      <a id="sameDefinitionSpecificAPI(Definition,Definition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDefinitionSpecificAPI</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a></span>, <span name="b">b: <a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDefinitionType">
+      <a id="sameDefinitionType(DefinitionType,DefinitionType):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDefinitionType</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/DefinitionType.html" class="extype" name="xsbti.api.DefinitionType">DefinitionType</a></span>, <span name="b">b: <a href="../../xsbti/api/DefinitionType.html" class="extype" name="xsbti.api.DefinitionType">DefinitionType</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDefinitions">
+      <a id="sameDefinitions(Map[String, List[Definition]],Map[String, List[Definition]]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDefinitions</span>
+        
+        <span class="params">(<span name="a">a: <span class="extype" name="scala.collection.Map">Map</span>[String, List[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]]</span>, <span name="b">b: <span class="extype" name="scala.collection.Map">Map</span>[String, List[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDefinitions">
+      <a id="sameDefinitions(Seq[Definition],Seq[Definition],Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDefinitions</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]</span>, <span name="b">b: Seq[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]</span>, <span name="topLevel">topLevel: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameDefinitions">
+      <a id="sameDefinitions(SourceAPI,SourceAPI):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameDefinitions</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/SourceAPI.html" class="extype" name="xsbti.api.SourceAPI">SourceAPI</a></span>, <span name="b">b: <a href="../../xsbti/api/SourceAPI.html" class="extype" name="xsbti.api.SourceAPI">SourceAPI</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameExistentialType">
+      <a id="sameExistentialType(Existential,Existential):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameExistentialType</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Existential.html" class="extype" name="xsbti.api.Existential">Existential</a></span>, <span name="b">b: <a href="../../xsbti/api/Existential.html" class="extype" name="xsbti.api.Existential">Existential</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameFieldCategory">
+      <a id="sameFieldCategory(FieldLike,FieldLike):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameFieldCategory</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/FieldLike.html" class="extype" name="xsbti.api.FieldLike">FieldLike</a></span>, <span name="b">b: <a href="../../xsbti/api/FieldLike.html" class="extype" name="xsbti.api.FieldLike">FieldLike</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameFieldSpecificAPI">
+      <a id="sameFieldSpecificAPI(FieldLike,FieldLike):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameFieldSpecificAPI</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/FieldLike.html" class="extype" name="xsbti.api.FieldLike">FieldLike</a></span>, <span name="b">b: <a href="../../xsbti/api/FieldLike.html" class="extype" name="xsbti.api.FieldLike">FieldLike</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameMembers">
+      <a id="sameMembers(Seq[Definition],Seq[Definition]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameMembers</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]</span>, <span name="b">b: Seq[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameMethodParameter">
+      <a id="sameMethodParameter(MethodParameter,MethodParameter):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameMethodParameter</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/MethodParameter.html" class="extype" name="xsbti.api.MethodParameter">MethodParameter</a></span>, <span name="b">b: <a href="../../xsbti/api/MethodParameter.html" class="extype" name="xsbti.api.MethodParameter">MethodParameter</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameModifiers">
+      <a id="sameModifiers(Modifiers,Modifiers):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameModifiers</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Modifiers.html" class="extype" name="xsbti.api.Modifiers">Modifiers</a></span>, <span name="b">b: <a href="../../xsbti/api/Modifiers.html" class="extype" name="xsbti.api.Modifiers">Modifiers</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameNamedDefinitions">
+      <a id="sameNamedDefinitions(List[Definition],List[Definition]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameNamedDefinitions</span>
+        
+        <span class="params">(<span name="a">a: List[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]</span>, <span name="b">b: List[<a href="../../xsbti/api/Definition.html" class="extype" name="xsbti.api.Definition">Definition</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Checks that the definitions in <code>a</code> are the same as those in <code>b</code>, ignoring order.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Checks that the definitions in <code>a</code> are the same as those in <code>b</code>, ignoring order.
+Each list is assumed to have already been checked to have the same names (by <code>sameDefinitions</code>, for example).</p></div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#samePackages">
+      <a id="samePackages(SourceAPI,SourceAPI):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">samePackages</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/SourceAPI.html" class="extype" name="xsbti.api.SourceAPI">SourceAPI</a></span>, <span name="b">b: <a href="../../xsbti/api/SourceAPI.html" class="extype" name="xsbti.api.SourceAPI">SourceAPI</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameParameterList">
+      <a id="sameParameterList(ParameterList,ParameterList):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameParameterList</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/ParameterList.html" class="extype" name="xsbti.api.ParameterList">ParameterList</a></span>, <span name="b">b: <a href="../../xsbti/api/ParameterList.html" class="extype" name="xsbti.api.ParameterList">ParameterList</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameParameterModifier">
+      <a id="sameParameterModifier(ParameterModifier,ParameterModifier):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameParameterModifier</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/ParameterModifier.html" class="extype" name="xsbti.api.ParameterModifier">ParameterModifier</a></span>, <span name="b">b: <a href="../../xsbti/api/ParameterModifier.html" class="extype" name="xsbti.api.ParameterModifier">ParameterModifier</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameParameterRef">
+      <a id="sameParameterRef(ParameterRef,ParameterRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameParameterRef</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/ParameterRef.html" class="extype" name="xsbti.api.ParameterRef">ParameterRef</a></span>, <span name="b">b: <a href="../../xsbti/api/ParameterRef.html" class="extype" name="xsbti.api.ParameterRef">ParameterRef</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameParameterized">
+      <a id="sameParameterized(Parameterized,Parameterized):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameParameterized</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Parameterized.html" class="extype" name="xsbti.api.Parameterized">Parameterized</a></span>, <span name="b">b: <a href="../../xsbti/api/Parameterized.html" class="extype" name="xsbti.api.Parameterized">Parameterized</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameParameterizedDefinition">
+      <a id="sameParameterizedDefinition(ParameterizedDefinition,ParameterizedDefinition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameParameterizedDefinition</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/ParameterizedDefinition.html" class="extype" name="xsbti.api.ParameterizedDefinition">ParameterizedDefinition</a></span>, <span name="b">b: <a href="../../xsbti/api/ParameterizedDefinition.html" class="extype" name="xsbti.api.ParameterizedDefinition">ParameterizedDefinition</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameParameterizedSpecificAPI">
+      <a id="sameParameterizedSpecificAPI(ParameterizedDefinition,ParameterizedDefinition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameParameterizedSpecificAPI</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/ParameterizedDefinition.html" class="extype" name="xsbti.api.ParameterizedDefinition">ParameterizedDefinition</a></span>, <span name="b">b: <a href="../../xsbti/api/ParameterizedDefinition.html" class="extype" name="xsbti.api.ParameterizedDefinition">ParameterizedDefinition</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameParameters">
+      <a id="sameParameters(Seq[MethodParameter],Seq[MethodParameter]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameParameters</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/MethodParameter.html" class="extype" name="xsbti.api.MethodParameter">MethodParameter</a>]</span>, <span name="b">b: Seq[<a href="../../xsbti/api/MethodParameter.html" class="extype" name="xsbti.api.MethodParameter">MethodParameter</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#samePath">
+      <a id="samePath(Path,Path):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">samePath</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Path.html" class="extype" name="xsbti.api.Path">Path</a></span>, <span name="b">b: <a href="../../xsbti/api/Path.html" class="extype" name="xsbti.api.Path">Path</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#samePathComponent">
+      <a id="samePathComponent(PathComponent,PathComponent):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">samePathComponent</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/PathComponent.html" class="extype" name="xsbti.api.PathComponent">PathComponent</a></span>, <span name="b">b: <a href="../../xsbti/api/PathComponent.html" class="extype" name="xsbti.api.PathComponent">PathComponent</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#samePathComponents">
+      <a id="samePathComponents(Seq[PathComponent],Seq[PathComponent]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">samePathComponents</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/PathComponent.html" class="extype" name="xsbti.api.PathComponent">PathComponent</a>]</span>, <span name="b">b: Seq[<a href="../../xsbti/api/PathComponent.html" class="extype" name="xsbti.api.PathComponent">PathComponent</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#samePathId">
+      <a id="samePathId(Id,Id):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">samePathId</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Id.html" class="extype" name="xsbti.api.Id">Id</a></span>, <span name="b">b: <a href="../../xsbti/api/Id.html" class="extype" name="xsbti.api.Id">Id</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#samePathSuper">
+      <a id="samePathSuper(Super,Super):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">samePathSuper</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Super.html" class="extype" name="xsbti.api.Super">Super</a></span>, <span name="b">b: <a href="../../xsbti/api/Super.html" class="extype" name="xsbti.api.Super">Super</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#samePolymorphicType">
+      <a id="samePolymorphicType(Polymorphic,Polymorphic):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">samePolymorphicType</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Polymorphic.html" class="extype" name="xsbti.api.Polymorphic">Polymorphic</a></span>, <span name="b">b: <a href="../../xsbti/api/Polymorphic.html" class="extype" name="xsbti.api.Polymorphic">Polymorphic</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameProjection">
+      <a id="sameProjection(Projection,Projection):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameProjection</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Projection.html" class="extype" name="xsbti.api.Projection">Projection</a></span>, <span name="b">b: <a href="../../xsbti/api/Projection.html" class="extype" name="xsbti.api.Projection">Projection</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameQualifier">
+      <a id="sameQualifier(Qualifier,Qualifier):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameQualifier</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Qualifier.html" class="extype" name="xsbti.api.Qualifier">Qualifier</a></span>, <span name="b">b: <a href="../../xsbti/api/Qualifier.html" class="extype" name="xsbti.api.Qualifier">Qualifier</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameQualifier">
+      <a id="sameQualifier(Qualified,Qualified):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameQualifier</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Qualified.html" class="extype" name="xsbti.api.Qualified">Qualified</a></span>, <span name="b">b: <a href="../../xsbti/api/Qualified.html" class="extype" name="xsbti.api.Qualified">Qualified</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameSeq">
+      <a id="sameSeq[T](Seq[T],Seq[T])((T, T) ⇒ Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameSeq</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="a">a: Seq[T]</span>, <span name="b">b: Seq[T]</span>)</span><span class="params">(<span name="eq">eq: (T, T) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameSimpleType">
+      <a id="sameSimpleType(SimpleType,SimpleType):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameSimpleType</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/SimpleType.html" class="extype" name="xsbti.api.SimpleType">SimpleType</a></span>, <span name="b">b: <a href="../../xsbti/api/SimpleType.html" class="extype" name="xsbti.api.SimpleType">SimpleType</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameSimpleTypeDirect">
+      <a id="sameSimpleTypeDirect(SimpleType,SimpleType):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameSimpleTypeDirect</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/SimpleType.html" class="extype" name="xsbti.api.SimpleType">SimpleType</a></span>, <span name="b">b: <a href="../../xsbti/api/SimpleType.html" class="extype" name="xsbti.api.SimpleType">SimpleType</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameSingleton">
+      <a id="sameSingleton(Singleton,Singleton):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameSingleton</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Singleton.html" class="extype" name="xsbti.api.Singleton">Singleton</a></span>, <span name="b">b: <a href="../../xsbti/api/Singleton.html" class="extype" name="xsbti.api.Singleton">Singleton</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameStrings">
+      <a id="sameStrings(Set[String],Set[String]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameStrings</span>
+        
+        <span class="params">(<span name="a">a: <span class="extype" name="scala.collection.Set">Set</span>[String]</span>, <span name="b">b: <span class="extype" name="scala.collection.Set">Set</span>[String]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameStructure">
+      <a id="sameStructure(Structure,Structure):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameStructure</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Structure.html" class="extype" name="xsbti.api.Structure">Structure</a></span>, <span name="b">b: <a href="../../xsbti/api/Structure.html" class="extype" name="xsbti.api.Structure">Structure</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameStructureDirect">
+      <a id="sameStructureDirect(Structure,Structure):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameStructureDirect</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Structure.html" class="extype" name="xsbti.api.Structure">Structure</a></span>, <span name="b">b: <a href="../../xsbti/api/Structure.html" class="extype" name="xsbti.api.Structure">Structure</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameTags">
+      <a id="sameTags(Int,Int):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameTags</span>
+        
+        <span class="params">(<span name="a">a: <span class="extype" name="scala.Int">Int</span></span>, <span name="b">b: <span class="extype" name="scala.Int">Int</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameType">
+      <a id="sameType(Type,Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameType</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Type.html" class="extype" name="xsbti.api.Type">Type</a></span>, <span name="b">b: <a href="../../xsbti/api/Type.html" class="extype" name="xsbti.api.Type">Type</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameTypeDirect">
+      <a id="sameTypeDirect(Type,Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameTypeDirect</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Type.html" class="extype" name="xsbti.api.Type">Type</a></span>, <span name="b">b: <a href="../../xsbti/api/Type.html" class="extype" name="xsbti.api.Type">Type</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameTypeParameter">
+      <a id="sameTypeParameter(TypeParameter,TypeParameter):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameTypeParameter</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/TypeParameter.html" class="extype" name="xsbti.api.TypeParameter">TypeParameter</a></span>, <span name="b">b: <a href="../../xsbti/api/TypeParameter.html" class="extype" name="xsbti.api.TypeParameter">TypeParameter</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameTypeParameters">
+      <a id="sameTypeParameters(Seq[TypeParameter],Seq[TypeParameter]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameTypeParameters</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/TypeParameter.html" class="extype" name="xsbti.api.TypeParameter">TypeParameter</a>]</span>, <span name="b">b: Seq[<a href="../../xsbti/api/TypeParameter.html" class="extype" name="xsbti.api.TypeParameter">TypeParameter</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameValueParameters">
+      <a id="sameValueParameters(Seq[ParameterList],Seq[ParameterList]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameValueParameters</span>
+        
+        <span class="params">(<span name="a">a: Seq[<a href="../../xsbti/api/ParameterList.html" class="extype" name="xsbti.api.ParameterList">ParameterList</a>]</span>, <span name="b">b: Seq[<a href="../../xsbti/api/ParameterList.html" class="extype" name="xsbti.api.ParameterList">ParameterList</a>]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#sameVariance">
+      <a id="sameVariance(Variance,Variance):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">sameVariance</span>
+        
+        <span class="params">(<span name="a">a: <a href="../../xsbti/api/Variance.html" class="extype" name="xsbti.api.Variance">Variance</a></span>, <span name="b">b: <a href="../../xsbti/api/Variance.html" class="extype" name="xsbti.api.Variance">Variance</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.api.SameAPI#setIf">
+      <a id="setIf(BitSet,Boolean,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setIf</span>
+        
+        <span class="params">(<span name="bs">bs: <span class="extype" name="scala.collection.mutable.BitSet">BitSet</span></span>, <span name="flag">flag: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="i">i: <span class="extype" name="scala.Int">Int</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#synchronized">
+      <a id="synchronized[T0](T0):T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">synchronized</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">(<span name="arg0">arg0: T0</span>)</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#toString">
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a string representation of the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a string representation of the object.</p><p>The default representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string representation of the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="xsbt.api.SameAPI#zippedEntries">
+      <a id="zippedEntries[A, B](Map[A, B],Map[A, B]):Iterable[(B, B)]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">zippedEntries</span>
+        <span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span>
+        <span class="params">(<span name="a">a: <span class="extype" name="scala.collection.Map">Map</span>[A, B]</span>, <span name="b">b: <span class="extype" name="scala.collection.Map">Map</span>[A, B]</span>)</span>
+        <span class="result">: Iterable[(B, B)]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div></div>
+          
+    </li></ol>
+            </div>
+
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from AnyRef</h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>
