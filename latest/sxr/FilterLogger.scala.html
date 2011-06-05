@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>FilterLogger.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2008, 2009, 2010 Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+
+<span class="comment">/** A filter logger is used to delegate messages but not the logging level to another logger.  This means
+* that messages are logged at the higher of the two levels set by this logger and its delegate.
+* */</span>
+<span class="keyword">class</span> <a title="class FilterLogger extends sbt.BasicLogger with ScalaObject" id="9241">FilterLogger</a><span title="ScalaObject" class="delimiter">(</span><a title="sbt.AbstractLogger" id="659102">delegate</a>: <a href="Logger.scala.html#9172" title="sbt.AbstractLogger">AbstractLogger</a><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="BasicLogger.scala.html#9175" title="sbt.BasicLogger">BasicLogger</a>
+<span class="delimiter">{</span>
+	<span class="keyword">override</span> <span class="keyword">lazy</span> <span class="keyword">val</span> <a title="Boolean" id="659090">ansiCodesSupported</a> = <a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#54091" title="=&gt; Boolean">ansiCodesSupported</a>
+	<span class="keyword">def</span> <a title="(t: =&gt; Throwable)Unit" id="659091">trace</a><span class="delimiter">(</span><a title="=&gt; Throwable" id="659104">t</a>: =&gt; Throwable<span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="Logger.scala.html#227148" title="=&gt; Boolean">traceEnabled</a><span class="delimiter">)</span>
+			<a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#54092" title="(t: =&gt; Throwable)Unit">trace</a><span class="delimiter">(</span><a href="#659104" title="=&gt; Throwable">t</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(flag: Boolean)Unit" id="659092">setSuccessEnabled</a><span class="delimiter">(</span><a title="Boolean" id="659112">flag</a>: <span title="Boolean">Boolean</span><span class="delimiter">)</span> <span class="delimiter">{</span> <a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#227150" title="(flag: Boolean)Unit">setSuccessEnabled</a><span class="delimiter">(</span><a href="#659112" title="Boolean">flag</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="=&gt; Boolean" id="659093">successEnabled</a> = <a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#227149" title="=&gt; Boolean">successEnabled</a>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="(level: Int)Unit" id="659094">setTrace</a><span class="delimiter">(</span><a title="Int" id="659118">level</a>: <span title="Int">Int</span><span class="delimiter">)</span> <span class="delimiter">{</span> <a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#227146" title="(flag: Int)Unit">setTrace</a><span class="delimiter">(</span><a href="#659118" title="Int">level</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="keyword">override</span> <span class="keyword">def</span> <a title="=&gt; Int" id="659095">getTrace</a> = <a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#227147" title="=&gt; Int">getTrace</a> 
+	<span class="keyword">def</span> <a title="(level: sbt.Level.Value,message: =&gt; String)Unit" id="659096">log</a><span class="delimiter">(</span><a title="sbt.Level.Value" id="659124">level</a>: Level.<span title="sbt.Level.Value">Value</span>, <a title="=&gt; String" id="659125">message</a>: =&gt; String<span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="Logger.scala.html#227151" title="(level: sbt.Level.Value)Boolean">atLevel</a><span class="delimiter">(</span><a href="#659124" title="sbt.Level.Value">level</a><span class="delimiter">)</span><span class="delimiter">)</span>
+			<a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#54094" title="(level: sbt.Level.Value,message: =&gt; String)Unit">log</a><span class="delimiter">(</span><a href="#659124" title="sbt.Level.Value">level</a>, <a href="#659125" title="=&gt; String">message</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="(message: =&gt; String)Unit" id="659097">success</a><span class="delimiter">(</span><a title="=&gt; String" id="659135">message</a>: =&gt; String<span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#659093" title="=&gt; Boolean">successEnabled</a><span class="delimiter">)</span>
+			<a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#54093" title="(message: =&gt; String)Unit">success</a><span class="delimiter">(</span><a href="#659135" title="=&gt; String">message</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="(event: sbt.ControlEvent.Value,message: =&gt; String)Unit" id="659098">control</a><span class="delimiter">(</span><a title="sbt.ControlEvent.Value" id="659138">event</a>: ControlEvent.<span title="sbt.ControlEvent.Value">Value</span>, <a title="=&gt; String" id="659139">message</a>: =&gt; String<span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="Logger.scala.html#227151" title="(level: sbt.Level.Value)Boolean">atLevel</a><span class="delimiter">(</span><a href="Level.scala.html#9260" title="object sbt.Level">Level</a>.<a href="Level.scala.html#82357" title="=&gt; sbt.Level.Value">Info</a><span class="delimiter">)</span><span class="delimiter">)</span>
+			<a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#227152" title="(event: sbt.ControlEvent.Value,message: =&gt; String)Unit">control</a><span class="delimiter">(</span><a href="#659138" title="sbt.ControlEvent.Value">event</a>, <a href="#659139" title="=&gt; String">message</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="(events: Seq[sbt.LogEvent])Unit" id="659099">logAll</a><span class="delimiter">(</span><a title="Seq[sbt.LogEvent]" id="659143">events</a>: <span title="Seq[sbt.LogEvent]">Seq</span><span class="delimiter">[</span>LogEvent<span class="delimiter">]</span><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#659102" title="sbt.AbstractLogger">delegate</a>.<a href="Logger.scala.html#227153" title="(events: Seq[sbt.LogEvent])Unit">logAll</a><span class="delimiter">(</span><a href="#659143" title="Seq[sbt.LogEvent]">events</a><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+
+        </pre>
+    </body>
+</html>
