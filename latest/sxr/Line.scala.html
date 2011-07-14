@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>Line.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2009  Mark Harrah
+ */</span>
+<span class="keyword">package</span> xsbt.datatype
+
+<span class="keyword">sealed</span> <span class="keyword">trait</span> <a title="trait Line extends java.lang.Object with NotNull" id="11954">Line</a> <span class="keyword">extends</span> <span title="NotNull">NotNull</span> <span class="delimiter">{</span> <span class="keyword">val</span> <a title="=&gt; Int" id="675403">line</a>: <span title="Int">Int</span> <span class="delimiter">}</span>
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class ClassLine extends java.lang.Object with xsbt.datatype.Line with ScalaObject" id="11955">ClassLine</a><span title="ScalaObject" class="delimiter">(</span><span class="keyword">val</span> <a title="String" id="675983">name</a>: <span title="String">String</span>, <span class="keyword">val</span> <a title="Int" id="675984">level</a>: <span title="Int">Int</span>, <span class="keyword">val</span> <a title="Int" id="675985">line</a>: <span title="Int">Int</span><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="#11954" title="xsbt.datatype.Line">Line</a>
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class EnumLine extends java.lang.Object with xsbt.datatype.Line with ScalaObject" id="11956">EnumLine</a><span title="ScalaObject" class="delimiter">(</span><span class="keyword">val</span> <a title="String" id="675582">name</a>: <span title="String">String</span>, <span class="keyword">val</span> <a title="Seq[String]" id="675583">members</a>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <span class="keyword">val</span> <a title="Int" id="675584">line</a>: <span title="Int">Int</span><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="#11954" title="xsbt.datatype.Line">Line</a>
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class MemberLine extends java.lang.Object with xsbt.datatype.Line with ScalaObject" id="11957">MemberLine</a><span title="ScalaObject" class="delimiter">(</span><span class="keyword">val</span> <a title="String" id="676011">name</a>: <span title="String">String</span>, <span class="keyword">val</span> <a title="String" id="676012">tpe</a>: <span title="String">String</span>, <span class="keyword">val</span> <a title="Boolean" id="676013">single</a>: <span title="Boolean">Boolean</span>, <span class="keyword">val</span> <a title="Int" id="676014">level</a>: <span title="Int">Int</span>, <span class="keyword">val</span> <a title="Int" id="676015">line</a>: <span title="Int">Int</span><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="#11954" title="xsbt.datatype.Line">Line</a>
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class WhitespaceLine extends java.lang.Object with xsbt.datatype.Line with ScalaObject" id="11958">WhitespaceLine</a><span title="ScalaObject" class="delimiter">(</span><span class="keyword">val</span> <a title="String" id="675411">comment</a>: <span title="String">String</span>, <span class="keyword">val</span> <a title="Int" id="675412">line</a>: <span title="Int">Int</span><span class="delimiter">)</span> <span class="keyword">extends</span> <a href="#11954" title="xsbt.datatype.Line">Line</a>
+
+        </pre>
+    </body>
+</html>

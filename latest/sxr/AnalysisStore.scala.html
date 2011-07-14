@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>AnalysisStore.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2010  Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+<span class="keyword">package</span> inc
+
+<span class="keyword">trait</span> <a title="trait AnalysisStore extends java.lang.Object" id="9460">AnalysisStore</a>
+<span title="java.lang.Object" class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="(analysis: sbt.inc.Analysis,setup: sbt.CompileSetup)Unit" id="102628">set</a><span class="delimiter">(</span><a title="sbt.inc.Analysis" id="102631">analysis</a>: <a href="Analysis.scala.html#9453" title="sbt.inc.Analysis">Analysis</a>, <a title="sbt.CompileSetup" id="102632">setup</a>: <a href="CompileSetup.scala.html#9494" title="sbt.CompileSetup">CompileSetup</a><span class="delimiter">)</span>: <span title="Unit">Unit</span>
+	<span class="keyword">def</span> <a title="()Option[(sbt.inc.Analysis, sbt.CompileSetup)]" id="102629">get</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Option[(sbt.inc.Analysis, sbt.CompileSetup)]">Option</span><span class="delimiter">[</span><span class="delimiter">(</span>Analysis, CompileSetup<span class="delimiter">)</span><span class="delimiter">]</span>
+<span class="delimiter">}</span>
+
+<span class="keyword">object</span> <a title="object sbt.inc.AnalysisStore" id="9461">AnalysisStore</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">def</span> <a title="(backing: sbt.inc.AnalysisStore)sbt.inc.AnalysisStore" id="102647">cached</a><span class="delimiter">(</span><a title="sbt.inc.AnalysisStore" id="102651">backing</a>: <a href="#9460" title="sbt.inc.AnalysisStore">AnalysisStore</a><span class="delimiter">)</span>: <a href="#9460" title="sbt.inc.AnalysisStore">AnalysisStore</a> = <a href="#102653" title="java.lang.Object with sbt.inc.AnalysisStore{}" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with sbt.inc.AnalysisStore" id="102653">AnalysisStore</a> <span class="delimiter">{</span>
+		<span class="keyword">private</span> <span class="keyword">var</span> <a title="Option[(sbt.inc.Analysis, sbt.CompileSetup)]" id="102658">last</a>: <span title="Option[(sbt.inc.Analysis, sbt.CompileSetup)]">Option</span><span class="delimiter">[</span><span class="delimiter">(</span>Analysis, CompileSetup<span class="delimiter">)</span><span class="delimiter">]</span> = <span title="object None">None</span>
+		<span class="keyword">def</span> <a title="(analysis: sbt.inc.Analysis,setup: sbt.CompileSetup)Unit" id="102660">set</a><span class="delimiter">(</span><a title="sbt.inc.Analysis" id="102662">analysis</a>: <a href="Analysis.scala.html#9453" title="sbt.inc.Analysis">Analysis</a>, <a title="sbt.CompileSetup" id="102663">setup</a>: <a href="CompileSetup.scala.html#9494" title="sbt.CompileSetup">CompileSetup</a><span class="delimiter">)</span>
+		<span class="delimiter">{</span>
+			<a href="#102651" title="sbt.inc.AnalysisStore">backing</a>.<a href="#102628" title="(analysis: sbt.inc.Analysis,setup: sbt.CompileSetup)Unit">set</a><span class="delimiter">(</span><a href="#102662" title="sbt.inc.Analysis">analysis</a>, <a href="#102663" title="sbt.CompileSetup">setup</a><span class="delimiter">)</span>
+			<a href="#102658" title="(x$1: Option[(sbt.inc.Analysis, sbt.CompileSetup)])Unit">last</a> = <span title="(x: (sbt.inc.Analysis, sbt.CompileSetup))Some[(sbt.inc.Analysis, sbt.CompileSetup)]">Some</span><span class="delimiter">(</span> <span title="(_1: sbt.inc.Analysis,_2: sbt.CompileSetup)(sbt.inc.Analysis, sbt.CompileSetup)" class="delimiter">(</span><a href="#102662" title="sbt.inc.Analysis">analysis</a>, <a href="#102663" title="sbt.CompileSetup">setup</a><span class="delimiter">)</span> <span class="delimiter">)</span>
+		<span class="delimiter">}</span>
+		<span class="keyword">def</span> <a title="()Option[(sbt.inc.Analysis, sbt.CompileSetup)]" id="102661">get</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Option[(sbt.inc.Analysis, sbt.CompileSetup)]">Option</span><span class="delimiter">[</span><span class="delimiter">(</span>Analysis, CompileSetup<span class="delimiter">)</span><span class="delimiter">]</span> =
+		<span class="delimiter">{</span>
+			<span title="Unit" class="keyword">if</span><span class="delimiter">(</span><a href="#102658" title="=&gt; Option[(sbt.inc.Analysis, sbt.CompileSetup)]">last</a>.<span title="=&gt; Boolean">isEmpty</span><span class="delimiter">)</span>
+				<a href="#102658" title="(x$1: Option[(sbt.inc.Analysis, sbt.CompileSetup)])Unit">last</a> = <a href="#102651" title="sbt.inc.AnalysisStore">backing</a>.<a href="#102629" title="()Option[(sbt.inc.Analysis, sbt.CompileSetup)]">get</a><span class="delimiter">(</span><span class="delimiter">)</span>
+			<a href="#102658" title="=&gt; Option[(sbt.inc.Analysis, sbt.CompileSetup)]">last</a>
+		<span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">def</span> <a title="(backing: sbt.inc.AnalysisStore)sbt.inc.AnalysisStore" id="102648">sync</a><span class="delimiter">(</span><a title="sbt.inc.AnalysisStore" id="102686">backing</a>: <a href="#9460" title="sbt.inc.AnalysisStore">AnalysisStore</a><span class="delimiter">)</span>: <a href="#9460" title="sbt.inc.AnalysisStore">AnalysisStore</a> = <a href="#102688" title="java.lang.Object with sbt.inc.AnalysisStore" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with sbt.inc.AnalysisStore" id="102688">AnalysisStore</a> <span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(analysis: sbt.inc.Analysis,setup: sbt.CompileSetup)Unit" id="102692">set</a><span class="delimiter">(</span><a title="sbt.inc.Analysis" id="102694">analysis</a>: <a href="Analysis.scala.html#9453" title="sbt.inc.Analysis">Analysis</a>, <a title="sbt.CompileSetup" id="102695">setup</a>: <a href="CompileSetup.scala.html#9494" title="sbt.CompileSetup">CompileSetup</a><span class="delimiter">)</span>: <span title="Unit">Unit</span> = <a href="#102688" title="(x$1: Unit)Unit">synchronized</a> <span class="delimiter">{</span> <a href="#102686" title="sbt.inc.AnalysisStore">backing</a>.<a href="#102628" title="(analysis: sbt.inc.Analysis,setup: sbt.CompileSetup)Unit">set</a><span class="delimiter">(</span><a href="#102694" title="sbt.inc.Analysis">analysis</a>, <a href="#102695" title="sbt.CompileSetup">setup</a><span class="delimiter">)</span> <span class="delimiter">}</span>
+		<span class="keyword">def</span> <a title="()Option[(sbt.inc.Analysis, sbt.CompileSetup)]" id="102693">get</a><span class="delimiter">(</span><span class="delimiter">)</span>: <span title="Option[(sbt.inc.Analysis, sbt.CompileSetup)]">Option</span><span class="delimiter">[</span><span class="delimiter">(</span>Analysis, CompileSetup<span class="delimiter">)</span><span class="delimiter">]</span> = <a href="#102688" title="(x$1: Option[(sbt.inc.Analysis, sbt.CompileSetup)])Option[(sbt.inc.Analysis, sbt.CompileSetup)]">synchronized</a> <span class="delimiter">{</span> <a href="#102686" title="sbt.inc.AnalysisStore">backing</a>.<a href="#102629" title="()Option[(sbt.inc.Analysis, sbt.CompileSetup)]">get</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">}</span>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>

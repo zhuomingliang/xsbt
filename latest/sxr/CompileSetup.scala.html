@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>CompileSetup.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2010  Mark Harrah
+ */</span>
+<span class="keyword">package</span> sbt
+
+	<span class="keyword">import</span> java.io.File
+
+<span class="keyword">object</span> <a title="object sbt.CompileOrder" id="9491">CompileOrder</a> <span title="ScalaObject" class="keyword">extends</span> <span title="Enumeration">Enumeration</span>
+<span class="delimiter">{</span>
+	<span class="keyword">val</span> <a title="sbt.CompileOrder.Value" id="107502">Mixed</a>, <a title="sbt.CompileOrder.Value" id="107504">JavaThenScala</a>, <a title="sbt.CompileOrder.Value" id="107506">ScalaThenJava</a> = <span title="=&gt; sbt.CompileOrder.Value">Value</span>
+<span class="delimiter">}</span>
+
+<span class="comment">// this class exists because of Scala's restriction on implicit parameter search.</span>
+<span class="comment">//  We cannot require an implicit parameter Equiv[Seq[String]] to construct Equiv[CompileSetup]</span>
+<span class="comment">//    because complexity(Equiv[Seq[String]]) &gt; complexity(Equiv[CompileSetup])</span>
+<span class="comment">//     (6 &gt; 4)</span>
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class CompileOptions extends java.lang.Object with ScalaObject" id="9493">CompileOptions</a><span title="ScalaObject" class="delimiter">(</span><span class="keyword">val</span> <a title="Seq[String]" id="107534">options</a>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span>, <span class="keyword">val</span> <a title="Seq[String]" id="107535">javacOptions</a>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span><span class="delimiter">)</span>
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class CompileSetup extends java.lang.Object with ScalaObject" id="9494">CompileSetup</a><span title="ScalaObject" class="delimiter">(</span><span class="keyword">val</span> <a title="java.io.File" id="107542">outputDirectory</a>: <span title="java.io.File">File</span>, <span class="keyword">val</span> <a title="sbt.CompileOptions" id="107543">options</a>: <a href="#9493" title="sbt.CompileOptions">CompileOptions</a>, <span class="keyword">val</span> <a title="String" id="107544">compilerVersion</a>: <span title="String">String</span>, <span class="keyword">val</span> <a title="sbt.CompileOrder.Value" id="107545">order</a>: CompileOrder.<span title="sbt.CompileOrder.Value">Value</span><span class="delimiter">)</span>
+
+<span class="keyword">object</span> <a title="object sbt.CompileSetup" id="9495">CompileSetup</a>
+<span title="ScalaObject" class="delimiter">{</span>
+	<span class="comment">// Equiv[CompileOrder.Value] dominates Equiv[CompileSetup]</span>
+	<span class="keyword">implicit</span> <span class="keyword">def</span> <a title="implicit sbt.CompileSetup.equivCompileSetup : (implicit equivFile: Equiv[java.io.File],implicit equivOpts: Equiv[sbt.CompileOptions],implicit equivComp: Equiv[String])Equiv[sbt.CompileSetup]" id="107548">equivCompileSetup</a><span class="delimiter">(</span><span class="keyword">implicit</span> <a title="Equiv[java.io.File]" id="107559">equivFile</a>: <span title="Equiv[java.io.File]">Equiv</span><span class="delimiter">[</span>File<span class="delimiter">]</span>, <a title="Equiv[sbt.CompileOptions]" id="107560">equivOpts</a>: <span title="Equiv[sbt.CompileOptions]">Equiv</span><span class="delimiter">[</span>CompileOptions<span class="delimiter">]</span>, <a title="Equiv[String]" id="107561">equivComp</a>: <span title="Equiv[String]">Equiv</span><span class="delimiter">[</span>String<span class="delimiter">]</span><span class="comment">/*, equivOrder: Equiv[CompileOrder.Value]*/</span><span class="delimiter">)</span>: <span title="Equiv[sbt.CompileSetup]">Equiv</span><span class="delimiter">[</span>CompileSetup<span class="delimiter">]</span> = <a href="#107563" title="java.lang.Object with Equiv[sbt.CompileSetup]" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with Equiv[sbt.CompileSetup]" id="107563">Equiv</a><span class="delimiter">[</span>CompileSetup<span class="delimiter">]</span> <span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(a: sbt.CompileSetup,b: sbt.CompileSetup)Boolean" id="107567">equiv</a><span class="delimiter">(</span><a title="sbt.CompileSetup" id="107568">a</a>: <a href="#9494" title="sbt.CompileSetup">CompileSetup</a>, <a title="sbt.CompileSetup" id="107569">b</a>: <a href="#9494" title="sbt.CompileSetup">CompileSetup</a><span class="delimiter">)</span> =
+			<a href="#107559" title="Equiv[java.io.File]">equivFile</a>.<span title="(x: java.io.File,y: java.io.File)Boolean">equiv</span><span title="(x$1: Boolean)Boolean" class="delimiter">(</span><a href="#107568" title="sbt.CompileSetup">a</a>.<a href="#107542" title="=&gt; java.io.File">outputDirectory</a>, <a href="#107569" title="sbt.CompileSetup">b</a>.<a href="#107542" title="=&gt; java.io.File">outputDirectory</a><span class="delimiter">)</span> <span title="(x$1: Boolean)Boolean">&amp;&amp;</span>
+			<a href="#107560" title="Equiv[sbt.CompileOptions]">equivOpts</a>.<span title="(x: sbt.CompileOptions,y: sbt.CompileOptions)Boolean">equiv</span><span class="delimiter">(</span><a href="#107568" title="sbt.CompileSetup">a</a>.<a href="#107543" title="=&gt; sbt.CompileOptions">options</a>, <a href="#107569" title="sbt.CompileSetup">b</a>.<a href="#107543" title="=&gt; sbt.CompileOptions">options</a><span class="delimiter">)</span> <span title="(x$1: Boolean)Boolean">&amp;&amp;</span>
+			<a href="#107561" title="Equiv[String]">equivComp</a>.<span title="(x: String,y: String)Boolean">equiv</span><span class="delimiter">(</span><a href="#107568" title="sbt.CompileSetup">a</a>.<a href="#107544" title="=&gt; String">compilerVersion</a>, <a href="#107569" title="sbt.CompileSetup">b</a>.<a href="#107544" title="=&gt; String">compilerVersion</a><span class="delimiter">)</span> &amp;&amp;
+			<a href="#107568" title="sbt.CompileSetup">a</a>.<a href="#107545" title="(x$1: AnyRef)Boolean">order</a> == <a href="#107569" title="sbt.CompileSetup">b</a>.<a href="#107545" title="=&gt; sbt.CompileOrder.Value">order</a> <span class="comment">// equivOrder.equiv(a.order, b.order)</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">implicit</span> <span class="keyword">val</span> <a title="Equiv[java.io.File]" id="107549">equivOutputDirectory</a>: <span title="Equiv[java.io.File]">Equiv</span><span class="delimiter">[</span>File<span class="delimiter">]</span> = <a href="#107597" title="java.lang.Object with Equiv[java.io.File]" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with Equiv[java.io.File]" id="107597">Equiv</a><span class="delimiter">[</span>File<span class="delimiter">]</span> <span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(a: java.io.File,b: java.io.File)Boolean" id="107601">equiv</a><span class="delimiter">(</span><a title="java.io.File" id="107602">a</a>: <span title="java.io.File">File</span>, <a title="java.io.File" id="107603">b</a>: <span title="java.io.File">File</span><span class="delimiter">)</span> = <a href="#107602" title="java.io.File">a</a>.<span title="(x$1: AnyRef)Boolean">getAbsoluteFile</span> == <a href="#107603" title="java.io.File">b</a>.<span title="()java.io.File">getAbsoluteFile</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">implicit</span> <span class="keyword">val</span> <a title="Equiv[sbt.CompileOptions]" id="107551">equivOpts</a>: <span title="Equiv[sbt.CompileOptions]">Equiv</span><span class="delimiter">[</span>CompileOptions<span class="delimiter">]</span> = <a href="#107620" title="java.lang.Object with Equiv[sbt.CompileOptions]" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with Equiv[sbt.CompileOptions]" id="107620">Equiv</a><span class="delimiter">[</span>CompileOptions<span class="delimiter">]</span> <span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(a: sbt.CompileOptions,b: sbt.CompileOptions)Boolean" id="107624">equiv</a><span class="delimiter">(</span><a title="sbt.CompileOptions" id="107625">a</a>: <a href="#9493" title="sbt.CompileOptions">CompileOptions</a>, <a title="sbt.CompileOptions" id="107626">b</a>: <a href="#9493" title="sbt.CompileOptions">CompileOptions</a><span class="delimiter">)</span> =
+			<span title="(x$1: Boolean)Boolean" class="delimiter">(</span><a href="#107625" title="sbt.CompileOptions">a</a>.<a href="#107534" title="(that: Iterable[String])Boolean">options</a> sameElements <a href="#107626" title="sbt.CompileOptions">b</a>.<a href="#107534" title="=&gt; Seq[String]">options</a><span class="delimiter">)</span> &amp;&amp;
+			<span class="delimiter">(</span><a href="#107625" title="sbt.CompileOptions">a</a>.<a href="#107535" title="(that: Iterable[String])Boolean">javacOptions</a> sameElements <a href="#107626" title="sbt.CompileOptions">b</a>.<a href="#107535" title="=&gt; Seq[String]">javacOptions</a><span class="delimiter">)</span> 
+	<span class="delimiter">}</span>
+	<span class="keyword">implicit</span> <span class="keyword">val</span> <a title="Equiv[String]" id="107553">equivCompilerVersion</a>: <span title="Equiv[String]">Equiv</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#107652" title="java.lang.Object with Equiv[String]" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with Equiv[String]" id="107652">Equiv</a><span class="delimiter">[</span>String<span class="delimiter">]</span> <span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(a: String,b: String)Boolean" id="107656">equiv</a><span class="delimiter">(</span><a title="String" id="107657">a</a>: <span title="String">String</span>, <a title="String" id="107658">b</a>: <span title="String">String</span><span class="delimiter">)</span> = <a href="#107657" title="(x$1: AnyRef)Boolean">a</a> == <a href="#107658" title="String">b</a>
+	<span class="delimiter">}</span>
+	
+	<span class="keyword">implicit</span> <span class="keyword">val</span> <a title="Equiv[sbt.CompileOrder.Value]" id="107555">equivOrder</a>: <span title="Equiv[sbt.CompileOrder.Value]">Equiv</span><span class="delimiter">[</span>CompileOrder.Value<span class="delimiter">]</span> = <a href="#107672" title="java.lang.Object with Equiv[sbt.CompileOrder.Value]" class="keyword">new</a> <a title="anonymous class $anon extends java.lang.Object with Equiv[sbt.CompileOrder.Value]" id="107672">Equiv</a><span class="delimiter">[</span>CompileOrder.Value<span class="delimiter">]</span> <span class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(a: sbt.CompileOrder.Value,b: sbt.CompileOrder.Value)Boolean" id="107676">equiv</a><span class="delimiter">(</span><a title="sbt.CompileOrder.Value" id="107677">a</a>: CompileOrder.<span title="sbt.CompileOrder.Value">Value</span>, <a title="sbt.CompileOrder.Value" id="107678">b</a>: CompileOrder.<span title="sbt.CompileOrder.Value">Value</span><span class="delimiter">)</span> = <a href="#107677" title="(x$1: AnyRef)Boolean">a</a> == <a href="#107678" title="sbt.CompileOrder.Value">b</a>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+        </pre>
+    </body>
+</html>
