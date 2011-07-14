@@ -32,6 +32,8 @@
       </h4>
       <div class="fullcomment" id="comment"><div class="comment cmt"><p>Provides a <code>java.io.Writer</code> interface to a <code>Logger</code>.  Content is line-buffered and logged at <code>level</code>.
 A line is delimited by <code>nl</code>, which is by default the platform line separator.</p></div><div class="block">
+            go to: <a href="LoggerWriter$.html">companion</a>
+          </div><div class="block">
             linear super types: <span class="extype" name="java.io.Writer">Writer</span>, <span class="extype" name="java.io.Flushable">Flushable</span>, <span class="extype" name="java.io.Closeable">Closeable</span>, <span class="extype" name="java.lang.Appendable">Appendable</span>, AnyRef, <span class="extype" name="scala.Any">Any</span>
           </div>
             
@@ -71,6 +73,18 @@ A line is delimited by <code>nl</code>, which is by default the platform line se
       <span class="symbol">
         <span class="name">LoggerWriter</span>
         
+        <span class="params">(<span name="delegate">delegate: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
+        
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.LoggerWriter#this">
+      <a id="this:LoggerWriter"></a>
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">LoggerWriter</span>
+        
         <span class="params">(<span name="delegate">delegate: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>, <span name="level">level: <span class="extype" name="scala.Enumeration.Value">Value</span></span>)</span>
         
       </span>
@@ -83,7 +97,7 @@ A line is delimited by <code>nl</code>, which is by default the platform line se
       <span class="symbol">
         <span class="name">LoggerWriter</span>
         
-        <span class="params">(<span name="delegate">delegate: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>, <span name="level">level: <span class="extype" name="scala.Enumeration.Value">Value</span></span>, <span name="nl">nl: String</span>)</span>
+        <span class="params">(<span name="delegate">delegate: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>, <span name="unbufferedLevel">unbufferedLevel: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Enumeration.Value">Value</span>]</span>, <span name="nl">nl: String =<span class="symbol"></span></span>)</span>
         
       </span>
       </h4>
@@ -471,6 +485,18 @@ there are no more references to the object.</p><p>The details of when and if the
           definition classes: <a href="" class="extype" name="sbt.LoggerWriter">LoggerWriter</a> → Writer → Flushable
         </div></div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.LoggerWriter#flushLines">
+      <a id="flushLines(Value):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">flushLines</span>
+        
+        <span class="params">(<span name="level">level: <span class="extype" name="scala.Enumeration.Value">Value</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#getClass">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">

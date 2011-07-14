@@ -245,6 +245,23 @@
           attributes: final 
         </div></div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#GlobalBaseProperty">
+      <a id="GlobalBaseProperty:java.lang.String(&quot;sbt.global.base&quot;)"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">GlobalBaseProperty</span>
+        
+        
+        <span class="result">: java.lang.String(&quot;sbt.global.base&quot;)</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#PluginsDirectoryName">
       <a id="PluginsDirectoryName:java.lang.String(&quot;plugins&quot;)"></a>
       <h4 class="signature">
@@ -347,26 +364,50 @@ part of compilation it is not possible to check whether the contents of the list
       </span>
       </h4>
       
-    </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#defaultGlobalPlugins">
-      <a id="defaultGlobalPlugins:File"></a>
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#defaultGlobalBase">
+      <a id="defaultGlobalBase:File"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
-        <span class="name">defaultGlobalPlugins</span>
+        <span class="name">defaultGlobalBase</span>
         
         
         <span class="result">: <span class="extype" name="java.io.File">File</span></span>
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#defaultGlobalPlugins">
+      <a id="defaultGlobalPlugins(File):File"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">defaultGlobalPlugins</span>
+        
+        <span class="params">(<span name="globalBase">globalBase: <span class="extype" name="java.io.File">File</span></span>)</span>
+        <span class="result">: <span class="extype" name="java.io.File">File</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#defaultGlobalSettings">
+      <a id="defaultGlobalSettings(File):Seq[File]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">defaultGlobalSettings</span>
+        
+        <span class="params">(<span name="globalBase">globalBase: <span class="extype" name="java.io.File">File</span></span>)</span>
+        <span class="result">: Seq[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#defaultStaging">
-      <a id="defaultStaging:File"></a>
+      <a id="defaultStaging(File):File"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">defaultStaging</span>
         
-        
+        <span class="params">(<span name="globalBase">globalBase: <span class="extype" name="java.io.File">File</span></span>)</span>
         <span class="result">: <span class="extype" name="java.io.File">File</span></span>
       </span>
       </h4>
@@ -513,6 +554,18 @@ there are no more references to the object.</p><p>The details of when and if the
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#getGlobalBase">
+      <a id="getGlobalBase(State):File"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getGlobalBase</span>
+        
+        <span class="params">(<span name="state">state: <a href="State.html" class="extype" name="sbt.State">State</a></span>)</span>
+        <span class="result">: <span class="extype" name="java.io.File">File</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#hashCode">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
@@ -714,6 +767,18 @@ possible to check whether the contents of the list are of the requested typed.
           definition classes: AnyRef
         </div></div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildPaths#systemGlobalBase">
+      <a id="systemGlobalBase:Option[File]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">systemGlobalBase</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.File">File</span>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#toString">
       <a id="toString():String"></a>
       <h4 class="signature">

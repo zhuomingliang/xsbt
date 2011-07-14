@@ -224,14 +224,14 @@
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.EvaluateConfigurations#apply">
-      <a id="apply(Eval,Seq[File],Seq[String]):Seq[sbt.Project.Setting[_]]"></a>
+      <a id="apply(Eval,Seq[File],Seq[String]):(ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">apply</span>
         
         <span class="params">(<span name="eval">eval: <a href="compiler/Eval.html" class="extype" name="sbt.compiler.Eval">Eval</a></span>, <span name="srcs">srcs: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="imports">imports: Seq[String]</span>)</span>
-        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -354,38 +354,38 @@ scala.Int
           </div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.EvaluateConfigurations#evaluateConfiguration">
-      <a id="evaluateConfiguration(Eval,String,Seq[String],Seq[String],Int):Seq[sbt.Project.Setting[_]]"></a>
+      <a id="evaluateConfiguration(Eval,String,Seq[String],Seq[String],Int):(ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">evaluateConfiguration</span>
         
         <span class="params">(<span name="eval">eval: <a href="compiler/Eval.html" class="extype" name="sbt.compiler.Eval">Eval</a></span>, <span name="name">name: String</span>, <span name="lines">lines: Seq[String]</span>, <span name="imports">imports: Seq[String]</span>, <span name="offset">offset: <span class="extype" name="scala.Int">Int</span></span>)</span>
-        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.EvaluateConfigurations#evaluateConfiguration">
-      <a id="evaluateConfiguration(Eval,File,Seq[String]):Seq[sbt.Project.Setting[_]]"></a>
+      <a id="evaluateConfiguration(Eval,File,Seq[String]):(ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">evaluateConfiguration</span>
         
         <span class="params">(<span name="eval">eval: <a href="compiler/Eval.html" class="extype" name="sbt.compiler.Eval">Eval</a></span>, <span name="src">src: <span class="extype" name="java.io.File">File</span></span>, <span name="imports">imports: Seq[String]</span>)</span>
-        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.EvaluateConfigurations#evaluateSetting">
-      <a id="evaluateSetting(Eval,String,Seq[(String, Int)],String,Int):Seq[sbt.Project.Setting[_]]"></a>
+      <a id="evaluateSetting(Eval,String,Seq[(String, Int)],String,Int):(ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">evaluateSetting</span>
         
         <span class="params">(<span name="eval">eval: <a href="compiler/Eval.html" class="extype" name="sbt.compiler.Eval">Eval</a></span>, <span name="name">name: String</span>, <span name="imports">imports: Seq[(String, <span class="extype" name="scala.Int">Int</span>)]</span>, <span name="expression">expression: String</span>, <span name="line">line: <span class="extype" name="scala.Int">Int</span></span>)</span>
-        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -414,6 +414,18 @@ there are no more references to the object.</p><p>The details of when and if the
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.EvaluateConfigurations#flatten">
+      <a id="flatten(Seq[(ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]]):(ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">flatten</span>
+        
+        <span class="params">(<span name="mksettings">mksettings: Seq[(<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ Seq[sbt.Project.Setting[_]]]</span>)</span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ Seq[sbt.Project.Setting[_]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#getClass">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">

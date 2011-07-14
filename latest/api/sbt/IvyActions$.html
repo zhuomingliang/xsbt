@@ -211,6 +211,18 @@
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#addExcluded">
+      <a id="addExcluded(UpdateReport,Seq[String],Map[ModuleID, Set[String]]):UpdateReport"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addExcluded</span>
+        
+        <span class="params">(<span name="report">report: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>, <span name="classifiers">classifiers: Seq[String]</span>, <span name="exclude">exclude: Map[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>, Set[String]]</span>)</span>
+        <span class="result">: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="scala.Any#asInstanceOf">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -236,6 +248,30 @@ part of compilation it is not possible to check whether the contents of the list
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#classifiedArtifacts">
+      <a id="classifiedArtifacts(String,Seq[String]):Seq[Artifact]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">classifiedArtifacts</span>
+        
+        <span class="params">(<span name="name">name: String</span>, <span name="classifiers">classifiers: Seq[String]</span>)</span>
+        <span class="result">: Seq[<a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#classifiedArtifacts">
+      <a id="classifiedArtifacts(Seq[String],Map[ModuleID, Set[String]])(ModuleID):Option[ModuleID]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">classifiedArtifacts</span>
+        
+        <span class="params">(<span name="classifiers">classifiers: Seq[String]</span>, <span name="exclude">exclude: Map[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>, Set[String]]</span>)</span><span class="params">(<span name="m">m: <a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#cleanCache">
       <a id="cleanCache(IvySbt,Logger):Unit"></a>
       <h4 class="signature">
@@ -372,6 +408,18 @@ scala.Int
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#extractExcludes">
+      <a id="extractExcludes(UpdateReport):Map[ModuleID, Set[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">extractExcludes</span>
+        
+        <span class="params">(<span name="report">report: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>)</span>
+        <span class="result">: Map[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>, Set[String]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#finalize">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -421,6 +469,30 @@ there are no more references to the object.</p><p>The details of when and if the
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#grouped">
+      <a id="grouped[T]((ModuleID) ⇒ T)(Seq[ModuleID]):Map[T, Set[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">grouped</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="grouping">grouping: (<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>) ⇒ T</span>)</span><span class="params">(<span name="mods">mods: Seq[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>)</span>
+        <span class="result">: Map[T, Set[String]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#groupedConflicts">
+      <a id="groupedConflicts[T](ModuleFilter,(ModuleID) ⇒ T)(UpdateReport):Map[T, Set[String]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">groupedConflicts</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="moduleFilter">moduleFilter: <a href="ModuleFilter.html" class="extype" name="sbt.ModuleFilter">ModuleFilter</a></span>, <span name="grouping">grouping: (<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>) ⇒ T</span>)</span><span class="params">(<span name="report">report: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>)</span>
+        <span class="result">: Map[T, Set[String]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#hashCode">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
@@ -670,26 +742,14 @@ possible to check whether the contents of the list are of the requested typed.
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#transitive">
-      <a id="transitive(IvySbt,ModuleID,UpdateReport,Seq[String],UpdateConfiguration,Option[IvyScala],Logger):UpdateReport"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol">
-        <span class="name">transitive</span>
-        
-        <span class="params">(<span name="ivySbt">ivySbt: <a href="IvySbt.html" class="extype" name="sbt.IvySbt">IvySbt</a></span>, <span name="module">module: <a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a></span>, <span name="report">report: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>, <span name="classifiers">classifiers: Seq[String]</span>, <span name="c">c: <a href="UpdateConfiguration.html" class="extype" name="sbt.UpdateConfiguration">UpdateConfiguration</a></span>, <span name="ivyScala">ivyScala: <span class="extype" name="scala.Option">Option</span>[<a href="IvyScala.html" class="extype" name="sbt.IvyScala">IvyScala</a>]</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
-        <span class="result">: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#transitiveScratch">
-      <a id="transitiveScratch(IvySbt,ModuleID,String,Seq[ModuleID],Seq[String],UpdateConfiguration,Option[IvyScala],Logger):UpdateReport"></a>
+      <a id="transitiveScratch(IvySbt,String,GetClassifiersConfiguration,Logger):UpdateReport"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">transitiveScratch</span>
         
-        <span class="params">(<span name="ivySbt">ivySbt: <a href="IvySbt.html" class="extype" name="sbt.IvySbt">IvySbt</a></span>, <span name="id">id: <a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a></span>, <span name="label">label: String</span>, <span name="deps">deps: Seq[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>, <span name="classifiers">classifiers: Seq[String]</span>, <span name="c">c: <a href="UpdateConfiguration.html" class="extype" name="sbt.UpdateConfiguration">UpdateConfiguration</a></span>, <span name="ivyScala">ivyScala: <span class="extype" name="scala.Option">Option</span>[<a href="IvyScala.html" class="extype" name="sbt.IvyScala">IvyScala</a>]</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
+        <span class="params">(<span name="ivySbt">ivySbt: <a href="IvySbt.html" class="extype" name="sbt.IvySbt">IvySbt</a></span>, <span name="label">label: String</span>, <span name="config">config: <a href="GetClassifiersConfiguration.html" class="extype" name="sbt.GetClassifiersConfiguration">GetClassifiersConfiguration</a></span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
         <span class="result">: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>
       </span>
       </h4>
@@ -715,13 +775,13 @@ possible to check whether the contents of the list are of the requested typed.
           </div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.IvyActions#updateClassifiers">
-      <a id="updateClassifiers(IvySbt,ModuleID,Seq[ModuleID],Seq[String],UpdateConfiguration,Option[IvyScala],Logger):UpdateReport"></a>
+      <a id="updateClassifiers(IvySbt,GetClassifiersConfiguration,Logger):UpdateReport"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">updateClassifiers</span>
         
-        <span class="params">(<span name="ivySbt">ivySbt: <a href="IvySbt.html" class="extype" name="sbt.IvySbt">IvySbt</a></span>, <span name="id">id: <a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a></span>, <span name="modules">modules: Seq[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>, <span name="classifiers">classifiers: Seq[String]</span>, <span name="configuration">configuration: <a href="UpdateConfiguration.html" class="extype" name="sbt.UpdateConfiguration">UpdateConfiguration</a></span>, <span name="ivyScala">ivyScala: <span class="extype" name="scala.Option">Option</span>[<a href="IvyScala.html" class="extype" name="sbt.IvyScala">IvyScala</a>]</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
+        <span class="params">(<span name="ivySbt">ivySbt: <a href="IvySbt.html" class="extype" name="sbt.IvySbt">IvySbt</a></span>, <span name="config">config: <a href="GetClassifiersConfiguration.html" class="extype" name="sbt.GetClassifiersConfiguration">GetClassifiersConfiguration</a></span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
         <span class="result">: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>
       </span>
       </h4>

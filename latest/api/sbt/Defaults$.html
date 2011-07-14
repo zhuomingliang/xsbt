@@ -277,40 +277,18 @@
       </span>
       </h4>
       
-    </li><li visbl="pub" data-isabs="false" name="sbt.Defaults#DocClassifier">
-      <a id="DocClassifier:java.lang.String(&quot;javadoc&quot;)"></a>
+    </li><li visbl="pub" data-isabs="false" name="sbt.Defaults#TaskGlobal">
+      <a id="TaskGlobal:Scope"></a>
       <h4 class="signature">
-      <span class="kind">val</span>
+      <span class="kind">lazy val</span>
       <span class="symbol">
-        <span class="name">DocClassifier</span>
+        <span class="name">TaskGlobal</span>
         
         
-        <span class="result">: java.lang.String(&quot;javadoc&quot;)</span>
+        <span class="result">: <a href="Scope.html" class="extype" name="sbt.Scope">Scope</a></span>
       </span>
       </h4>
       
-            
-            <div class="fullcomment"><div class="block">
-          attributes: final 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="false" name="sbt.Defaults#SourceClassifier">
-      <a id="SourceClassifier:java.lang.String(&quot;sources&quot;)"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol">
-        <span class="name">SourceClassifier</span>
-        
-        
-        <span class="result">: java.lang.String(&quot;sources&quot;)</span>
-      </span>
-      </h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: final 
-        </div></div>
-          
     </li><li visbl="pub" data-isabs="false" name="sbt.Defaults#addBaseSources">
       <a id="addBaseSources:Seq[Setting[Task[Seq[File]]]]"></a>
       <h4 class="signature">
@@ -380,7 +358,7 @@ part of compilation it is not possible to check whether the contents of the list
         <span class="name">baseClasspaths</span>
         
         
-        <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Project.Setting[_]]</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -468,6 +446,18 @@ part of compilation it is not possible to check whether the contents of the list
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.Defaults#compileIncSetupTask">
+      <a id="compileIncSetupTask:Initialize[Task[IncSetup]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">compileIncSetupTask</span>
+        
+        
+        <span class="result">: <a href="Init$Initialize.html" class="extype" name="sbt.Init.Initialize">Initialize</a>[<a href="Task.html" class="extype" name="sbt.Task">Task</a>[<a href="Compiler$$IncSetup.html" class="extype" name="sbt.Compiler.IncSetup">IncSetup</a>]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Defaults#compileInputsTask">
       <a id="compileInputsTask:Initialize[Task[Inputs]]"></a>
       <h4 class="signature">
@@ -488,7 +478,7 @@ part of compilation it is not possible to check whether the contents of the list
         <span class="name">compileSettings</span>
         
         
-        <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Project.Setting[_]]</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -548,7 +538,7 @@ part of compilation it is not possible to check whether the contents of the list
         <span class="name">configSettings</span>
         
         
-        <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Project.Setting[_]]</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -565,14 +555,14 @@ part of compilation it is not possible to check whether the contents of the list
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.Defaults#configTasks">
-      <a id="configTasks:Seq[sbt.Project.Setting[_ &gt;: sbt.Task[Seq[(java.io.File, java.io.File)]] with sbt.Task[java.io.File] with sbt.Task[Seq[java.lang.String]] with sbt.InputTask[Unit] with sbt.Task[Option[java.lang.String]] with _$32 with sbt.Task[scala.collection.immutable.Set[java.lang.String]] with sbt.Task[Unit] with sbt.Task[sbt.Compiler.Inputs] with sbt.Task[sbt.inc.Analysis] with java.lang.String]] forSome { type _$32 }"></a>
+      <a id="configTasks:Seq[sbt.Project.Setting[_ &gt;: sbt.Task[Seq[(java.io.File, java.io.File)]] with sbt.Task[java.io.File] with sbt.Task[Seq[java.lang.String]] with sbt.InputTask[Unit] with sbt.Task[Option[java.lang.String]] with _$35 with sbt.Task[scala.collection.immutable.Set[java.lang.String]] with sbt.Task[Unit] with sbt.Task[sbt.Compiler.IncSetup] with sbt.Task[sbt.Compiler.Inputs] with sbt.Task[sbt.inc.Analysis] with java.lang.String]] forSome { type _$35 }"></a>
       <h4 class="signature">
       <span class="kind">lazy val</span>
       <span class="symbol">
         <span class="name">configTasks</span>
         
         
-        <span class="result">: Seq[sbt.Project.Setting[_ &gt;: sbt.Task[Seq[(java.io.File, java.io.File)]] with sbt.Task[java.io.File] with sbt.Task[Seq[java.lang.String]] with sbt.InputTask[Unit] with sbt.Task[Option[java.lang.String]] with _$32 with sbt.Task[scala.collection.immutable.Set[java.lang.String]] with sbt.Task[Unit] with sbt.Task[sbt.Compiler.Inputs] with sbt.Task[sbt.inc.Analysis] with java.lang.String]] forSome { type _$32 }</span>
+        <span class="result">: Seq[sbt.Project.Setting[_ &gt;: sbt.Task[Seq[(java.io.File, java.io.File)]] with sbt.Task[java.io.File] with sbt.Task[Seq[java.lang.String]] with sbt.InputTask[Unit] with sbt.Task[Option[java.lang.String]] with _$35 with sbt.Task[scala.collection.immutable.Set[java.lang.String]] with sbt.Task[Unit] with sbt.Task[sbt.Compiler.IncSetup] with sbt.Task[sbt.Compiler.Inputs] with sbt.Task[sbt.inc.Analysis] with java.lang.String]] forSome { type _$35 }</span>
       </span>
       </h4>
       
@@ -644,7 +634,7 @@ part of compilation it is not possible to check whether the contents of the list
         <span class="name">defaultConfigs</span>
         
         
-        <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Project.Setting[_]]</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -1212,15 +1202,32 @@ possible to check whether the contents of the list are of the requested typed.
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildCommon#overrideConfigs">
+      <a id="overrideConfigs(Configuration*)(Seq[Configuration]):Seq[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">overrideConfigs</span>
+        
+        <span class="params">(<span name="cs">cs: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>*</span>)</span><span class="params">(<span name="configurations">configurations: Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>)</span>
+        <span class="result">: Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="BuildCommon.html" class="extype" name="sbt.BuildCommon">BuildCommon</a>
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="false" name="sbt.Defaults#packageBase">
-      <a id="packageBase:Seq[sbt.Project.Setting[_ &gt;: (java.lang.String, sbt.ModuleID, sbt.Artifact) =&gt; java.lang.String with sbt.Task[Seq[sbt.PackageOption]] with sbt.Artifact &lt;: ScalaObject]]"></a>
+      <a id="packageBase:Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
       <span class="kind">lazy val</span>
       <span class="symbol">
         <span class="name">packageBase</span>
         
         
-        <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Project.Setting[_ &gt;: (java.lang.String, sbt.ModuleID, sbt.Artifact) =&gt; java.lang.String with sbt.Task[Seq[sbt.PackageOption]] with sbt.Artifact &lt;: ScalaObject]]</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -1244,7 +1251,7 @@ possible to check whether the contents of the list are of the requested typed.
         <span class="name">packageConfig</span>
         
         
-        <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Project.Setting[_]]</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -1680,7 +1687,7 @@ possible to check whether the contents of the list are of the requested typed.
         <span class="name">testSettings</span>
         
         
-        <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Project.Setting[_]]</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -1704,7 +1711,7 @@ possible to check whether the contents of the list are of the requested typed.
         <span class="name">testTasks</span>
         
         
-        <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[sbt.Project.Setting[_]]</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       

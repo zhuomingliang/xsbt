@@ -571,13 +571,13 @@
         </div></div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.Project#apply">
-      <a id="apply(String,File,⇒ Seq[ProjectReference],⇒ Seq[ClasspathDep[ProjectReference]],⇒ Seq[ProjectReference],Seq[sbt.Project.Setting[_]],Seq[Configuration]):Project"></a>
+      <a id="apply(String,File,⇒ Seq[ProjectReference],⇒ Seq[ClasspathDep[ProjectReference]],⇒ Seq[ProjectReference],⇒ Seq[sbt.Project.Setting[_]],Seq[Configuration]):Project"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">apply</span>
         
-        <span class="params">(<span name="id">id: String</span>, <span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="aggregate">aggregate: ⇒ Seq[<a href="ProjectReference.html" class="extype" name="sbt.ProjectReference">ProjectReference</a>] =<span class="symbol">Nil</span></span>, <span name="dependencies">dependencies: ⇒ Seq[<a href="ClasspathDep.html" class="extype" name="sbt.ClasspathDep">ClasspathDep</a>[<a href="ProjectReference.html" class="extype" name="sbt.ProjectReference">ProjectReference</a>]] =<span class="symbol">Nil</span></span>, <span name="delegates">delegates: ⇒ Seq[<a href="ProjectReference.html" class="extype" name="sbt.ProjectReference">ProjectReference</a>] =<span class="symbol">Nil</span></span>, <span name="settings">settings: Seq[sbt.Project.Setting[_]] =<span class="defval" name='<span class="name"><a href="#defaultSettings:Seq[sbt.Project.Setting[_]]">defaultSettings</a></span>'> ...</span></span>, <span name="configurations">configurations: Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>] =<span class="defval" name='<span class="name"><a href="Configurations$.html">Configurations</a></span>.<span class="name"><a href="Configurations$.html#default:Seq[Configuration]">default</a></span>'> ...</span></span>)</span>
+        <span class="params">(<span name="id">id: String</span>, <span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="aggregate">aggregate: ⇒ Seq[<a href="ProjectReference.html" class="extype" name="sbt.ProjectReference">ProjectReference</a>] =<span class="symbol">Nil</span></span>, <span name="dependencies">dependencies: ⇒ Seq[<a href="ClasspathDep.html" class="extype" name="sbt.ClasspathDep">ClasspathDep</a>[<a href="ProjectReference.html" class="extype" name="sbt.ProjectReference">ProjectReference</a>]] =<span class="symbol">Nil</span></span>, <span name="delegates">delegates: ⇒ Seq[<a href="ProjectReference.html" class="extype" name="sbt.ProjectReference">ProjectReference</a>] =<span class="symbol">Nil</span></span>, <span name="settings">settings: ⇒ Seq[sbt.Project.Setting[_]] =<span class="defval" name='<span class="name"><a href="#defaultSettings:Seq[sbt.Project.Setting[_]]">defaultSettings</a></span>'> ...</span></span>, <span name="configurations">configurations: Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>] =<span class="defval" name='<span class="name"><a href="Configurations$.html">Configurations</a></span>.<span class="name"><a href="Configurations$.html#default:Seq[Configuration]">default</a></span>'> ...</span></span>)</span>
         <span class="result">: <a href="Project.html" class="extype" name="sbt.Project">Project</a></span>
       </span>
       </h4>
@@ -1116,13 +1116,13 @@ there are no more references to the object.</p><p>The details of when and if the
         </div></div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.Project#globalLoggerKey">
-      <a id="globalLoggerKey:sbt.Project.ScopedKey[_]"></a>
+      <a id="globalLoggerKey(ScopeAxis[ResolvedReference]):sbt.Project.ScopedKey[_]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">globalLoggerKey</span>
         
-        
+        <span class="params">(<span name="ref">ref: <a href="ScopeAxis.html" class="extype" name="sbt.ScopeAxis">ScopeAxis</a>[<a href="ResolvedReference.html" class="extype" name="sbt.ResolvedReference">ResolvedReference</a>]</span>)</span>
         <span class="result">: sbt.Project.ScopedKey[_]</span>
       </span>
       </h4>
@@ -1246,13 +1246,13 @@ to verify that the behavior is consistent with the <code>equals</code> method.
         </div></div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.Project#installGlobalLogger">
-      <a id="installGlobalLogger(State,BuildStructure):State"></a>
+      <a id="installGlobalLogger(State,BuildStructure,ProjectRef):State"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">installGlobalLogger</span>
         
-        <span class="params">(<span name="s">s: <a href="State.html" class="extype" name="sbt.State">State</a></span>, <span name="structure">structure: <a href="Load$$BuildStructure.html" class="extype" name="sbt.Load.BuildStructure">BuildStructure</a></span>)</span>
+        <span class="params">(<span name="s">s: <a href="State.html" class="extype" name="sbt.State">State</a></span>, <span name="structure">structure: <a href="Load$$BuildStructure.html" class="extype" name="sbt.Load.BuildStructure">BuildStructure</a></span>, <span name="ref">ref: <a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a></span>)</span>
         <span class="result">: <a href="State.html" class="extype" name="sbt.State">State</a></span>
       </span>
       </h4>

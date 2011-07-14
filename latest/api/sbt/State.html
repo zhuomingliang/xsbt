@@ -26,7 +26,7 @@
       <span class="symbol">
         <span class="name">State</span>
         
-        <span class="params">(<span name="configuration">configuration: <a href="../xsbti/AppConfiguration.html" class="extype" name="xsbti.AppConfiguration">AppConfiguration</a></span>, <span name="definedCommands">definedCommands: Seq[<a href="Command.html" class="extype" name="sbt.Command">Command</a>]</span>, <span name="exitHooks">exitHooks: Set[<a href="ExitHook.html" class="extype" name="sbt.ExitHook">ExitHook</a>]</span>, <span name="onFailure">onFailure: <span class="extype" name="scala.Option">Option</span>[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: <a href="AttributeMap.html" class="extype" name="sbt.AttributeMap">AttributeMap</a></span>, <span name="next">next: <span class="extype" name="scala.Enumeration.Value">Value</span></span>)</span>
+        <span class="params">(<span name="configuration">configuration: <a href="../xsbti/AppConfiguration.html" class="extype" name="xsbti.AppConfiguration">AppConfiguration</a></span>, <span name="definedCommands">definedCommands: Seq[<a href="Command.html" class="extype" name="sbt.Command">Command</a>]</span>, <span name="exitHooks">exitHooks: Set[<a href="ExitHook.html" class="extype" name="sbt.ExitHook">ExitHook</a>]</span>, <span name="onFailure">onFailure: <span class="extype" name="scala.Option">Option</span>[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: <a href="AttributeMap.html" class="extype" name="sbt.AttributeMap">AttributeMap</a></span>, <span name="result">result: <span class="extype" name="scala.Option">Option</span>[<a href="../xsbti/MainResult.html" class="extype" name="xsbti.MainResult">MainResult</a>]</span>)</span>
         <span class="result"> extends <a href="Identity.html" class="extype" name="sbt.Identity">Identity</a> with <span class="extype" name="scala.Product">Product</span></span>
       </span>
       </h4>
@@ -70,7 +70,7 @@
       <span class="symbol">
         <span class="name">State</span>
         
-        <span class="params">(<span name="configuration">configuration: <a href="../xsbti/AppConfiguration.html" class="extype" name="xsbti.AppConfiguration">AppConfiguration</a></span>, <span name="definedCommands">definedCommands: Seq[<a href="Command.html" class="extype" name="sbt.Command">Command</a>]</span>, <span name="exitHooks">exitHooks: Set[<a href="ExitHook.html" class="extype" name="sbt.ExitHook">ExitHook</a>]</span>, <span name="onFailure">onFailure: <span class="extype" name="scala.Option">Option</span>[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: <a href="AttributeMap.html" class="extype" name="sbt.AttributeMap">AttributeMap</a></span>, <span name="next">next: <span class="extype" name="scala.Enumeration.Value">Value</span></span>)</span>
+        <span class="params">(<span name="configuration">configuration: <a href="../xsbti/AppConfiguration.html" class="extype" name="xsbti.AppConfiguration">AppConfiguration</a></span>, <span name="definedCommands">definedCommands: Seq[<a href="Command.html" class="extype" name="sbt.Command">Command</a>]</span>, <span name="exitHooks">exitHooks: Set[<a href="ExitHook.html" class="extype" name="sbt.ExitHook">ExitHook</a>]</span>, <span name="onFailure">onFailure: <span class="extype" name="scala.Option">Option</span>[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: <a href="AttributeMap.html" class="extype" name="sbt.AttributeMap">AttributeMap</a></span>, <span name="result">result: <span class="extype" name="scala.Option">Option</span>[<a href="../xsbti/MainResult.html" class="extype" name="xsbti.MainResult">MainResult</a>]</span>)</span>
         
       </span>
       </h4>
@@ -554,18 +554,6 @@ possible to check whether the contents of the list are of the requested typed.
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="sbt.State#next">
-      <a id="next:Value"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol">
-        <span class="name">next</span>
-        
-        
-        <span class="result">: <span class="extype" name="scala.Enumeration.Value">Value</span></span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notify">
       <a id="notify():Unit"></a>
       <h4 class="signature">
@@ -720,6 +708,18 @@ possible to check whether the contents of the list are of the requested typed.
         
         
         <span class="result">: Seq[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.State#result">
+      <a id="result:Option[MainResult]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">result</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="../xsbti/MainResult.html" class="extype" name="xsbti.MainResult">MainResult</a>]</span>
       </span>
       </h4>
       

@@ -272,6 +272,18 @@ part of compilation it is not possible to check whether the contents of the list
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#autoLibraryDependency">
+      <a id="autoLibraryDependency(Boolean,Boolean,String):Seq[ModuleID]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">autoLibraryDependency</span>
+        
+        <span class="params">(<span name="auto">auto: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="plugin">plugin: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="version">version: String</span>)</span>
+        <span class="result">: Seq[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#autoPlugins">
       <a id="autoPlugins(UpdateReport):Seq[String]"></a>
       <h4 class="signature">
@@ -309,13 +321,13 @@ part of compilation it is not possible to check whether the contents of the list
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#cachedUpdate">
-      <a id="cachedUpdate(File,Module,UpdateConfiguration,Option[ScalaInstance],Logger):UpdateReport"></a>
+      <a id="cachedUpdate(File,String,Module,UpdateConfiguration,Option[ScalaInstance],Logger):UpdateReport"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">cachedUpdate</span>
         
-        <span class="params">(<span name="cacheFile">cacheFile: <span class="extype" name="java.io.File">File</span></span>, <span name="module">module: <a href="IvySbt$Module.html" class="extype" name="sbt.IvySbt.Module">Module</a></span>, <span name="config">config: <a href="UpdateConfiguration.html" class="extype" name="sbt.UpdateConfiguration">UpdateConfiguration</a></span>, <span name="scalaInstance">scalaInstance: <span class="extype" name="scala.Option">Option</span>[<a href="ScalaInstance.html" class="extype" name="sbt.ScalaInstance">ScalaInstance</a>]</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
+        <span class="params">(<span name="cacheFile">cacheFile: <span class="extype" name="java.io.File">File</span></span>, <span name="label">label: String</span>, <span name="module">module: <a href="IvySbt$Module.html" class="extype" name="sbt.IvySbt.Module">Module</a></span>, <span name="config">config: <a href="UpdateConfiguration.html" class="extype" name="sbt.UpdateConfiguration">UpdateConfiguration</a></span>, <span name="scalaInstance">scalaInstance: <span class="extype" name="scala.Option">Option</span>[<a href="ScalaInstance.html" class="extype" name="sbt.ScalaInstance">ScalaInstance</a>]</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
         <span class="result">: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>
       </span>
       </h4>
@@ -368,6 +380,18 @@ part of compilation it is not possible to check whether the contents of the list
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#concatDistinct">
+      <a id="concatDistinct[T](ScopedTaskable[Seq[T]],ScopedTaskable[Seq[T]]):Initialize[Task[Seq[T]]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">concatDistinct</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="a">a: <a href="ScopedTaskable.html" class="extype" name="sbt.ScopedTaskable">ScopedTaskable</a>[Seq[T]]</span>, <span name="b">b: <a href="ScopedTaskable.html" class="extype" name="sbt.ScopedTaskable">ScopedTaskable</a>[Seq[T]]</span>)</span>
+        <span class="result">: <a href="Init$Initialize.html" class="extype" name="sbt.Init.Initialize">Initialize</a>[<a href="Task.html" class="extype" name="sbt.Task">Task</a>[Seq[T]]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#concatSettings">
       <a id="concatSettings[T](ScopedSetting[Seq[T]],ScopedSetting[Seq[T]]):Initialize[Seq[T]]"></a>
       <h4 class="signature">
@@ -380,6 +404,18 @@ part of compilation it is not possible to check whether the contents of the list
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#confOpt">
+      <a id="confOpt(Seq[Configuration],String):Option[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">confOpt</span>
+        
+        <span class="params">(<span name="configurations">configurations: Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>, <span name="conf">conf: String</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#configSettings">
       <a id="configSettings:Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
@@ -389,18 +425,6 @@ part of compilation it is not possible to check whether the contents of the list
         
         
         <span class="result">: Seq[sbt.Project.Setting[_]]</span>
-      </span>
-      </h4>
-      
-    </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#configurationNames">
-      <a id="configurationNames(ResolvedProject):Seq[String]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol">
-        <span class="name">configurationNames</span>
-        
-        <span class="params">(<span name="p">p: <a href="ResolvedProject.html" class="extype" name="sbt.ResolvedProject">ResolvedProject</a></span>)</span>
-        <span class="result">: Seq[String]</span>
       </span>
       </h4>
       
@@ -702,15 +726,15 @@ there are no more references to the object.</p><p>The details of when and if the
       </span>
       </h4>
       
-    </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#getConfiguration">
-      <a id="getConfiguration(ProjectRef,ResolvedProject,String):Configuration"></a>
+    </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#getConfigurations">
+      <a id="getConfigurations(ResolvedReference,Settings[Scope]):Seq[Configuration]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
-        <span class="name">getConfiguration</span>
+        <span class="name">getConfigurations</span>
         
-        <span class="params">(<span name="ref">ref: <a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a></span>, <span name="dep">dep: <a href="ResolvedProject.html" class="extype" name="sbt.ResolvedProject">ResolvedProject</a></span>, <span name="conf">conf: String</span>)</span>
-        <span class="result">: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a></span>
+        <span class="params">(<span name="p">p: <a href="ResolvedReference.html" class="extype" name="sbt.ResolvedReference">ResolvedReference</a></span>, <span name="data">data: <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]</span>)</span>
+        <span class="result">: Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
       </span>
       </h4>
       
@@ -753,13 +777,13 @@ to verify that the behavior is consistent with the <code>equals</code> method.
           </div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#interDependencies">
-      <a id="interDependencies(ProjectRef,ResolvedProject,Configuration,Settings[Scope],Boolean,(ProjectRef, String, Settings[Scope]) ⇒ Task[Classpath]):Task[Classpath]"></a>
+      <a id="interDependencies(ProjectRef,ResolvedProject,Configuration,Configuration,Settings[Scope],Boolean,(ProjectRef, String, Settings[Scope]) ⇒ Task[Classpath]):Task[Classpath]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">interDependencies</span>
         
-        <span class="params">(<span name="projectRef">projectRef: <a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a></span>, <span name="project">project: <a href="ResolvedProject.html" class="extype" name="sbt.ResolvedProject">ResolvedProject</a></span>, <span name="conf">conf: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a></span>, <span name="data">data: <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]</span>, <span name="includeSelf">includeSelf: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="f">f: (<a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a>, String, <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]) ⇒ <a href="Task.html" class="extype" name="sbt.Task">Task</a>[Classpath]</span>)</span>
+        <span class="params">(<span name="projectRef">projectRef: <a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a></span>, <span name="project">project: <a href="ResolvedProject.html" class="extype" name="sbt.ResolvedProject">ResolvedProject</a></span>, <span name="conf">conf: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a></span>, <span name="self">self: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a></span>, <span name="data">data: <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]</span>, <span name="includeSelf">includeSelf: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="f">f: (<a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a>, String, <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]) ⇒ <a href="Task.html" class="extype" name="sbt.Task">Task</a>[Classpath]</span>)</span>
         <span class="result">: <a href="Task.html" class="extype" name="sbt.Task">Task</a>[Classpath]</span>
       </span>
       </h4>
@@ -789,13 +813,13 @@ to verify that the behavior is consistent with the <code>equals</code> method.
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#internalDependencies0">
-      <a id="internalDependencies0(ProjectRef,ResolvedProject,Configuration,Settings[Scope]):Task[Classpath]"></a>
+      <a id="internalDependencies0(ProjectRef,ResolvedProject,Configuration,Configuration,Settings[Scope]):Task[Classpath]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">internalDependencies0</span>
         
-        <span class="params">(<span name="projectRef">projectRef: <a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a></span>, <span name="project">project: <a href="ResolvedProject.html" class="extype" name="sbt.ResolvedProject">ResolvedProject</a></span>, <span name="conf">conf: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a></span>, <span name="data">data: <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]</span>)</span>
+        <span class="params">(<span name="projectRef">projectRef: <a href="ProjectRef.html" class="extype" name="sbt.ProjectRef">ProjectRef</a></span>, <span name="project">project: <a href="ResolvedProject.html" class="extype" name="sbt.ResolvedProject">ResolvedProject</a></span>, <span name="conf">conf: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a></span>, <span name="self">self: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a></span>, <span name="data">data: <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]</span>)</span>
         <span class="result">: <a href="Task.html" class="extype" name="sbt.Task">Task</a>[Classpath]</span>
       </span>
       </h4>
@@ -883,6 +907,18 @@ possible to check whether the contents of the list are of the requested typed.
         
         
         <span class="result">: <a href="Init$Initialize.html" class="extype" name="sbt.Init.Initialize">Initialize</a>[<a href="Task.html" class="extype" name="sbt.Task">Task</a>[<a href="IvyConfiguration.html" class="extype" name="sbt.IvyConfiguration">IvyConfiguration</a>]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#modifyForPlugin">
+      <a id="modifyForPlugin(Boolean,ModuleID):ModuleID"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">modifyForPlugin</span>
+        
+        <span class="params">(<span name="plugin">plugin: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="dep">dep: <a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a></span>)</span>
+        <span class="result">: <a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a></span>
       </span>
       </h4>
       
@@ -1270,6 +1306,18 @@ possible to check whether the contents of the list are of the requested typed.
           definition classes: AnyRef
         </div></div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Classpaths#withExcludes">
+      <a id="withExcludes(File,Seq[String],GlobalLock)((Map[ModuleID, Set[String]]) ⇒ UpdateReport):UpdateReport"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">withExcludes</span>
+        
+        <span class="params">(<span name="out">out: <span class="extype" name="java.io.File">File</span></span>, <span name="classifiers">classifiers: Seq[String]</span>, <span name="lock">lock: <a href="../xsbti/GlobalLock.html" class="extype" name="xsbti.GlobalLock">GlobalLock</a></span>)</span><span class="params">(<span name="f">f: (Map[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>, Set[String]]) ⇒ <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>)</span>
+        <span class="result">: <a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a></span>
+      </span>
+      </h4>
+      
     </li></ol>
             </div>
 

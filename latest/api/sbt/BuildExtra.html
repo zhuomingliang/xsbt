@@ -652,6 +652,26 @@ possible to check whether the contents of the list are of the requested typed.
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildExtra#noTestCompletion">
+      <a id="noTestCompletion(Configuration):sbt.Project.Setting[_]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">noTestCompletion</span>
+        
+        <span class="params">(<span name="config">config: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a> =<span class="symbol"><span class="name"><a href="Configurations$.html#Test:Configuration">Test</a></span></span></span>)</span>
+        <span class="result">: sbt.Project.Setting[_]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Disables post-compilation hook for determining tests for tab-completion (such as for 'test-only').</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Disables post-compilation hook for determining tests for tab-completion (such as for 'test-only').
+This is useful for reducing test:compile time when not running test.</p></div>
+            
+            
+            
+          </div>
+          
     </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notify">
       <a id="notify():Unit"></a>
       <h4 class="signature">
@@ -697,6 +717,23 @@ possible to check whether the contents of the list are of the requested typed.
             
             
           </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.BuildCommon#overrideConfigs">
+      <a id="overrideConfigs(Configuration*)(Seq[Configuration]):Seq[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">overrideConfigs</span>
+        
+        <span class="params">(<span name="cs">cs: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>*</span>)</span><span class="params">(<span name="configurations">configurations: Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>)</span>
+        <span class="result">: Seq[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="BuildCommon.html" class="extype" name="sbt.BuildCommon">BuildCommon</a>
+        </div></div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.BuildCommon#richAttributed">
       <a id="richAttributed(Seq[Attributed[File]]):RichAttributed"></a>

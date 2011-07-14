@@ -374,6 +374,23 @@ part of compilation it is not possible to check whether the contents of the list
           attributes: implicit 
         </div></div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#chainedIC">
+      <a id="chainedIC:InputCache[ChainedResolver]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit lazy val</span>
+      <span class="symbol">
+        <span class="name">chainedIC</span>
+        
+        
+        <span class="result">: <a href="InputCache.html" class="extype" name="sbt.InputCache">InputCache</a>[<a href="ChainedResolver.html" class="extype" name="sbt.ChainedResolver">ChainedResolver</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#classpathFormat">
       <a id="classpathFormat:Format[Map[String, Seq[File]]]"></a>
       <h4 class="signature">
@@ -569,6 +586,18 @@ scala.Int
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#excludeMap">
+      <a id="excludeMap:Format[Map[ModuleID, Set[String]]]"></a>
+      <h4 class="signature">
+      <span class="kind">lazy val</span>
+      <span class="symbol">
+        <span class="name">excludeMap</span>
+        
+        
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[Map[<a href="ModuleID.html" class="extype" name="sbt.ModuleID">ModuleID</a>, Set[String]]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#extIvyIC">
       <a id="extIvyIC:InputCache[ExternalIvyConfiguration]"></a>
       <h4 class="signature">
@@ -1039,7 +1068,7 @@ possible to check whether the contents of the list are of the requested typed.
     </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#resolverIC">
       <a id="resolverIC:InputCache[Resolver]"></a>
       <h4 class="signature">
-      <span class="kind">implicit def</span>
+      <span class="kind">implicit lazy val</span>
       <span class="symbol">
         <span class="name">resolverIC</span>
         
@@ -1131,7 +1160,7 @@ possible to check whether the contents of the list are of the requested typed.
     </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#updateIC">
       <a id="updateIC:InputCache[$colon$plus$colon[IvyConfiguration, $colon$plus$colon[ModuleSettings, $colon$plus$colon[UpdateConfiguration, HNil]]]]"></a>
       <h4 class="signature">
-      <span class="kind">def</span>
+      <span class="kind">lazy val</span>
       <span class="symbol">
         <span class="name">updateIC</span>
         
@@ -1143,7 +1172,7 @@ possible to check whether the contents of the list are of the requested typed.
     </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#updateReportF">
       <a id="updateReportF:Format[UpdateReport]"></a>
       <h4 class="signature">
-      <span class="kind">def</span>
+      <span class="kind">lazy val</span>
       <span class="symbol">
         <span class="name">updateReportF</span>
         
@@ -1153,14 +1182,31 @@ possible to check whether the contents of the list are of the requested typed.
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#updateReportFormat">
-      <a id="updateReportFormat(Format[String],Format[ConfigurationReport]):Format[UpdateReport]"></a>
+      <a id="updateReportFormat(Format[String],Format[ConfigurationReport],Format[UpdateStats]):Format[UpdateReport]"></a>
       <h4 class="signature">
       <span class="kind">implicit def</span>
       <span class="symbol">
         <span class="name">updateReportFormat</span>
         
-        <span class="params">(<span class="implicit">implicit </span><span name="m">m: <span class="extype" name="sbinary.Format">Format</span>[String]</span>, <span name="cr">cr: <span class="extype" name="sbinary.Format">Format</span>[<a href="ConfigurationReport.html" class="extype" name="sbt.ConfigurationReport">ConfigurationReport</a>]</span>)</span>
+        <span class="params">(<span class="implicit">implicit </span><span name="m">m: <span class="extype" name="sbinary.Format">Format</span>[String]</span>, <span name="cr">cr: <span class="extype" name="sbinary.Format">Format</span>[<a href="ConfigurationReport.html" class="extype" name="sbt.ConfigurationReport">ConfigurationReport</a>]</span>, <span name="us">us: <span class="extype" name="sbinary.Format">Format</span>[<a href="UpdateStats.html" class="extype" name="sbt.UpdateStats">UpdateStats</a>]</span>)</span>
         <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="UpdateReport.html" class="extype" name="sbt.UpdateReport">UpdateReport</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: implicit 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.CacheIvy#updateStatsFormat">
+      <a id="updateStatsFormat:Format[UpdateStats]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">updateStatsFormat</span>
+        
+        
+        <span class="result">: <span class="extype" name="sbinary.Format">Format</span>[<a href="UpdateStats.html" class="extype" name="sbt.UpdateStats">UpdateStats</a>]</span>
       </span>
       </h4>
       

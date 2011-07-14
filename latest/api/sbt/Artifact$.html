@@ -213,6 +213,42 @@
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#DocClassifier">
+      <a id="DocClassifier:String"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">DocClassifier</span>
+        
+        
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#PomType">
+      <a id="PomType:String"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">PomType</span>
+        
+        
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#SourceClassifier">
+      <a id="SourceClassifier:String"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">SourceClassifier</span>
+        
+        
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#apply">
       <a id="apply(String,String,String,Option[String],Iterable[Configuration],Option[URL]):Artifact"></a>
       <h4 class="signature">
@@ -334,6 +370,66 @@ part of compilation it is not possible to check whether the contents of the list
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#classified">
+      <a id="classified(String,String):Artifact"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">classified</span>
+        
+        <span class="params">(<span name="name">name: String</span>, <span name="classifier">classifier: String</span>)</span>
+        <span class="result">: <a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#classifierConf">
+      <a id="classifierConf(String):Configuration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">classifierConf</span>
+        
+        <span class="params">(<span name="classifier">classifier: String</span>)</span>
+        <span class="result">: <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#classifierConfMap">
+      <a id="classifierConfMap:Map[String, Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">classifierConfMap</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="java.lang.String">String</span>, <a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#classifierType">
+      <a id="classifierType(String):String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">classifierType</span>
+        
+        <span class="params">(<span name="classifier">classifier: String</span>)</span>
+        <span class="result">: String</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#classifierTypeMap">
+      <a id="classifierTypeMap:Map[String, String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">classifierTypeMap</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="java.lang.String">String</span>, <span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#clone">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -682,6 +778,18 @@ possible to check whether the contents of the list are of the requested typed.
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Artifact#pom">
+      <a id="pom(String):Artifact"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">pom</span>
+        
+        <span class="params">(<span name="name">name: String</span>)</span>
+        <span class="result">: <a href="Artifact.html" class="extype" name="sbt.Artifact">Artifact</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" data-isabs="false" name="sbt.Artifact#readResolve">
       <a id="readResolve():AnyRef"></a>
       <h4 class="signature">

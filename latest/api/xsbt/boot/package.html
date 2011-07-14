@@ -1,0 +1,1019 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>xsbt.boot</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="../package.html" class="extype" name="xsbt">xsbt</a></p>
+
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <h1>boot</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">boot</span>
+        
+        
+        
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          
+          
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="xsbt.boot.AppConfiguration">
+      <a id="AppConfiguration:AppConfiguration"></a>
+      <h4 class="signature"><a href="AppConfiguration.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">AppConfiguration</span>
+        
+        
+        <span class="result"> extends AppConfiguration</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.AppID">
+      <a id="AppID:AppID"></a>
+      <h4 class="signature"><a href="AppID.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">AppID</span>
+        
+        <span class="params">(<span name="groupID">groupID: String</span>, <span name="name">name: String</span>, <span name="version">version: String</span>, <span name="mainClass">mainClass: String</span>, <span name="mainComponents">mainComponents: Array[String]</span>, <span name="crossVersioned">crossVersioned: Boolean</span>, <span name="classpathExtra">classpathExtra: Array[File]</span>)</span>
+        <span class="result"> extends ApplicationID with Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.AppProperty">
+      <a id="AppProperty:AppProperty"></a>
+      <h4 class="signature"><a href="AppProperty.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">AppProperty</span>
+        
+        <span class="params">(<span name="name">name: String</span>, <span name="quick">quick: Option[PropertyInit]</span>, <span name="create">create: Option[PropertyInit]</span>, <span name="fill">fill: Option[PropertyInit]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Application">
+      <a id="Application:Application"></a>
+      <h4 class="signature"><a href="Application.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">Application</span>
+        
+        <span class="params">(<span name="groupID">groupID: String</span>, <span name="name">name: String</span>, <span name="version">version: Value[String]</span>, <span name="main">main: String</span>, <span name="components">components: List[String]</span>, <span name="crossVersioned">crossVersioned: Boolean</span>, <span name="classpathExtra">classpathExtra: Array[File]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.BootException">
+      <a id="BootException:BootException"></a>
+      <h4 class="signature"><a href="BootException.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BootException</span>
+        
+        
+        <span class="result"> extends RuntimeException</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.BootSetup">
+      <a id="BootSetup:BootSetup"></a>
+      <h4 class="signature"><a href="BootSetup.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">BootSetup</span>
+        
+        <span class="params">(<span name="directory">directory: File</span>, <span name="lock">lock: Boolean</span>, <span name="properties">properties: File</span>, <span name="search">search: Search</span>, <span name="promptCreate">promptCreate: String</span>, <span name="enableQuick">enableQuick: Boolean</span>, <span name="promptFill">promptFill: Boolean</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Cache">
+      <a id="Cache:Cache[K, X, V]"></a>
+      <h4 class="signature"><a href="Cache.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Cache</span>
+        <span class="tparams">[<span name="K">K</span>, <span name="X">X</span>, <span name="V">V</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Classifiers">
+      <a id="Classifiers:Classifiers"></a>
+      <h4 class="signature"><a href="Classifiers.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">Classifiers</span>
+        
+        <span class="params">(<span name="forScala">forScala: Value[List[String]]</span>, <span name="app">app: Value[List[String]]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ComponentProvider">
+      <a id="ComponentProvider:ComponentProvider"></a>
+      <h4 class="signature"><a href="ComponentProvider.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ComponentProvider</span>
+        
+        
+        <span class="result"> extends ComponentProvider</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ConfigurationParser">
+      <a id="ConfigurationParser:ConfigurationParser"></a>
+      <h4 class="signature"><a href="ConfigurationParser.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ConfigurationParser</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Enumeration">
+      <a id="Enumeration:Enumeration"></a>
+      <h4 class="signature"><a href="Enumeration.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Enumeration</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Explicit">
+      <a id="Explicit:Explicit[T]"></a>
+      <h4 class="signature"><a href="Explicit.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Explicit</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends Value[T]</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Find">
+      <a id="Find:Find"></a>
+      <h4 class="signature"><a href="Find.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Find</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Implicit">
+      <a id="Implicit:Implicit[T]"></a>
+      <h4 class="signature"><a href="Implicit.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Implicit</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends Value[T]</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.IvyOptions">
+      <a id="IvyOptions:IvyOptions"></a>
+      <h4 class="signature"><a href="IvyOptions.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">IvyOptions</span>
+        
+        <span class="params">(<span name="ivyHome">ivyHome: Option[File]</span>, <span name="classifiers">classifiers: Classifiers</span>, <span name="repositories">repositories: List[Repository]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="xsbt.boot.JLine">
+      <a id="JLine:JLine"></a>
+      <h4 class="signature"><a href="JLine.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">JLine</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: abstract 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Labeled">
+      <a id="Labeled:Labeled"></a>
+      <h4 class="signature"><a href="Labeled.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Labeled</span>
+        
+        
+        <span class="result"> extends Line</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Launch">
+      <a id="Launch:Launch"></a>
+      <h4 class="signature"><a href="Launch.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Launch</span>
+        
+        
+        <span class="result"> extends Launcher</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.LaunchConfiguration">
+      <a id="LaunchConfiguration:LaunchConfiguration"></a>
+      <h4 class="signature"><a href="LaunchConfiguration.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">LaunchConfiguration</span>
+        
+        <span class="params">(<span name="scalaVersion">scalaVersion: Value[String]</span>, <span name="ivyConfiguration">ivyConfiguration: IvyOptions</span>, <span name="app">app: Application</span>, <span name="boot">boot: BootSetup</span>, <span name="logging">logging: Logging</span>, <span name="appProperties">appProperties: List[AppProperty]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="xsbt.boot.Line">
+      <a id="Line:Line"></a>
+      <h4 class="signature"><a href="Line.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Line</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ListMap">
+      <a id="ListMap:ListMap[K, V]"></a>
+      <h4 class="signature"><a href="ListMap.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ListMap</span>
+        <span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span>
+        
+        <span class="result"> extends Iterable[(K, V)]</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Logging">
+      <a id="Logging:Logging"></a>
+      <h4 class="signature"><a href="Logging.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Logging</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ParseException">
+      <a id="ParseException:ParseException"></a>
+      <h4 class="signature"><a href="ParseException.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ParseException</span>
+        
+        
+        <span class="result"> extends BootException</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.PromptProperty">
+      <a id="PromptProperty:PromptProperty"></a>
+      <h4 class="signature"><a href="PromptProperty.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">PromptProperty</span>
+        
+        
+        <span class="result"> extends PropertyInit</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="xsbt.boot.PropertyInit">
+      <a id="PropertyInit:PropertyInit"></a>
+      <h4 class="signature"><a href="PropertyInit.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">PropertyInit</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="xsbt.boot.Provider">
+      <a id="Provider:Provider"></a>
+      <h4 class="signature"><a href="Provider.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Provider</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="xsbt.boot.Repository">
+      <a id="Repository:Repository"></a>
+      <h4 class="signature"><a href="Repository.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Repository</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ResolveValues">
+      <a id="ResolveValues:ResolveValues"></a>
+      <h4 class="signature"><a href="ResolveValues.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ResolveValues</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.RunConfiguration">
+      <a id="RunConfiguration:RunConfiguration"></a>
+      <h4 class="signature"><a href="RunConfiguration.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">RunConfiguration</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Search">
+      <a id="Search:Search"></a>
+      <h4 class="signature"><a href="Search.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">Search</span>
+        
+        <span class="params">(<span name="tpe">tpe: Value</span>, <span name="paths">paths: List[File]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Section">
+      <a id="Section:Section"></a>
+      <h4 class="signature"><a href="Section.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Section</span>
+        
+        
+        <span class="result"> extends Line</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.SetProperty">
+      <a id="SetProperty:SetProperty"></a>
+      <h4 class="signature"><a href="SetProperty.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SetProperty</span>
+        
+        
+        <span class="result"> extends PropertyInit</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Update">
+      <a id="Update:Update"></a>
+      <h4 class="signature"><a href="Update.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Update</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Ensures that the Scala and application jars exist for the given versions or else downloads them.</p>
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.UpdateApp">
+      <a id="UpdateApp:UpdateApp"></a>
+      <h4 class="signature"><a href="UpdateApp.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">UpdateApp</span>
+        
+        
+        <span class="result"> extends UpdateTarget</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.UpdateConfiguration">
+      <a id="UpdateConfiguration:UpdateConfiguration"></a>
+      <h4 class="signature"><a href="UpdateConfiguration.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">UpdateConfiguration</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.UpdateScala">
+      <a id="UpdateScala:UpdateScala"></a>
+      <h4 class="signature"><a href="UpdateScala.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">UpdateScala</span>
+        
+        
+        <span class="result"> extends UpdateTarget</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="xsbt.boot.UpdateTarget">
+      <a id="UpdateTarget:UpdateTarget"></a>
+      <h4 class="signature"><a href="UpdateTarget.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">UpdateTarget</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="xsbt.boot.Value">
+      <a id="Value:Value[T]"></a>
+      <h4 class="signature"><a href="Value.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Value</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
+    </li></ol>
+            </div>
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="xsbt.boot.Application">
+      <a id="Application:Application"></a>
+      <h4 class="signature"><a href="Application$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Application</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Boot">
+      <a id="Boot:Boot"></a>
+      <h4 class="signature"><a href="Boot$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Boot</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.CheckProxy">
+      <a id="CheckProxy:CheckProxy"></a>
+      <h4 class="signature"><a href="CheckProxy$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">CheckProxy</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Classifiers">
+      <a id="Classifiers:Classifiers"></a>
+      <h4 class="signature"><a href="Classifiers$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Classifiers</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Comment">
+      <a id="Comment:Comment"></a>
+      <h4 class="signature"><a href="Comment$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Comment</span>
+        
+        
+        <span class="result"> extends Line</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ComponentProvider">
+      <a id="ComponentProvider:ComponentProvider"></a>
+      <h4 class="signature"><a href="ComponentProvider$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ComponentProvider</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Configuration">
+      <a id="Configuration:Configuration"></a>
+      <h4 class="signature"><a href="Configuration$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Configuration</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ConfigurationParser">
+      <a id="ConfigurationParser:ConfigurationParser"></a>
+      <h4 class="signature"><a href="ConfigurationParser$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ConfigurationParser</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Copy">
+      <a id="Copy:Copy"></a>
+      <h4 class="signature"><a href="Copy$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Copy</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Find">
+      <a id="Find:Find"></a>
+      <h4 class="signature"><a href="Find$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Find</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.GetLocks">
+      <a id="GetLocks:GetLocks"></a>
+      <h4 class="signature"><a href="GetLocks$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">GetLocks</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Initialize">
+      <a id="Initialize:Initialize"></a>
+      <h4 class="signature"><a href="Initialize$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Initialize</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Launch">
+      <a id="Launch:Launch"></a>
+      <h4 class="signature"><a href="Launch$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Launch</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Launcher">
+      <a id="Launcher:Launcher"></a>
+      <h4 class="signature"><a href="Launcher$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Launcher</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ListMap">
+      <a id="ListMap:ListMap"></a>
+      <h4 class="signature"><a href="ListMap$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ListMap</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Loaders">
+      <a id="Loaders:Loaders"></a>
+      <h4 class="signature"><a href="Loaders$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Loaders</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Locks">
+      <a id="Locks:Locks"></a>
+      <h4 class="signature"><a href="Locks$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Locks</span>
+        
+        
+        <span class="result"> extends GlobalLock</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.LogLevel">
+      <a id="LogLevel:LogLevel"></a>
+      <h4 class="signature"><a href="LogLevel$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">LogLevel</span>
+        
+        
+        <span class="result"> extends Enumeration</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ParseLine">
+      <a id="ParseLine:ParseLine"></a>
+      <h4 class="signature"><a href="ParseLine$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ParseLine</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Pre">
+      <a id="Pre:Pre"></a>
+      <h4 class="signature"><a href="Pre$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Pre</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Provider">
+      <a id="Provider:Provider"></a>
+      <h4 class="signature"><a href="Provider$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Provider</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Repository">
+      <a id="Repository:Repository"></a>
+      <h4 class="signature"><a href="Repository$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Repository</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ResolvePaths">
+      <a id="ResolvePaths:ResolvePaths"></a>
+      <h4 class="signature"><a href="ResolvePaths$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ResolvePaths</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.ResolveValues">
+      <a id="ResolveValues:ResolveValues"></a>
+      <h4 class="signature"><a href="ResolveValues$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ResolveValues</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Search">
+      <a id="Search:Search"></a>
+      <h4 class="signature"><a href="Search$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Search</span>
+        
+        
+        <span class="result"> extends Enumeration</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.SimpleReader">
+      <a id="SimpleReader:SimpleReader"></a>
+      <h4 class="signature"><a href="SimpleReader$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">SimpleReader</span>
+        
+        
+        <span class="result"> extends JLine</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Using">
+      <a id="Using:Using"></a>
+      <h4 class="signature"><a href="Using$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Using</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.Value">
+      <a id="Value:Value"></a>
+      <h4 class="signature"><a href="Value$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Value</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="xsbt.boot.test">
+      <a id="test:test"></a>
+      <h4 class="signature"><a href="test/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">test</span>
+        
+        
+        
+      </span>
+      </a></h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

@@ -94,7 +94,7 @@
       <span class="symbol">
         <span class="name">Eval</span>
         
-        <span class="params">(<span name="optionsNoncp">optionsNoncp: Seq[String]</span>, <span name="classpath">classpath: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="mkReporter">mkReporter: (<span class="extype" name="scala.tools.nsc.Settings">Settings</span>) ⇒ <span class="extype" name="scala.tools.nsc.reporters.Reporter">Reporter</span></span>, <span name="parent">parent: <span class="extype" name="java.lang.ClassLoader">ClassLoader</span></span>, <span name="backing">backing: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.File">File</span>]</span>)</span>
+        <span class="params">(<span name="optionsNoncp">optionsNoncp: Seq[String]</span>, <span name="classpath">classpath: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="mkReporter">mkReporter: (<span class="extype" name="scala.tools.nsc.Settings">Settings</span>) ⇒ <span class="extype" name="scala.tools.nsc.reporters.Reporter">Reporter</span></span>, <span name="backing">backing: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.File">File</span>]</span>)</span>
         
       </span>
       </h4>
@@ -453,14 +453,14 @@ scala.Int
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.compiler.Eval#eval0">
-      <a id="eval0(String,EvalImports,Option[String],Run,CompilationUnit,Option[File],String):(String, Any)"></a>
+      <a id="eval0(String,EvalImports,Option[String],Run,CompilationUnit,Option[File],String):(String, (ClassLoader) ⇒ Any)"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">eval0</span>
         
         <span class="params">(<span name="expression">expression: String</span>, <span name="imports">imports: <a href="EvalImports.html" class="extype" name="sbt.compiler.EvalImports">EvalImports</a></span>, <span name="tpeName">tpeName: <span class="extype" name="scala.Option">Option</span>[String]</span>, <span name="run">run: <span class="extype" name="scala.tools.nsc.Global.Run">Run</span></span>, <span name="unit">unit: <span class="extype" name="scala.tools.nsc.CompilationUnits.CompilationUnit">CompilationUnit</span></span>, <span name="backing">backing: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.File">File</span>]</span>, <span name="moduleName">moduleName: String</span>)</span>
-        <span class="result">: (String, <span class="extype" name="scala.Any">Any</span>)</span>
+        <span class="result">: (String, (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Any">Any</span>)</span>
       </span>
       </h4>
       
@@ -590,26 +590,26 @@ possible to check whether the contents of the list are of the requested typed.
           </div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.compiler.Eval#load">
-      <a id="load(AbstractFile,String):Any"></a>
+      <a id="load(AbstractFile,String):(ClassLoader) ⇒ Any"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">load</span>
         
         <span class="params">(<span name="dir">dir: <span class="extype" name="scala.tools.nsc.io.AbstractFile">AbstractFile</span></span>, <span name="moduleName">moduleName: String</span>)</span>
-        <span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Any">Any</span></span>
       </span>
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.compiler.Eval#loadPlain">
-      <a id="loadPlain(File,String):Any"></a>
+      <a id="loadPlain(File,String):(ClassLoader) ⇒ Any"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">loadPlain</span>
         
         <span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="moduleName">moduleName: String</span>)</span>
-        <span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Any">Any</span></span>
       </span>
       </h4>
       

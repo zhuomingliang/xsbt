@@ -129,6 +129,23 @@
           attributes: final 
         </div></div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load.InjectSettings">
+      <a id="InjectSettings:InjectSettings"></a>
+      <h4 class="signature"><a href="Load$$InjectSettings.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">InjectSettings</span>
+        
+        <span class="params">(<span name="global">global: Seq[sbt.Project.Setting[_]]</span>, <span name="project">project: Seq[sbt.Project.Setting[_]]</span>, <span name="projectLoaded">projectLoaded: (ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="false" name="sbt.Load.LoadBuildConfiguration">
       <a id="LoadBuildConfiguration:LoadBuildConfiguration"></a>
       <h4 class="signature"><a href="Load$$LoadBuildConfiguration.html">
@@ -136,7 +153,7 @@
       <span class="symbol">
         <span class="name">LoadBuildConfiguration</span>
         
-        <span class="params">(<span name="stagingDirectory">stagingDirectory: File</span>, <span name="commonPluginClasspath">commonPluginClasspath: Seq[Attributed[File]]</span>, <span name="classpath">classpath: Seq[File]</span>, <span name="loader">loader: ClassLoader</span>, <span name="compilers">compilers: Compilers</span>, <span name="evalPluginDef">evalPluginDef: (BuildStructure, State) ⇒ Seq[Attributed[File]]</span>, <span name="delegates">delegates: (LoadedBuild) ⇒ (Scope) ⇒ Seq[Scope]</span>, <span name="scopeLocal">scopeLocal: ScopeLocal</span>, <span name="injectSettings">injectSettings: Seq[sbt.Project.Setting[_]]</span>, <span name="log">log: Logger</span>)</span>
+        <span class="params">(<span name="stagingDirectory">stagingDirectory: File</span>, <span name="classpath">classpath: Seq[Attributed[File]]</span>, <span name="loader">loader: ClassLoader</span>, <span name="compilers">compilers: Compilers</span>, <span name="evalPluginDef">evalPluginDef: (BuildStructure, State) ⇒ Seq[Attributed[File]]</span>, <span name="definesClass">definesClass: DefinesClass</span>, <span name="delegates">delegates: (LoadedBuild) ⇒ (Scope) ⇒ Seq[Scope]</span>, <span name="scopeLocal">scopeLocal: ScopeLocal</span>, <span name="injectSettings">injectSettings: InjectSettings</span>, <span name="globalPlugin">globalPlugin: Option[GlobalPlugin]</span>, <span name="log">log: Logger</span>)</span>
         <span class="result"> extends Product</span>
       </span>
       </a></h4>
@@ -418,6 +435,18 @@
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#activateGlobalPlugin">
+      <a id="activateGlobalPlugin(LoadBuildConfiguration):LoadBuildConfiguration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">activateGlobalPlugin</span>
+        
+        <span class="params">(<span name="config">config: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>)</span>
+        <span class="result">: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#addResolvers">
       <a id="addResolvers(BuildUnit,Boolean,BuildLoader):BuildLoader"></a>
       <h4 class="signature">
@@ -492,38 +521,38 @@ part of compilation it is not possible to check whether the contents of the list
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#build">
-      <a id="build(Seq[File],Seq[File],File,Compilers,Logger):(Inputs, Analysis)"></a>
+      <a id="build(Seq[Attributed[File]],Seq[File],File,Compilers,DefinesClass,Logger):(Inputs, Analysis)"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">build</span>
         
-        <span class="params">(<span name="classpath">classpath: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="sources">sources: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="target">target: <span class="extype" name="java.io.File">File</span></span>, <span name="compilers">compilers: <a href="Compiler$$Compilers.html" class="extype" name="sbt.Compiler.Compilers">Compilers</a></span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
+        <span class="params">(<span name="classpath">classpath: Seq[<a href="Attributed.html" class="extype" name="sbt.Attributed">Attributed</a>[<span class="extype" name="java.io.File">File</span>]]</span>, <span name="sources">sources: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="target">target: <span class="extype" name="java.io.File">File</span></span>, <span name="compilers">compilers: <a href="Compiler$$Compilers.html" class="extype" name="sbt.Compiler.Compilers">Compilers</a></span>, <span name="definesClass">definesClass: DefinesClass</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
         <span class="result">: (<a href="Compiler$$Inputs.html" class="extype" name="sbt.Compiler.Inputs">Inputs</a>, <a href="inc/Analysis.html" class="extype" name="sbt.inc.Analysis">Analysis</a>)</span>
       </span>
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#buildConfigurations">
-      <a id="buildConfigurations(LoadedBuild,(URI) ⇒ String,() ⇒ Eval):Seq[sbt.Project.Setting[_]]"></a>
+      <a id="buildConfigurations(LoadedBuild,(URI) ⇒ String,() ⇒ Eval,InjectSettings):Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">buildConfigurations</span>
         
-        <span class="params">(<span name="loaded">loaded: <a href="Load$$LoadedBuild.html" class="extype" name="sbt.Load.LoadedBuild">LoadedBuild</a></span>, <span name="rootProject">rootProject: (<span class="extype" name="java.net.URI">URI</span>) ⇒ String</span>, <span name="rootEval">rootEval: () ⇒ <a href="compiler/Eval.html" class="extype" name="sbt.compiler.Eval">Eval</a></span>)</span>
+        <span class="params">(<span name="loaded">loaded: <a href="Load$$LoadedBuild.html" class="extype" name="sbt.Load.LoadedBuild">LoadedBuild</a></span>, <span name="rootProject">rootProject: (<span class="extype" name="java.net.URI">URI</span>) ⇒ String</span>, <span name="rootEval">rootEval: () ⇒ <a href="compiler/Eval.html" class="extype" name="sbt.compiler.Eval">Eval</a></span>, <span name="injectSettings">injectSettings: <a href="Load$$InjectSettings.html" class="extype" name="sbt.Load.InjectSettings">InjectSettings</a></span>)</span>
         <span class="result">: Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
-    </li><li visbl="pub" data-isabs="false" name="sbt.Load#buildGlobalPlugins">
-      <a id="buildGlobalPlugins(File,State,LoadBuildConfiguration):Seq[Attributed[File]]"></a>
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#buildGlobalSettings">
+      <a id="buildGlobalSettings(File,Seq[File],LoadBuildConfiguration):(ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
-        <span class="name">buildGlobalPlugins</span>
+        <span class="name">buildGlobalSettings</span>
         
-        <span class="params">(<span name="baseDirectory">baseDirectory: <span class="extype" name="java.io.File">File</span></span>, <span name="state">state: <a href="State.html" class="extype" name="sbt.State">State</a></span>, <span name="config">config: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>)</span>
-        <span class="result">: Seq[<a href="Attributed.html" class="extype" name="sbt.Attributed">Attributed</a>[<span class="extype" name="java.io.File">File</span>]]</span>
+        <span class="params">(<span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="files">files: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="config">config: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>)</span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -684,14 +713,14 @@ part of compilation it is not possible to check whether the contents of the list
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#configurations">
-      <a id="configurations(Seq[File],() ⇒ Eval,Seq[String]):Seq[sbt.Project.Setting[_]]"></a>
+      <a id="configurations(Seq[File],() ⇒ Eval,Seq[String]):(ClassLoader) ⇒ Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">configurations</span>
         
         <span class="params">(<span name="srcs">srcs: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="eval">eval: () ⇒ <a href="compiler/Eval.html" class="extype" name="sbt.compiler.Eval">Eval</a></span>, <span name="imports">imports: Seq[String]</span>)</span>
-        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ Seq[sbt.Project.Setting[_]]</span>
       </span>
       </h4>
       
@@ -707,6 +736,18 @@ part of compilation it is not possible to check whether the contents of the list
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#defaultEvalOptions">
+      <a id="defaultEvalOptions:Seq[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">defaultEvalOptions</span>
+        
+        
+        <span class="result">: Seq[String]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#defaultLoad">
       <a id="defaultLoad(State,File,Logger):(() ⇒ Eval, BuildStructure)"></a>
       <h4 class="signature">
@@ -719,14 +760,38 @@ part of compilation it is not possible to check whether the contents of the list
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#defaultPreGlobal">
+      <a id="defaultPreGlobal(State,File,DefinesClass,File,Logger):LoadBuildConfiguration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">defaultPreGlobal</span>
+        
+        <span class="params">(<span name="state">state: <a href="State.html" class="extype" name="sbt.State">State</a></span>, <span name="baseDirectory">baseDirectory: <span class="extype" name="java.io.File">File</span></span>, <span name="definesClass">definesClass: DefinesClass</span>, <span name="globalBase">globalBase: <span class="extype" name="java.io.File">File</span></span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
+        <span class="result">: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#defaultWithGlobal">
+      <a id="defaultWithGlobal(State,File,LoadBuildConfiguration,File,Logger):LoadBuildConfiguration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">defaultWithGlobal</span>
+        
+        <span class="params">(<span name="state">state: <a href="State.html" class="extype" name="sbt.State">State</a></span>, <span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="rawConfig">rawConfig: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>, <span name="globalBase">globalBase: <span class="extype" name="java.io.File">File</span></span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
+        <span class="result">: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#definitions">
-      <a id="definitions(File,File,Seq[File],LoadedPlugins,Compilers,Logger,File):LoadedDefinitions"></a>
+      <a id="definitions(File,File,Seq[File],LoadedPlugins,DefinesClass,Compilers,Logger,File):LoadedDefinitions"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">definitions</span>
         
-        <span class="params">(<span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="targetBase">targetBase: <span class="extype" name="java.io.File">File</span></span>, <span name="srcs">srcs: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="plugins">plugins: <a href="Load$$LoadedPlugins.html" class="extype" name="sbt.Load.LoadedPlugins">LoadedPlugins</a></span>, <span name="compilers">compilers: <a href="Compiler$$Compilers.html" class="extype" name="sbt.Compiler.Compilers">Compilers</a></span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>, <span name="buildBase">buildBase: <span class="extype" name="java.io.File">File</span></span>)</span>
+        <span class="params">(<span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="targetBase">targetBase: <span class="extype" name="java.io.File">File</span></span>, <span name="srcs">srcs: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="plugins">plugins: <a href="Load$$LoadedPlugins.html" class="extype" name="sbt.Load.LoadedPlugins">LoadedPlugins</a></span>, <span name="definesClass">definesClass: DefinesClass</span>, <span name="compilers">compilers: <a href="Compiler$$Compilers.html" class="extype" name="sbt.Compiler.Compilers">Compilers</a></span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>, <span name="buildBase">buildBase: <span class="extype" name="java.io.File">File</span></span>)</span>
         <span class="result">: <a href="Load$$LoadedDefinitions.html" class="extype" name="sbt.Load.LoadedDefinitions">LoadedDefinitions</a></span>
       </span>
       </h4>
@@ -752,6 +817,18 @@ part of compilation it is not possible to check whether the contents of the list
         
         <span class="params">(<span name="uri">uri: <span class="extype" name="java.net.URI">URI</span></span>)</span>
         <span class="result">: <span class="extype" name="scala.Nothing">Nothing</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#enableSbtPlugin">
+      <a id="enableSbtPlugin(LoadBuildConfiguration):LoadBuildConfiguration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">enableSbtPlugin</span>
+        
+        <span class="params">(<span name="config">config: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>)</span>
+        <span class="result">: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>
       </span>
       </h4>
       
@@ -945,6 +1022,18 @@ there are no more references to the object.</p><p>The details of when and if the
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#getPluginNames">
+      <a id="getPluginNames(Seq[Attributed[File]],ClassLoader):Seq[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getPluginNames</span>
+        
+        <span class="params">(<span name="classpath">classpath: Seq[<a href="Attributed.html" class="extype" name="sbt.Attributed">Attributed</a>[<span class="extype" name="java.io.File">File</span>]]</span>, <span name="loader">loader: <span class="extype" name="java.lang.ClassLoader">ClassLoader</span></span>)</span>
+        <span class="result">: Seq[String]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#getProject">
       <a id="getProject(Map[URI, LoadedBuildUnit],URI,String):ResolvedProject"></a>
       <h4 class="signature">
@@ -966,6 +1055,18 @@ there are no more references to the object.</p><p>The details of when and if the
         
         <span class="params">(<span name="map">map: Map[<span class="extype" name="java.net.URI">URI</span>, <a href="Load$$BuildUnitBase.html" class="extype" name="sbt.Load.BuildUnitBase">BuildUnitBase</a>]</span>)</span>
         <span class="result">: (<span class="extype" name="java.net.URI">URI</span>) ⇒ String</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#globalPluginClasspath">
+      <a id="globalPluginClasspath(Option[GlobalPlugin]):Seq[Attributed[File]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">globalPluginClasspath</span>
+        
+        <span class="params">(<span name="globalPlugin">globalPlugin: <span class="extype" name="scala.Option">Option</span>[<a href="GlobalPlugin.html" class="extype" name="sbt.GlobalPlugin">GlobalPlugin</a>]</span>)</span>
+        <span class="result">: Seq[<a href="Attributed.html" class="extype" name="sbt.Attributed">Attributed</a>[<span class="extype" name="java.io.File">File</span>]]</span>
       </span>
       </h4>
       
@@ -1129,6 +1230,30 @@ possible to check whether the contents of the list are of the requested typed.
       </span>
       </h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#loadGlobal">
+      <a id="loadGlobal(State,File,File,LoadBuildConfiguration):LoadBuildConfiguration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">loadGlobal</span>
+        
+        <span class="params">(<span name="state">state: <a href="State.html" class="extype" name="sbt.State">State</a></span>, <span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="global">global: <span class="extype" name="java.io.File">File</span></span>, <span name="config">config: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>)</span>
+        <span class="result">: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#loadGlobalSettings">
+      <a id="loadGlobalSettings(File,File,Seq[File],LoadBuildConfiguration):LoadBuildConfiguration"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">loadGlobalSettings</span>
+        
+        <span class="params">(<span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="globalBase">globalBase: <span class="extype" name="java.io.File">File</span></span>, <span name="files">files: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="config">config: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>)</span>
+        <span class="result">: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#loadPlugin">
       <a id="loadPlugin(String,ClassLoader):Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">
@@ -1166,13 +1291,13 @@ possible to check whether the contents of the list are of the requested typed.
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#loadPlugins">
-      <a id="loadPlugins(File,Seq[File],ClassLoader,Seq[Analysis]):LoadedPlugins"></a>
+      <a id="loadPlugins(File,Seq[Attributed[File]],ClassLoader):LoadedPlugins"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">loadPlugins</span>
         
-        <span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="classpath">classpath: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="loader">loader: <span class="extype" name="java.lang.ClassLoader">ClassLoader</span></span>, <span name="analysis">analysis: Seq[<a href="inc/Analysis.html" class="extype" name="sbt.inc.Analysis">Analysis</a>]</span>)</span>
+        <span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="classpath">classpath: Seq[<a href="Attributed.html" class="extype" name="sbt.Attributed">Attributed</a>[<span class="extype" name="java.io.File">File</span>]]</span>, <span name="loader">loader: <span class="extype" name="java.lang.ClassLoader">ClassLoader</span></span>)</span>
         <span class="result">: <a href="Load$$LoadedPlugins.html" class="extype" name="sbt.Load.LoadedPlugins">LoadedPlugins</a></span>
       </span>
       </h4>
@@ -1210,6 +1335,18 @@ possible to check whether the contents of the list are of the requested typed.
         
         <span class="params">(<span name="unit">unit: <a href="Load$$BuildUnit.html" class="extype" name="sbt.Load.BuildUnit">BuildUnit</a></span>)</span>
         <span class="result">: (<a href="Load$$PartBuildUnit.html" class="extype" name="sbt.Load.PartBuildUnit">PartBuildUnit</a>, List[<a href="ProjectReference.html" class="extype" name="sbt.ProjectReference">ProjectReference</a>])</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#mkEval">
+      <a id="mkEval(Seq[File],File,Seq[String]):Eval"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">mkEval</span>
+        
+        <span class="params">(<span name="classpath">classpath: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="base">base: <span class="extype" name="java.io.File">File</span></span>, <span name="options">options: Seq[String]</span>)</span>
+        <span class="result">: <a href="compiler/Eval.html" class="extype" name="sbt.compiler.Eval">Eval</a></span>
       </span>
       </h4>
       
@@ -1355,6 +1492,18 @@ possible to check whether the contents of the list are of the requested typed.
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#pluginDefinitionLoader">
+      <a id="pluginDefinitionLoader(LoadBuildConfiguration,Seq[Attributed[File]]):(Seq[Attributed[File]], ClassLoader)"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">pluginDefinitionLoader</span>
+        
+        <span class="params">(<span name="config">config: <a href="Load$$LoadBuildConfiguration.html" class="extype" name="sbt.Load.LoadBuildConfiguration">LoadBuildConfiguration</a></span>, <span name="pluginClasspath">pluginClasspath: Seq[<a href="Attributed.html" class="extype" name="sbt.Attributed">Attributed</a>[<span class="extype" name="java.io.File">File</span>]]</span>)</span>
+        <span class="result">: (Seq[<a href="Attributed.html" class="extype" name="sbt.Attributed">Attributed</a>[<span class="extype" name="java.io.File">File</span>]], <span class="extype" name="java.lang.ClassLoader">ClassLoader</span>)</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#plugins">
       <a id="plugins(File,State,LoadBuildConfiguration):LoadedPlugins"></a>
       <h4 class="signature">
@@ -1552,6 +1701,18 @@ possible to check whether the contents of the list are of the requested typed.
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Load#transformProjectOnly">
+      <a id="transformProjectOnly(URI,(URI) ⇒ String,Seq[sbt.Project.Setting[_]]):Seq[sbt.Project.Setting[_]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">transformProjectOnly</span>
+        
+        <span class="params">(<span name="uri">uri: <span class="extype" name="java.net.URI">URI</span></span>, <span name="rootProject">rootProject: (<span class="extype" name="java.net.URI">URI</span>) ⇒ String</span>, <span name="settings">settings: Seq[sbt.Project.Setting[_]]</span>)</span>
+        <span class="result">: Seq[sbt.Project.Setting[_]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.Load#transformSettings">
       <a id="transformSettings(Scope,URI,(URI) ⇒ String,Seq[sbt.Project.Setting[_]]):Seq[sbt.Project.Setting[_]]"></a>
       <h4 class="signature">

@@ -401,13 +401,13 @@
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.Tests#apply">
-      <a id="apply(Map[TestFramework, Framework],ClassLoader,Seq[TestDefinition],Seq[TestOption],Boolean,Logger):Task[()]"></a>
+      <a id="apply(Map[TestFramework, Framework],ClassLoader,Seq[TestDefinition],Seq[TestOption],Boolean,⇒ String,Logger):Task[()]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">apply</span>
         
-        <span class="params">(<span name="frameworks">frameworks: Map[<a href="TestFramework.html" class="extype" name="sbt.TestFramework">TestFramework</a>, <span class="extype" name="org.scalatools.testing.Framework">Framework</span>]</span>, <span name="testLoader">testLoader: <span class="extype" name="java.lang.ClassLoader">ClassLoader</span></span>, <span name="discovered">discovered: Seq[<a href="TestDefinition.html" class="extype" name="sbt.TestDefinition">TestDefinition</a>]</span>, <span name="options">options: Seq[<a href="TestOption.html" class="extype" name="sbt.TestOption">TestOption</a>]</span>, <span name="parallel">parallel: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
+        <span class="params">(<span name="frameworks">frameworks: Map[<a href="TestFramework.html" class="extype" name="sbt.TestFramework">TestFramework</a>, <span class="extype" name="org.scalatools.testing.Framework">Framework</span>]</span>, <span name="testLoader">testLoader: <span class="extype" name="java.lang.ClassLoader">ClassLoader</span></span>, <span name="discovered">discovered: Seq[<a href="TestDefinition.html" class="extype" name="sbt.TestDefinition">TestDefinition</a>]</span>, <span name="options">options: Seq[<a href="TestOption.html" class="extype" name="sbt.TestOption">TestOption</a>]</span>, <span name="parallel">parallel: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="noTestsMessage">noTestsMessage: ⇒ String</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>)</span>
         <span class="result">: <a href="Task.html" class="extype" name="sbt.Task">Task</a>[()]</span>
       </span>
       </h4>
@@ -805,13 +805,13 @@ possible to check whether the contents of the list are of the requested typed.
         </div></div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.Tests#testTask">
-      <a id="testTask(Seq[Framework],ClassLoader,Seq[TestDefinition],Iterable[(ClassLoader) ⇒ Unit],Iterable[(ClassLoader) ⇒ Unit],Logger,Seq[TestReportListener],Map[Framework, Seq[String]],Boolean):Task[()]"></a>
+      <a id="testTask(Seq[Framework],ClassLoader,Seq[TestDefinition],⇒ String,Iterable[(ClassLoader) ⇒ Unit],Iterable[(ClassLoader) ⇒ Unit],Logger,Seq[TestReportListener],Map[Framework, Seq[String]],Boolean):Task[()]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">testTask</span>
         
-        <span class="params">(<span name="frameworks">frameworks: Seq[<span class="extype" name="org.scalatools.testing.Framework">Framework</span>]</span>, <span name="loader">loader: <span class="extype" name="java.lang.ClassLoader">ClassLoader</span></span>, <span name="tests">tests: Seq[<a href="TestDefinition.html" class="extype" name="sbt.TestDefinition">TestDefinition</a>]</span>, <span name="userSetup">userSetup: Iterable[(<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span>]</span>, <span name="userCleanup">userCleanup: Iterable[(<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span>]</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>, <span name="testListeners">testListeners: Seq[<a href="TestReportListener.html" class="extype" name="sbt.TestReportListener">TestReportListener</a>]</span>, <span name="arguments">arguments: Map[<span class="extype" name="org.scalatools.testing.Framework">Framework</span>, Seq[String]]</span>, <span name="parallel">parallel: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
+        <span class="params">(<span name="frameworks">frameworks: Seq[<span class="extype" name="org.scalatools.testing.Framework">Framework</span>]</span>, <span name="loader">loader: <span class="extype" name="java.lang.ClassLoader">ClassLoader</span></span>, <span name="tests">tests: Seq[<a href="TestDefinition.html" class="extype" name="sbt.TestDefinition">TestDefinition</a>]</span>, <span name="noTestsMessage">noTestsMessage: ⇒ String</span>, <span name="userSetup">userSetup: Iterable[(<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span>]</span>, <span name="userCleanup">userCleanup: Iterable[(<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span>]</span>, <span name="log">log: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>, <span name="testListeners">testListeners: Seq[<a href="TestReportListener.html" class="extype" name="sbt.TestReportListener">TestReportListener</a>]</span>, <span name="arguments">arguments: Map[<span class="extype" name="org.scalatools.testing.Framework">Framework</span>, Seq[String]]</span>, <span name="parallel">parallel: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
         <span class="result">: <a href="Task.html" class="extype" name="sbt.Task">Task</a>[()]</span>
       </span>
       </h4>

@@ -299,13 +299,13 @@ part of compilation it is not possible to check whether the contents of the list
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.LogManager#defaultLogger">
-      <a id="defaultLogger(Settings[Scope],sbt.Project.ScopedKey[_],AbstractLogger,AbstractLogger):Logger"></a>
+      <a id="defaultLogger(Settings[Scope],sbt.Project.ScopedKey[_],AbstractLogger,AbstractLogger,List[AbstractLogger]):Logger"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">defaultLogger</span>
         
-        <span class="params">(<span name="data">data: <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]</span>, <span name="task">task: sbt.Project.ScopedKey[_]</span>, <span name="console">console: <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a></span>, <span name="backed">backed: <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a></span>)</span>
+        <span class="params">(<span name="data">data: <a href="Settings.html" class="extype" name="sbt.Settings">Settings</a>[<a href="Scope.html" class="extype" name="sbt.Scope">Scope</a>]</span>, <span name="task">task: sbt.Project.ScopedKey[_]</span>, <span name="console">console: <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a></span>, <span name="backed">backed: <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a></span>, <span name="extra">extra: List[<a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a>]</span>)</span>
         <span class="result">: <a href="Logger.html" class="extype" name="sbt.Logger">Logger</a></span>
       </span>
       </h4>
@@ -319,6 +319,18 @@ part of compilation it is not possible to check whether the contents of the list
         
         
         <span class="result">: <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.LogManager#defaults">
+      <a id="defaults((sbt.Project.ScopedKey[_]) ⇒ Seq[AbstractLogger]):LogManager"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">defaults</span>
+        
+        <span class="params">(<span name="extra">extra: (sbt.Project.ScopedKey[_]) ⇒ Seq[<a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a>]</span>)</span>
+        <span class="result">: <a href="LogManager.html" class="extype" name="sbt.LogManager">LogManager</a></span>
       </span>
       </h4>
       
@@ -661,13 +673,13 @@ possible to check whether the contents of the list are of the requested typed.
         </div></div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.LogManager#withLoggers">
-      <a id="withLoggers(⇒ AbstractLogger,(PrintWriter) ⇒ AbstractLogger):LogManager"></a>
+      <a id="withLoggers(⇒ AbstractLogger,(PrintWriter) ⇒ AbstractLogger,(sbt.Project.ScopedKey[_]) ⇒ Seq[AbstractLogger]):LogManager"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">withLoggers</span>
         
-        <span class="params">(<span name="screen">screen: ⇒ <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a> =<span class="defval" name='<span class="name"><a href="#defaultScreen:AbstractLogger">defaultScreen</a></span>'> ...</span></span>, <span name="backed">backed: (<span class="extype" name="java.io.PrintWriter">PrintWriter</span>) ⇒ <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a> =<span class="defval" name='<span class="name"><a href="#defaultBacked(Boolean):(PrintWriter) ⇒ AbstractLogger">defaultBacked</a></span>(true)'> ...</span></span>)</span>
+        <span class="params">(<span name="screen">screen: ⇒ <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a> =<span class="defval" name='<span class="name"><a href="#defaultScreen:AbstractLogger">defaultScreen</a></span>'> ...</span></span>, <span name="backed">backed: (<span class="extype" name="java.io.PrintWriter">PrintWriter</span>) ⇒ <a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a> =<span class="defval" name='<span class="name"><a href="#defaultBacked(Boolean):(PrintWriter) ⇒ AbstractLogger">defaultBacked</a></span>(<span class="name"><a href="ConsoleLogger$.html">ConsoleLogger</a></span>.<span class="name"><a href="ConsoleLogger$.html#formatEnabled:Boolean">formatEnabled</a></span>)'> ...</span></span>, <span name="extra">extra: (sbt.Project.ScopedKey[_]) ⇒ Seq[<a href="AbstractLogger.html" class="extype" name="sbt.AbstractLogger">AbstractLogger</a>] =<span class="defval" name="_ =&gt; Nil"> ...</span></span>)</span>
         <span class="result">: <a href="LogManager.html" class="extype" name="sbt.LogManager">LogManager</a></span>
       </span>
       </h4>

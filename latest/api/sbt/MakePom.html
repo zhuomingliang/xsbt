@@ -226,6 +226,18 @@
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.MakePom#allResolvers">
+      <a id="allResolvers(IvySettings):Seq[DependencyResolver]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">allResolvers</span>
+        
+        <span class="params">(<span name="settings">settings: <span class="extype" name="org.apache.ivy.core.settings.IvySettings">IvySettings</span></span>)</span>
+        <span class="result">: Seq[<span class="extype" name="org.apache.ivy.plugins.resolver.DependencyResolver">DependencyResolver</span>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="scala.Any#asInstanceOf">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -590,13 +602,13 @@ possible to check whether the contents of the list are of the requested typed.
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.MakePom#makeRepositories">
-      <a id="makeRepositories(IvySettings,(MavenRepository) ⇒ Boolean):Seq[Node]"></a>
+      <a id="makeRepositories(IvySettings,Boolean,(MavenRepository) ⇒ Boolean):Seq[Node]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">makeRepositories</span>
         
-        <span class="params">(<span name="settings">settings: <span class="extype" name="org.apache.ivy.core.settings.IvySettings">IvySettings</span></span>, <span name="filterRepositories">filterRepositories: (<a href="MavenRepository.html" class="extype" name="sbt.MavenRepository">MavenRepository</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
+        <span class="params">(<span name="settings">settings: <span class="extype" name="org.apache.ivy.core.settings.IvySettings">IvySettings</span></span>, <span name="includeAll">includeAll: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="filterRepositories">filterRepositories: (<a href="MavenRepository.html" class="extype" name="sbt.MavenRepository">MavenRepository</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
         <span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.xml.Node">Node</span>]</span>
       </span>
       </h4>
@@ -811,13 +823,13 @@ possible to check whether the contents of the list are of the requested typed.
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.MakePom#toPom">
-      <a id="toPom(Ivy,ModuleDescriptor,Option[Iterable[Configuration]],NodeSeq,(MavenRepository) ⇒ Boolean):Node"></a>
+      <a id="toPom(Ivy,ModuleDescriptor,Option[Iterable[Configuration]],NodeSeq,(MavenRepository) ⇒ Boolean,Boolean):Node"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">toPom</span>
         
-        <span class="params">(<span name="ivy">ivy: <span class="extype" name="org.apache.ivy.Ivy">Ivy</span></span>, <span name="module">module: <span class="extype" name="org.apache.ivy.core.module.descriptor.ModuleDescriptor">ModuleDescriptor</span></span>, <span name="configurations">configurations: <span class="extype" name="scala.Option">Option</span>[Iterable[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]]</span>, <span name="extra">extra: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>, <span name="filterRepositories">filterRepositories: (<a href="MavenRepository.html" class="extype" name="sbt.MavenRepository">MavenRepository</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
+        <span class="params">(<span name="ivy">ivy: <span class="extype" name="org.apache.ivy.Ivy">Ivy</span></span>, <span name="module">module: <span class="extype" name="org.apache.ivy.core.module.descriptor.ModuleDescriptor">ModuleDescriptor</span></span>, <span name="configurations">configurations: <span class="extype" name="scala.Option">Option</span>[Iterable[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]]</span>, <span name="extra">extra: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>, <span name="filterRepositories">filterRepositories: (<a href="MavenRepository.html" class="extype" name="sbt.MavenRepository">MavenRepository</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="allRepositories">allRepositories: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span>
         <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
       </span>
       </h4>
@@ -914,13 +926,13 @@ possible to check whether the contents of the list are of the requested typed.
         </div></div>
           
     </li><li visbl="pub" data-isabs="false" name="sbt.MakePom#write">
-      <a id="write(String,File):Unit"></a>
+      <a id="write(String,File,String):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">write</span>
         
-        <span class="params">(<span name="xmlString">xmlString: String</span>, <span name="output">output: <span class="extype" name="java.io.File">File</span></span>)</span>
+        <span class="params">(<span name="xmlString">xmlString: String</span>, <span name="output">output: <span class="extype" name="java.io.File">File</span></span>, <span name="newline">newline: String</span>)</span>
         <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
@@ -938,13 +950,13 @@ possible to check whether the contents of the list are of the requested typed.
       </h4>
       
     </li><li visbl="pub" data-isabs="false" name="sbt.MakePom#write">
-      <a id="write(Ivy,ModuleDescriptor,Option[Iterable[Configuration]],NodeSeq,(Node) ⇒ Node,(MavenRepository) ⇒ Boolean,File):Unit"></a>
+      <a id="write(Ivy,ModuleDescriptor,Option[Iterable[Configuration]],NodeSeq,(Node) ⇒ Node,(MavenRepository) ⇒ Boolean,Boolean,File):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
         <span class="name">write</span>
         
-        <span class="params">(<span name="ivy">ivy: <span class="extype" name="org.apache.ivy.Ivy">Ivy</span></span>, <span name="module">module: <span class="extype" name="org.apache.ivy.core.module.descriptor.ModuleDescriptor">ModuleDescriptor</span></span>, <span name="configurations">configurations: <span class="extype" name="scala.Option">Option</span>[Iterable[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]]</span>, <span name="extra">extra: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>, <span name="process">process: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a href="MavenRepository.html" class="extype" name="sbt.MavenRepository">MavenRepository</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="output">output: <span class="extype" name="java.io.File">File</span></span>)</span>
+        <span class="params">(<span name="ivy">ivy: <span class="extype" name="org.apache.ivy.Ivy">Ivy</span></span>, <span name="module">module: <span class="extype" name="org.apache.ivy.core.module.descriptor.ModuleDescriptor">ModuleDescriptor</span></span>, <span name="configurations">configurations: <span class="extype" name="scala.Option">Option</span>[Iterable[<a href="Configuration.html" class="extype" name="sbt.Configuration">Configuration</a>]]</span>, <span name="extra">extra: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>, <span name="process">process: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a href="MavenRepository.html" class="extype" name="sbt.MavenRepository">MavenRepository</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="allRepositories">allRepositories: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="output">output: <span class="extype" name="java.io.File">File</span></span>)</span>
         <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>

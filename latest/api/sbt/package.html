@@ -156,6 +156,23 @@
       </span>
       </a></h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.ApplicationID">
+      <a id="ApplicationID:ApplicationID"></a>
+      <h4 class="signature"><a href="ApplicationID.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">ApplicationID</span>
+        
+        <span class="params">(<span name="groupID">groupID: String</span>, <span name="name">name: String</span>, <span name="version">version: String</span>, <span name="mainClass">mainClass: String</span>, <span name="components">components: Seq[String]</span>, <span name="crossVersioned">crossVersioned: Boolean</span>, <span name="extra">extra: Seq[File]</span>)</span>
+        <span class="result"> extends ApplicationID with Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="false" name="sbt.Artifact">
       <a id="Artifact:Artifact"></a>
       <h4 class="signature"><a href="Artifact.html">
@@ -420,6 +437,23 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </a></h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.ChainedResolver">
+      <a id="ChainedResolver:ChainedResolver"></a>
+      <h4 class="signature"><a href="ChainedResolver.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">ChainedResolver</span>
+        
+        <span class="params">(<span name="name">name: String</span>, <span name="resolvers">resolvers: Seq[Resolver]</span>)</span>
+        <span class="result"> extends Resolver with Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="true" name="sbt.ChangeReport">
       <a id="ChangeReport:ChangeReport[T]"></a>
       <h4 class="signature"><a href="ChangeReport.html">
@@ -669,6 +703,23 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </a></h4>
       <p class="comment cmt">Provides information about resolution of a single configuration.</p>
+    </li><li visbl="pub" data-isabs="false" name="sbt.ConflictWarning">
+      <a id="ConflictWarning:ConflictWarning"></a>
+      <h4 class="signature"><a href="ConflictWarning.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">ConflictWarning</span>
+        
+        <span class="params">(<span name="filter">filter: ModuleFilter</span>, <span name="group">group: (ModuleID) ⇒ String</span>, <span name="level">level: Value</span>, <span name="failOnConflict">failOnConflict: Boolean</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="false" name="sbt.Console">
       <a id="Console:Console"></a>
       <h4 class="signature"><a href="Console.html">
@@ -986,6 +1037,23 @@ to the delegate logger provided in the constructor.</p>
           attributes: final 
         </div></div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Exit">
+      <a id="Exit:Exit"></a>
+      <h4 class="signature"><a href="Exit.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">Exit</span>
+        
+        <span class="params">(<span name="code">code: Int</span>)</span>
+        <span class="result"> extends Exit with Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="true" name="sbt.ExitHook">
       <a id="ExitHook:ExitHook"></a>
       <h4 class="signature"><a href="ExitHook.html">
@@ -1034,7 +1102,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol">
         <span class="name">Extracted</span>
         
-        <span class="params">(<span name="structure">structure: BuildStructure</span>, <span name="session">session: SessionSettings</span>, <span name="currentRef">currentRef: ProjectRef</span>, <span name="rootProject">rootProject: (URI) ⇒ String</span>)</span>
+        <span class="params">(<span name="structure">structure: BuildStructure</span>, <span name="session">session: SessionSettings</span>, <span name="currentRef">currentRef: ProjectRef</span>)</span>
         <span class="result"> extends Product</span>
       </span>
       </a></h4>
@@ -1258,6 +1326,57 @@ to the delegate logger provided in the constructor.</p>
         
         
         <span class="result"> extends JLine</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.GetClassifiersConfiguration">
+      <a id="GetClassifiersConfiguration:GetClassifiersConfiguration"></a>
+      <h4 class="signature"><a href="GetClassifiersConfiguration.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">GetClassifiersConfiguration</span>
+        
+        <span class="params">(<span name="id">id: ModuleID</span>, <span name="modules">modules: Seq[ModuleID]</span>, <span name="classifiers">classifiers: Seq[String]</span>, <span name="exclude">exclude: Map[ModuleID, Set[String]]</span>, <span name="configuration">configuration: UpdateConfiguration</span>, <span name="ivyScala">ivyScala: Option[IvyScala]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.GlobalPlugin">
+      <a id="GlobalPlugin:GlobalPlugin"></a>
+      <h4 class="signature"><a href="GlobalPlugin.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">GlobalPlugin</span>
+        
+        <span class="params">(<span name="data">data: GlobalPluginData</span>, <span name="structure">structure: BuildStructure</span>, <span name="inject">inject: Seq[sbt.Project.Setting[_]]</span>, <span name="base">base: File</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="sbt.GlobalPluginData">
+      <a id="GlobalPluginData:GlobalPluginData"></a>
+      <h4 class="signature"><a href="GlobalPluginData.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">GlobalPluginData</span>
+        
+        <span class="params">(<span name="projectID">projectID: ModuleID</span>, <span name="dependencies">dependencies: Seq[ModuleID]</span>, <span name="descriptors">descriptors: Map[ModuleRevisionId, ModuleDescriptor]</span>, <span name="fullClasspath">fullClasspath: Classpath</span>, <span name="internalClasspath">internalClasspath: Classpath</span>)</span>
+        <span class="result"> extends Product</span>
       </span>
       </a></h4>
       
@@ -1950,7 +2069,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol">
         <span class="name">MakePomConfiguration</span>
         
-        <span class="params">(<span name="file">file: File</span>, <span name="configurations">configurations: Option[Iterable[Configuration]]</span>, <span name="extra">extra: NodeSeq</span>, <span name="process">process: (Node) ⇒ Node</span>, <span name="filterRepositories">filterRepositories: (MavenRepository) ⇒ Boolean</span>)</span>
+        <span class="params">(<span name="file">file: File</span>, <span name="configurations">configurations: Option[Iterable[Configuration]]</span>, <span name="extra">extra: NodeSeq</span>, <span name="process">process: (Node) ⇒ Node</span>, <span name="filterRepositories">filterRepositories: (MavenRepository) ⇒ Boolean</span>, <span name="allRepositories">allRepositories: Boolean</span>)</span>
         <span class="result"> extends Product</span>
       </span>
       </a></h4>
@@ -2610,6 +2729,23 @@ to the delegate logger provided in the constructor.</p>
           attributes: final 
         </div></div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.Reboot">
+      <a id="Reboot:Reboot"></a>
+      <h4 class="signature"><a href="Reboot.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">Reboot</span>
+        
+        <span class="params">(<span name="scalaVersion">scalaVersion: String</span>, <span name="argsList">argsList: Seq[String]</span>, <span name="app">app: ApplicationID</span>, <span name="baseDirectory">baseDirectory: File</span>)</span>
+        <span class="result"> extends Reboot with Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="true" name="sbt.Reference">
       <a id="Reference:Reference"></a>
       <h4 class="signature"><a href="Reference.html">
@@ -3082,7 +3218,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol">
         <span class="name">SessionSettings</span>
         
-        <span class="params">(<span name="currentBuild">currentBuild: URI</span>, <span name="currentProject">currentProject: Map[URI, String]</span>, <span name="original">original: Seq[sbt.Project.Setting[_]]</span>, <span name="prepend">prepend: SessionMap</span>, <span name="append">append: SessionMap</span>, <span name="currentEval">currentEval: () ⇒ Eval</span>)</span>
+        <span class="params">(<span name="currentBuild">currentBuild: URI</span>, <span name="currentProject">currentProject: Map[URI, String]</span>, <span name="original">original: Seq[sbt.Project.Setting[_]]</span>, <span name="append">append: SessionMap</span>, <span name="currentEval">currentEval: () ⇒ Eval</span>)</span>
         <span class="result"> extends Product</span>
       </span>
       </a></h4>
@@ -3290,7 +3426,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol">
         <span class="name">State</span>
         
-        <span class="params">(<span name="configuration">configuration: AppConfiguration</span>, <span name="definedCommands">definedCommands: Seq[Command]</span>, <span name="exitHooks">exitHooks: Set[ExitHook]</span>, <span name="onFailure">onFailure: Option[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: AttributeMap</span>, <span name="next">next: Value</span>)</span>
+        <span class="params">(<span name="configuration">configuration: AppConfiguration</span>, <span name="definedCommands">definedCommands: Seq[Command]</span>, <span name="exitHooks">exitHooks: Set[ExitHook]</span>, <span name="onFailure">onFailure: Option[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: AttributeMap</span>, <span name="result">result: Option[MainResult]</span>)</span>
         <span class="result"> extends Identity with Product</span>
       </span>
       </a></h4>
@@ -3699,6 +3835,23 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </a></h4>
       <p class="comment cmt">Provides information about dependency resolution.</p>
+    </li><li visbl="pub" data-isabs="false" name="sbt.UpdateStats">
+      <a id="UpdateStats:UpdateStats"></a>
+      <h4 class="signature"><a href="UpdateStats.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">UpdateStats</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div></div>
+          
     </li><li visbl="pub" data-isabs="true" name="sbt.Using">
       <a id="Using:Using[Source, T]"></a>
       <h4 class="signature"><a href="Using.html">
@@ -3848,6 +4001,18 @@ to the delegate logger provided in the constructor.</p>
         
         
         <span class="result"> extends Alternatives</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.ApplicationID">
+      <a id="ApplicationID:ApplicationID"></a>
+      <h4 class="signature"><a href="ApplicationID$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ApplicationID</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
       </span>
       </a></h4>
       
@@ -4158,6 +4323,18 @@ The InputCaches for a basic data structure is built in two parts.</p>
       <span class="kind">object</span>
       <span class="symbol">
         <span class="name">Configurations</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="sbt.ConflictWarning">
+      <a id="ConflictWarning:ConflictWarning"></a>
+      <h4 class="signature"><a href="ConflictWarning$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ConflictWarning</span>
         
         
         <span class="result"> extends AnyRef</span>
@@ -4500,6 +4677,18 @@ The InputCaches for a basic data structure is built in two parts.</p>
       </span>
       </a></h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.GlobalPlugin">
+      <a id="GlobalPlugin:GlobalPlugin"></a>
+      <h4 class="signature"><a href="GlobalPlugin$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">GlobalPlugin</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.HList">
       <a id="HList:HList"></a>
       <h4 class="signature"><a href="HList$.html">
@@ -4836,6 +5025,18 @@ The InputCaches for a basic data structure is built in two parts.</p>
       </span>
       </a></h4>
       
+    </li><li visbl="pub" data-isabs="false" name="sbt.LocalRootProject">
+      <a id="LocalRootProject:LocalRootProject"></a>
+      <h4 class="signature"><a href="LocalRootProject$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">LocalRootProject</span>
+        
+        
+        <span class="result"> extends ProjectReference with Product</span>
+      </span>
+      </a></h4>
+      
     </li><li visbl="pub" data-isabs="false" name="sbt.LogManager">
       <a id="LogManager:LogManager"></a>
       <h4 class="signature"><a href="LogManager$.html">
@@ -4941,18 +5142,6 @@ The InputCaches for a basic data structure is built in two parts.</p>
         
         
         <span class="result"> extends AnyRef</span>
-      </span>
-      </a></h4>
-      
-    </li><li visbl="pub" data-isabs="false" name="sbt.Next">
-      <a id="Next:Next"></a>
-      <h4 class="signature"><a href="Next$.html">
-      <span class="kind">object</span>
-      <span class="symbol">
-        <span class="name">Next</span>
-        
-        
-        <span class="result"> extends Enumeration</span>
       </span>
       </a></h4>
       

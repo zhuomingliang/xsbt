@@ -68,7 +68,7 @@
       <span class="symbol">
         <span class="name">EvalResult</span>
         
-        <span class="params">(<span name="tpe">tpe: String</span>, <span name="value">value: <span class="extype" name="scala.Any">Any</span></span>, <span name="generated">generated: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="enclosingModule">enclosingModule: String</span>)</span>
+        <span class="params">(<span name="tpe">tpe: String</span>, <span name="getValue">getValue: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Any">Any</span></span>, <span name="generated">generated: Seq[<span class="extype" name="java.io.File">File</span>]</span>, <span name="enclosingModule">enclosingModule: String</span>)</span>
         
       </span>
       </h4>
@@ -419,6 +419,18 @@ there are no more references to the object.</p><p>The details of when and if the
             
           </div>
           
+    </li><li visbl="pub" data-isabs="false" name="sbt.compiler.EvalResult#getValue">
+      <a id="getValue:(ClassLoader) ⇒ Any"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">getValue</span>
+        
+        
+        <span class="result">: (<span class="extype" name="java.lang.ClassLoader">ClassLoader</span>) ⇒ <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#hashCode">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
@@ -591,18 +603,6 @@ possible to check whether the contents of the list are of the requested typed.
         
         
         <span class="result">: String</span>
-      </span>
-      </h4>
-      
-    </li><li visbl="pub" data-isabs="false" name="sbt.compiler.EvalResult#value">
-      <a id="value:Any"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol">
-        <span class="name">value</span>
-        
-        
-        <span class="result">: <span class="extype" name="scala.Any">Any</span></span>
       </span>
       </h4>
       
