@@ -14,24 +14,24 @@
 
 <span class="keyword">import</span> java.util.Arrays;
 <span class="keyword">import</span> java.util.List;
-public <span class="keyword">class</span> <a title="object xsbti.api.Annotation" id="9752">Annotation</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
+public <span class="keyword">class</span> <a title="object xsbti.api.Annotation" id="10049">Annotation</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
-	public Annotation<a href="#9752" title="xsbti.api.Annotation" class="delimiter">(</a><a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="78512">base</a>, <a href="AnnotationArgument.java.html#9758" title="xsbti.api.AnnotationArgument">AnnotationArgument</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.AnnotationArgument]" id="78513">arguments</a><span class="delimiter">)</span>
+	public Annotation<a href="#10049" title="xsbti.api.Annotation" class="delimiter">(</a><a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="94138">base</a>, <a href="AnnotationArgument.java.html#10055" title="xsbti.api.AnnotationArgument">AnnotationArgument</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.AnnotationArgument]" id="94139">arguments</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">this</span>.base = base;
 		<span class="keyword">this</span>.arguments = arguments;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="77835">base</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="AnnotationArgument.java.html#9758" title="xsbti.api.AnnotationArgument">AnnotationArgument</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.AnnotationArgument]" id="77836">arguments</a>;
-	public <span class="keyword">final</span> <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="()xsbti.api.Type" id="77837">base</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="92738">base</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="AnnotationArgument.java.html#10055" title="xsbti.api.AnnotationArgument">AnnotationArgument</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.AnnotationArgument]" id="92739">arguments</a>;
+	public <span class="keyword">final</span> <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="()xsbti.api.Type" id="92740">base</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> base;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="AnnotationArgument.java.html#9758" title="xsbti.api.AnnotationArgument">AnnotationArgument</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.AnnotationArgument]" id="77838">arguments</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="AnnotationArgument.java.html#10055" title="xsbti.api.AnnotationArgument">AnnotationArgument</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.AnnotationArgument]" id="92741">arguments</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> arguments;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="77839">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public String <a title="()java.lang.String" id="92742">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="string">&quot;Annotation(&quot;</span> + <span class="string">&quot;base: &quot;</span> + base<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;arguments: &quot;</span> + Arrays.toString<span class="delimiter">(</span>arguments<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>

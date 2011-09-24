@@ -5,32 +5,31 @@
           <title>sbt.std</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <link type="text/css" media="screen" rel="stylesheet" href="../../lib/template.css" />
       <script type="text/javascript" src="../../lib/jquery.js"></script>
       <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="value" onload="windowTitle();">
-
-      <p id="owner"><a href="../package.html" class="extype" name="sbt">sbt</a></p>
-
+        <body class="value">
       <div id="definition">
         <img src="../../lib/package_big.png" />
+        <p id="owner"><a name="sbt" class="extype" href="../package.html">sbt</a></p>
         <h1>std</h1>
       </div>
 
       <h4 class="signature" id="signature">
       <span class="kind">package</span>
-      <span class="symbol">
+      <span class="symbol"> 
         <span class="name">std</span>
-        
         
         
       </span>
       </h4>
-      <div class="fullcomment" id="comment"></div>
+      
+          <div class="fullcommenttop" id="comment"></div>
+        
 
       <div id="template">
 
@@ -40,11 +39,7 @@
           
           <div id="visbl">
               <span class="filtertype">Visibility</span>
-              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
-            </div>
-          <div id="impl">
-              <span class="filtertype">Impl.</span>
-              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
             </div>
         </div>
 
@@ -52,272 +47,204 @@
 
         <div class="types members" id="types">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" data-isabs="true" name="sbt.std.BinaryPipe">
+              <ol><li visbl="pub" name="sbt.std.BinaryPipe" data-isabs="true">
       <a id="BinaryPipe:BinaryPipe"></a>
-      <h4 class="signature"><a href="BinaryPipe.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">BinaryPipe</span>
-        
+      <span class="symbol"> 
+        <a href="BinaryPipe.html"><span class="name">BinaryPipe</span></a>
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.CloseableStreams">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.CloseableStreams" data-isabs="true">
       <a id="CloseableStreams:CloseableStreams[Key]"></a>
-      <h4 class="signature"><a href="CloseableStreams.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">CloseableStreams</span>
+      <span class="symbol"> 
+        <a href="CloseableStreams.html"><span class="name">CloseableStreams</span></a>
         <span class="tparams">[<span name="Key">Key</span>]</span>
-        
         <span class="result"> extends Streams[Key] with Closeable</span>
       </span>
-      </a></h4>
+      </h4>
       
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.ForkTask">
+    </li><li visbl="pub" name="sbt.std.ForkTask" data-isabs="true">
       <a id="ForkTask:ForkTask[S, CC]"></a>
-      <h4 class="signature"><a href="ForkTask.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">ForkTask</span>
+      <span class="symbol"> 
+        <a href="ForkTask.html"><span class="name">ForkTask</span></a>
         <span class="tparams">[<span name="S">S</span>, <span name="CC">CC<span class="tparams">[<span name="_">_</span>]</span></span>]</span>
-        
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.JoinTask">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.JoinTask" data-isabs="true">
       <a id="JoinTask:JoinTask[S, CC]"></a>
-      <h4 class="signature"><a href="JoinTask.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">JoinTask</span>
+      <span class="symbol"> 
+        <a href="JoinTask.html"><span class="name">JoinTask</span></a>
         <span class="tparams">[<span name="S">S</span>, <span name="CC">CC<span class="tparams">[<span name="_">_</span>]</span></span>]</span>
-        
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.ManagedStreams">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.ManagedStreams" data-isabs="true">
       <a id="ManagedStreams:ManagedStreams[Key]"></a>
-      <h4 class="signature"><a href="ManagedStreams.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">ManagedStreams</span>
+      <span class="symbol"> 
+        <a href="ManagedStreams.html"><span class="name">ManagedStreams</span></a>
         <span class="tparams">[<span name="Key">Key</span>]</span>
-        
         <span class="result"> extends TaskStreams[Key]</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.MultiInTask">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.MultiInTask" data-isabs="true">
       <a id="MultiInTask:MultiInTask[In]"></a>
-      <h4 class="signature"><a href="MultiInTask.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">MultiInTask</span>
+      <span class="symbol"> 
+        <a href="MultiInTask.html"><span class="name">MultiInTask</span></a>
         <span class="tparams">[<span name="In">In &lt;: HList</span>]</span>
-        
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.ProcessPipe">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.ProcessPipe" data-isabs="true">
       <a id="ProcessPipe:ProcessPipe"></a>
-      <h4 class="signature"><a href="ProcessPipe.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">ProcessPipe</span>
-        
+      <span class="symbol"> 
+        <a href="ProcessPipe.html"><span class="name">ProcessPipe</span></a>
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.SingleInTask">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.SingleInTask" data-isabs="true">
       <a id="SingleInTask:SingleInTask[S]"></a>
-      <h4 class="signature"><a href="SingleInTask.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">SingleInTask</span>
+      <span class="symbol"> 
+        <a href="SingleInTask.html"><span class="name">SingleInTask</span></a>
         <span class="tparams">[<span name="S">S</span>]</span>
-        
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.Streams">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.Streams" data-isabs="true">
       <a id="Streams:Streams[Key]"></a>
-      <h4 class="signature"><a href="Streams.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">Streams</span>
+      <span class="symbol"> 
+        <a href="Streams.html"><span class="name">Streams</span></a>
         <span class="tparams">[<span name="Key">Key</span>]</span>
-        
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
+      </h4>
       
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.TaskExtra">
+    </li><li visbl="pub" name="sbt.std.TaskExtra" data-isabs="true">
       <a id="TaskExtra:TaskExtra"></a>
-      <h4 class="signature"><a href="TaskExtra.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">TaskExtra</span>
-        
+      <span class="symbol"> 
+        <a href="TaskExtra.html"><span class="name">TaskExtra</span></a>
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
+      </h4>
       
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.TaskInfo">
+    </li><li visbl="pub" name="sbt.std.TaskInfo" data-isabs="true">
       <a id="TaskInfo:TaskInfo[S]"></a>
-      <h4 class="signature"><a href="TaskInfo.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">TaskInfo</span>
+      <span class="symbol"> 
+        <a href="TaskInfo.html"><span class="name">TaskInfo</span></a>
         <span class="tparams">[<span name="S">S</span>]</span>
-        
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.TaskLines">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.TaskLines" data-isabs="true">
       <a id="TaskLines:TaskLines"></a>
-      <h4 class="signature"><a href="TaskLines.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">TaskLines</span>
-        
+      <span class="symbol"> 
+        <a href="TaskLines.html"><span class="name">TaskLines</span></a>
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.TaskStreams">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.TaskStreams" data-isabs="true">
       <a id="TaskStreams:TaskStreams[Key]"></a>
-      <h4 class="signature"><a href="TaskStreams.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">TaskStreams</span>
+      <span class="symbol"> 
+        <a href="TaskStreams.html"><span class="name">TaskStreams</span></a>
         <span class="tparams">[<span name="Key">Key</span>]</span>
-        
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
-    </li><li visbl="pub" data-isabs="true" name="sbt.std.TextPipe">
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.std.TextPipe" data-isabs="true">
       <a id="TextPipe:TextPipe"></a>
-      <h4 class="signature"><a href="TextPipe.html">
+      <h4 class="signature">
       <span class="kind">trait</span>
-      <span class="symbol">
-        <span class="name">TextPipe</span>
-        
+      <span class="symbol"> 
+        <a href="TextPipe.html"><span class="name">TextPipe</span></a>
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
-      
-            
-            <div class="fullcomment"><div class="block">
-          attributes: sealed 
-        </div></div>
-          
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
     </li></ol>
             </div>
+        
+        
 
         <div class="values members" id="values">
               <h3>Value Members</h3>
-              <ol><li visbl="pub" data-isabs="false" name="sbt.std.Streams">
+              <ol><li visbl="pub" name="sbt.std.Streams" data-isabs="false">
       <a id="Streams:Streams"></a>
-      <h4 class="signature"><a href="Streams$.html">
+      <h4 class="signature">
       <span class="kind">object</span>
-      <span class="symbol">
-        <span class="name">Streams</span>
-        
+      <span class="symbol"> 
+        <a href="Streams$.html"><span class="name">Streams</span></a>
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
+      </h4>
       
-    </li><li visbl="pub" data-isabs="false" name="sbt.std.TaskExtra">
+    </li><li visbl="pub" name="sbt.std.TaskExtra" data-isabs="false">
       <a id="TaskExtra:TaskExtra"></a>
-      <h4 class="signature"><a href="TaskExtra$.html">
+      <h4 class="signature">
       <span class="kind">object</span>
-      <span class="symbol">
-        <span class="name">TaskExtra</span>
-        
+      <span class="symbol"> 
+        <a href="TaskExtra$.html"><span class="name">TaskExtra</span></a>
         
         <span class="result"> extends TaskExtra</span>
       </span>
-      </a></h4>
+      </h4>
       
-    </li><li visbl="pub" data-isabs="false" name="sbt.std.Transform">
+    </li><li visbl="pub" name="sbt.std.Transform" data-isabs="false">
       <a id="Transform:Transform"></a>
-      <h4 class="signature"><a href="Transform$.html">
+      <h4 class="signature">
       <span class="kind">object</span>
-      <span class="symbol">
-        <span class="name">Transform</span>
-        
+      <span class="symbol"> 
+        <a href="Transform$.html"><span class="name">Transform</span></a>
         
         <span class="result"> extends AnyRef</span>
       </span>
-      </a></h4>
+      </h4>
       
     </li></ol>
             </div>
+
+        
 
         
 

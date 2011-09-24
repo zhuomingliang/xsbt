@@ -14,14 +14,14 @@
 
 <span class="keyword">import</span> java.io.File;
 
-public interface <a title="object xsbti.ComponentProvider" id="48625">ComponentProvider</a>
+public interface <a title="object xsbti.ComponentProvider" id="56795">ComponentProvider</a>
 <span class="delimiter">{</span>
-	public File <a title="(id: java.lang.String)java.io.File" id="48626">componentLocation</a><span class="delimiter">(</span>String <a title="java.lang.String" id="221627">id</a><span class="delimiter">)</span>;
-	public File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="(componentID: java.lang.String)Array[java.io.File]" id="48627">component</a><span class="delimiter">(</span>String <a title="java.lang.String" id="172911">componentID</a><span class="delimiter">)</span>;
-	public void <a title="(componentID: java.lang.String,components: Array[java.io.File])Unit" id="48628">defineComponent</a><span class="delimiter">(</span>String <a title="java.lang.String" id="48631">componentID</a>, File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[java.io.File]" id="48632">components</a><span class="delimiter">)</span>;
-	public boolean <a title="(componentID: java.lang.String,components: Array[java.io.File])Boolean" id="48629">addToComponent</a><span class="delimiter">(</span>String <a title="java.lang.String" id="222458">componentID</a>, File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[java.io.File]" id="222459">components</a><span class="delimiter">)</span>;
+	public File <a title="(id: java.lang.String)java.io.File" id="56796">componentLocation</a><span class="delimiter">(</span>String <a title="java.lang.String" id="279383">id</a><span class="delimiter">)</span>;
+	public File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="(componentID: java.lang.String)Array[java.io.File]" id="56797">component</a><span class="delimiter">(</span>String <a title="java.lang.String" id="221543">componentID</a><span class="delimiter">)</span>;
+	public void <a title="(componentID: java.lang.String, components: Array[java.io.File])Unit" id="56798">defineComponent</a><span class="delimiter">(</span>String <a title="java.lang.String" id="56801">componentID</a>, File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[java.io.File]" id="56802">components</a><span class="delimiter">)</span>;
+	public boolean <a title="(componentID: java.lang.String, components: Array[java.io.File])Boolean" id="56799">addToComponent</a><span class="delimiter">(</span>String <a title="java.lang.String" id="280143">componentID</a>, File<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[java.io.File]" id="280144">components</a><span class="delimiter">)</span>;
 	 <span class="comment">// null if locking disabled</span>
-	public File <a title="()java.io.File" id="48630">lockFile</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public File <a title="()java.io.File" id="56800">lockFile</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 <span class="delimiter">}</span>
         </pre>
     </body>

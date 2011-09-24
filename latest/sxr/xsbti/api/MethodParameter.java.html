@@ -14,36 +14,36 @@
 
 <span class="keyword">import</span> java.util.Arrays;
 <span class="keyword">import</span> java.util.List;
-public <span class="keyword">class</span> <a title="object xsbti.api.MethodParameter" id="9828">MethodParameter</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
+public <span class="keyword">class</span> <a title="object xsbti.api.MethodParameter" id="10125">MethodParameter</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
-	public MethodParameter<a href="#9828" title="xsbti.api.MethodParameter" class="delimiter">(</a>String <a title="java.lang.String" id="78580">name</a>, <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="78581">tpe</a>, boolean <a title="Boolean" id="78582">hasDefault</a>, <a href="ParameterModifier.java.html#9844" title="xsbti.api.ParameterModifier">ParameterModifier</a> <a title="xsbti.api.ParameterModifier" id="78583">modifier</a><span class="delimiter">)</span>
+	public MethodParameter<a href="#10125" title="xsbti.api.MethodParameter" class="delimiter">(</a>String <a title="java.lang.String" id="94197">name</a>, <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="94198">tpe</a>, boolean <a title="Boolean" id="94199">hasDefault</a>, <a href="ParameterModifier.java.html#10141" title="xsbti.api.ParameterModifier">ParameterModifier</a> <a title="xsbti.api.ParameterModifier" id="94200">modifier</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">this</span>.name = name;
 		<span class="keyword">this</span>.tpe = tpe;
 		<span class="keyword">this</span>.hasDefault = hasDefault;
 		<span class="keyword">this</span>.modifier = modifier;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> String <a title="java.lang.String" id="77712">name</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="77713">tpe</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> boolean <a title="Boolean" id="77714">hasDefault</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="ParameterModifier.java.html#9844" title="xsbti.api.ParameterModifier">ParameterModifier</a> <a title="xsbti.api.ParameterModifier" id="77715">modifier</a>;
-	public <span class="keyword">final</span> String <a title="()java.lang.String" id="77716">name</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> String <a title="java.lang.String" id="92629">name</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="92630">tpe</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> boolean <a title="Boolean" id="92631">hasDefault</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="ParameterModifier.java.html#10141" title="xsbti.api.ParameterModifier">ParameterModifier</a> <a title="xsbti.api.ParameterModifier" id="92632">modifier</a>;
+	public <span class="keyword">final</span> String <a title="()java.lang.String" id="92633">name</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> name;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="()xsbti.api.Type" id="77717">tpe</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="()xsbti.api.Type" id="92634">tpe</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> tpe;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> boolean <a title="()Boolean" id="77718">hasDefault</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> boolean <a title="()Boolean" id="92635">hasDefault</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> hasDefault;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="ParameterModifier.java.html#9844" title="xsbti.api.ParameterModifier">ParameterModifier</a> <a title="()xsbti.api.ParameterModifier" id="77719">modifier</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="ParameterModifier.java.html#10141" title="xsbti.api.ParameterModifier">ParameterModifier</a> <a title="()xsbti.api.ParameterModifier" id="92636">modifier</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> modifier;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="77720">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public String <a title="()java.lang.String" id="92637">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="string">&quot;MethodParameter(&quot;</span> + <span class="string">&quot;name: &quot;</span> + name<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;tpe: &quot;</span> + tpe<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;hasDefault: &quot;</span> + hasDefault<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;modifier: &quot;</span> + modifier<span class="delimiter">(</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>

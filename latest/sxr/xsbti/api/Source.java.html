@@ -14,30 +14,30 @@
 
 <span class="keyword">import</span> java.util.Arrays;
 <span class="keyword">import</span> java.util.List;
-public <span class="keyword">class</span> <a title="object xsbti.api.Source" id="9934">Source</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
+public <span class="keyword">class</span> <a title="object xsbti.api.Source" id="10231">Source</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
-	public Source<a href="#9934" title="xsbti.api.Source" class="delimiter">(</a><a href="Compilation.java.html#9770" title="xsbti.api.Compilation">Compilation</a> <a title="xsbti.api.Compilation" id="101710">compilation</a>, byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[Byte]" id="101711">hash</a>, <a href="SourceAPI.java.html#9940" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="xsbti.api.SourceAPI" id="101712">api</a><span class="delimiter">)</span>
+	public Source<a href="#10231" title="xsbti.api.Source" class="delimiter">(</a><a href="Compilation.java.html#10067" title="xsbti.api.Compilation">Compilation</a> <a title="xsbti.api.Compilation" id="117870">compilation</a>, byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[Byte]" id="117871">hash</a>, <a href="SourceAPI.java.html#10237" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="xsbti.api.SourceAPI" id="117872">api</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">this</span>.compilation = compilation;
 		<span class="keyword">this</span>.hash = hash;
 		<span class="keyword">this</span>.api = api;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Compilation.java.html#9770" title="xsbti.api.Compilation">Compilation</a> <a title="xsbti.api.Compilation" id="87199">compilation</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[Byte]" id="87200">hash</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="SourceAPI.java.html#9940" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="xsbti.api.SourceAPI" id="87201">api</a>;
-	public <span class="keyword">final</span> <a href="Compilation.java.html#9770" title="xsbti.api.Compilation">Compilation</a> <a title="()xsbti.api.Compilation" id="87202">compilation</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Compilation.java.html#10067" title="xsbti.api.Compilation">Compilation</a> <a title="xsbti.api.Compilation" id="102563">compilation</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[Byte]" id="102564">hash</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="SourceAPI.java.html#10237" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="xsbti.api.SourceAPI" id="102565">api</a>;
+	public <span class="keyword">final</span> <a href="Compilation.java.html#10067" title="xsbti.api.Compilation">Compilation</a> <a title="()xsbti.api.Compilation" id="102566">compilation</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> compilation;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[Byte]" id="87203">hash</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[Byte]" id="102567">hash</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> hash;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="SourceAPI.java.html#9940" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="()xsbti.api.SourceAPI" id="87204">api</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="SourceAPI.java.html#10237" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="()xsbti.api.SourceAPI" id="102568">api</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> api;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="87205">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public String <a title="()java.lang.String" id="102569">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="string">&quot;Source(&quot;</span> + <span class="string">&quot;compilation: &quot;</span> + compilation<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;hash: &quot;</span> + Arrays.toString<span class="delimiter">(</span>hash<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;api: &quot;</span> + api<span class="delimiter">(</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>

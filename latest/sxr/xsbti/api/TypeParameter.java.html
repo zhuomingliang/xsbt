@@ -14,9 +14,9 @@
 
 <span class="keyword">import</span> java.util.Arrays;
 <span class="keyword">import</span> java.util.List;
-public <span class="keyword">class</span> <a title="object xsbti.api.TypeParameter" id="9994">TypeParameter</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
+public <span class="keyword">class</span> <a title="object xsbti.api.TypeParameter" id="10291">TypeParameter</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
-	public TypeParameter<a href="#9994" title="xsbti.api.TypeParameter" class="delimiter">(</a>int <a title="Int" id="79613">id</a>, <a href="Annotation.java.html#9752" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Annotation]" id="79614">annotations</a>, <a href="#9994" title="xsbti.api.TypeParameter">TypeParameter</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.TypeParameter]" id="79615">typeParameters</a>, <a href="Variance.java.html#10016" title="xsbti.api.Variance">Variance</a> <a title="xsbti.api.Variance" id="79616">variance</a>, <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="79617">lowerBound</a>, <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="79618">upperBound</a><span class="delimiter">)</span>
+	public TypeParameter<a href="#10291" title="xsbti.api.TypeParameter" class="delimiter">(</a>int <a title="Int" id="95487">id</a>, <a href="Annotation.java.html#10049" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Annotation]" id="95488">annotations</a>, <a href="#10291" title="xsbti.api.TypeParameter">TypeParameter</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.TypeParameter]" id="95489">typeParameters</a>, <a href="Variance.java.html#10313" title="xsbti.api.Variance">Variance</a> <a title="xsbti.api.Variance" id="95490">variance</a>, <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="95491">lowerBound</a>, <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="95492">upperBound</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">this</span>.id = id;
 		<span class="keyword">this</span>.annotations = annotations;
@@ -25,37 +25,37 @@ public <span class="keyword">class</span> <a title="object xsbti.api.TypeParamet
 		<span class="keyword">this</span>.lowerBound = lowerBound;
 		<span class="keyword">this</span>.upperBound = upperBound;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> int <a title="Int" id="74911">id</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Annotation.java.html#9752" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Annotation]" id="74912">annotations</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="#9994" title="xsbti.api.TypeParameter">TypeParameter</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.TypeParameter]" id="74913">typeParameters</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Variance.java.html#10016" title="xsbti.api.Variance">Variance</a> <a title="xsbti.api.Variance" id="74914">variance</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="74915">lowerBound</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="74916">upperBound</a>;
-	public <span class="keyword">final</span> int <a title="()Int" id="74917">id</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> int <a title="Int" id="89640">id</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Annotation.java.html#10049" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.Annotation]" id="89641">annotations</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="#10291" title="xsbti.api.TypeParameter">TypeParameter</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.TypeParameter]" id="89642">typeParameters</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Variance.java.html#10313" title="xsbti.api.Variance">Variance</a> <a title="xsbti.api.Variance" id="89643">variance</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="89644">lowerBound</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="xsbti.api.Type" id="89645">upperBound</a>;
+	public <span class="keyword">final</span> int <a title="()Int" id="89646">id</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> id;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Annotation.java.html#9752" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Annotation]" id="74918">annotations</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Annotation.java.html#10049" title="xsbti.api.Annotation">Annotation</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.Annotation]" id="89647">annotations</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> annotations;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="#9994" title="xsbti.api.TypeParameter">TypeParameter</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.TypeParameter]" id="74919">typeParameters</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="#10291" title="xsbti.api.TypeParameter">TypeParameter</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.TypeParameter]" id="89648">typeParameters</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> typeParameters;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Variance.java.html#10016" title="xsbti.api.Variance">Variance</a> <a title="()xsbti.api.Variance" id="74920">variance</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Variance.java.html#10313" title="xsbti.api.Variance">Variance</a> <a title="()xsbti.api.Variance" id="89649">variance</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> variance;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="()xsbti.api.Type" id="74921">lowerBound</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="()xsbti.api.Type" id="89650">lowerBound</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> lowerBound;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="Type.java.html#9970" title="xsbti.api.Type">Type</a> <a title="()xsbti.api.Type" id="74922">upperBound</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="Type.java.html#10267" title="xsbti.api.Type">Type</a> <a title="()xsbti.api.Type" id="89651">upperBound</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> upperBound;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="74923">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public String <a title="()java.lang.String" id="89652">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="string">&quot;TypeParameter(&quot;</span> + <span class="string">&quot;id: &quot;</span> + id<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;annotations: &quot;</span> + Arrays.toString<span class="delimiter">(</span>annotations<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;typeParameters: &quot;</span> + Arrays.toString<span class="delimiter">(</span>typeParameters<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;variance: &quot;</span> + variance<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;lowerBound: &quot;</span> + lowerBound<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;upperBound: &quot;</span> + upperBound<span class="delimiter">(</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>
