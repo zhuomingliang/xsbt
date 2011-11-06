@@ -118,13 +118,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.Command#apply" data-isabs="false">
-      <a id="apply[T](String,Help*)((State) ⇒ Parser[T])((State, T) ⇒ State):Command"></a>
+      <a id="apply[T](String,Help)((State) ⇒ Parser[T])((State, T) ⇒ State):Command"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">apply</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="name">name: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a>*</span>)</span><span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[T]</span>)</span><span class="params">(<span name="effect">effect: (<a name="sbt.State" class="extype" href="State.html">State</a>, T) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
+        <span class="params">(<span name="name">name: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a> = <span class="symbol"><span class="name"><a href="Help$.html">Help.empty</a></span></span></span>)</span><span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[T]</span>)</span><span class="params">(<span name="effect">effect: (<a name="sbt.State" class="extype" href="State.html">State</a>, T) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
       </span>
       </h4>
       
@@ -162,24 +162,24 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Command#arb" data-isabs="false">
-      <a id="arb[T]((State) ⇒ Parser[T],Help*)((State, T) ⇒ State):Command"></a>
+      <a id="arb[T]((State) ⇒ Parser[T],Help)((State, T) ⇒ State):Command"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">arb</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[T]</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a>*</span>)</span><span class="params">(<span name="effect">effect: (<a name="sbt.State" class="extype" href="State.html">State</a>, T) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
+        <span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[T]</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>)</span><span class="params">(<span name="effect">effect: (<a name="sbt.State" class="extype" href="State.html">State</a>, T) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.Command#args" data-isabs="false">
-      <a id="args(String,String,Help*)((State, Seq[String]) ⇒ State):Command"></a>
+      <a id="args(String,String,Help)((State, Seq[String]) ⇒ State):Command"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">args</span>
         
-        <span class="params">(<span name="name">name: String</span>, <span name="display">display: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a>*</span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>, Seq[String]) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
+        <span class="params">(<span name="name">name: String</span>, <span name="display">display: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a> = <span class="symbol"><span class="name"><a href="Help$.html">Help.empty</a></span></span></span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>, Seq[String]) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
       </span>
       </h4>
       
@@ -231,13 +231,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Command#command" data-isabs="false">
-      <a id="command(String,Seq[Help])((State) ⇒ State):Command"></a>
+      <a id="command(String,Help)((State) ⇒ State):Command"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">command</span>
         
-        <span class="params">(<span name="name">name: String</span>, <span name="help">help: Seq[<a name="sbt.Help" class="extype" href="Help.html">Help</a>]</span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
+        <span class="params">(<span name="name">name: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a> = <span class="symbol"><span class="name"><a href="Help$.html">Help.empty</a></span></span></span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
       </span>
       </h4>
       
@@ -249,17 +249,6 @@
         <span class="name">command</span>
         
         <span class="params">(<span name="name">name: String</span>, <span name="briefHelp">briefHelp: String</span>, <span name="detail">detail: String</span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
-      </span>
-      </h4>
-      
-    </li><li visbl="pub" name="sbt.Command#command" data-isabs="false">
-      <a id="command(String)((State) ⇒ State):Command"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">command</span>
-        
-        <span class="params">(<span name="name">name: String</span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
       </span>
       </h4>
       
@@ -275,13 +264,24 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Command#custom" data-isabs="false">
-      <a id="custom((State) ⇒ Parser[() ⇒ State],Seq[Help]):Command"></a>
+      <a id="custom((State) ⇒ Parser[() ⇒ State],Help):Command"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">custom</span>
         
-        <span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[() ⇒ <a name="sbt.State" class="extype" href="State.html">State</a>]</span>, <span name="help">help: Seq[<a name="sbt.Help" class="extype" href="Help.html">Help</a>] = <span class="symbol">Nil</span></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
+        <span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[() ⇒ <a name="sbt.State" class="extype" href="State.html">State</a>]</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a> = <span class="symbol"><span class="name"><a href="Help$.html">Help.empty</a></span></span></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.Command#customHelp" data-isabs="false">
+      <a id="customHelp((State) ⇒ Parser[() ⇒ State],(State) ⇒ Help):Command"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">customHelp</span>
+        
+        <span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[() ⇒ <a name="sbt.State" class="extype" href="State.html">State</a>]</span>, <span name="help">help: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
       </span>
       </h4>
       
@@ -388,13 +388,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.Command#make" data-isabs="false">
-      <a id="make(String,Help*)((State) ⇒ Parser[() ⇒ State]):Command"></a>
+      <a id="make(String,Help)((State) ⇒ Parser[() ⇒ State]):Command"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">make</span>
         
-        <span class="params">(<span name="name">name: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a>*</span>)</span><span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[() ⇒ <a name="sbt.State" class="extype" href="State.html">State</a>]</span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
+        <span class="params">(<span name="name">name: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>)</span><span class="params">(<span name="parser">parser: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[() ⇒ <a name="sbt.State" class="extype" href="State.html">State</a>]</span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
       </span>
       </h4>
       
@@ -498,13 +498,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Command#single" data-isabs="false">
-      <a id="single(String,Help*)((State, String) ⇒ State):Command"></a>
+      <a id="single(String,Help)((State, String) ⇒ State):Command"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">single</span>
         
-        <span class="params">(<span name="name">name: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a>*</span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>, String) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
+        <span class="params">(<span name="name">name: String</span>, <span name="help">help: <a name="sbt.Help" class="extype" href="Help.html">Help</a> = <span class="symbol"><span class="name"><a href="Help$.html">Help.empty</a></span></span></span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>, String) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>
       </span>
       </h4>
       

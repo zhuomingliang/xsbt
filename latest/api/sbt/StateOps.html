@@ -28,7 +28,7 @@
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Convenience methods for State transformations and operations.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -70,7 +70,7 @@
         <span class="params">(<span name="newCommand">newCommand: <a name="sbt.Command" class="extype" href="Command.html">Command</a></span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Schedules <code>newCommand</code> to be run after any remaining commands.</p><div class="fullcomment"><div class="comment cmt"><p>Schedules <code>newCommand</code> to be run after any remaining commands.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#++" data-isabs="true">
       <a id="++(Seq[Command]):State"></a>
       <h4 class="signature">
@@ -81,7 +81,7 @@
         <span class="params">(<span name="newCommands">newCommands: Seq[<a name="sbt.Command" class="extype" href="Command.html">Command</a>]</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Schedules <code>newCommands</code> to be run after any remaining commands.</p><div class="fullcomment"><div class="comment cmt"><p>Schedules <code>newCommands</code> to be run after any remaining commands.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#::" data-isabs="true">
       <a id="::(String):State"></a>
       <h4 class="signature">
@@ -92,7 +92,7 @@
         <span class="params">(<span name="command">command: String</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Schedules <code>command</code> to be run before any remaining commands.</p><div class="fullcomment"><div class="comment cmt"><p>Schedules <code>command</code> to be run before any remaining commands.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#:::" data-isabs="true">
       <a id=":::(Seq[String]):State"></a>
       <h4 class="signature">
@@ -103,7 +103,7 @@
         <span class="params">(<span name="commands">commands: Seq[String]</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Schedules <code>commands</code> to be run before any remaining commands.</p><div class="fullcomment"><div class="comment cmt"><p>Schedules <code>commands</code> to be run before any remaining commands.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#addExitHook" data-isabs="true">
       <a id="addExitHook(⇒ Unit):State"></a>
       <h4 class="signature">
@@ -114,7 +114,7 @@
         <span class="params">(<span name="f">f: ⇒ <span name="scala.Unit" class="extype">Unit</span></span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Registers a new exit hook, which will run when sbt exits or restarts.</p><div class="fullcomment"><div class="comment cmt"><p>Registers a new exit hook, which will run when sbt exits or restarts.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#baseDir" data-isabs="true">
       <a id="baseDir:File"></a>
       <h4 class="signature">
@@ -125,7 +125,18 @@
         <span class="result">: <span name="java.io.File" class="extype">File</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">The application base directory, which is not necessarily the current working directory.</p><div class="fullcomment"><div class="comment cmt"><p>The application base directory, which is not necessarily the current working directory.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+    </li><li visbl="pub" name="sbt.StateOps#clearGlobalLog" data-isabs="true">
+      <a id="clearGlobalLog:State"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">clearGlobalLog</span>
+        
+        <span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets the next command processing action to be to rotate the global log and continue executing commands.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the next command processing action to be to rotate the global log and continue executing commands.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#continue" data-isabs="true">
       <a id="continue:State"></a>
       <h4 class="signature">
@@ -136,7 +147,7 @@
         <span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Sets the next command processing action to be to continue processing the next command.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the next command processing action to be to continue processing the next command.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#exit" data-isabs="true">
       <a id="exit(Boolean):State"></a>
       <h4 class="signature">
@@ -147,7 +158,7 @@
         <span class="params">(<span name="ok">ok: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Sets the next command processing action to be to exit with a zero exit code if <code>ok</code> is true and a nonzero exit code if <code>ok</code> if false.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the next command processing action to be to exit with a zero exit code if <code>ok</code> is true and a nonzero exit code if <code>ok</code> if false.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#fail" data-isabs="true">
       <a id="fail:State"></a>
       <h4 class="signature">
@@ -158,7 +169,7 @@
         <span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Marks the currently executing command as failing.</p><div class="fullcomment"><div class="comment cmt"><p>Marks the currently executing command as failing.  This triggers failure handling by the command processor.  See also <code>State.onFailure</code></p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#get" data-isabs="true">
       <a id="get[T](AttributeKey[T]):Option[T]"></a>
       <h4 class="signature">
@@ -169,7 +180,7 @@
         <span class="params">(<span name="key">key: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[T]</span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[T]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Gets the value associated with <code>key</code> from the custom attributes map.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the value associated with <code>key</code> from the custom attributes map.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#has" data-isabs="true">
       <a id="has(sbt.AttributeKey[_]):Boolean"></a>
       <h4 class="signature">
@@ -180,7 +191,18 @@
         <span class="params">(<span name="key">key: sbt.AttributeKey[_]</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Returns true if <code>key</code> exists in the custom attributes map, false if it does not exist.</p><div class="fullcomment"><div class="comment cmt"><p>Returns true if <code>key</code> exists in the custom attributes map, false if it does not exist.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+    </li><li visbl="pub" name="sbt.StateOps#keepLastLog" data-isabs="true">
+      <a id="keepLastLog:State"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">keepLastLog</span>
+        
+        <span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets the next command processing action to be to keep the previous log and continue executing commands.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the next command processing action to be to keep the previous log and continue executing commands.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#locked" data-isabs="true">
       <a id="locked[T](File)(⇒ T):T"></a>
       <h4 class="signature">
@@ -191,7 +213,18 @@
         <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>)</span><span class="params">(<span name="t">t: ⇒ T</span>)</span><span class="result">: T</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Evaluates the provided expression with a JVM-wide and machine-wide lock on <code>file</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluates the provided expression with a JVM-wide and machine-wide lock on <code>file</code>.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+    </li><li visbl="pub" name="sbt.StateOps#log" data-isabs="true">
+      <a id="log:Logger"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">log</span>
+        
+        <span class="result">: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The Logger used for general command logging.</p><div class="fullcomment"><div class="comment cmt"><p>The Logger used for general command logging.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#process" data-isabs="true">
       <a id="process((String, State) ⇒ State):State"></a>
       <h4 class="signature">
@@ -213,7 +246,7 @@
         <span class="params">(<span name="key">key: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[T]</span>, <span name="value">value: T</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Sets the value associated with <code>key</code> in the custom attributes map.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the value associated with <code>key</code> in the custom attributes map.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#reboot" data-isabs="true">
       <a id="reboot(Boolean):State"></a>
       <h4 class="signature">
@@ -224,7 +257,12 @@
         <span class="params">(<span name="full">full: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Reboots sbt.</p><div class="fullcomment"><div class="comment cmt"><p>Reboots sbt.  A reboot restarts execution from the entry point of the launcher.
+A reboot is designed to be as close as possible to actually restarting the JVM without actually doing so.
+Because the JVM is not restarted, JVM exit hooks are not run.
+State.exitHooks should be used instead and those will be run before rebooting.
+If <code>full</code> is true, the boot directory is deleted before starting again.
+This command is currently implemented to not return, but may be implemented in the future to only reboot at the next command processing step.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#reload" data-isabs="true">
       <a id="reload:State"></a>
       <h4 class="signature">
@@ -235,7 +273,7 @@
         <span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Restarts sbt without dropping loaded Scala classes.</p><div class="fullcomment"><div class="comment cmt"><p>Restarts sbt without dropping loaded Scala classes.  It is a shallower restart than <code>reboot</code>.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#remove" data-isabs="true">
       <a id="remove(sbt.AttributeKey[_]):State"></a>
       <h4 class="signature">
@@ -246,7 +284,7 @@
         <span class="params">(<span name="key">key: sbt.AttributeKey[_]</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Removes the <code>key</code> and any associated value from the custom attributes map.</p><div class="fullcomment"><div class="comment cmt"><p>Removes the <code>key</code> and any associated value from the custom attributes map.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#runExitHooks" data-isabs="true">
       <a id="runExitHooks():State"></a>
       <h4 class="signature">
@@ -257,18 +295,43 @@
         <span class="params">()</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Runs any defined exitHooks and then clears them.</p><div class="fullcomment"><div class="comment cmt"><p>Runs any defined exitHooks and then clears them.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+    </li><li visbl="pub" name="sbt.StateOps#setNext" data-isabs="true">
+      <a id="setNext(Next):State"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">setNext</span>
+        
+        <span class="params">(<span name="n">n: <a name="sbt.State.Next" class="extype" href="State$$Next.html">Next</a></span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets the next command processing action to do.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the next command processing action to do.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+    </li><li visbl="pub" name="sbt.StateOps#update" data-isabs="true">
+      <a id="update[T](AttributeKey[T])((Option[T]) ⇒ T):State"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">update</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="key">key: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[T]</span>)</span><span class="params">(<span name="f">f: (<span name="scala.Option" class="extype">Option</span>[T]) ⇒ T</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets the value associated with <code>key</code> in the custom attributes map by transforming the current value.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the value associated with <code>key</code> in the custom attributes map by transforming the current value.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li><li visbl="pub" name="sbt.StateOps#setResult" data-isabs="true">
       <a id="setResult(Option[MainResult]):State"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">setResult</span>
+        <span class="name deprecated">setResult</span>
         
-        <span class="params">(<span name="n">n: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a>]</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+        <span class="params">(<span name="ro">ro: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a>]</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>Use setNext</p></dd></dl></div>
     </li></ol>
             </div>
 

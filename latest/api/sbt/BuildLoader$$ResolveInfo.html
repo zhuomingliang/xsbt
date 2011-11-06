@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>sbt.Key</title>
+          <title>sbt.BuildLoader.ResolveInfo</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../lib/template.css" />
@@ -14,26 +14,23 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../lib/trait_big.png" />
-        <p id="owner"><a name="sbt" class="extype" href="package.html">sbt</a></p>
-        <h1>Key</h1>
+        <img src="../lib/class_big.png" />
+        <p id="owner"><a name="sbt" class="extype" href="package.html">sbt</a>.<a name="sbt.BuildLoader" class="extype" href="BuildLoader$.html">BuildLoader</a></p>
+        <h1>ResolveInfo</h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">trait</span>
+      <span class="kind">class</span>
       <span class="symbol"> 
-        <span class="name">Key</span>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>
+        <span class="name">ResolveInfo</span>
+        
+        <span class="result"> extends <a name="sbt.BuildLoader.Info" class="extype" href="BuildLoader$$Info.html">Info</a></span>
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
-        </div><div class="toggleContainer block">
-          <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a name="sbt.InputKey" class="extype" href="InputKey.html">InputKey</a>, <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>, <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a></div>
+          <div class="superTypes hiddenContent"><a name="sbt.BuildLoader.Info" class="extype" href="BuildLoader$$Info.html">Info</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
         
 
@@ -49,7 +46,7 @@
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall out"><span>Hide All</span></li>
                 <li class="showall in"><span>Show all</span></li></ol>
-                <ol id="linearization"><li name="sbt.Key" class="in"><span>Key</span></li><li name="sbt.Scoped" class="in"><span>Scoped</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+                <ol id="linearization"><li name="sbt.BuildLoader.ResolveInfo" class="in"><span>ResolveInfo</span></li><li name="sbt.BuildLoader.Info" class="in"><span>Info</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -57,28 +54,28 @@
             </div>
         </div>
 
-        
-
-        
-        
-        <div class="values members" id="values">
-              <h3>Abstract Value Members</h3>
-              <ol><li visbl="pub" name="sbt.Scoped#key" data-isabs="true">
-      <a id="key:sbt.AttributeKey[_]"></a>
+        <div class="members" id="constructors">
+              <h3>Instance Constructors</h3>
+              <ol><li visbl="pub" name="sbt.BuildLoader.ResolveInfo#this" data-isabs="false">
+      <a id="this:ResolveInfo"></a>
       <h4 class="signature">
-      <span class="kind">def</span>
+      <span class="kind">new</span>
       <span class="symbol"> 
-        <span class="name">key</span>
+        <span class="name">ResolveInfo</span>
         
-        <span class="result">: sbt.AttributeKey[_]</span>
+        <span class="params">(<span name="uri">uri: <span name="java.net.URI" class="extype">URI</span></span>, <span name="staging">staging: <span name="java.io.File" class="extype">File</span></span>, <span name="config">config: <a name="sbt.Load.LoadBuildConfiguration" class="extype" href="Load$$LoadBuildConfiguration.html">LoadBuildConfiguration</a></span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd><dt>Definition Classes</dt><dd><a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></dd></dl></div>
+      
     </li></ol>
             </div>
 
+        
+        
+        
+
         <div class="values members" id="values">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol><li visbl="pub" name="scala.AnyRef#!=" data-isabs="false">
       <a id="!=(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -159,6 +156,17 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader.ResolveInfo#config" data-isabs="false">
+      <a id="config:LoadBuildConfiguration"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">config</span>
+        
+        <span class="result">: <a name="sbt.Load.LoadBuildConfiguration" class="extype" href="Load$$LoadBuildConfiguration.html">LoadBuildConfiguration</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.BuildLoader.ResolveInfo" class="extype" href="">ResolveInfo</a> → <a name="sbt.BuildLoader.Info" class="extype" href="BuildLoader$$Info.html">Info</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -261,17 +269,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.Key#scope" data-isabs="false">
-      <a id="scope:Scope"></a>
+    </li><li visbl="pub" name="sbt.BuildLoader.ResolveInfo#staging" data-isabs="false">
+      <a id="staging:File"></a>
       <h4 class="signature">
-      <span class="kind">def</span>
+      <span class="kind">val</span>
       <span class="symbol"> 
-        <span class="name">scope</span>
+        <span class="name">staging</span>
         
-        <span class="result">: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>
+        <span class="result">: <span name="java.io.File" class="extype">File</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd><a name="sbt.Key" class="extype" href="">Key</a> → <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></dd></dl></div>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader.ResolveInfo#state" data-isabs="false">
+      <a id="state:State"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">state</span>
+        
+        <span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.BuildLoader.ResolveInfo" class="extype" href="">ResolveInfo</a> → <a name="sbt.BuildLoader.Info" class="extype" href="BuildLoader$$Info.html">Info</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -294,6 +313,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader.ResolveInfo#uri" data-isabs="false">
+      <a id="uri:URI"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">uri</span>
+        
+        <span class="result">: <span name="java.net.URI" class="extype">URI</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.BuildLoader.ResolveInfo" class="extype" href="">ResolveInfo</a> → <a name="sbt.BuildLoader.Info" class="extype" href="BuildLoader$$Info.html">Info</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">
@@ -341,8 +371,8 @@
 
         
 
-        <div name="sbt.Scoped" class="parent">
-              <h3>Inherited from <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></h3>
+        <div name="sbt.BuildLoader.Info" class="parent">
+              <h3>Inherited from <a name="sbt.BuildLoader.Info" class="extype" href="BuildLoader$$Info.html">Info</a></h3>
             </div><div name="scala.AnyRef" class="parent">
               <h3>Inherited from AnyRef</h3>
             </div><div name="scala.Any" class="parent">

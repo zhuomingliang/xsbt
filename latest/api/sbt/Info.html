@@ -24,11 +24,11 @@
       <span class="symbol"> 
         <span class="name">Info</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="attributes">attributes: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>, <span name="original">original: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>)</span><span class="result"> extends <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
+        <span class="params">(<span name="attributes">attributes: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>, <span name="post">post: (T) ⇒ <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>)</span><span class="result"> extends <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p><code>original</code> is used during transformation only.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -63,7 +63,7 @@
       <span class="symbol"> 
         <span class="name">Info</span>
         
-        <span class="params">(<span name="attributes">attributes: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>, <span name="original">original: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>)</span>
+        <span class="params">(<span name="attributes">attributes: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>, <span name="post">post: (T) ⇒ <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>)</span>
       </span>
       </h4>
       
@@ -302,14 +302,25 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.Info#original" data-isabs="false">
-      <a id="original:Option[Task[T]]"></a>
+    </li><li visbl="pub" name="sbt.Info#post" data-isabs="false">
+      <a id="post:(T) ⇒ AttributeMap"></a>
       <h4 class="signature">
       <span class="kind">val</span>
       <span class="symbol"> 
-        <span class="name">original</span>
+        <span class="name">post</span>
         
-        <span class="result">: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>
+        <span class="result">: (T) ⇒ <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.Info#postTransform" data-isabs="false">
+      <a id="postTransform[A]((T, AttributeMap) ⇒ AttributeMap):Info[T]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">postTransform</span>
+        <span class="tparams">[<span name="A">A</span>]</span>
+        <span class="params">(<span name="f">f: (T, <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a>) ⇒ <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>)</span><span class="result">: <a name="sbt.Info" class="extype" href="">Info</a>[T]</span>
       </span>
       </h4>
       

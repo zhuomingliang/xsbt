@@ -15,17 +15,17 @@
  */</span>
 <span class="keyword">package</span> sbt
 
-<span class="keyword">import</span> <a href="Types.scala.html#12143" title="object sbt.Types">Types</a>._
+<span class="keyword">import</span> <a href="Types.scala.html#12197" title="object sbt.Types">Types</a>._
 
-<span class="keyword">trait</span> <a title="trait Node[A[_], T] extends java.lang.Object" id="11734">Node</a><span class="delimiter">[</span><a title="[_]&gt;: Nothing &lt;: Any" id="11735">A</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="1299222">_</a><span class="delimiter">]</span>, <a title="&gt;: Nothing &lt;: Any" id="11736">T</a><span class="delimiter">]</span>
+<span class="keyword">trait</span> <a title="trait Node[A[_], T] extends java.lang.Object" id="11780">Node</a><span class="delimiter">[</span><a title="[_]&gt;: Nothing &lt;: Any" id="11781">A</a><span class="delimiter">[</span><a title="&gt;: Nothing &lt;: Any" id="1320818">_</a><span class="delimiter">]</span>, <a title="&gt;: Nothing &lt;: Any" id="11782">T</a><span class="delimiter">]</span>
 <span title="java.lang.Object" class="delimiter">{</span>
-	<span class="keyword">type</span> <a title="&gt;: Nothing &lt;: sbt.HList" id="298196">Mixed</a> &lt;: HList
-	<span class="keyword">type</span> <a title="&gt;: Nothing &lt;: Any" id="298197">Uniform</a>
+	<span class="keyword">type</span> <a title="&gt;: Nothing &lt;: sbt.HList" id="305001">Mixed</a> &lt;: HList
+	<span class="keyword">type</span> <a title="&gt;: Nothing &lt;: Any" id="305002">Uniform</a>
 
-	<span class="keyword">val</span> <a title="=&gt; sbt.KList[A,Node.this.Mixed]" id="298198">mixedIn</a>: <a href="KList.scala.html#12049" title="sbt.KList[A,Node.this.Mixed]">KList</a><span class="delimiter">[</span>A, Mixed<span class="delimiter">]</span>
-	<span class="keyword">val</span> <a title="=&gt; Seq[A[Node.this.Uniform]]" id="298199">uniformIn</a>: <span title="Seq[A[Node.this.Uniform]]">Seq</span><span class="delimiter">[</span>A<span class="delimiter">[</span>Uniform<span class="delimiter">]</span><span class="delimiter">]</span>
+	<span class="keyword">val</span> <a title="=&gt; sbt.KList[A,Node.this.Mixed]" id="305003">mixedIn</a>: <a href="KList.scala.html#12097" title="sbt.KList[A,Node.this.Mixed]">KList</a><span class="delimiter">[</span>A, Mixed<span class="delimiter">]</span>
+	<span class="keyword">val</span> <a title="=&gt; Seq[A[Node.this.Uniform]]" id="305004">uniformIn</a>: <span title="Seq[A[Node.this.Uniform]]">Seq</span><span class="delimiter">[</span>A<span class="delimiter">[</span>Uniform<span class="delimiter">]</span><span class="delimiter">]</span>
 
-	<span class="keyword">def</span> <a title="(mixed: sbt.KList[sbt.Result,Node.this.Mixed], uniform: Seq[sbt.Result[Node.this.Uniform]])Either[A[T],T]" id="298200">work</a><span class="delimiter">(</span><a title="sbt.KList[sbt.Result,Node.this.Mixed]" id="1299220">mixed</a>: <a href="KList.scala.html#12049" title="sbt.KList[sbt.Result,Node.this.Mixed]">KList</a><span class="delimiter">[</span>Result, Mixed<span class="delimiter">]</span>, <a title="Seq[sbt.Result[Node.this.Uniform]]" id="1299221">uniform</a>: <span title="Seq[sbt.Result[Node.this.Uniform]]">Seq</span><span class="delimiter">[</span>Result<span class="delimiter">[</span>Uniform<span class="delimiter">]</span><span class="delimiter">]</span><span class="delimiter">)</span>: <span title="Either[A[T],T]">Either</span><span class="delimiter">[</span>A<span class="delimiter">[</span>T<span class="delimiter">]</span>, T<span class="delimiter">]</span>
+	<span class="keyword">def</span> <a title="(mixed: sbt.KList[sbt.Result,Node.this.Mixed], uniform: Seq[sbt.Result[Node.this.Uniform]])Either[A[T],T]" id="305005">work</a><span class="delimiter">(</span><a title="sbt.KList[sbt.Result,Node.this.Mixed]" id="1320816">mixed</a>: <a href="KList.scala.html#12097" title="sbt.KList[sbt.Result,Node.this.Mixed]">KList</a><span class="delimiter">[</span>Result, Mixed<span class="delimiter">]</span>, <a title="Seq[sbt.Result[Node.this.Uniform]]" id="1320817">uniform</a>: <span title="Seq[sbt.Result[Node.this.Uniform]]">Seq</span><span class="delimiter">[</span>Result<span class="delimiter">[</span>Uniform<span class="delimiter">]</span><span class="delimiter">]</span><span class="delimiter">)</span>: <span title="Either[A[T],T]">Either</span><span class="delimiter">[</span>A<span class="delimiter">[</span>T<span class="delimiter">]</span>, T<span class="delimiter">]</span>
 <span class="delimiter">}</span>
 
         </pre>

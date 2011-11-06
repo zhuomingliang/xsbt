@@ -63,7 +63,7 @@
       <span class="symbol"> 
         <span class="name">MakePom</span>
         
-        <span class="params">()</span>
+        <span class="params">(<span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span>
       </span>
       </h4>
       
@@ -164,6 +164,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.MakePom#classifier" data-isabs="false">
+      <a id="classifier(DependencyDescriptor):Seq[Node]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">classifier</span>
+        
+        <span class="params">(<span name="dependency">dependency: <span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span></span>)</span><span class="result">: Seq[<span name="scala.xml.Node" class="extype">Node</span>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -186,17 +197,6 @@
         <span class="name">description</span>
         
         <span class="params">(<span name="d">d: String</span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
-      </span>
-      </h4>
-      
-    </li><li visbl="pub" name="sbt.MakePom#encoding" data-isabs="false">
-      <a id="encoding:String"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">encoding</span>
-        
-        <span class="result">: <span name="java.lang.String" class="extype">String</span></span>
       </span>
       </h4>
       
@@ -335,14 +335,25 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.MakePom#log" data-isabs="false">
+      <a id="log:Logger"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">log</span>
+        
+        <span class="result">: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.MakePom#makeDependencies" data-isabs="false">
-      <a id="makeDependencies(ModuleDescriptor,Option[Iterable[Configuration]]):NodeSeq"></a>
+      <a id="makeDependencies(Seq[DependencyDescriptor]):NodeSeq"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">makeDependencies</span>
         
-        <span class="params">(<span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
+        <span class="params">(<span name="dependencies">dependencies: Seq[<span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span>]</span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
       </span>
       </h4>
       
@@ -354,6 +365,17 @@
         <span class="name">makeDependency</span>
         
         <span class="params">(<span name="dependency">dependency: <span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span></span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.MakePom#makeExclusion" data-isabs="false">
+      <a id="makeExclusion(ExcludeRule):Either[String, NodeSeq]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">makeExclusion</span>
+        
+        <span class="params">(<span name="exclRule">exclRule: <span name="org.apache.ivy.core.module.descriptor.ExcludeRule" class="extype">ExcludeRule</span></span>)</span><span class="result">: <span name="scala.Either" class="extype">Either</span>[String, <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span>]</span>
       </span>
       </h4>
       
@@ -391,13 +413,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.MakePom#makeProperties" data-isabs="false">
-      <a id="makeProperties(ModuleDescriptor):NodeSeq"></a>
+      <a id="makeProperties(ModuleDescriptor,Seq[DependencyDescriptor]):NodeSeq"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">makeProperties</span>
         
-        <span class="params">(<span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
+        <span class="params">(<span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>, <span name="dependencies">dependencies: Seq[<span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span>]</span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
       </span>
       </h4>
       

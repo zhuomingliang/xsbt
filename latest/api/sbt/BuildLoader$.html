@@ -58,18 +58,128 @@
 
         <div class="types members" id="types">
               <h3>Type Members</h3>
-              <ol><li visbl="pub" name="sbt.BuildLoader#BuildResolver" data-isabs="false">
-      <a id="BuildResolver:BuildResolver"></a>
+              <ol><li visbl="pub" name="sbt.BuildLoader.BuildInfo" data-isabs="false">
+      <a id="BuildInfo:BuildInfo"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="BuildLoader$$BuildInfo.html"><span class="name">BuildInfo</span></a>
+        
+        <span class="result"> extends Info</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#Builder" data-isabs="false">
+      <a id="Builder:Builder"></a>
       <h4 class="signature">
       <span class="kind">type</span>
       <span class="symbol"> 
-        <span class="name">BuildResolver</span>
+        <span class="name">Builder</span>
         
-        <span class="result"> = (<a name="sbt.ResolveInfo" class="extype" href="ResolveInfo.html">ResolveInfo</a>) ⇒ <span name="scala.Option" class="extype">Option</span>[() ⇒ <span name="java.io.File" class="extype">File</span>]</span>
+        <span class="result"> = (<a name="sbt.BuildLoader.BuildInfo" class="extype" href="BuildLoader$$BuildInfo.html">BuildInfo</a>) ⇒ <span name="scala.Option" class="extype">Option</span>[() ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader.Components" data-isabs="false">
+      <a id="Components:Components"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="BuildLoader$$Components.html"><span class="name">Components</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader.Info" data-isabs="true">
+      <a id="Info:Info"></a>
+      <h4 class="signature">
+      <span class="kind">trait</span>
+      <span class="symbol"> 
+        <a href="BuildLoader$$Info.html"><span class="name">Info</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader.LoadInfo" data-isabs="false">
+      <a id="LoadInfo:LoadInfo"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="BuildLoader$$LoadInfo.html"><span class="name">LoadInfo</span></a>
+        
+        <span class="result"> extends Info</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#Loader" data-isabs="false">
+      <a id="Loader:Loader"></a>
+      <h4 class="signature">
+      <span class="kind">type</span>
+      <span class="symbol"> 
+        <span class="name">Loader</span>
+        
+        <span class="result"> = (<a name="sbt.BuildLoader.LoadInfo" class="extype" href="BuildLoader$$LoadInfo.html">LoadInfo</a>) ⇒ <span name="scala.Option" class="extype">Option</span>[() ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader.ResolveInfo" data-isabs="false">
+      <a id="ResolveInfo:ResolveInfo"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="BuildLoader$$ResolveInfo.html"><span class="name">ResolveInfo</span></a>
+        
+        <span class="result"> extends Info</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#Resolver" data-isabs="false">
+      <a id="Resolver:Resolver"></a>
+      <h4 class="signature">
+      <span class="kind">type</span>
+      <span class="symbol"> 
+        <span class="name">Resolver</span>
+        
+        <span class="result"> = (<a name="sbt.BuildLoader.ResolveInfo" class="extype" href="BuildLoader$$ResolveInfo.html">ResolveInfo</a>) ⇒ <span name="scala.Option" class="extype">Option</span>[() ⇒ <span name="java.io.File" class="extype">File</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">in: Build URI and staging directory
 out: None if unhandled or Some containing the retrieve function, which returns the directory retrieved to (can be the same as the staging directory)</p>
+    </li><li visbl="pub" name="sbt.BuildLoader#TransformAll" data-isabs="false">
+      <a id="TransformAll:TransformAll"></a>
+      <h4 class="signature">
+      <span class="kind">type</span>
+      <span class="symbol"> 
+        <span class="name">TransformAll</span>
+        
+        <span class="result"> = (<a name="sbt.Load.PartBuild" class="extype" href="Load$$PartBuild.html">PartBuild</a>) ⇒ <a name="sbt.Load.PartBuild" class="extype" href="Load$$PartBuild.html">PartBuild</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader.TransformInfo" data-isabs="false">
+      <a id="TransformInfo:TransformInfo"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="BuildLoader$$TransformInfo.html"><span class="name">TransformInfo</span></a>
+        
+        <span class="result"> extends Info</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#Transformer" data-isabs="false">
+      <a id="Transformer:Transformer"></a>
+      <h4 class="signature">
+      <span class="kind">type</span>
+      <span class="symbol"> 
+        <span class="name">Transformer</span>
+        
+        <span class="result"> = (<a name="sbt.BuildLoader.TransformInfo" class="extype" href="BuildLoader$$TransformInfo.html">TransformInfo</a>) ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a></span>
+      </span>
+      </h4>
+      
     </li></ol>
             </div>
         
@@ -133,13 +243,13 @@ out: None if unhandled or Some containing the retrieve function, which returns t
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.BuildLoader#apply" data-isabs="false">
-      <a id="apply((URI, File) ⇒ BuildUnit,BuildResolver,(URI) ⇒ Nothing,LoadBuildConfiguration):BuildLoader"></a>
+      <a id="apply(Components,(URI) ⇒ Nothing,State,LoadBuildConfiguration):BuildLoader"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">apply</span>
         
-        <span class="params">(<span name="load">load: (<span name="java.net.URI" class="extype">URI</span>, <span name="java.io.File" class="extype">File</span>) ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a></span>, <span name="builtIn">builtIn: BuildResolver</span>, <span name="fail">fail: (<span name="java.net.URI" class="extype">URI</span>) ⇒ <span name="scala.Nothing" class="extype">Nothing</span></span>, <span name="config">config: <a name="sbt.Load.LoadBuildConfiguration" class="extype" href="Load$$LoadBuildConfiguration.html">LoadBuildConfiguration</a></span>)</span><span class="result">: <a name="sbt.BuildLoader" class="extype" href="BuildLoader.html">BuildLoader</a></span>
+        <span class="params">(<span name="base">base: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>, <span name="fail">fail: (<span name="java.net.URI" class="extype">URI</span>) ⇒ <span name="scala.Nothing" class="extype">Nothing</span></span>, <span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="config">config: <a name="sbt.Load.LoadBuildConfiguration" class="extype" href="Load$$LoadBuildConfiguration.html">LoadBuildConfiguration</a></span>)</span><span class="result">: <a name="sbt.BuildLoader" class="extype" href="BuildLoader.html">BuildLoader</a></span>
       </span>
       </h4>
       
@@ -154,6 +264,17 @@ out: None if unhandled or Some containing the retrieve function, which returns t
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#build" data-isabs="false">
+      <a id="build(Builder):Components"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">build</span>
+        
+        <span class="params">(<span name="b">b: Builder</span>)</span><span class="result">: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -168,6 +289,28 @@ out: None if unhandled or Some containing the retrieve function, which returns t
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#componentLoader" data-isabs="false">
+      <a id="componentLoader:Loader"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">componentLoader</span>
+        
+        <span class="result">: Loader</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader#components" data-isabs="false">
+      <a id="components(Resolver,Builder,Transformer,Loader,TransformAll):Components"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">components</span>
+        
+        <span class="params">(<span name="resolver">resolver: Resolver = <span class="symbol"><span class="name"><a href="../scala/package.html">const(None)</a></span></span></span>, <span name="builder">builder: Builder = <span class="symbol"><span class="name"><a href="../scala/package.html">const(None)</a></span></span></span>, <span name="transformer">transformer: Transformer = <span class="symbol"><span class="name"><a href="BuildLoader$$TransformInfo.html#unit:BuildUnit">_.unit</a></span></span></span>, <span name="full">full: Loader = <span class="symbol"><span class="name"><a href="../scala/package.html">const(None)</a></span></span></span>, <span name="transformAll">transformAll: TransformAll = <span class="symbol"><span class="name"><a href="Types$.html">idFun</a></span></span></span>)</span><span class="result">: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -204,6 +347,17 @@ out: None if unhandled or Some containing the retrieve function, which returns t
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#full" data-isabs="false">
+      <a id="full(Loader):Components"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">full</span>
+        
+        <span class="params">(<span name="f">f: Loader</span>)</span><span class="result">: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -270,6 +424,28 @@ out: None if unhandled or Some containing the retrieve function, which returns t
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#resolve" data-isabs="false">
+      <a id="resolve(Resolver):Components"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">resolve</span>
+        
+        <span class="params">(<span name="r">r: Resolver</span>)</span><span class="result">: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader#seq" data-isabs="false">
+      <a id="seq(Transformer,Transformer):Transformer"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">seq</span>
+        
+        <span class="params">(<span name="a">a: Transformer</span>, <span name="b">b: Transformer</span>)</span><span class="result">: Transformer</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -292,6 +468,28 @@ out: None if unhandled or Some containing the retrieve function, which returns t
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#transform" data-isabs="false">
+      <a id="transform(Transformer):Components"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">transform</span>
+        
+        <span class="params">(<span name="t">t: Transformer</span>)</span><span class="result">: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader#transformAll" data-isabs="false">
+      <a id="transformAll(TransformAll):Components"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">transformAll</span>
+        
+        <span class="params">(<span name="t">t: TransformAll</span>)</span><span class="result">: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">

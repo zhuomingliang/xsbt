@@ -363,6 +363,28 @@ Given the data structure:
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.CacheIvy#exclusionIC" data-isabs="false">
+      <a id="exclusionIC:InputCache[ExclusionRule]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol"> 
+        <span class="name">exclusionIC</span>
+        
+        <span class="result">: <a name="sbt.InputCache" class="extype" href="InputCache.html">InputCache</a>[<a name="sbt.ExclusionRule" class="extype" href="ExclusionRule.html">ExclusionRule</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
+    </li><li visbl="pub" name="sbt.CacheIvy#exclusionRuleFormat" data-isabs="false">
+      <a id="exclusionRuleFormat(Format[String]):Format[ExclusionRule]"></a>
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol"> 
+        <span class="name">exclusionRuleFormat</span>
+        
+        <span class="params">(<span class="implicit">implicit </span><span name="sf">sf: <span name="sbinary.Format" class="extype">Format</span>[String]</span>)</span><span class="result">: <span name="sbinary.Format" class="extype">Format</span>[<a name="sbt.ExclusionRule" class="extype" href="ExclusionRule.html">ExclusionRule</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
     </li><li visbl="pub" name="sbt.CacheIvy#extIvyIC" data-isabs="false">
       <a id="extIvyIC:InputCache[ExternalIvyConfiguration]"></a>
       <h4 class="signature">
@@ -532,13 +554,13 @@ Given the data structure:
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
     </li><li visbl="pub" name="sbt.CacheIvy#moduleIDFormat" data-isabs="false">
-      <a id="moduleIDFormat(Format[String],Format[Artifact],Format[Boolean]):Format[ModuleID]"></a>
+      <a id="moduleIDFormat(Format[String],Format[Artifact],Format[Boolean],Format[ExclusionRule]):Format[ModuleID]"></a>
       <h4 class="signature">
       <span class="kind">implicit def</span>
       <span class="symbol"> 
         <span class="name">moduleIDFormat</span>
         
-        <span class="params">(<span class="implicit">implicit </span><span name="sf">sf: <span name="sbinary.Format" class="extype">Format</span>[String]</span>, <span name="af">af: <span name="sbinary.Format" class="extype">Format</span>[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>]</span>, <span name="bf">bf: <span name="sbinary.Format" class="extype">Format</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>)</span><span class="result">: <span name="sbinary.Format" class="extype">Format</span>[<a name="sbt.ModuleID" class="extype" href="ModuleID.html">ModuleID</a>]</span>
+        <span class="params">(<span class="implicit">implicit </span><span name="sf">sf: <span name="sbinary.Format" class="extype">Format</span>[String]</span>, <span name="af">af: <span name="sbinary.Format" class="extype">Format</span>[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>]</span>, <span name="bf">bf: <span name="sbinary.Format" class="extype">Format</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>, <span name="ef">ef: <span name="sbinary.Format" class="extype">Format</span>[<a name="sbt.ExclusionRule" class="extype" href="ExclusionRule.html">ExclusionRule</a>]</span>)</span><span class="result">: <span name="sbinary.Format" class="extype">Format</span>[<a name="sbt.ModuleID" class="extype" href="ModuleID.html">ModuleID</a>]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>

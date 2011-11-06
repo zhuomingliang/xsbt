@@ -244,17 +244,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Extracted" class="extype" href="">Extracted</a> → Equals → AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.Extracted#evalTask" data-isabs="false">
-      <a id="evalTask[T](ScopedTask[T],State):T"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">evalTask</span>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="key">key: <a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[T]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: T</span>
-      </span>
-      </h4>
-      
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -270,24 +259,24 @@
               
         </dd></dl></div>
     </li><li visbl="pub" name="sbt.Extracted#get" data-isabs="false">
-      <a id="get[T](ScopedSetting[T]):T"></a>
+      <a id="get[T](SettingKey[T]):T"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">get</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="key">key: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[T]</span>)</span><span class="result">: T</span>
+        <span class="params">(<span name="key">key: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[T]</span>)</span><span class="result">: T</span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.Extracted#get" data-isabs="false">
-      <a id="get[T](ScopedTask[T]):Task[T]"></a>
+      <a id="get[T](TaskKey[T]):Task[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">get</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="key">key: <a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[T]</span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]</span>
+        <span class="params">(<span name="key">key: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]</span>
       </span>
       </h4>
       
@@ -303,13 +292,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.Extracted#getOpt" data-isabs="false">
-      <a id="getOpt[T](ScopedSetting[T]):Option[T]"></a>
+      <a id="getOpt[T](SettingKey[T]):Option[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">getOpt</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="key">key: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[T]</span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[T]</span>
+        <span class="params">(<span name="key">key: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[T]</span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[T]</span>
       </span>
       </h4>
       
@@ -423,6 +412,28 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.Extracted#runAggregated" data-isabs="false">
+      <a id="runAggregated[T](TaskKey[T],State):State"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">runAggregated</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="key">key: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.Extracted#runTask" data-isabs="false">
+      <a id="runTask[T](TaskKey[T],State):(State, T)"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">runTask</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="key">key: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: (<a name="sbt.State" class="extype" href="State.html">State</a>, T)</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.Extracted#session" data-isabs="false">
       <a id="session:SessionSettings"></a>
       <h4 class="signature">
@@ -525,7 +536,21 @@
 
         <div class="values members" id="values">
               <h3>Deprecated Value Members</h3>
-              <ol><li visbl="pub" name="scala.Product#productElements" data-isabs="false">
+              <ol><li visbl="pub" name="sbt.Extracted#evalTask" data-isabs="false">
+      <a id="evalTask[T](TaskKey[T],State):T"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name deprecated">evalTask</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="key">key: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: T</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>This method does not apply state changes requested during task execution.  Use 'runTask' instead, which does.</p></dd></dl></div>
+    </li><li visbl="pub" name="scala.Product#productElements" data-isabs="false">
       <a id="productElements:Iterator[Any]"></a>
       <h4 class="signature">
       <span class="kind">def</span>

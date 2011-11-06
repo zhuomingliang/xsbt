@@ -117,6 +117,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.CustomPomParser#ExtraAttributesKey" data-isabs="false">
+      <a id="ExtraAttributesKey:String"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">ExtraAttributesKey</span>
+        
+        <span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.CustomPomParser#JarPackagings" data-isabs="false">
+      <a id="JarPackagings:Set[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">JarPackagings</span>
+        
+        <span class="result">: <span name="scala.collection.immutable.Set" class="extype">Set</span>[<span name="java.lang.String" class="extype">String</span>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.CustomPomParser#SbtVersionKey" data-isabs="false">
       <a id="SbtVersionKey:String"></a>
       <h4 class="signature">
@@ -140,13 +162,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.CustomPomParser#addExtra" data-isabs="false">
-      <a id="addExtra(Map[String, String],ModuleDescriptorParser,ModuleDescriptor):ModuleDescriptor"></a>
+      <a id="addExtra(Map[String, String],Map[ModuleRevisionId, Map[String, String]],ModuleDescriptorParser,ModuleDescriptor):ModuleDescriptor"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">addExtra</span>
         
-        <span class="params">(<span name="properties">properties: Map[String, String]</span>, <span name="parser">parser: <span name="org.apache.ivy.plugins.parser.ModuleDescriptorParser" class="extype">ModuleDescriptorParser</span></span>, <span name="md">md: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>)</span><span class="result">: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>
+        <span class="params">(<span name="properties">properties: Map[String, String]</span>, <span name="dependencyExtra">dependencyExtra: Map[<span name="org.apache.ivy.core.module.id.ModuleRevisionId" class="extype">ModuleRevisionId</span>, Map[String, String]]</span>, <span name="parser">parser: <span name="org.apache.ivy.plugins.parser.ModuleDescriptorParser" class="extype">ModuleDescriptorParser</span></span>, <span name="md">md: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>)</span><span class="result">: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>
       </span>
       </h4>
       
@@ -219,6 +241,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.CustomPomParser#filterCustomExtra" data-isabs="false">
+      <a id="filterCustomExtra(ExtendableItem,Boolean):Map[String, String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">filterCustomExtra</span>
+        
+        <span class="params">(<span name="item">item: <span name="org.apache.ivy.util.extendable.ExtendableItem" class="extype">ExtendableItem</span></span>, <span name="include">include: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: Map[String, String]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -299,6 +332,39 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="sbt.CustomPomParser#qualifiedExtra" data-isabs="false">
+      <a id="qualifiedExtra(ExtendableItem):Map[String, String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">qualifiedExtra</span>
+        
+        <span class="params">(<span name="item">item: <span name="org.apache.ivy.util.extendable.ExtendableItem" class="extype">ExtendableItem</span></span>)</span><span class="result">: Map[String, String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.CustomPomParser#qualifiedIsExtra" data-isabs="false">
+      <a id="qualifiedIsExtra(String):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">qualifiedIsExtra</span>
+        
+        <span class="params">(<span name="k">k: String</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.CustomPomParser#readDependencyExtra" data-isabs="false">
+      <a id="readDependencyExtra(String):Seq[ModuleRevisionId]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">readDependencyExtra</span>
+        
+        <span class="params">(<span name="s">s: String</span>)</span><span class="result">: Seq[<span name="org.apache.ivy.core.module.id.ModuleRevisionId" class="extype">ModuleRevisionId</span>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.CustomPomParser#registerDefault" data-isabs="false">
       <a id="registerDefault:Unit"></a>
       <h4 class="signature">
@@ -307,6 +373,17 @@
         <span class="name">registerDefault</span>
         
         <span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.CustomPomParser#simplify" data-isabs="false">
+      <a id="simplify(ModuleRevisionId):ModuleRevisionId"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">simplify</span>
+        
+        <span class="params">(<span name="id">id: <span name="org.apache.ivy.core.module.id.ModuleRevisionId" class="extype">ModuleRevisionId</span></span>)</span><span class="result">: <span name="org.apache.ivy.core.module.id.ModuleRevisionId" class="extype">ModuleRevisionId</span></span>
       </span>
       </h4>
       
@@ -374,6 +451,17 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.CustomPomParser#writeDependencyExtra" data-isabs="false">
+      <a id="writeDependencyExtra(Seq[DependencyDescriptor]):Seq[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">writeDependencyExtra</span>
+        
+        <span class="params">(<span name="s">s: Seq[<span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span>]</span>)</span><span class="result">: Seq[String]</span>
+      </span>
+      </h4>
+      
     </li></ol>
             </div>
 

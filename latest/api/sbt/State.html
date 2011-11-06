@@ -24,11 +24,12 @@
       <span class="symbol"> 
         <span class="name">State</span>
         
-        <span class="params">(<span name="configuration">configuration: <a name="xsbti.AppConfiguration" class="extype" href="../xsbti/AppConfiguration.html">AppConfiguration</a></span>, <span name="definedCommands">definedCommands: Seq[<a name="sbt.Command" class="extype" href="Command.html">Command</a>]</span>, <span name="exitHooks">exitHooks: Set[<a name="sbt.ExitHook" class="extype" href="ExitHook.html">ExitHook</a>]</span>, <span name="onFailure">onFailure: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>, <span name="result">result: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a>]</span>)</span><span class="result"> extends <a name="sbt.Identity" class="extype" href="Identity.html">Identity</a> with <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
+        <span class="params">(<span name="configuration">configuration: <a name="xsbti.AppConfiguration" class="extype" href="../xsbti/AppConfiguration.html">AppConfiguration</a></span>, <span name="definedCommands">definedCommands: Seq[<a name="sbt.Command" class="extype" href="Command.html">Command</a>]</span>, <span name="exitHooks">exitHooks: Set[<a name="sbt.ExitHook" class="extype" href="ExitHook.html">ExitHook</a>]</span>, <span name="onFailure">onFailure: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="history">history: <a name="sbt.State.History" class="extype" href="State$$History.html">History</a></span>, <span name="attributes">attributes: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>, <span name="next">next: <a name="sbt.State.Next" class="extype" href="State$$Next.html">Next</a></span>)</span><span class="result"> extends <a name="sbt.Identity" class="extype" href="Identity.html">Identity</a> with <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Data structure representing all command execution information.
+</p></div><dl class="paramcmts block"><dt class="param">definedCommands</dt><dd class="cmt"><p>the list of command definitions that evaluate command strings.  These may be modified to change the available commands.</p></dd><dt class="param">exitHooks</dt><dd class="cmt"><p>code to run before sbt exits, usually to ensure resources are cleaned up.</p></dd><dt class="param">onFailure</dt><dd class="cmt"><p>the command to execute when another command fails.  <code>onFailure</code> is cleared before the failure handling command is executed.</p></dd><dt class="param">remainingCommands</dt><dd class="cmt"><p>the sequence of commands to execute.  This sequence may be modified to change the commands to be executed.  Typically, the <code>::</code> and <code>:::</code> methods are used to prepend new commands to run.</p></dd><dt class="param">history</dt><dd class="cmt"><p>tracks the recently executed commands</p></dd><dt class="param">attributes</dt><dd class="cmt"><p>custom command state.  It is important to clean up attributes when no longer needed to avoid memory leaks and class loader leaks.</p></dd><dt class="param">next</dt><dd class="cmt"><p>the next action for the command processor to take.  This may be to continue with the next command, adjust global logging, or exit.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, <a name="sbt.Identity" class="extype" href="Identity.html">Identity</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -63,10 +64,10 @@
       <span class="symbol"> 
         <span class="name">State</span>
         
-        <span class="params">(<span name="configuration">configuration: <a name="xsbti.AppConfiguration" class="extype" href="../xsbti/AppConfiguration.html">AppConfiguration</a></span>, <span name="definedCommands">definedCommands: Seq[<a name="sbt.Command" class="extype" href="Command.html">Command</a>]</span>, <span name="exitHooks">exitHooks: Set[<a name="sbt.ExitHook" class="extype" href="ExitHook.html">ExitHook</a>]</span>, <span name="onFailure">onFailure: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>, <span name="result">result: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a>]</span>)</span>
+        <span class="params">(<span name="configuration">configuration: <a name="xsbti.AppConfiguration" class="extype" href="../xsbti/AppConfiguration.html">AppConfiguration</a></span>, <span name="definedCommands">definedCommands: Seq[<a name="sbt.Command" class="extype" href="Command.html">Command</a>]</span>, <span name="exitHooks">exitHooks: Set[<a name="sbt.ExitHook" class="extype" href="ExitHook.html">ExitHook</a>]</span>, <span name="onFailure">onFailure: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="history">history: <a name="sbt.State.History" class="extype" href="State$$History.html">History</a></span>, <span name="attributes">attributes: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>, <span name="next">next: <a name="sbt.State.Next" class="extype" href="State$$Next.html">Next</a></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">definedCommands</dt><dd class="cmt"><p>the list of command definitions that evaluate command strings.  These may be modified to change the available commands.</p></dd><dt class="param">exitHooks</dt><dd class="cmt"><p>code to run before sbt exits, usually to ensure resources are cleaned up.</p></dd><dt class="param">onFailure</dt><dd class="cmt"><p>the command to execute when another command fails.  <code>onFailure</code> is cleared before the failure handling command is executed.</p></dd><dt class="param">remainingCommands</dt><dd class="cmt"><p>the sequence of commands to execute.  This sequence may be modified to change the commands to be executed.  Typically, the <code>::</code> and <code>:::</code> methods are used to prepend new commands to run.</p></dd><dt class="param">history</dt><dd class="cmt"><p>tracks the recently executed commands</p></dd><dt class="param">attributes</dt><dd class="cmt"><p>custom command state.  It is important to clean up attributes when no longer needed to avoid memory leaks and class loader leaks.</p></dd><dt class="param">next</dt><dd class="cmt"><p>the next action for the command processor to take.  This may be to continue with the next command, adjust global logging, or exit.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -152,7 +153,7 @@
         <span class="result">: <a name="sbt.AttributeMap" class="extype" href="AttributeMap.html">AttributeMap</a></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">custom command state.</p><div class="fullcomment"><div class="comment cmt"><p>custom command state.  It is important to clean up attributes when no longer needed to avoid memory leaks and class loader leaks.</p></div></div>
     </li><li visbl="pub" name="sbt.State#canEqual" data-isabs="false">
       <a id="canEqual(Any):Boolean"></a>
       <h4 class="signature">
@@ -210,7 +211,7 @@
         <span class="result">: Seq[<a name="sbt.Command" class="extype" href="Command.html">Command</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">the list of command definitions that evaluate command strings.</p><div class="fullcomment"><div class="comment cmt"><p>the list of command definitions that evaluate command strings.  These may be modified to change the available commands.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -243,7 +244,7 @@
         <span class="result">: Set[<a name="sbt.ExitHook" class="extype" href="ExitHook.html">ExitHook</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">code to run before sbt exits, usually to ensure resources are cleaned up.</p>
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -280,6 +281,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd><a name="sbt.Identity" class="extype" href="Identity.html">Identity</a> → AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.State#history" data-isabs="false">
+      <a id="history:History"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">history</span>
+        
+        <span class="result">: <a name="sbt.State.History" class="extype" href="State$$History.html">History</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">tracks the recently executed commands</p>
     </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
@@ -302,6 +314,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="sbt.State#next" data-isabs="false">
+      <a id="next:Next"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">next</span>
+        
+        <span class="result">: <a name="sbt.State.Next" class="extype" href="State$$Next.html">Next</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">the next action for the command processor to take.</p><div class="fullcomment"><div class="comment cmt"><p>the next action for the command processor to take.  This may be to continue with the next command, adjust global logging, or exit.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#notify" data-isabs="false">
       <a id="notify():Unit"></a>
       <h4 class="signature">
@@ -334,7 +357,7 @@
         <span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">the command to execute when another command fails.</p><div class="fullcomment"><div class="comment cmt"><p>the command to execute when another command fails.  <code>onFailure</code> is cleared before the failure handling command is executed.</p></div></div>
     </li><li visbl="pub" name="sbt.State#productArity" data-isabs="false">
       <a id="productArity:Int"></a>
       <h4 class="signature">
@@ -389,18 +412,7 @@
         <span class="result">: Seq[String]</span>
       </span>
       </h4>
-      
-    </li><li visbl="pub" name="sbt.State#result" data-isabs="false">
-      <a id="result:Option[MainResult]"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">result</span>
-        
-        <span class="result">: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a>]</span>
-      </span>
-      </h4>
-      
+      <p class="shortcomment cmt">the sequence of commands to execute.</p><div class="fullcomment"><div class="comment cmt"><p>the sequence of commands to execute.  This sequence may be modified to change the commands to be executed.  Typically, the <code>::</code> and <code>:::</code> methods are used to prepend new commands to run.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

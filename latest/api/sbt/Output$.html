@@ -270,46 +270,46 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.Output#last" data-isabs="false">
-      <a id="last(File,String):Unit"></a>
+      <a id="last(File,(Seq[String]) ⇒ Unit,String):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">last</span>
         
-        <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="tailDelim">tailDelim: String = <span class="symbol"><span class="name"><a href="#DefaultTail:java.lang.String(&quot;&gt; &quot;)">DefaultTail</a></span></span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="printLines">printLines: (Seq[String]) ⇒ <span name="scala.Unit" class="extype">Unit</span></span>, <span name="tailDelim">tailDelim: String = <span class="symbol"><span class="name"><a href="#DefaultTail:java.lang.String(&quot;&gt; &quot;)">DefaultTail</a></span></span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.Output#last" data-isabs="false">
-      <a id="last(sbt.Project.ScopedKey[_],BuildStructure)(Show[sbt.Project.ScopedKey[_]]):Unit"></a>
+      <a id="last(sbt.Project.ScopedKey[_],BuildStructure,Streams,(Seq[String]) ⇒ Unit)(Show[sbt.Project.ScopedKey[_]]):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">last</span>
         
-        <span class="params">(<span name="key">key: sbt.Project.ScopedKey[_]</span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="display">display: <a name="sbt.Show" class="extype" href="Show.html">Show</a>[sbt.Project.ScopedKey[_]]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="params">(<span name="key">key: sbt.Project.ScopedKey[_]</span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>, <span name="streams">streams: Streams</span>, <span name="printLines">printLines: (Seq[String]) ⇒ <span name="scala.Unit" class="extype">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="display">display: <a name="sbt.Show" class="extype" href="Show.html">Show</a>[sbt.Project.ScopedKey[_]]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.Output#lastGrep" data-isabs="false">
-      <a id="lastGrep(File,String,String):Unit"></a>
+      <a id="lastGrep(File,String,(Seq[String]) ⇒ Unit,String):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">lastGrep</span>
         
-        <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="patternString">patternString: String</span>, <span name="tailDelim">tailDelim: String = <span class="symbol"><span class="name"><a href="#DefaultTail:java.lang.String(&quot;&gt; &quot;)">DefaultTail</a></span></span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="patternString">patternString: String</span>, <span name="printLines">printLines: (Seq[String]) ⇒ <span name="scala.Unit" class="extype">Unit</span></span>, <span name="tailDelim">tailDelim: String = <span class="symbol"><span class="name"><a href="#DefaultTail:java.lang.String(&quot;&gt; &quot;)">DefaultTail</a></span></span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.Output#lastGrep" data-isabs="false">
-      <a id="lastGrep(sbt.Project.ScopedKey[_],BuildStructure,String)(Show[sbt.Project.ScopedKey[_]]):Unit"></a>
+      <a id="lastGrep(sbt.Project.ScopedKey[_],BuildStructure,Streams,String,(Seq[String]) ⇒ Unit)(Show[sbt.Project.ScopedKey[_]]):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">lastGrep</span>
         
-        <span class="params">(<span name="key">key: sbt.Project.ScopedKey[_]</span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>, <span name="patternString">patternString: String</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="display">display: <a name="sbt.Show" class="extype" href="Show.html">Show</a>[sbt.Project.ScopedKey[_]]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="params">(<span name="key">key: sbt.Project.ScopedKey[_]</span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>, <span name="streams">streams: Streams</span>, <span name="patternString">patternString: String</span>, <span name="printLines">printLines: (Seq[String]) ⇒ <span name="scala.Unit" class="extype">Unit</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="display">display: <a name="sbt.Show" class="extype" href="Show.html">Show</a>[sbt.Project.ScopedKey[_]]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
       
@@ -325,13 +325,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Output#lastLines" data-isabs="false">
-      <a id="lastLines(sbt.Project.ScopedKey[_],BuildStructure):Seq[KeyValue[Seq[String]]]"></a>
+      <a id="lastLines(sbt.Project.ScopedKey[_],BuildStructure,Streams):Seq[KeyValue[Seq[String]]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">lastLines</span>
         
-        <span class="params">(<span name="key">key: sbt.Project.ScopedKey[_]</span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>)</span><span class="result">: Seq[<a name="sbt.Aggregation.KeyValue" class="extype" href="Aggregation$$KeyValue.html">KeyValue</a>[Seq[String]]]</span>
+        <span class="params">(<span name="key">key: sbt.Project.ScopedKey[_]</span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>, <span name="streams">streams: Streams</span>)</span><span class="result">: Seq[<a name="sbt.Aggregation.KeyValue" class="extype" href="Aggregation$$KeyValue.html">KeyValue</a>[Seq[String]]]</span>
       </span>
       </h4>
       
@@ -368,17 +368,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.Output#printLines" data-isabs="false">
-      <a id="printLines(Seq[String]):Unit"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">printLines</span>
-        
-        <span class="params">(<span name="lines">lines: Seq[String]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="sbt.Output#showMatches" data-isabs="false">
       <a id="showMatches(Pattern)(String):Option[String]"></a>
       <h4 class="signature">

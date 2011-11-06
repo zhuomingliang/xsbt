@@ -161,6 +161,17 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.complete.JLineCompletion#bufferSnapshot" data-isabs="false">
+      <a id="bufferSnapshot(ConsoleReader):(String, Int)"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">bufferSnapshot</span>
+        
+        <span class="params">(<span name="reader">reader: <span name="jline.ConsoleReader" class="extype">ConsoleReader</span></span>)</span><span class="result">: (String, <span name="scala.Int" class="extype">Int</span>)</span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -231,13 +242,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.complete.JLineCompletion#customCompletor" data-isabs="false">
-      <a id="customCompletor((String) ⇒ (Seq[String], Seq[String])):(ConsoleReader) ⇒ Boolean"></a>
+      <a id="customCompletor((String, Int) ⇒ (Seq[String], Seq[String])):(ConsoleReader, Int) ⇒ Boolean"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">customCompletor</span>
         
-        <span class="params">(<span name="f">f: (String) ⇒ (Seq[String], Seq[String])</span>)</span><span class="result">: (<span name="jline.ConsoleReader" class="extype">ConsoleReader</span>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="params">(<span name="f">f: (String, <span name="scala.Int" class="extype">Int</span>) ⇒ (Seq[String], Seq[String])</span>)</span><span class="result">: (<span name="jline.ConsoleReader" class="extype">ConsoleReader</span>, <span name="scala.Int" class="extype">Int</span>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>
       </span>
       </h4>
       
@@ -300,24 +311,24 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.complete.JLineCompletion#installCustomCompletor" data-isabs="false">
-      <a id="installCustomCompletor((ConsoleReader) ⇒ Boolean,ConsoleReader):Unit"></a>
+      <a id="installCustomCompletor((ConsoleReader, Int) ⇒ Boolean,ConsoleReader):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">installCustomCompletor</span>
         
-        <span class="params">(<span name="complete">complete: (<span name="jline.ConsoleReader" class="extype">ConsoleReader</span>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="reader">reader: <span name="jline.ConsoleReader" class="extype">ConsoleReader</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="params">(<span name="complete">complete: (<span name="jline.ConsoleReader" class="extype">ConsoleReader</span>, <span name="scala.Int" class="extype">Int</span>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="reader">reader: <span name="jline.ConsoleReader" class="extype">ConsoleReader</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.complete.JLineCompletion#installCustomCompletor" data-isabs="false">
-      <a id="installCustomCompletor(ConsoleReader)((String) ⇒ (Seq[String], Seq[String])):Unit"></a>
+      <a id="installCustomCompletor(ConsoleReader)((String, Int) ⇒ (Seq[String], Seq[String])):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">installCustomCompletor</span>
         
-        <span class="params">(<span name="reader">reader: <span name="jline.ConsoleReader" class="extype">ConsoleReader</span></span>)</span><span class="params">(<span name="complete">complete: (String) ⇒ (Seq[String], Seq[String])</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="params">(<span name="reader">reader: <span name="jline.ConsoleReader" class="extype">ConsoleReader</span></span>)</span><span class="params">(<span name="complete">complete: (String, <span name="scala.Int" class="extype">Int</span>) ⇒ (Seq[String], Seq[String])</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
       
@@ -377,13 +388,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li visbl="pub" name="sbt.complete.JLineCompletion#parserAsCompletor" data-isabs="false">
-      <a id="parserAsCompletor(sbt.complete.Parser[_]):(ConsoleReader) ⇒ Boolean"></a>
+      <a id="parserAsCompletor(sbt.complete.Parser[_]):(String, Int) ⇒ (Seq[String], Seq[String])"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">parserAsCompletor</span>
         
-        <span class="params">(<span name="p">p: sbt.complete.Parser[_]</span>)</span><span class="result">: (<span name="jline.ConsoleReader" class="extype">ConsoleReader</span>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="params">(<span name="p">p: sbt.complete.Parser[_]</span>)</span><span class="result">: (String, <span name="scala.Int" class="extype">Int</span>) ⇒ (Seq[String], Seq[String])</span>
       </span>
       </h4>
       

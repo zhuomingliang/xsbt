@@ -63,7 +63,7 @@
       <span class="symbol"> 
         <span class="name">BuildStructure</span>
         
-        <span class="params">(<span name="units">units: Map[<span name="java.net.URI" class="extype">URI</span>, <a name="sbt.Load.LoadedBuildUnit" class="extype" href="Load$$LoadedBuildUnit.html">LoadedBuildUnit</a>]</span>, <span name="root">root: <span name="java.net.URI" class="extype">URI</span></span>, <span name="settings">settings: Seq[sbt.Project.Setting[_]]</span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="index">index: <a name="sbt.Load.StructureIndex" class="extype" href="Load$$StructureIndex.html">StructureIndex</a></span>, <span name="streams">streams: Streams</span>, <span name="delegates">delegates: (<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>) ⇒ Seq[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="scopeLocal">scopeLocal: ScopeLocal</span>)</span>
+        <span class="params">(<span name="units">units: Map[<span name="java.net.URI" class="extype">URI</span>, <a name="sbt.Load.LoadedBuildUnit" class="extype" href="Load$$LoadedBuildUnit.html">LoadedBuildUnit</a>]</span>, <span name="root">root: <span name="java.net.URI" class="extype">URI</span></span>, <span name="settings">settings: Seq[sbt.Project.Setting[_]]</span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="index">index: <a name="sbt.Load.StructureIndex" class="extype" href="Load$$StructureIndex.html">StructureIndex</a></span>, <span name="streams">streams: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ Streams</span>, <span name="delegates">delegates: (<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>) ⇒ Seq[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="scopeLocal">scopeLocal: ScopeLocal</span>)</span>
       </span>
       </h4>
       
@@ -380,13 +380,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Load.BuildStructure#streams" data-isabs="false">
-      <a id="streams:Streams"></a>
+      <a id="streams:(State) ⇒ Streams"></a>
       <h4 class="signature">
       <span class="kind">val</span>
       <span class="symbol"> 
         <span class="name">streams</span>
         
-        <span class="result">: Streams</span>
+        <span class="result">: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ Streams</span>
       </span>
       </h4>
       

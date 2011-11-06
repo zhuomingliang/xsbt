@@ -28,7 +28,7 @@
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Methods and types related to constructing settings, including keys, scopes, and initializations.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -483,17 +483,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.Scoped.Apply" data-isabs="false">
-      <a id="Apply:Apply"></a>
-      <h4 class="signature">
-      <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="Scoped$$Apply$.html"><span class="name">Apply</span></a>
-        
-        <span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="sbt.Scoped.Combine" data-isabs="false">
       <a id="Combine:Combine"></a>
       <h4 class="signature">
@@ -688,13 +677,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Scoped#inputScopedToKey" data-isabs="false">
-      <a id="inputScopedToKey[T](ScopedInput[T]):ScopedKey[InputTask[T]]"></a>
+      <a id="inputScopedToKey[T](InputKey[T]):ScopedKey[InputTask[T]]"></a>
       <h4 class="signature">
       <span class="kind">implicit def</span>
       <span class="symbol"> 
         <span class="name">inputScopedToKey</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="s">s: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>)</span><span class="result">: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</span>
+        <span class="params">(<span name="s">s: <a name="sbt.InputKey" class="extype" href="InputKey.html">InputKey</a>[T]</span>)</span><span class="result">: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
@@ -941,24 +930,24 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped#richFileSetting" data-isabs="false">
-      <a id="richFileSetting(ScopedSetting[File]):RichFileSetting"></a>
+      <a id="richFileSetting(SettingKey[File]):RichFileSetting"></a>
       <h4 class="signature">
       <span class="kind">implicit def</span>
       <span class="symbol"> 
         <span class="name">richFileSetting</span>
         
-        <span class="params">(<span name="s">s: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[<span name="java.io.File" class="extype">File</span>]</span>)</span><span class="result">: <a name="sbt.Scoped.RichFileSetting" class="extype" href="Scoped$$RichFileSetting.html">RichFileSetting</a></span>
+        <span class="params">(<span name="s">s: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[<span name="java.io.File" class="extype">File</span>]</span>)</span><span class="result">: <a name="sbt.Scoped.RichFileSetting" class="extype" href="Scoped$$RichFileSetting.html">RichFileSetting</a></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped#richFilesSetting" data-isabs="false">
-      <a id="richFilesSetting(ScopedSetting[Seq[File]]):RichFilesSetting"></a>
+      <a id="richFilesSetting(SettingKey[Seq[File]]):RichFilesSetting"></a>
       <h4 class="signature">
       <span class="kind">implicit def</span>
       <span class="symbol"> 
         <span class="name">richFilesSetting</span>
         
-        <span class="params">(<span name="s">s: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[Seq[<span name="java.io.File" class="extype">File</span>]]</span>)</span><span class="result">: <a name="sbt.Scoped.RichFilesSetting" class="extype" href="Scoped$$RichFilesSetting.html">RichFilesSetting</a></span>
+        <span class="params">(<span name="s">s: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[Seq[<span name="java.io.File" class="extype">File</span>]]</span>)</span><span class="result">: <a name="sbt.Scoped.RichFilesSetting" class="extype" href="Scoped$$RichFilesSetting.html">RichFilesSetting</a></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
@@ -985,35 +974,35 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped#scopedInput" data-isabs="false">
-      <a id="scopedInput[T](Scope,AttributeKey[InputTask[T]]):ScopedInput[T]"></a>
+      <a id="scopedInput[T](Scope,AttributeKey[InputTask[T]]):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">scopedInput</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="s">s: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>, <span name="k">k: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="s">s: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>, <span name="k">k: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="InputKey.html">InputKey</a>[T]</span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.Scoped#scopedSetting" data-isabs="false">
-      <a id="scopedSetting[T](Scope,AttributeKey[T]):ScopedSetting[T]"></a>
+      <a id="scopedSetting[T](Scope,AttributeKey[T]):SettingKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">scopedSetting</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="s">s: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>, <span name="k">k: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[T]</span>)</span><span class="result">: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[T]</span>
+        <span class="params">(<span name="s">s: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>, <span name="k">k: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[T]</span>)</span><span class="result">: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[T]</span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.Scoped#scopedTask" data-isabs="false">
-      <a id="scopedTask[T](Scope,AttributeKey[Task[T]]):ScopedTask[T]"></a>
+      <a id="scopedTask[T](Scope,AttributeKey[Task[T]]):TaskKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">scopedTask</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="s">s: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>, <span name="k">k: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>)</span><span class="result">: <a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[T]</span>
+        <span class="params">(<span name="s">s: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>, <span name="k">k: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>)</span><span class="result">: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>
       </span>
       </h4>
       
@@ -1205,13 +1194,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped#taskScopedToKey" data-isabs="false">
-      <a id="taskScopedToKey[T](ScopedTask[T]):ScopedKey[Task[T]]"></a>
+      <a id="taskScopedToKey[T](TaskKey[T]):ScopedKey[Task[T]]"></a>
       <h4 class="signature">
       <span class="kind">implicit def</span>
       <span class="symbol"> 
         <span class="name">taskScopedToKey</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="s">s: <a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[T]</span>)</span><span class="result">: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>
+        <span class="params">(<span name="s">s: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>)</span><span class="result">: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>

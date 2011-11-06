@@ -24,7 +24,7 @@
       <span class="symbol"> 
         <span class="name">ModuleID</span>
         
-        <span class="params">(<span name="organization">organization: String</span>, <span name="name">name: String</span>, <span name="revision">revision: String</span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="isChanging">isChanging: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="isTransitive">isTransitive: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="explicitArtifacts">explicitArtifacts: Seq[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>]</span>, <span name="extraAttributes">extraAttributes: Map[String, String]</span>, <span name="crossVersion">crossVersion: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result"> extends <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
+        <span class="params">(<span name="organization">organization: String</span>, <span name="name">name: String</span>, <span name="revision">revision: String</span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="isChanging">isChanging: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="isTransitive">isTransitive: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="explicitArtifacts">explicitArtifacts: Seq[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>]</span>, <span name="exclusions">exclusions: Seq[<a name="sbt.ExclusionRule" class="extype" href="ExclusionRule.html">ExclusionRule</a>]</span>, <span name="extraAttributes">extraAttributes: Map[String, String]</span>, <span name="crossVersion">crossVersion: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result"> extends <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
       </span>
       </h4>
       
@@ -63,7 +63,7 @@
       <span class="symbol"> 
         <span class="name">ModuleID</span>
         
-        <span class="params">(<span name="organization">organization: String</span>, <span name="name">name: String</span>, <span name="revision">revision: String</span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="isChanging">isChanging: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="isTransitive">isTransitive: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="explicitArtifacts">explicitArtifacts: Seq[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>]</span>, <span name="extraAttributes">extraAttributes: Map[String, String]</span>, <span name="crossVersion">crossVersion: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span>
+        <span class="params">(<span name="organization">organization: String</span>, <span name="name">name: String</span>, <span name="revision">revision: String</span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="isChanging">isChanging: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="isTransitive">isTransitive: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="explicitArtifacts">explicitArtifacts: Seq[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>]</span>, <span name="exclusions">exclusions: Seq[<a name="sbt.ExclusionRule" class="extype" href="ExclusionRule.html">ExclusionRule</a>]</span>, <span name="extraAttributes">extraAttributes: Map[String, String]</span>, <span name="crossVersion">crossVersion: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span>
       </span>
       </h4>
       
@@ -255,6 +255,39 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.ModuleID" class="extype" href="">ModuleID</a> → Equals → AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.ModuleID#exclude" data-isabs="false">
+      <a id="exclude(String,String):ModuleID"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">exclude</span>
+        
+        <span class="params">(<span name="org">org: String</span>, <span name="name">name: String</span>)</span><span class="result">: <a name="sbt.ModuleID" class="extype" href="">ModuleID</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.ModuleID#excludeAll" data-isabs="false">
+      <a id="excludeAll(ExclusionRule*):ModuleID"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">excludeAll</span>
+        
+        <span class="params">(<span name="rules">rules: <a name="sbt.ExclusionRule" class="extype" href="ExclusionRule.html">ExclusionRule</a>*</span>)</span><span class="result">: <a name="sbt.ModuleID" class="extype" href="">ModuleID</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.ModuleID#exclusions" data-isabs="false">
+      <a id="exclusions:Seq[ExclusionRule]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">exclusions</span>
+        
+        <span class="result">: Seq[<a name="sbt.ExclusionRule" class="extype" href="ExclusionRule.html">ExclusionRule</a>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.ModuleID#explicitArtifacts" data-isabs="false">
       <a id="explicitArtifacts:Seq[Artifact]"></a>
       <h4 class="signature">

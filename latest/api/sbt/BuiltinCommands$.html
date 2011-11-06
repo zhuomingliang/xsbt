@@ -238,6 +238,17 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.BuiltinCommands#actHelp" data-isabs="false">
+      <a id="actHelp:(State) ⇒ Help"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">actHelp</span>
+        
+        <span class="result">: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.BuiltinCommands#addAlias" data-isabs="false">
       <a id="addAlias(State,String,String):State"></a>
       <h4 class="signature">
@@ -396,13 +407,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.BuiltinCommands#detail" data-isabs="false">
-      <a id="detail(Iterable[String])(Help):Option[String]"></a>
+      <a id="detail(Seq[String],Map[String, String]):Seq[String]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">detail</span>
         
-        <span class="params">(<span name="selected">selected: Iterable[String]</span>)</span><span class="params">(<span name="h">h: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
+        <span class="params">(<span name="selected">selected: Seq[String]</span>, <span name="detailMap">detailMap: Map[String, String]</span>)</span><span class="result">: Seq[String]</span>
       </span>
       </h4>
       
@@ -720,6 +731,22 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuiltinCommands#isLastOnly" data-isabs="false">
+      <a id="isLastOnly(State):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isLastOnly</span>
+        
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The last* commands need to determine whether to read from the current log file or the previous log file
+and whether to keep the previous log file or not.</p><div class="fullcomment"><div class="comment cmt"><p>The last* commands need to determine whether to read from the current log file or the previous log file
+and whether to keep the previous log file or not.  This is selected based on whether the previous command
+was 'shell', which meant that the user directly entered the 'last' command.  If it wasn't directly entered,
+the last* commands operate on any output since the last 'shell' command and do shift the log file.
+Otherwise, the output since the previous 'shell' command is used and the log file is not shifted.</p></div></div>
     </li><li visbl="pub" name="sbt.BuiltinCommands#isNamed" data-isabs="false">
       <a id="isNamed(String,Option[(String, String)]):Boolean"></a>
       <h4 class="signature">
@@ -728,6 +755,29 @@
         <span class="name">isNamed</span>
         
         <span class="params">(<span name="name">name: String</span>, <span name="alias">alias: <span name="scala.Option" class="extype">Option</span>[(String, String)]</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuiltinCommands#keepLastLog" data-isabs="false">
+      <a id="keepLastLog(State):State"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">keepLastLog</span>
+        
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">If false, shift the current log file to be the log file that 'last' will operate on.</p><div class="fullcomment"><div class="comment cmt"><p>If false, shift the current log file to be the log file that 'last' will operate on.
+If true, keep the previous log file as the one 'last' operates on because there is nothing useful in the current one.</p></div></div>
+    </li><li visbl="pub" name="sbt.BuiltinCommands#keysHelp" data-isabs="false">
+      <a id="keysHelp(State):Help"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">keysHelp</span>
+        
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
       </span>
       </h4>
       
@@ -764,6 +814,17 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.BuiltinCommands#lastLogFile" data-isabs="false">
+      <a id="lastLogFile(State):Option[File]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">lastLogFile</span>
+        
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<span name="java.io.File" class="extype">File</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Determines the log file that last* commands should operate on.</p><div class="fullcomment"><div class="comment cmt"><p>Determines the log file that last* commands should operate on.  See also isLastOnly.</p></div></div>
     </li><li visbl="pub" name="sbt.BuiltinCommands#listBuild" data-isabs="false">
       <a id="listBuild(URI,LoadedBuildUnit,Boolean,String,Logger):Unit"></a>
       <h4 class="signature">
@@ -973,6 +1034,17 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.BuiltinCommands#printLast" data-isabs="false">
+      <a id="printLast(State):(Seq[String]) ⇒ Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">printLast</span>
+        
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: (Seq[String]) ⇒ <span name="scala.Unit" class="extype">Unit</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.BuiltinCommands#project" data-isabs="false">
       <a id="project:Command"></a>
       <h4 class="signature">
@@ -1106,13 +1178,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.BuiltinCommands#runHelp" data-isabs="false">
-      <a id="runHelp(State,Seq[Help])(Seq[String]):State"></a>
+      <a id="runHelp(State,Help)(Seq[String]):State"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">runHelp</span>
         
-        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="h">h: Seq[<a name="sbt.Help" class="extype" href="Help.html">Help</a>]</span>)</span><span class="params">(<span name="args">args: Seq[String]</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="h">h: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>)</span><span class="params">(<span name="args">args: Seq[String]</span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
       
@@ -1204,6 +1276,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuiltinCommands#taskDetail" data-isabs="false">
+      <a id="taskDetail(State):Seq[(String, String)]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">taskDetail</span>
+        
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: Seq[(String, String)]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuiltinCommands#taskKeys" data-isabs="false">
+      <a id="taskKeys(State):Seq[sbt.AttributeKey[_]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">taskKeys</span>
+        
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: Seq[sbt.AttributeKey[_]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.BuiltinCommands#taskStrings" data-isabs="false">
       <a id="taskStrings(sbt.AttributeKey[_]):Option[(String, String)]"></a>
       <h4 class="signature">

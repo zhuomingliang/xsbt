@@ -140,13 +140,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#artifactDefs" data-isabs="false">
-      <a id="artifactDefs(Seq[ScopedTask[File]]):Initialize[Seq[Artifact]]"></a>
+      <a id="artifactDefs(Seq[TaskKey[File]]):Initialize[Seq[Artifact]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">artifactDefs</span>
         
-        <span class="params">(<span name="pkgTasks">pkgTasks: Seq[<a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[<span name="java.io.File" class="extype">File</span>]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[Seq[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>]]</span>
+        <span class="params">(<span name="pkgTasks">pkgTasks: Seq[<a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[<span name="java.io.File" class="extype">File</span>]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[Seq[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>]]</span>
       </span>
       </h4>
       
@@ -194,6 +194,17 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.Classpaths#bootChecksums" data-isabs="false">
+      <a id="bootChecksums(AppConfiguration):Seq[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">bootChecksums</span>
+        
+        <span class="params">(<span name="app">app: <a name="xsbti.AppConfiguration" class="extype" href="../xsbti/AppConfiguration.html">AppConfiguration</a></span>)</span><span class="result">: Seq[String]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.Classpaths#bootIvyHome" data-isabs="false">
       <a id="bootIvyHome(AppConfiguration):Option[File]"></a>
       <h4 class="signature">
@@ -217,13 +228,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#cachedUpdate" data-isabs="false">
-      <a id="cachedUpdate(File,String,Module,UpdateConfiguration,Option[ScalaInstance],Logger):UpdateReport"></a>
+      <a id="cachedUpdate(File,String,Module,UpdateConfiguration,Option[ScalaInstance],Boolean,Logger):UpdateReport"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">cachedUpdate</span>
         
-        <span class="params">(<span name="cacheFile">cacheFile: <span name="java.io.File" class="extype">File</span></span>, <span name="label">label: String</span>, <span name="module">module: <a name="sbt.IvySbt.Module" class="extype" href="IvySbt$Module.html">Module</a></span>, <span name="config">config: <a name="sbt.UpdateConfiguration" class="extype" href="UpdateConfiguration.html">UpdateConfiguration</a></span>, <span name="scalaInstance">scalaInstance: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.ScalaInstance" class="extype" href="ScalaInstance.html">ScalaInstance</a>]</span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="result">: <a name="sbt.UpdateReport" class="extype" href="UpdateReport.html">UpdateReport</a></span>
+        <span class="params">(<span name="cacheFile">cacheFile: <span name="java.io.File" class="extype">File</span></span>, <span name="label">label: String</span>, <span name="module">module: <a name="sbt.IvySbt.Module" class="extype" href="IvySbt$Module.html">Module</a></span>, <span name="config">config: <a name="sbt.UpdateConfiguration" class="extype" href="UpdateConfiguration.html">UpdateConfiguration</a></span>, <span name="scalaInstance">scalaInstance: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.ScalaInstance" class="extype" href="ScalaInstance.html">ScalaInstance</a>]</span>, <span name="depsUpdated">depsUpdated: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="result">: <a name="sbt.UpdateReport" class="extype" href="UpdateReport.html">UpdateReport</a></span>
       </span>
       </h4>
       
@@ -275,13 +286,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#concatSettings" data-isabs="false">
-      <a id="concatSettings[T](ScopedSetting[Seq[T]],ScopedSetting[Seq[T]]):Initialize[Seq[T]]"></a>
+      <a id="concatSettings[T](SettingKey[Seq[T]],SettingKey[Seq[T]]):Initialize[Seq[T]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">concatSettings</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="a">a: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[Seq[T]]</span>, <span name="b">b: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[Seq[T]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[Seq[T]]</span>
+        <span class="params">(<span name="a">a: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[Seq[T]]</span>, <span name="b">b: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[Seq[T]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[Seq[T]]</span>
       </span>
       </h4>
       
@@ -307,14 +318,25 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.Classpaths#constructBuildDependencies" data-isabs="false">
+      <a id="constructBuildDependencies:Initialize[BuildDependencies]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">constructBuildDependencies</span>
+        
+        <span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.BuildDependencies" class="extype" href="BuildDependencies.html">BuildDependencies</a>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.Classpaths#defaultArtifactTasks" data-isabs="false">
-      <a id="defaultArtifactTasks:Seq[ScopedTask[File]]"></a>
+      <a id="defaultArtifactTasks:Seq[TaskKey[File]]"></a>
       <h4 class="signature">
       <span class="kind">lazy val</span>
       <span class="symbol"> 
         <span class="name">defaultArtifactTasks</span>
         
-        <span class="result">: Seq[<a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[<span name="java.io.File" class="extype">File</span>]]</span>
+        <span class="result">: Seq[<a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[<span name="java.io.File" class="extype">File</span>]]</span>
       </span>
       </h4>
       
@@ -341,13 +363,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#defaultPackages" data-isabs="false">
-      <a id="defaultPackages:Seq[ScopedTask[File]]"></a>
+      <a id="defaultPackages:Seq[TaskKey[File]]"></a>
       <h4 class="signature">
       <span class="kind">lazy val</span>
       <span class="symbol"> 
         <span class="name">defaultPackages</span>
         
-        <span class="result">: Seq[<a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[<span name="java.io.File" class="extype">File</span>]]</span>
+        <span class="result">: Seq[<a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[<span name="java.io.File" class="extype">File</span>]]</span>
       </span>
       </h4>
       
@@ -396,13 +418,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#depMap" data-isabs="false">
-      <a id="depMap(Seq[(ProjectRef, ResolvedProject)],Settings[Scope],Logger):Task[Map[ModuleRevisionId, ModuleDescriptor]]"></a>
+      <a id="depMap(Seq[ProjectRef],Settings[Scope],Logger):Task[Map[ModuleRevisionId, ModuleDescriptor]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">depMap</span>
         
-        <span class="params">(<span name="projects">projects: Seq[(<a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a>, <a name="sbt.ResolvedProject" class="extype" href="ResolvedProject.html">ResolvedProject</a>)]</span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Map[<span name="org.apache.ivy.core.module.id.ModuleRevisionId" class="extype">ModuleRevisionId</span>, <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span>]]</span>
+        <span class="params">(<span name="projects">projects: Seq[<a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a>]</span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Map[<span name="org.apache.ivy.core.module.id.ModuleRevisionId" class="extype">ModuleRevisionId</span>, <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span>]]</span>
       </span>
       </h4>
       
@@ -418,13 +440,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#enabledOnly" data-isabs="false">
-      <a id="enabledOnly[T](ScopedSetting[T],Seq[ScopedTask[File]]):Initialize[Seq[T]]"></a>
+      <a id="enabledOnly[T](SettingKey[T],Seq[TaskKey[File]]):Initialize[Seq[T]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">enabledOnly</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="key">key: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[T]</span>, <span name="pkgTasks">pkgTasks: Seq[<a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[<span name="java.io.File" class="extype">File</span>]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[Seq[T]]</span>
+        <span class="params">(<span name="key">key: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[T]</span>, <span name="pkgTasks">pkgTasks: Seq[<a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[<span name="java.io.File" class="extype">File</span>]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[Seq[T]]</span>
       </span>
       </h4>
       
@@ -475,6 +497,17 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.Classpaths#findClasspathConfig" data-isabs="false">
+      <a id="findClasspathConfig((Configuration) ⇒ Configuration,Configuration,Task[Option[Configuration]],Task[UpdateReport]):Task[Configuration]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">findClasspathConfig</span>
+        
+        <span class="params">(<span name="map">map: (<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>) ⇒ <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="thisConfig">thisConfig: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="delegate">delegate: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[<span name="scala.Option" class="extype">Option</span>[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="up">up: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[<a name="sbt.UpdateReport" class="extype" href="UpdateReport.html">UpdateReport</a>]</span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.Classpaths#flatten" data-isabs="false">
       <a id="flatten[T](Option[Option[T]]):Option[T]"></a>
       <h4 class="signature">
@@ -487,13 +520,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#forallIn" data-isabs="false">
-      <a id="forallIn[T](ScopedSetting[T],Seq[sbt.ScopedTask[_]]):Initialize[Seq[T]]"></a>
+      <a id="forallIn[T](SettingKey[T],Seq[sbt.TaskKey[_]]):Initialize[Seq[T]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">forallIn</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="key">key: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[T]</span>, <span name="pkgTasks">pkgTasks: Seq[sbt.ScopedTask[_]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[Seq[T]]</span>
+        <span class="params">(<span name="key">key: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[T]</span>, <span name="pkgTasks">pkgTasks: Seq[sbt.TaskKey[_]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[Seq[T]]</span>
       </span>
       </h4>
       
@@ -553,24 +586,24 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.Classpaths#interDependencies" data-isabs="false">
-      <a id="interDependencies(ProjectRef,ResolvedProject,Configuration,Configuration,Settings[Scope],Boolean,(ProjectRef, String, Settings[Scope]) ⇒ Task[Classpath]):Task[Classpath]"></a>
+      <a id="interDependencies(ProjectRef,BuildDependencies,Configuration,Configuration,Settings[Scope],Boolean,(ProjectRef, String, Settings[Scope]) ⇒ Task[Classpath]):Task[Classpath]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">interDependencies</span>
         
-        <span class="params">(<span name="projectRef">projectRef: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="project">project: <a name="sbt.ResolvedProject" class="extype" href="ResolvedProject.html">ResolvedProject</a></span>, <span name="conf">conf: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="self">self: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="includeSelf">includeSelf: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="f">f: (<a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a>, String, <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]) ⇒ <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Classpath]</span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Classpath]</span>
+        <span class="params">(<span name="projectRef">projectRef: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="deps">deps: <a name="sbt.BuildDependencies" class="extype" href="BuildDependencies.html">BuildDependencies</a></span>, <span name="conf">conf: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="self">self: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="includeSelf">includeSelf: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="f">f: (<a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a>, String, <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]) ⇒ <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Classpath]</span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Classpath]</span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#interSort" data-isabs="false">
-      <a id="interSort(ProjectRef,ResolvedProject,Configuration,Settings[Scope]):Seq[(ProjectRef, String)]"></a>
+      <a id="interSort(ProjectRef,Configuration,Settings[Scope],BuildDependencies):Seq[(ProjectRef, String)]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">interSort</span>
         
-        <span class="params">(<span name="projectRef">projectRef: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="project">project: <a name="sbt.ResolvedProject" class="extype" href="ResolvedProject.html">ResolvedProject</a></span>, <span name="conf">conf: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>)</span><span class="result">: Seq[(<a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a>, String)]</span>
+        <span class="params">(<span name="projectRef">projectRef: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="conf">conf: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="deps">deps: <a name="sbt.BuildDependencies" class="extype" href="BuildDependencies.html">BuildDependencies</a></span>)</span><span class="result">: Seq[(<a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a>, String)]</span>
       </span>
       </h4>
       
@@ -586,13 +619,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#internalDependencies0" data-isabs="false">
-      <a id="internalDependencies0(ProjectRef,ResolvedProject,Configuration,Configuration,Settings[Scope]):Task[Classpath]"></a>
+      <a id="internalDependencies0(ProjectRef,Configuration,Configuration,Settings[Scope],BuildDependencies):Task[Classpath]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">internalDependencies0</span>
         
-        <span class="params">(<span name="projectRef">projectRef: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="project">project: <a name="sbt.ResolvedProject" class="extype" href="ResolvedProject.html">ResolvedProject</a></span>, <span name="conf">conf: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="self">self: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Classpath]</span>
+        <span class="params">(<span name="projectRef">projectRef: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="conf">conf: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="self">self: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="deps">deps: <a name="sbt.BuildDependencies" class="extype" href="BuildDependencies.html">BuildDependencies</a></span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Classpath]</span>
       </span>
       </h4>
       
@@ -729,13 +762,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li visbl="pub" name="sbt.Classpaths#packaged" data-isabs="false">
-      <a id="packaged(Seq[ScopedTask[File]]):Initialize[Task[Map[Artifact, File]]]"></a>
+      <a id="packaged(Seq[TaskKey[File]]):Initialize[Task[Map[Artifact, File]]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">packaged</span>
         
-        <span class="params">(<span name="pkgTasks">pkgTasks: Seq[<a name="sbt.ScopedTask" class="extype" href="ScopedTask.html">ScopedTask</a>[<span name="java.io.File" class="extype">File</span>]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[Map[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>, <span name="java.io.File" class="extype">File</span>]]]</span>
+        <span class="params">(<span name="pkgTasks">pkgTasks: Seq[<a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[<span name="java.io.File" class="extype">File</span>]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[Map[<a name="sbt.Artifact" class="extype" href="Artifact.html">Artifact</a>, <span name="java.io.File" class="extype">File</span>]]]</span>
       </span>
       </h4>
       
@@ -801,7 +834,7 @@
       <span class="symbol"> 
         <span class="name">projectDependenciesTask</span>
         
-        <span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[<span name="scala.collection.Seq" class="extype">Seq</span>[<a name="sbt.ModuleID" class="extype" href="ModuleID.html">ModuleID</a>]]]</span>
+        <span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[Seq[<a name="sbt.ModuleID" class="extype" href="ModuleID.html">ModuleID</a>]]]</span>
       </span>
       </h4>
       
@@ -960,13 +993,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Classpaths#unmanagedDependencies0" data-isabs="false">
-      <a id="unmanagedDependencies0(ProjectRef,ResolvedProject,Configuration,Settings[Scope]):Task[Classpath]"></a>
+      <a id="unmanagedDependencies0(ProjectRef,Configuration,Settings[Scope],BuildDependencies):Task[Classpath]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">unmanagedDependencies0</span>
         
-        <span class="params">(<span name="projectRef">projectRef: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="project">project: <a name="sbt.ResolvedProject" class="extype" href="ResolvedProject.html">ResolvedProject</a></span>, <span name="conf">conf: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Classpath]</span>
+        <span class="params">(<span name="projectRef">projectRef: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="conf">conf: <a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a></span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>, <span name="deps">deps: <a name="sbt.BuildDependencies" class="extype" href="BuildDependencies.html">BuildDependencies</a></span>)</span><span class="result">: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[Classpath]</span>
       </span>
       </h4>
       

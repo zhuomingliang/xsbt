@@ -56,7 +56,43 @@
 
         
 
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="sbt.State.History" data-isabs="false">
+      <a id="History:History"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="State$$History.html"><span class="name">History</span></a>
         
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Provides a list of recently executed commands.</p>
+    </li><li visbl="pub" name="sbt.State.Next" data-isabs="true">
+      <a id="Next:Next"></a>
+      <h4 class="signature">
+      <span class="kind">trait</span>
+      <span class="symbol"> 
+        <a href="State$$Next.html"><span class="name">Next</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Represents the next action for the command processor.</p>
+    </li><li visbl="pub" name="sbt.State.Return" data-isabs="false">
+      <a id="Return:Return"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="State$$Return.html"><span class="name">Return</span></a>
+        
+        <span class="result"> extends Next</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Indicates that the application should exit with the given result.</p>
+    </li></ol>
+            </div>
         
         
 
@@ -117,6 +153,39 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.State.ClearGlobalLog" data-isabs="false">
+      <a id="ClearGlobalLog:ClearGlobalLog"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="State$$ClearGlobalLog$.html"><span class="name">ClearGlobalLog</span></a>
+        
+        <span class="result"> extends Next</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Indicates that global logging should be rotated.</p>
+    </li><li visbl="pub" name="sbt.State.Continue" data-isabs="false">
+      <a id="Continue:Continue"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="State$$Continue$.html"><span class="name">Continue</span></a>
+        
+        <span class="result"> extends Next</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Indicates that the command processor should process the next command.</p>
+    </li><li visbl="pub" name="sbt.State.KeepLastLog" data-isabs="false">
+      <a id="KeepLastLog:KeepLastLog"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="State$$KeepLastLog$.html"><span class="name">KeepLastLog</span></a>
+        
+        <span class="result"> extends Next</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Indicates that the previous log file should be preserved instead of discarded.</p>
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -233,6 +302,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="sbt.State#newHistory" data-isabs="false">
+      <a id="newHistory:History"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">newHistory</span>
+        
+        <span class="result">: <a name="sbt.State.History" class="extype" href="State$$History.html">History</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Constructs an empty command History with a default, finite command limit.</p>
     </li><li visbl="pub" name="scala.AnyRef#notify" data-isabs="false">
       <a id="notify():Unit"></a>
       <h4 class="signature">
@@ -276,7 +356,7 @@
         <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.StateOps" class="extype" href="StateOps.html">StateOps</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
+      <p class="shortcomment cmt">Provides operations and transformations on State.</p><div class="fullcomment"><div class="comment cmt"><p>Provides operations and transformations on State.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

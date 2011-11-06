@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>sbt.IvyCache</title>
+          <title>sbt.State.Next</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../lib/template.css" />
@@ -12,25 +12,28 @@
       <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="value">
+        <body class="type">
       <div id="definition">
-        <img src="../lib/object_big.png" />
-        <p id="owner"><a name="sbt" class="extype" href="package.html">sbt</a></p>
-        <h1>IvyCache</h1>
+        <img src="../lib/trait_big.png" />
+        <p id="owner"><a name="sbt" class="extype" href="package.html">sbt</a>.<a name="sbt.State" class="extype" href="State$.html">State</a></p>
+        <h1>Next</h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">object</span>
+      <span class="kind">trait</span>
       <span class="symbol"> 
-        <span class="name">IvyCache</span>
+        <span class="name">Next</span>
         
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Provides methods for working at the level of a single jar file with the default Ivy cache.</p></div><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Represents the next action for the command processor.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+        </div><div class="toggleContainer block">
+          <span class="toggle">Known Subclasses</span>
+          <div class="subClasses hiddenContent"><a name="sbt.State.ClearGlobalLog" class="extype" href="State$$ClearGlobalLog$.html">ClearGlobalLog</a>, <a name="sbt.State.Continue" class="extype" href="State$$Continue$.html">Continue</a>, <a name="sbt.State.KeepLastLog" class="extype" href="State$$KeepLastLog$.html">KeepLastLog</a>, <a name="sbt.State.Return" class="extype" href="State$$Return.html">Return</a></div>
         </div></div>
         
 
@@ -46,7 +49,7 @@
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall out"><span>Hide All</span></li>
                 <li class="showall in"><span>Show all</span></li></ol>
-                <ol id="linearization"><li name="sbt.IvyCache" class="in"><span>IvyCache</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+                <ol id="linearization"><li name="sbt.State.Next" class="in"><span>Next</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -128,28 +131,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.IvyCache#cacheJar" data-isabs="false">
-      <a id="cacheJar(ModuleID,File,Option[GlobalLock],Logger):Unit"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">cacheJar</span>
-        
-        <span class="params">(<span name="moduleID">moduleID: <a name="sbt.ModuleID" class="extype" href="ModuleID.html">ModuleID</a></span>, <span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="lock">lock: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.GlobalLock" class="extype" href="../xsbti/GlobalLock.html">GlobalLock</a>]</span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Caches the given 'file' with the given ID.</p><div class="fullcomment"><div class="comment cmt"><p>Caches the given 'file' with the given ID.  It may be retrieved or cleared using this ID.</p></div></div>
-    </li><li visbl="pub" name="sbt.IvyCache#clearCachedJar" data-isabs="false">
-      <a id="clearCachedJar(ModuleID,Option[GlobalLock],Logger):Unit"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">clearCachedJar</span>
-        
-        <span class="params">(<span name="id">id: <a name="sbt.ModuleID" class="extype" href="ModuleID.html">ModuleID</a></span>, <span name="lock">lock: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.GlobalLock" class="extype" href="../xsbti/GlobalLock.html">GlobalLock</a>]</span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Clears the cache of the jar for the given ID.</p>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -233,17 +214,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.IvyCache#lockFile" data-isabs="false">
-      <a id="lockFile:File"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">lockFile</span>
-        
-        <span class="result">: <span name="java.io.File" class="extype">File</span></span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -277,17 +247,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.IvyCache#retrieveCachedJar" data-isabs="false">
-      <a id="retrieveCachedJar(ModuleID,File,Option[GlobalLock],Logger):File"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">retrieveCachedJar</span>
-        
-        <span class="params">(<span name="id">id: <a name="sbt.ModuleID" class="extype" href="ModuleID.html">ModuleID</a></span>, <span name="toDirectory">toDirectory: <span name="java.io.File" class="extype">File</span></span>, <span name="lock">lock: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.GlobalLock" class="extype" href="../xsbti/GlobalLock.html">GlobalLock</a>]</span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="result">: <span name="java.io.File" class="extype">File</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Copies the cached jar for the given ID to the directory 'toDirectory'.</p><div class="fullcomment"><div class="comment cmt"><p>Copies the cached jar for the given ID to the directory 'toDirectory'.  If the jar is not in the cache, NotInCache is thrown.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -352,28 +311,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="sbt.IvyCache#withCachedJar" data-isabs="false">
-      <a id="withCachedJar[T](ModuleID,Option[GlobalLock],Logger)((File) ⇒ T):T"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">withCachedJar</span>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="id">id: <a name="sbt.ModuleID" class="extype" href="ModuleID.html">ModuleID</a></span>, <span name="lock">lock: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.GlobalLock" class="extype" href="../xsbti/GlobalLock.html">GlobalLock</a>]</span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="params">(<span name="f">f: (<span name="java.io.File" class="extype">File</span>) ⇒ T</span>)</span><span class="result">: T</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Get the location of the cached jar for the given ID in the Ivy cache.</p><div class="fullcomment"><div class="comment cmt"><p>Get the location of the cached jar for the given ID in the Ivy cache.  If the jar is not in the cache, NotInCache is thrown .</p></div></div>
-    </li><li visbl="pub" name="sbt.IvyCache#withDefaultCache" data-isabs="false">
-      <a id="withDefaultCache[T](Option[GlobalLock],Logger)((DefaultRepositoryCacheManager) ⇒ T):T"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">withDefaultCache</span>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="lock">lock: <span name="scala.Option" class="extype">Option</span>[<a name="xsbti.GlobalLock" class="extype" href="../xsbti/GlobalLock.html">GlobalLock</a>]</span>, <span name="log">log: <a name="sbt.Logger" class="extype" href="Logger.html">Logger</a></span>)</span><span class="params">(<span name="f">f: (<span name="org.apache.ivy.core.cache.DefaultRepositoryCacheManager" class="extype">DefaultRepositoryCacheManager</span>) ⇒ T</span>)</span><span class="result">: T</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Calls the given function with the default Ivy cache.</p>
     </li></ol>
             </div>
 

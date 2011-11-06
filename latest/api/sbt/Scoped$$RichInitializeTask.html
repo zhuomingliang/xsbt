@@ -302,6 +302,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.Scoped.RichInitializeTask#keepAs" data-isabs="false">
+      <a id="keepAs(TaskKey[S]):Initialize[Task[S]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">keepAs</span>
+        
+        <span class="params">(<span name="key">key: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[S]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[S]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.Scoped.RichInitializeTask#map" data-isabs="false">
       <a id="map[T]((S) ⇒ T):Initialize[Task[T]]"></a>
       <h4 class="signature">
@@ -379,6 +390,17 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.Scoped.RichInitializeTask#storeAs" data-isabs="false">
+      <a id="storeAs(TaskKey[S])(Format[S]):Initialize[Task[S]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">storeAs</span>
+        
+        <span class="params">(<span name="key">key: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[S]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="f">f: <span name="sbinary.Format" class="extype">Format</span>[S]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[S]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -409,6 +431,17 @@
         <span class="name">triggeredBy</span>
         
         <span class="params">(<span name="tasks">tasks: AnyInitTask*</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[S]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.Scoped.RichInitializeTask#updateState" data-isabs="false">
+      <a id="updateState((State, S) ⇒ State):Initialize[Task[S]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">updateState</span>
+        
+        <span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>, S) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[S]]</span>
       </span>
       </h4>
       

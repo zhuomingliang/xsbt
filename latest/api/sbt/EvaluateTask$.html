@@ -142,6 +142,28 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.EvaluateTask#apply" data-isabs="false">
+      <a id="apply[T](BuildStructure,ScopedKey[Task[T]],State,ProjectRef,EvaluateConfig):Option[(State, Result[T])]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">apply</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>, <span name="taskKey">taskKey: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="ref">ref: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="config">config: <a name="sbt.EvaluateConfig" class="extype" href="EvaluateConfig.html">EvaluateConfig</a></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[(<a name="sbt.State" class="extype" href="State.html">State</a>, <a name="sbt.Result" class="extype" href="Result.html">Result</a>[T])]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.EvaluateTask#applyResults" data-isabs="false">
+      <a id="applyResults[T](RMap[Task, Result],State,Task[T]):(State, Result[T])"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">applyResults</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="results">results: <a name="sbt.RMap" class="extype" href="RMap.html">RMap</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>, <a name="sbt.Result" class="extype" href="Result.html">Result</a>]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="root">root: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]</span>)</span><span class="result">: (<a name="sbt.State" class="extype" href="State.html">State</a>, <a name="sbt.Result" class="extype" href="Result.html">Result</a>[T])</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -153,6 +175,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.EvaluateTask#cancelable" data-isabs="false">
+      <a id="cancelable(Extracted,BuildStructure):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">cancelable</span>
+        
+        <span class="params">(<span name="extracted">extracted: <a name="sbt.Extracted" class="extype" href="Extracted.html">Extracted</a></span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -189,6 +222,17 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.EvaluateTask#defaultConfig" data-isabs="false">
+      <a id="defaultConfig:EvaluateConfig"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">defaultConfig</span>
+        
+        <span class="result">: <a name="sbt.EvaluateConfig" class="extype" href="EvaluateConfig.html">EvaluateConfig</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -222,14 +266,14 @@
       </span>
       </h4>
       
-    </li><li visbl="pub" name="sbt.EvaluateTask#evaluateTask" data-isabs="false">
-      <a id="evaluateTask[T](BuildStructure,ScopedKey[Task[T]],State,ProjectRef,Boolean,Int):Option[Result[T]]"></a>
+    </li><li visbl="pub" name="sbt.EvaluateTask#extractedConfig" data-isabs="false">
+      <a id="extractedConfig(Extracted,BuildStructure):EvaluateConfig"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">evaluateTask</span>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>, <span name="taskKey">taskKey: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="ref">ref: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="checkCycles">checkCycles: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="maxWorkers">maxWorkers: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.Result" class="extype" href="Result.html">Result</a>[T]]</span>
+        <span class="name">extractedConfig</span>
+        
+        <span class="params">(<span name="extracted">extracted: <a name="sbt.Extracted" class="extype" href="Extracted.html">Extracted</a></span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>)</span><span class="result">: <a name="sbt.EvaluateConfig" class="extype" href="EvaluateConfig.html">EvaluateConfig</a></span>
       </span>
       </h4>
       
@@ -247,6 +291,17 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.EvaluateTask#getBoolean" data-isabs="false">
+      <a id="getBoolean(SettingKey[Boolean],Boolean,Extracted,BuildStructure):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">getBoolean</span>
+        
+        <span class="params">(<span name="key">key: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>, <span name="default">default: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="extracted">extracted: <a name="sbt.Extracted" class="extype" href="Extracted.html">Extracted</a></span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -357,6 +412,17 @@
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.EvaluateTask#maxWorkers" data-isabs="false">
+      <a id="maxWorkers(Extracted,BuildStructure):Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">maxWorkers</span>
+        
+        <span class="params">(<span name="extracted">extracted: <a name="sbt.Extracted" class="extype" href="Extracted.html">Extracted</a></span>, <span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>)</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.EvaluateTask#name" data-isabs="false">
       <a id="name(sbt.Task[_]):String"></a>
       <h4 class="signature">
@@ -435,13 +501,24 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.EvaluateTask#runTask" data-isabs="false">
-      <a id="runTask[Task&lt;:AnyRef, T](Task[T],Streams,Triggers[Task],Boolean,Int)(NodeView[Task]):Result[T]"></a>
+      <a id="runTask[T](Task[T],State,Streams,Triggers[Task],EvaluateConfig)(NodeView[Task]):(State, Result[T])"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">runTask</span>
-        <span class="tparams">[<span name="Task">Task<span class="tparams">[<span name="_">_</span>]</span> &lt;: AnyRef</span>, <span name="T">T</span>]</span>
-        <span class="params">(<span name="root">root: Task[T]</span>, <span name="streams">streams: Streams</span>, <span name="triggers">triggers: <a name="sbt.Triggers" class="extype" href="Triggers.html">Triggers</a>[Task]</span>, <span name="checkCycles">checkCycles: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="maxWorkers">maxWorkers: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="taskToNode">taskToNode: NodeView[Task]</span>)</span><span class="result">: <a name="sbt.Result" class="extype" href="Result.html">Result</a>[T]</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="root">root: <a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="streams">streams: Streams</span>, <span name="triggers">triggers: <a name="sbt.Triggers" class="extype" href="Triggers.html">Triggers</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>]</span>, <span name="config">config: <a name="sbt.EvaluateConfig" class="extype" href="EvaluateConfig.html">EvaluateConfig</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="taskToNode">taskToNode: NodeView[<a name="sbt.Task" class="extype" href="Task.html">Task</a>]</span>)</span><span class="result">: (<a name="sbt.State" class="extype" href="State.html">State</a>, <a name="sbt.Result" class="extype" href="Result.html">Result</a>[T])</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.EvaluateTask#stateTransform" data-isabs="false">
+      <a id="stateTransform(RMap[Task, Result]):(State) ⇒ State"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">stateTransform</span>
+        
+        <span class="params">(<span name="results">results: <a name="sbt.RMap" class="extype" href="RMap.html">RMap</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>, <a name="sbt.Result" class="extype" href="Result.html">Result</a>]</span>)</span><span class="result">: (<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
       
@@ -543,20 +620,37 @@
               
         </dd></dl></div>
     </li><li visbl="pub" name="sbt.EvaluateTask#withStreams" data-isabs="false">
-      <a id="withStreams[T](BuildStructure)((Streams) ⇒ T):T"></a>
+      <a id="withStreams[T](BuildStructure,State)((Streams) ⇒ T):T"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">withStreams</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>)</span><span class="params">(<span name="f">f: (Streams) ⇒ T</span>)</span><span class="result">: T</span>
+        <span class="params">(<span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="params">(<span name="f">f: (Streams) ⇒ T</span>)</span><span class="result">: T</span>
       </span>
       </h4>
       
     </li></ol>
             </div>
 
-        
+        <div class="values members" id="values">
+              <h3>Deprecated Value Members</h3>
+              <ol><li visbl="pub" name="sbt.EvaluateTask#evaluateTask" data-isabs="false">
+      <a id="evaluateTask[T](BuildStructure,ScopedKey[Task[T]],State,ProjectRef,Boolean,Int):Option[Result[T]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name deprecated">evaluateTask</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="structure">structure: <a name="sbt.Load.BuildStructure" class="extype" href="Load$$BuildStructure.html">BuildStructure</a></span>, <span name="taskKey">taskKey: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="ref">ref: <a name="sbt.ProjectRef" class="extype" href="ProjectRef.html">ProjectRef</a></span>, <span name="checkCycles">checkCycles: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="maxWorkers">maxWorkers: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.Result" class="extype" href="Result.html">Result</a>[T]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>This method does not apply state changes requested during task execution.  Use 'apply' instead, which does.</p></dd></dl></div>
+    </li></ol>
+            </div>
 
         <div name="scala.AnyRef" class="parent">
               <h3>Inherited from AnyRef</h3>

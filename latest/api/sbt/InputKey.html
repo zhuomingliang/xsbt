@@ -14,23 +14,27 @@
         </head>
         <body class="type">
       <div id="definition">
-        <a title="Go to companion" href="InputKey$.html"><img src="../lib/class_to_object_big.png" /></a>
+        <a title="Go to companion" href="InputKey$.html"><img src="../lib/trait_to_object_big.png" /></a>
         <p id="owner"><a name="sbt" class="extype" href="package.html">sbt</a></p>
         <h1><a title="Go to companion" href="InputKey$.html">InputKey</a></h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">class</span>
+      <span class="kind">trait</span>
       <span class="symbol"> 
         <span class="name">InputKey</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends <a name="sbt.Key" class="extype" href="Key.html">Key</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]] with <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="result"> extends <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a> with <a name="sbt.Init.KeyedInitialize" class="extype" href="Init$KeyedInitialize.html">KeyedInitialize</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]] with <a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a>[<a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]] with <a name="sbt.Scoped.DefinableSetting" class="extype" href="Scoped$$DefinableSetting.html">DefinableSetting</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</span>
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Identifies an input task.  An input task parses input and produces a task to run.
+It consists of three parts: the scope, the name, and the type of the value produced by an input task associated with this key.
+The scope is represented by a value of type Scope.
+The name and the type are represented by a value of type AttributeKey[InputTask[T]].
+Instances are constructed using the companion object.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T], <a name="sbt.Scoped.DefinableSetting" class="extype" href="Scoped$$DefinableSetting.html">DefinableSetting</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a>[<a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]], <a name="sbt.Init.KeyedInitialize" class="extype" href="Init$KeyedInitialize.html">KeyedInitialize</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Init.Keyed" class="extype" href="Init$Keyed.html">Keyed</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T], <a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Key" class="extype" href="Key.html">Key</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+          <div class="superTypes hiddenContent"><a name="sbt.Scoped.DefinableSetting" class="extype" href="Scoped$$DefinableSetting.html">DefinableSetting</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a>[<a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]], <a name="sbt.Init.KeyedInitialize" class="extype" href="Init$KeyedInitialize.html">KeyedInitialize</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Init.Keyed" class="extype" href="Init$Keyed.html">Keyed</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T], <a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]], <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
         
 
@@ -46,7 +50,7 @@
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall out"><span>Hide All</span></li>
                 <li class="showall in"><span>Show all</span></li></ol>
-                <ol id="linearization"><li name="sbt.InputKey" class="in"><span>InputKey</span></li><li name="sbt.ScopedInput" class="in"><span>ScopedInput</span></li><li name="sbt.Scoped.DefinableSetting" class="in"><span>DefinableSetting</span></li><li name="sbt.Scoped.ScopingSetting" class="in"><span>ScopingSetting</span></li><li name="sbt.Init.KeyedInitialize" class="in"><span>KeyedInitialize</span></li><li name="sbt.Init.Keyed" class="in"><span>Keyed</span></li><li name="sbt.Init.Initialize" class="in"><span>Initialize</span></li><li name="sbt.Key" class="in"><span>Key</span></li><li name="sbt.Scoped" class="in"><span>Scoped</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+                <ol id="linearization"><li name="sbt.InputKey" class="in"><span>InputKey</span></li><li name="sbt.Scoped.DefinableSetting" class="in"><span>DefinableSetting</span></li><li name="sbt.Scoped.ScopingSetting" class="in"><span>ScopingSetting</span></li><li name="sbt.Init.KeyedInitialize" class="in"><span>KeyedInitialize</span></li><li name="sbt.Init.Keyed" class="in"><span>Keyed</span></li><li name="sbt.Init.Initialize" class="in"><span>Initialize</span></li><li name="sbt.Scoped" class="in"><span>Scoped</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -58,10 +62,35 @@
 
         
         
+        <div class="values members" id="values">
+              <h3>Abstract Value Members</h3>
+              <ol><li visbl="pub" name="sbt.InputKey#key" data-isabs="true">
+      <a id="key:AttributeKey[InputTask[T]]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">key</span>
         
+        <span class="result">: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd><dt>Definition Classes</dt><dd><a name="sbt.InputKey" class="extype" href="">InputKey</a> → <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></dd></dl></div>
+    </li><li visbl="pub" name="sbt.Scoped#scope" data-isabs="true">
+      <a id="scope:Scope"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">scope</span>
+        
+        <span class="result">: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd><dt>Definition Classes</dt><dd><a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></dd></dl></div>
+    </li></ol>
+            </div>
 
         <div class="values members" id="values">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol><li visbl="pub" name="scala.AnyRef#!=" data-isabs="false">
       <a id="!=(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -288,102 +317,102 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.ScopedInput#in" data-isabs="false">
-      <a id="in(Scope):ScopedInput[T]"></a>
+    </li><li visbl="pub" name="sbt.InputKey#in" data-isabs="false">
+      <a id="in(Scope):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">in</span>
         
-        <span class="params">(<span name="scope">scope: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="scope">scope: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a> → <a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.InputKey" class="extype" href="">InputKey</a> → <a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
-      <a id="in(ScopeAxis[Reference],ScopeAxis[ConfigKey],ScopeAxis[sbt.AttributeKey[_]]):ScopedInput[T]"></a>
+      <a id="in(ScopeAxis[Reference],ScopeAxis[ConfigKey],ScopeAxis[sbt.AttributeKey[_]]):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">in</span>
         
-        <span class="params">(<span name="p">p: <a name="sbt.ScopeAxis" class="extype" href="ScopeAxis.html">ScopeAxis</a>[<a name="sbt.Reference" class="extype" href="Reference.html">Reference</a>]</span>, <span name="c">c: <a name="sbt.ScopeAxis" class="extype" href="ScopeAxis.html">ScopeAxis</a>[<a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a>]</span>, <span name="t">t: <a name="sbt.ScopeAxis" class="extype" href="ScopeAxis.html">ScopeAxis</a>[sbt.AttributeKey[_]]</span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
-    </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
-      <a id="in(Reference,ConfigKey,Scoped):ScopedInput[T]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">in</span>
-        
-        <span class="params">(<span name="p">p: <a name="sbt.Reference" class="extype" href="Reference.html">Reference</a></span>, <span name="c">c: <a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a></span>, <span name="t">t: <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="p">p: <a name="sbt.ScopeAxis" class="extype" href="ScopeAxis.html">ScopeAxis</a>[<a name="sbt.Reference" class="extype" href="Reference.html">Reference</a>]</span>, <span name="c">c: <a name="sbt.ScopeAxis" class="extype" href="ScopeAxis.html">ScopeAxis</a>[<a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a>]</span>, <span name="t">t: <a name="sbt.ScopeAxis" class="extype" href="ScopeAxis.html">ScopeAxis</a>[sbt.AttributeKey[_]]</span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
-      <a id="in(Reference,Scoped):ScopedInput[T]"></a>
+      <a id="in(Reference,ConfigKey,Scoped):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">in</span>
         
-        <span class="params">(<span name="p">p: <a name="sbt.Reference" class="extype" href="Reference.html">Reference</a></span>, <span name="t">t: <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="p">p: <a name="sbt.Reference" class="extype" href="Reference.html">Reference</a></span>, <span name="c">c: <a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a></span>, <span name="t">t: <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
-      <a id="in(Reference,ConfigKey):ScopedInput[T]"></a>
+      <a id="in(Reference,Scoped):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">in</span>
         
-        <span class="params">(<span name="p">p: <a name="sbt.Reference" class="extype" href="Reference.html">Reference</a></span>, <span name="c">c: <a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a></span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="p">p: <a name="sbt.Reference" class="extype" href="Reference.html">Reference</a></span>, <span name="t">t: <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
-      <a id="in(ConfigKey,Scoped):ScopedInput[T]"></a>
+      <a id="in(Reference,ConfigKey):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">in</span>
         
-        <span class="params">(<span name="c">c: <a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a></span>, <span name="t">t: <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="p">p: <a name="sbt.Reference" class="extype" href="Reference.html">Reference</a></span>, <span name="c">c: <a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a></span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
-      <a id="in(ConfigKey):ScopedInput[T]"></a>
+      <a id="in(ConfigKey,Scoped):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">in</span>
         
-        <span class="params">(<span name="c">c: <a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a></span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="c">c: <a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a></span>, <span name="t">t: <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
-      <a id="in(Scoped):ScopedInput[T]"></a>
+      <a id="in(ConfigKey):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">in</span>
         
-        <span class="params">(<span name="t">t: <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="c">c: <a name="sbt.ConfigKey" class="extype" href="ConfigKey.html">ConfigKey</a></span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
-      <a id="in(Reference):ScopedInput[T]"></a>
+      <a id="in(Scoped):InputKey[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">in</span>
         
-        <span class="params">(<span name="p">p: <a name="sbt.Reference" class="extype" href="Reference.html">Reference</a></span>)</span><span class="result">: <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</span>
+        <span class="params">(<span name="t">t: <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
+    </li><li visbl="pub" name="sbt.Scoped.ScopingSetting#in" data-isabs="false">
+      <a id="in(Reference):InputKey[T]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">in</span>
+        
+        <span class="params">(<span name="p">p: <a name="sbt.Reference" class="extype" href="Reference.html">Reference</a></span>)</span><span class="result">: <a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a></dd></dl></div>
@@ -398,17 +427,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.InputKey#key" data-isabs="false">
-      <a id="key:AttributeKey[InputTask[T]]"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">key</span>
-        
-        <span class="result">: <a name="sbt.AttributeKey" class="extype" href="AttributeKey.html">AttributeKey</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.InputKey" class="extype" href="">InputKey</a> → <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a> → <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.Init.Keyed#mapConstant" data-isabs="false">
       <a id="mapConstant(MapConstant):Initialize[InputTask[T]]"></a>
       <h4 class="signature">
@@ -475,18 +493,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd><a name="sbt.Scoped.DefinableSetting" class="extype" href="Scoped$$DefinableSetting.html">DefinableSetting</a></dd></dl></div>
-    </li><li visbl="pub" name="sbt.Key#scope" data-isabs="false">
-      <a id="scope:Scope"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">scope</span>
-        
-        <span class="result">: <a name="sbt.Scope" class="extype" href="Scope.html">Scope</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd><a name="sbt.Key" class="extype" href="Key.html">Key</a> → <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></dd></dl></div>
-    </li><li visbl="pub" name="sbt.ScopedInput#scopedKey" data-isabs="false">
+    </li><li visbl="pub" name="sbt.InputKey#scopedKey" data-isabs="false">
       <a id="scopedKey:ScopedKey[InputTask[T]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -496,7 +503,7 @@
         <span class="result">: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a> → <a name="sbt.Scoped.DefinableSetting" class="extype" href="Scoped$$DefinableSetting.html">DefinableSetting</a> → <a name="sbt.Init.Keyed" class="extype" href="Init$Keyed.html">Keyed</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.InputKey" class="extype" href="">InputKey</a> → <a name="sbt.Scoped.DefinableSetting" class="extype" href="Scoped$$DefinableSetting.html">DefinableSetting</a> → <a name="sbt.Init.Keyed" class="extype" href="Init$Keyed.html">Keyed</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -638,20 +645,16 @@
     </li></ol>
             </div>
 
-        <div name="sbt.ScopedInput" class="parent">
-              <h3>Inherited from <a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]</h3>
-            </div><div name="sbt.Scoped.DefinableSetting" class="parent">
+        <div name="sbt.Scoped.DefinableSetting" class="parent">
               <h3>Inherited from <a name="sbt.Scoped.DefinableSetting" class="extype" href="Scoped$$DefinableSetting.html">DefinableSetting</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</h3>
             </div><div name="sbt.Scoped.ScopingSetting" class="parent">
-              <h3>Inherited from <a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a>[<a name="sbt.ScopedInput" class="extype" href="ScopedInput.html">ScopedInput</a>[T]]</h3>
+              <h3>Inherited from <a name="sbt.Scoped.ScopingSetting" class="extype" href="Scoped$$ScopingSetting.html">ScopingSetting</a>[<a name="sbt.InputKey" class="extype" href="">InputKey</a>[T]]</h3>
             </div><div name="sbt.Init.KeyedInitialize" class="parent">
               <h3>Inherited from <a name="sbt.Init.KeyedInitialize" class="extype" href="Init$KeyedInitialize.html">KeyedInitialize</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</h3>
             </div><div name="sbt.Init.Keyed" class="parent">
               <h3>Inherited from <a name="sbt.Init.Keyed" class="extype" href="Init$Keyed.html">Keyed</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T], <a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</h3>
             </div><div name="sbt.Init.Initialize" class="parent">
               <h3>Inherited from <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</h3>
-            </div><div name="sbt.Key" class="parent">
-              <h3>Inherited from <a name="sbt.Key" class="extype" href="Key.html">Key</a>[<a name="sbt.InputTask" class="extype" href="InputTask.html">InputTask</a>[T]]</h3>
             </div><div name="sbt.Scoped" class="parent">
               <h3>Inherited from <a name="sbt.Scoped" class="extype" href="Scoped.html">Scoped</a></h3>
             </div><div name="scala.AnyRef" class="parent">

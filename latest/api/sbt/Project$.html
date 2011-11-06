@@ -91,6 +91,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.Init.Flattened" data-isabs="false">
+      <a id="Flattened:Flattened"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="Init$Flattened.html"><span class="name">Flattened</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
     </li><li visbl="pub" name="sbt.Init.Initialize" data-isabs="true">
       <a id="Initialize:Initialize[T]"></a>
       <h4 class="signature">
@@ -717,17 +728,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.Project#evaluateTask" data-isabs="false">
-      <a id="evaluateTask[T](ScopedKey[Task[T]],State,Boolean,Int):Option[Result[T]]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">evaluateTask</span>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="taskKey">taskKey: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="checkCycles">checkCycles: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="maxWorkers">maxWorkers: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.Result" class="extype" href="Result.html">Result</a>[T]]</span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="sbt.Project#extract" data-isabs="false">
       <a id="extract(SessionSettings,BuildStructure):Extracted"></a>
       <h4 class="signature">
@@ -775,6 +775,17 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.Init#flattenLocals" data-isabs="false">
+      <a id="flattenLocals(CompiledMap):Map[sbt.Project.ScopedKey[_], Flattened]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">flattenLocals</span>
+        
+        <span class="params">(<span name="compiled">compiled: CompiledMap</span>)</span><span class="result">: Map[sbt.Project.ScopedKey[_], <a name="sbt.Init.Flattened" class="extype" href="Init$Flattened.html">Flattened</a>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.Init" class="extype" href="Init.html">Init</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -787,13 +798,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.Project#getHook" data-isabs="false">
-      <a id="getHook[T](ScopedSetting[(T) ⇒ T],Settings[Scope]):(T) ⇒ T"></a>
+      <a id="getHook[T](SettingKey[(T) ⇒ T],Settings[Scope]):(T) ⇒ T"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">getHook</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="key">key: <a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>[(T) ⇒ T]</span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>)</span><span class="result">: (T) ⇒ T</span>
+        <span class="params">(<span name="key">key: <a name="sbt.SettingKey" class="extype" href="SettingKey.html">SettingKey</a>[(T) ⇒ T]</span>, <span name="data">data: <a name="sbt.Settings" class="extype" href="Settings.html">Settings</a>[<a name="sbt.Scope" class="extype" href="Scope.html">Scope</a>]</span>)</span><span class="result">: (T) ⇒ T</span>
       </span>
       </h4>
       
@@ -1139,13 +1150,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.Project#reverseDependencies" data-isabs="false">
-      <a id="reverseDependencies(CompiledMap,sbt.Project.ScopedKey[_]):Iterable[sbt.Project.ScopedKey[_]]"></a>
+      <a id="reverseDependencies(Map[sbt.Project.ScopedKey[_], Flattened],sbt.Project.ScopedKey[_]):Iterable[sbt.Project.ScopedKey[_]]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">reverseDependencies</span>
         
-        <span class="params">(<span name="cMap">cMap: CompiledMap</span>, <span name="scoped">scoped: sbt.Project.ScopedKey[_]</span>)</span><span class="result">: Iterable[sbt.Project.ScopedKey[_]]</span>
+        <span class="params">(<span name="cMap">cMap: Map[sbt.Project.ScopedKey[_], <a name="sbt.Init.Flattened" class="extype" href="Init$Flattened.html">Flattened</a>]</span>, <span name="scoped">scoped: sbt.Project.ScopedKey[_]</span>)</span><span class="result">: Iterable[sbt.Project.ScopedKey[_]]</span>
       </span>
       </h4>
       
@@ -1171,6 +1182,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>implicit </dd></dl></div>
+    </li><li visbl="pub" name="sbt.Project#runTask" data-isabs="false">
+      <a id="runTask[T](ScopedKey[Task[T]],State,Boolean,Int):Option[(State, Result[T])]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">runTask</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="taskKey">taskKey: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="checkCycles">checkCycles: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="maxWorkers">maxWorkers: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[(<a name="sbt.State" class="extype" href="State.html">State</a>, <a name="sbt.Result" class="extype" href="Result.html">Result</a>[T])]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.Project#runUnloadHooks" data-isabs="false">
+      <a id="runUnloadHooks(State):State"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">runUnloadHooks</span>
+        
+        <span class="params">(<span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.Project#session" data-isabs="false">
       <a id="session(State):SessionSettings"></a>
       <h4 class="signature">
@@ -1458,7 +1491,24 @@
     </li></ol>
             </div>
 
-        
+        <div class="values members" id="values">
+              <h3>Deprecated Value Members</h3>
+              <ol><li visbl="pub" name="sbt.Project#evaluateTask" data-isabs="false">
+      <a id="evaluateTask[T](ScopedKey[Task[T]],State,Boolean,Int):Option[Result[T]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name deprecated">evaluateTask</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="taskKey">taskKey: <a name="sbt.Init.ScopedKey" class="extype" href="Init$ScopedKey.html">ScopedKey</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[T]]</span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="checkCycles">checkCycles: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="maxWorkers">maxWorkers: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[<a name="sbt.Result" class="extype" href="Result.html">Result</a>[T]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>This method does not apply state changes requested during task execution.  Use 'runTask' instead, which does.</p></dd></dl></div>
+    </li></ol>
+            </div>
 
         <div name="sbt.ProjectExtra" class="parent">
               <h3>Inherited from <a name="sbt.ProjectExtra" class="extype" href="ProjectExtra.html">ProjectExtra</a></h3>

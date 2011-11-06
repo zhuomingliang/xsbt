@@ -56,7 +56,54 @@
 
         
 
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="sbt.MainLoop.ClearGlobalLog" data-isabs="false">
+      <a id="ClearGlobalLog:ClearGlobalLog"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="MainLoop$$ClearGlobalLog.html"><span class="name">ClearGlobalLog</span></a>
         
+        <span class="result"> extends RunNext</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.MainLoop.KeepGlobalLog" data-isabs="false">
+      <a id="KeepGlobalLog:KeepGlobalLog"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="MainLoop$$KeepGlobalLog.html"><span class="name">KeepGlobalLog</span></a>
+        
+        <span class="result"> extends RunNext</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.MainLoop.Return" data-isabs="false">
+      <a id="Return:Return"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="MainLoop$$Return.html"><span class="name">Return</span></a>
+        
+        <span class="result"> extends RunNext</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.MainLoop.RunNext" data-isabs="true">
+      <a id="RunNext:RunNext"></a>
+      <h4 class="signature">
+      <span class="kind">trait</span>
+      <span class="symbol"> 
+        <a href="MainLoop$$RunNext.html"><span class="name">RunNext</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li></ol>
+            </div>
         
         
 
@@ -142,6 +189,17 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.MainLoop#deleteLastLog" data-isabs="false">
+      <a id="deleteLastLog(GlobalLogBacking):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">deleteLastLog</span>
+        
+        <span class="params">(<span name="logBacking">logBacking: <a name="sbt.GlobalLogBacking" class="extype" href="GlobalLogBacking.html">GlobalLogBacking</a></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Deletes the previous global log file.</p>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -222,6 +280,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="sbt.MainLoop#newBackingFile" data-isabs="false">
+      <a id="newBackingFile():File"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">newBackingFile</span>
+        
+        <span class="params">()</span><span class="result">: <span name="java.io.File" class="extype">File</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Constructs a new, (weakly) unique, temporary file to use as the backing for global logging.</p>
     </li><li visbl="pub" name="sbt.MainLoop#next" data-isabs="false">
       <a id="next(State):State"></a>
       <h4 class="signature">
@@ -256,30 +325,30 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li visbl="pub" name="sbt.MainLoop#run" data-isabs="false">
-      <a id="run(State):MainResult"></a>
+      <a id="run(State):RunNext"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">run</span>
         
-        <span class="params">(<span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a></span>
+        <span class="params">(<span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="sbt.MainLoop.RunNext" class="extype" href="MainLoop$$RunNext.html">RunNext</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Runs the next sequence of commands that doesn't require global logging changes.</p><div class="fullcomment"><div class="comment cmt"><p>Runs the next sequence of commands that doesn't require global logging changes.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@tailrec</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="sbt.MainLoop#runLogged" data-isabs="false">
-      <a id="runLogged(State,File):MainResult"></a>
+    </li><li visbl="pub" name="sbt.MainLoop#runAndClearLast" data-isabs="false">
+      <a id="runAndClearLast(State,GlobalLogBacking):RunNext"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">runLogged</span>
+        <span class="name">runAndClearLast</span>
         
-        <span class="params">(<span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="backing">backing: <span name="java.io.File" class="extype">File</span></span>)</span><span class="result">: <a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a></span>
+        <span class="params">(<span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="logBacking">logBacking: <a name="sbt.GlobalLogBacking" class="extype" href="GlobalLogBacking.html">GlobalLogBacking</a></span>)</span><span class="result">: <a name="sbt.MainLoop.RunNext" class="extype" href="MainLoop$$RunNext.html">RunNext</a></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Runs the next sequence of commands, cleaning up global logging after any exceptions.</p>
     </li><li visbl="pub" name="sbt.MainLoop#runLogged" data-isabs="false">
       <a id="runLogged(State):MainResult"></a>
       <h4 class="signature">
@@ -290,7 +359,32 @@
         <span class="params">(<span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Entry point to run the remaining commands in State with managed global logging.</p>
+    </li><li visbl="pub" name="sbt.MainLoop#runLoggedLoop" data-isabs="false">
+      <a id="runLoggedLoop(State,GlobalLogBacking):MainResult"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">runLoggedLoop</span>
+        
+        <span class="params">(<span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="logBacking">logBacking: <a name="sbt.GlobalLogBacking" class="extype" href="GlobalLogBacking.html">GlobalLogBacking</a></span>)</span><span class="result">: <a name="xsbti.MainResult" class="extype" href="../xsbti/MainResult.html">MainResult</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Run loop that evaluates remaining commands and manages changes to global logging configuration.</p><div class="fullcomment"><div class="comment cmt"><p>Run loop that evaluates remaining commands and manages changes to global logging configuration.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@tailrec</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li visbl="pub" name="sbt.MainLoop#runWithNewLog" data-isabs="false">
+      <a id="runWithNewLog(State,GlobalLogBacking):RunNext"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">runWithNewLog</span>
+        
+        <span class="params">(<span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="logBacking">logBacking: <a name="sbt.GlobalLogBacking" class="extype" href="GlobalLogBacking.html">GlobalLogBacking</a></span>)</span><span class="result">: <a name="sbt.MainLoop.RunNext" class="extype" href="MainLoop$$RunNext.html">RunNext</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Runs the next sequence of commands with global logging in place.</p>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

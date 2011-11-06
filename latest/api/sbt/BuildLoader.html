@@ -63,7 +63,7 @@
       <span class="symbol"> 
         <span class="name">BuildLoader</span>
         
-        <span class="params">(<span name="load">load: (<span name="java.net.URI" class="extype">URI</span>, <span name="java.io.File" class="extype">File</span>) ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a></span>, <span name="builtIn">builtIn: BuildResolver</span>, <span name="root">root: <span name="scala.Option" class="extype">Option</span>[BuildResolver]</span>, <span name="nonRoots">nonRoots: List[(<span name="java.net.URI" class="extype">URI</span>, BuildResolver)]</span>, <span name="fail">fail: (<span name="java.net.URI" class="extype">URI</span>) ⇒ <span name="scala.Nothing" class="extype">Nothing</span></span>, <span name="config">config: <a name="sbt.Load.LoadBuildConfiguration" class="extype" href="Load$$LoadBuildConfiguration.html">LoadBuildConfiguration</a></span>)</span>
+        <span class="params">(<span name="fail">fail: (<span name="java.net.URI" class="extype">URI</span>) ⇒ <span name="scala.Nothing" class="extype">Nothing</span></span>, <span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>, <span name="config">config: <a name="sbt.Load.LoadBuildConfiguration" class="extype" href="Load$$LoadBuildConfiguration.html">LoadBuildConfiguration</a></span>, <span name="resolvers">resolvers: <a name="sbt.MultiHandler" class="extype" href="MultiHandler.html">MultiHandler</a>[<a name="sbt.BuildLoader.ResolveInfo" class="extype" href="BuildLoader$$ResolveInfo.html">ResolveInfo</a>, () ⇒ <span name="java.io.File" class="extype">File</span>]</span>, <span name="builders">builders: <a name="sbt.MultiHandler" class="extype" href="MultiHandler.html">MultiHandler</a>[<a name="sbt.BuildLoader.BuildInfo" class="extype" href="BuildLoader$$BuildInfo.html">BuildInfo</a>, () ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a>]</span>, <span name="transformer">transformer: Transformer</span>, <span name="full">full: <a name="sbt.MultiHandler" class="extype" href="MultiHandler.html">MultiHandler</a>[<a name="sbt.BuildLoader.LoadInfo" class="extype" href="BuildLoader$$LoadInfo.html">LoadInfo</a>, () ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a>]</span>, <span name="transformAll">transformAll: TransformAll</span>)</span>
       </span>
       </h4>
       
@@ -132,13 +132,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.BuildLoader#addNonRoot" data-isabs="false">
-      <a id="addNonRoot(URI,BuildResolver):BuildLoader"></a>
+      <a id="addNonRoot(URI,Components):BuildLoader"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">addNonRoot</span>
         
-        <span class="params">(<span name="uri">uri: <span name="java.net.URI" class="extype">URI</span></span>, <span name="loader">loader: BuildResolver</span>)</span><span class="result">: <a name="sbt.BuildLoader" class="extype" href="">BuildLoader</a></span>
+        <span class="params">(<span name="uri">uri: <span name="java.net.URI" class="extype">URI</span></span>, <span name="loaders">loaders: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>)</span><span class="result">: <a name="sbt.BuildLoader" class="extype" href="">BuildLoader</a></span>
       </span>
       </h4>
       
@@ -153,17 +153,6 @@
       </span>
       </h4>
       
-    </li><li visbl="pub" name="sbt.BuildLoader#applyNonRoots" data-isabs="false">
-      <a id="applyNonRoots(ResolveInfo):List[(URI, () ⇒ File)]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">applyNonRoots</span>
-        
-        <span class="params">(<span name="info">info: <a name="sbt.ResolveInfo" class="extype" href="ResolveInfo.html">ResolveInfo</a></span>)</span><span class="result">: List[(<span name="java.net.URI" class="extype">URI</span>, () ⇒ <span name="java.io.File" class="extype">File</span>)]</span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -175,25 +164,14 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.BuildLoader#baseLoader" data-isabs="false">
-      <a id="baseLoader:BuildResolver"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">baseLoader</span>
-        
-        <span class="result">: BuildResolver</span>
-      </span>
-      </h4>
-      
-    </li><li visbl="pub" name="sbt.BuildLoader#builtIn" data-isabs="false">
-      <a id="builtIn:BuildResolver"></a>
+    </li><li visbl="pub" name="sbt.BuildLoader#builders" data-isabs="false">
+      <a id="builders:MultiHandler[BuildInfo, () ⇒ BuildUnit]"></a>
       <h4 class="signature">
       <span class="kind">val</span>
       <span class="symbol"> 
-        <span class="name">builtIn</span>
+        <span class="name">builders</span>
         
-        <span class="result">: BuildResolver</span>
+        <span class="result">: <a name="sbt.MultiHandler" class="extype" href="MultiHandler.html">MultiHandler</a>[<a name="sbt.BuildLoader.BuildInfo" class="extype" href="BuildLoader$$BuildInfo.html">BuildInfo</a>, () ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a>]</span>
       </span>
       </h4>
       
@@ -211,6 +189,17 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#components" data-isabs="false">
+      <a id="components:Components"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">components</span>
+        
+        <span class="result">: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.BuildLoader#config" data-isabs="false">
       <a id="config:LoadBuildConfiguration"></a>
       <h4 class="signature">
@@ -269,6 +258,17 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#full" data-isabs="false">
+      <a id="full:MultiHandler[LoadInfo, () ⇒ BuildUnit]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">full</span>
+        
+        <span class="result">: <a name="sbt.MultiHandler" class="extype" href="MultiHandler.html">MultiHandler</a>[<a name="sbt.BuildLoader.LoadInfo" class="extype" href="BuildLoader$$LoadInfo.html">LoadInfo</a>, () ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a>]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -302,17 +302,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.BuildLoader#load" data-isabs="false">
-      <a id="load:(URI, File) ⇒ BuildUnit"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">load</span>
-        
-        <span class="result">: (<span name="java.net.URI" class="extype">URI</span>, <span name="java.io.File" class="extype">File</span>) ⇒ <a name="sbt.Load.BuildUnit" class="extype" href="Load$$BuildUnit.html">BuildUnit</a></span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -324,17 +313,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.BuildLoader#nonRoots" data-isabs="false">
-      <a id="nonRoots:List[(URI, BuildResolver)]"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">nonRoots</span>
-        
-        <span class="result">: List[(<span name="java.net.URI" class="extype">URI</span>, BuildResolver)]</span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.AnyRef#notify" data-isabs="false">
       <a id="notify():Unit"></a>
       <h4 class="signature">
@@ -357,36 +335,36 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.BuildLoader#resolve" data-isabs="false">
-      <a id="resolve(ResolveInfo):File"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">resolve</span>
-        
-        <span class="params">(<span name="info">info: <a name="sbt.ResolveInfo" class="extype" href="ResolveInfo.html">ResolveInfo</a></span>)</span><span class="result">: <span name="java.io.File" class="extype">File</span></span>
-      </span>
-      </h4>
-      
-    </li><li visbl="pub" name="sbt.BuildLoader#root" data-isabs="false">
-      <a id="root:Option[BuildResolver]"></a>
+    </li><li visbl="pub" name="sbt.BuildLoader#resolvers" data-isabs="false">
+      <a id="resolvers:MultiHandler[ResolveInfo, () ⇒ File]"></a>
       <h4 class="signature">
       <span class="kind">val</span>
       <span class="symbol"> 
-        <span class="name">root</span>
+        <span class="name">resolvers</span>
         
-        <span class="result">: <span name="scala.Option" class="extype">Option</span>[BuildResolver]</span>
+        <span class="result">: <a name="sbt.MultiHandler" class="extype" href="MultiHandler.html">MultiHandler</a>[<a name="sbt.BuildLoader.ResolveInfo" class="extype" href="BuildLoader$$ResolveInfo.html">ResolveInfo</a>, () ⇒ <span name="java.io.File" class="extype">File</span>]</span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.BuildLoader#setRoot" data-isabs="false">
-      <a id="setRoot(BuildResolver):BuildLoader"></a>
+      <a id="setRoot(Components):BuildLoader"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">setRoot</span>
         
-        <span class="params">(<span name="resolver">resolver: BuildResolver</span>)</span><span class="result">: <a name="sbt.BuildLoader" class="extype" href="">BuildLoader</a></span>
+        <span class="params">(<span name="loaders">loaders: <a name="sbt.BuildLoader.Components" class="extype" href="BuildLoader$$Components.html">Components</a></span>)</span><span class="result">: <a name="sbt.BuildLoader" class="extype" href="">BuildLoader</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader#state" data-isabs="false">
+      <a id="state:State"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">state</span>
+        
+        <span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
       </span>
       </h4>
       
@@ -412,6 +390,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildLoader#transformAll" data-isabs="false">
+      <a id="transformAll:TransformAll"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">transformAll</span>
+        
+        <span class="result">: TransformAll</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildLoader#transformer" data-isabs="false">
+      <a id="transformer:Transformer"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">transformer</span>
+        
+        <span class="result">: Transformer</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">

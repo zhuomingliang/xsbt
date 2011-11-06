@@ -41,7 +41,7 @@
       <div class="occurrences"><a name="xsbti.api" class="extype" href="../xsbti/api/package.html">api</a> </div>
     </div><div class="entry">
       <div class="name">defAnnotations</div>
-      <div class="occurrences"><a name="sbt.compiler.Discovery" class="extype" href="../sbt/compiler/Discovery.html">Discovery</a> </div>
+      <div class="occurrences"><a name="xsbt.api.Discovery" class="extype" href="../xsbt/api/Discovery$.html">Discovery</a> </div>
     </div><div class="entry">
       <div class="name">default</div>
       <div class="occurrences"><a name="sbt.Build" class="extype" href="../sbt/Build$.html">Build</a> <a name="sbt.Configurations" class="extype" href="../sbt/Configurations$.html">Configurations</a> <a name="sbt.ConflictWarning" class="extype" href="../sbt/ConflictWarning$.html">ConflictWarning</a> <a name="sbt.CustomPomParser" class="extype" href="../sbt/CustomPomParser$.html">CustomPomParser</a> <a name="sbt.LogManager" class="extype" href="../sbt/LogManager$.html">LogManager</a> <a name="sbt.std.TaskStreams" class="extype" href="../sbt/std/TaskStreams.html">TaskStreams</a> <a name="xsbt.boot.Implicit" class="extype" href="../xsbt/boot/Implicit.html">Implicit</a> <a name="xsbt.boot.ListMap" class="extype" href="../xsbt/boot/ListMap.html">ListMap</a> <a name="xsbt.boot.PromptProperty" class="extype" href="../xsbt/boot/PromptProperty.html">PromptProperty</a> </div>
@@ -71,7 +71,7 @@
       <div class="occurrences"><a name="sbt.BuiltinCommands" class="extype" href="../sbt/BuiltinCommands$.html">BuiltinCommands</a> </div>
     </div><div class="entry">
       <div class="name">defaultConfig</div>
-      <div class="occurrences"><a name="sbt.IvySbt.Module" class="extype" href="../sbt/IvySbt$Module.html">Module</a> </div>
+      <div class="occurrences"><a name="sbt.EvaluateTask" class="extype" href="../sbt/EvaluateTask$.html">EvaluateTask</a> <a name="sbt.IvySbt.Module" class="extype" href="../sbt/IvySbt$Module.html">Module</a> </div>
     </div><div class="entry">
       <div class="name">defaultConfigs</div>
       <div class="occurrences"><a name="sbt.Act" class="extype" href="../sbt/Act$.html">Act</a> <a name="sbt.Defaults" class="extype" href="../sbt/Defaults$.html">Defaults</a> </div>
@@ -89,7 +89,7 @@
       <div class="occurrences"><a name="sbt.Classpaths" class="extype" href="../sbt/Classpaths$.html">Classpaths</a> </div>
     </div><div class="entry">
       <div class="name">DefaultDataID</div>
-      <div class="occurrences"><a name="sbt.TaskData" class="extype" href="../sbt/TaskData$.html">TaskData</a> </div>
+      <div class="occurrences"><a name="sbt.SessionVar" class="extype" href="../sbt/SessionVar$.html">SessionVar</a> <a name="sbt.TaskData" class="extype" href="../sbt/TaskData$.html">TaskData</a> </div>
     </div><div class="entry">
       <div class="name">defaultDelegates</div>
       <div class="occurrences"><a name="sbt.Load" class="extype" href="../sbt/Load$.html">Load</a> </div>
@@ -153,6 +153,9 @@
     </div><div class="entry">
       <div class="name">defaultMultiConfig</div>
       <div class="occurrences"><a name="sbt.LogManager" class="extype" href="../sbt/LogManager$.html">LogManager</a> </div>
+    </div><div class="entry">
+      <div class="name">DefaultOptions</div>
+      <div class="occurrences"><a name="sbt" class="extype" href="../sbt/package.html">sbt</a> </div>
     </div><div class="entry">
       <div class="name">defaultPackageKeys</div>
       <div class="occurrences"><a name="sbt.Classpaths" class="extype" href="../sbt/Classpaths$.html">Classpaths</a> </div>
@@ -223,11 +226,17 @@
       <div class="name">defaultTransform</div>
       <div class="occurrences"><a name="sbt.CustomPomParser" class="extype" href="../sbt/CustomPomParser$.html">CustomPomParser</a> </div>
     </div><div class="entry">
+      <div class="name">defaultTriggeredMessage</div>
+      <div class="occurrences"><a name="sbt.Watched" class="extype" href="../sbt/Watched$.html">Watched</a> </div>
+    </div><div class="entry">
       <div class="name">DefaultType</div>
       <div class="occurrences"><a name="sbt.Artifact" class="extype" href="../sbt/Artifact$.html">Artifact</a> </div>
     </div><div class="entry">
       <div class="name">defaultUserFileRepository</div>
       <div class="occurrences"><a name="sbt.Resolver" class="extype" href="../sbt/Resolver$.html">Resolver</a> </div>
+    </div><div class="entry">
+      <div class="name">defaultWatchingMessage</div>
+      <div class="occurrences"><a name="sbt.Watched" class="extype" href="../sbt/Watched$.html">Watched</a> </div>
     </div><div class="entry">
       <div class="name">defaultWithGlobal</div>
       <div class="occurrences"><a name="sbt.Load" class="extype" href="../sbt/Load$.html">Load</a> </div>
@@ -254,6 +263,9 @@
       <div class="occurrences"><a name="sbt.State" class="extype" href="../sbt/State.html">State</a> </div>
     </div><div class="entry">
       <div class="name">definedSbtPlugins</div>
+      <div class="occurrences"><a name="sbt.Keys" class="extype" href="../sbt/Keys$.html">Keys</a> </div>
+    </div><div class="entry">
+      <div class="name">definedTestNames</div>
       <div class="occurrences"><a name="sbt.Keys" class="extype" href="../sbt/Keys$.html">Keys</a> </div>
     </div><div class="entry">
       <div class="name">definedTests</div>
@@ -316,6 +328,9 @@
       <div class="name">deleteIfEmpty</div>
       <div class="occurrences"><a name="sbt.IO" class="extype" href="../sbt/IO$.html">IO</a> </div>
     </div><div class="entry">
+      <div class="name">deleteLastLog</div>
+      <div class="occurrences"><a name="sbt.MainLoop" class="extype" href="../sbt/MainLoop$.html">MainLoop</a> </div>
+    </div><div class="entry">
       <div class="name">deliver</div>
       <div class="occurrences"><a name="sbt.IvyActions" class="extype" href="../sbt/IvyActions$.html">IvyActions</a> <a name="sbt.Keys" class="extype" href="../sbt/Keys$.html">Keys</a> </div>
     </div><div class="entry">
@@ -344,7 +359,7 @@
       <div class="occurrences"><a name="sbt.Classpaths" class="extype" href="../sbt/Classpaths$.html">Classpaths</a> </div>
     </div><div class="entry">
       <div class="name">dependencies</div>
-      <div class="occurrences"><a name="sbt.Aggregation.Explicit" class="extype" href="../sbt/Aggregation$$Explicit.html">Explicit</a> <a name="sbt.Dag" class="extype" href="../sbt/Dag.html">Dag</a> <a name="sbt.Execute" class="extype" href="../sbt/Execute.html">Execute</a> <a name="sbt.GlobalPluginData" class="extype" href="../sbt/GlobalPluginData.html">GlobalPluginData</a> <a name="sbt.Init.Compiled" class="extype" href="../sbt/Init$Compiled.html">Compiled</a> <a name="sbt.Init.Initialize" class="extype" href="../sbt/Init$Initialize.html">Initialize</a> <a name="sbt.Init.Keyed" class="extype" href="../sbt/Init$Keyed.html">Keyed</a> <a name="sbt.Init.Setting" class="extype" href="../sbt/Init$Setting.html">Setting</a> <a name="sbt.InlineConfiguration" class="extype" href="../sbt/InlineConfiguration.html">InlineConfiguration</a> <a name="sbt.IvyConsole" class="extype" href="../sbt/IvyConsole$.html">IvyConsole</a> <a name="sbt.ProjectDefinition" class="extype" href="../sbt/ProjectDefinition.html">ProjectDefinition</a> </div>
+      <div class="occurrences"><a name="sbt.Aggregation.Explicit" class="extype" href="../sbt/Aggregation$$Explicit.html">Explicit</a> <a name="sbt.Dag" class="extype" href="../sbt/Dag.html">Dag</a> <a name="sbt.Execute" class="extype" href="../sbt/Execute.html">Execute</a> <a name="sbt.GlobalPluginData" class="extype" href="../sbt/GlobalPluginData.html">GlobalPluginData</a> <a name="sbt.Init.Compiled" class="extype" href="../sbt/Init$Compiled.html">Compiled</a> <a name="sbt.Init.Flattened" class="extype" href="../sbt/Init$Flattened.html">Flattened</a> <a name="sbt.Init.Initialize" class="extype" href="../sbt/Init$Initialize.html">Initialize</a> <a name="sbt.Init.Keyed" class="extype" href="../sbt/Init$Keyed.html">Keyed</a> <a name="sbt.Init.Setting" class="extype" href="../sbt/Init$Setting.html">Setting</a> <a name="sbt.InlineConfiguration" class="extype" href="../sbt/InlineConfiguration.html">InlineConfiguration</a> <a name="sbt.IvyConsole" class="extype" href="../sbt/IvyConsole$.html">IvyConsole</a> <a name="sbt.ProjectDefinition" class="extype" href="../sbt/ProjectDefinition.html">ProjectDefinition</a> </div>
     </div><div class="entry">
       <div class="name">DependencyBuilders</div>
       <div class="occurrences"><a name="sbt.impl" class="extype" href="../sbt/impl/package.html">impl</a> </div>
@@ -361,6 +376,9 @@
       <div class="name">DependencyFilterExtra</div>
       <div class="occurrences"><a name="sbt" class="extype" href="../sbt/package.html">sbt</a> </div>
     </div><div class="entry">
+      <div class="name">DependencyMap</div>
+      <div class="occurrences"><a name="sbt.BuildDependencies" class="extype" href="../sbt/BuildDependencies$.html">BuildDependencies</a> </div>
+    </div><div class="entry">
       <div class="name">dependencyMapping</div>
       <div class="occurrences"><a name="sbt.IvySbt.Module" class="extype" href="../sbt/IvySbt$Module.html">Module</a> </div>
     </div><div class="entry">
@@ -375,6 +393,9 @@
     </div><div class="entry">
       <div class="name">DepPattern</div>
       <div class="occurrences"><a name="sbt.IvyConsole" class="extype" href="../sbt/IvyConsole$.html">IvyConsole</a> </div>
+    </div><div class="entry">
+      <div class="name">deprecation</div>
+      <div class="occurrences"><a name="sbt.Opts.compile" class="extype" href="../sbt/Opts$$compile$.html">compile</a> </div>
     </div><div class="entry">
       <div class="name">deps</div>
       <div class="occurrences"><a name="sbt.DependsOn" class="extype" href="../sbt/DependsOn.html">DependsOn</a> </div>
@@ -411,6 +432,9 @@
     </div><div class="entry">
       <div class="name">detail</div>
       <div class="occurrences"><a name="sbt.BuiltinCommands" class="extype" href="../sbt/BuiltinCommands$.html">BuiltinCommands</a> <a name="sbt.Help" class="extype" href="../sbt/Help.html">Help</a> <a name="sbt.TestEvent" class="extype" href="../sbt/TestEvent.html">TestEvent</a> </div>
+    </div><div class="entry">
+      <div class="name">detailOnly</div>
+      <div class="occurrences"><a name="sbt.Help" class="extype" href="../sbt/Help$.html">Help</a> </div>
     </div><div class="entry">
       <div class="name">details</div>
       <div class="occurrences"><a name="sbt.Project" class="extype" href="../sbt/Project$.html">Project</a> </div>
@@ -484,8 +508,8 @@
       <div class="name">Disabled</div>
       <div class="occurrences"><a name="sbt.Aggregation" class="extype" href="../sbt/Aggregation$.html">Aggregation</a> </div>
     </div><div class="entry">
-      <div class="name">discover</div>
-      <div class="occurrences"><a name="sbt.CommandSupport" class="extype" href="../sbt/CommandSupport$.html">CommandSupport</a> <a name="sbt.compiler.Discovery" class="extype" href="../sbt/compiler/Discovery.html">Discovery</a> <a name="sbt.Load" class="extype" href="../sbt/Load$.html">Load</a> <a name="sbt.Tests" class="extype" href="../sbt/Tests$.html">Tests</a> </div>
+      <div class="name">Discover</div>
+      <div class="occurrences"><a name="sbt.CommandSupport" class="extype" href="../sbt/CommandSupport$.html">CommandSupport</a> <a name="sbt.Load" class="extype" href="../sbt/Load$.html">Load</a> <a name="sbt.Tests" class="extype" href="../sbt/Tests$.html">Tests</a> <a name="xsbt.api.Discovery" class="extype" href="../xsbt/api/Discovery.html">Discovery</a> </div>
     </div><div class="entry">
       <div class="name">DiscoverBrief</div>
       <div class="occurrences"><a name="sbt.CommandSupport" class="extype" href="../sbt/CommandSupport$.html">CommandSupport</a> </div>
@@ -494,7 +518,7 @@
       <div class="occurrences"><a name="sbt.CommandSupport" class="extype" href="../sbt/CommandSupport$.html">CommandSupport</a> </div>
     </div><div class="entry">
       <div class="name">Discovered</div>
-      <div class="occurrences"><a name="sbt.compiler" class="extype" href="../sbt/compiler/package.html">compiler</a> </div>
+      <div class="occurrences"><a name="xsbt.api" class="extype" href="../xsbt/api/package.html">api</a> </div>
     </div><div class="entry">
       <div class="name">discoveredMainClasses</div>
       <div class="occurrences"><a name="sbt.Keys" class="extype" href="../sbt/Keys$.html">Keys</a> </div>
@@ -512,7 +536,7 @@
       <div class="occurrences"><a name="sbt.CommandSupport" class="extype" href="../sbt/CommandSupport$.html">CommandSupport</a> </div>
     </div><div class="entry">
       <div class="name">Discovery</div>
-      <div class="occurrences"><a name="sbt.compiler" class="extype" href="../sbt/compiler/package.html">compiler</a> </div>
+      <div class="occurrences"><a name="xsbt.api" class="extype" href="../xsbt/api/package.html">api</a> </div>
     </div><div class="entry">
       <div class="name">display</div>
       <div class="occurrences"><a name="sbt.complete.Completion" class="extype" href="../sbt/complete/Completion.html">Completion</a> <a name="sbt.complete.DisplayOnly" class="extype" href="../sbt/complete/DisplayOnly.html">DisplayOnly</a> <a name="sbt.complete.Suggestion" class="extype" href="../sbt/complete/Suggestion.html">Suggestion</a> <a name="sbt.complete.Token" class="extype" href="../sbt/complete/Token.html">Token</a> <a name="sbt.LoggerReporter" class="extype" href="../sbt/LoggerReporter.html">LoggerReporter</a> <a name="sbt.Project" class="extype" href="../sbt/Project$.html">Project</a> <a name="sbt.Scope" class="extype" href="../sbt/Scope$.html">Scope</a> </div>
@@ -539,7 +563,7 @@
       <div class="occurrences"><a name="sbt.Defaults" class="extype" href="../sbt/Defaults$.html">Defaults</a> </div>
     </div><div class="entry">
       <div class="name">doc</div>
-      <div class="occurrences"><a name="sbt.compiler.AnalyzingCompiler" class="extype" href="../sbt/compiler/AnalyzingCompiler.html">AnalyzingCompiler</a> <a name="sbt.Keys" class="extype" href="../sbt/Keys$.html">Keys</a> </div>
+      <div class="occurrences"><a name="sbt.compiler.AnalyzingCompiler" class="extype" href="../sbt/compiler/AnalyzingCompiler.html">AnalyzingCompiler</a> <a name="sbt.Keys" class="extype" href="../sbt/Keys$.html">Keys</a> <a name="sbt.Opts" class="extype" href="../sbt/Opts$.html">Opts</a> </div>
     </div><div class="entry">
       <div class="name">DocClassifier</div>
       <div class="occurrences"><a name="sbt.Artifact" class="extype" href="../sbt/Artifact$.html">Artifact</a> </div>

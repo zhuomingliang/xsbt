@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>sbt.Scoped.Apply</title>
+          <title>sbt.MainLoop.ClearGlobalLog</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../lib/template.css" />
@@ -12,25 +12,25 @@
       <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="value">
+        <body class="type">
       <div id="definition">
-        <img src="../lib/object_big.png" />
-        <p id="owner"><a name="sbt" class="extype" href="package.html">sbt</a>.<a name="sbt.Scoped" class="extype" href="Scoped$.html">Scoped</a></p>
-        <h1>Apply</h1>
+        <img src="../lib/class_big.png" />
+        <p id="owner"><a name="sbt" class="extype" href="package.html">sbt</a>.<a name="sbt.MainLoop" class="extype" href="MainLoop$.html">MainLoop</a></p>
+        <h1>ClearGlobalLog</h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">object</span>
+      <span class="kind">class</span>
       <span class="symbol"> 
-        <span class="name">Apply</span>
+        <span class="name">ClearGlobalLog</span>
         
-        <span class="result"> extends AnyRef</span>
+        <span class="result"> extends <a name="sbt.MainLoop.RunNext" class="extype" href="MainLoop$$RunNext.html">RunNext</a></span>
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+          <div class="superTypes hiddenContent"><a name="sbt.MainLoop.RunNext" class="extype" href="MainLoop$$RunNext.html">RunNext</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
         
 
@@ -46,7 +46,7 @@
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall out"><span>Hide All</span></li>
                 <li class="showall in"><span>Show all</span></li></ol>
-                <ol id="linearization"><li name="sbt.Scoped.Apply" class="in"><span>Apply</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+                <ol id="linearization"><li name="sbt.MainLoop.ClearGlobalLog" class="in"><span>ClearGlobalLog</span></li><li name="sbt.MainLoop.RunNext" class="in"><span>RunNext</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -54,7 +54,21 @@
             </div>
         </div>
 
+        <div class="members" id="constructors">
+              <h3>Instance Constructors</h3>
+              <ol><li visbl="pub" name="sbt.MainLoop.ClearGlobalLog#this" data-isabs="false">
+      <a id="this:ClearGlobalLog"></a>
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol"> 
+        <span class="name">ClearGlobalLog</span>
         
+        <span class="params">(<span name="state">state: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
 
         
         
@@ -117,17 +131,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.Scoped.Apply#apply" data-isabs="false">
-      <a id="apply[HL&lt;:HList, T](KList[ScopedSetting, HL])((HL) ⇒ T):Initialize[T]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">apply</span>
-        <span class="tparams">[<span name="HL">HL &lt;: <a name="sbt.HList" class="extype" href="HList.html">HList</a></span>, <span name="T">T</span>]</span>
-        <span class="params">(<span name="in">in: <a name="sbt.KList" class="extype" href="KList.html">KList</a>[<a name="sbt.ScopedSetting" class="extype" href="ScopedSetting.html">ScopedSetting</a>, HL]</span>)</span><span class="params">(<span name="f">f: (HL) ⇒ T</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[T]</span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -255,6 +258,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="sbt.MainLoop.ClearGlobalLog#state" data-isabs="false">
+      <a id="state:State"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">state</span>
+        
+        <span class="result">: <a name="sbt.State" class="extype" href="State.html">State</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -324,7 +338,9 @@
 
         
 
-        <div name="scala.AnyRef" class="parent">
+        <div name="sbt.MainLoop.RunNext" class="parent">
+              <h3>Inherited from <a name="sbt.MainLoop.RunNext" class="extype" href="MainLoop$$RunNext.html">RunNext</a></h3>
+            </div><div name="scala.AnyRef" class="parent">
               <h3>Inherited from AnyRef</h3>
             </div><div name="scala.Any" class="parent">
               <h3>Inherited from <span name="scala.Any" class="extype">Any</span></h3>

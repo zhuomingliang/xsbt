@@ -228,6 +228,50 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildCommon#getForParser" data-isabs="false">
+      <a id="getForParser[P, T](TaskKey[T])((State, Option[T]) ⇒ Parser[P]):Initialize[(State) ⇒ Parser[P]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">getForParser</span>
+        <span class="tparams">[<span name="P">P</span>, <span name="T">T</span>]</span>
+        <span class="params">(<span name="task">task: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>)</span><span class="params">(<span name="init">init: (<a name="sbt.State" class="extype" href="State.html">State</a>, <span name="scala.Option" class="extype">Option</span>[T]) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[P]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[(<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[P]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildCommon#getForParserI" data-isabs="false">
+      <a id="getForParserI[P, T](TaskKey[T])(Initialize[(State, Option[T]) ⇒ Parser[P]]):Initialize[(State) ⇒ Parser[P]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">getForParserI</span>
+        <span class="tparams">[<span name="P">P</span>, <span name="T">T</span>]</span>
+        <span class="params">(<span name="task">task: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>)</span><span class="params">(<span name="init">init: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[(<a name="sbt.State" class="extype" href="State.html">State</a>, <span name="scala.Option" class="extype">Option</span>[T]) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[P]]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[(<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[P]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildCommon#getFromContext" data-isabs="false">
+      <a id="getFromContext[T](TaskKey[T],sbt.Project.ScopedKey[_],State):Option[T]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">getFromContext</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="task">task: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>, <span name="context">context: sbt.Project.ScopedKey[_]</span>, <span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[T]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildCommon#getPrevious" data-isabs="false">
+      <a id="getPrevious[T](TaskKey[T]):Initialize[Task[Option[T]]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">getPrevious</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="task">task: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[<span name="scala.Option" class="extype">Option</span>[T]]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.BuildCommon#globFilter" data-isabs="false">
       <a id="globFilter(String):NameFilter"></a>
       <h4 class="signature">
@@ -272,6 +316,50 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.BuildCommon#loadForParser" data-isabs="false">
+      <a id="loadForParser[P, T](TaskKey[T])((State, Option[T]) ⇒ Parser[P])(Format[T]):Initialize[(State) ⇒ Parser[P]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">loadForParser</span>
+        <span class="tparams">[<span name="P">P</span>, <span name="T">T</span>]</span>
+        <span class="params">(<span name="task">task: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>)</span><span class="params">(<span name="f">f: (<a name="sbt.State" class="extype" href="State.html">State</a>, <span name="scala.Option" class="extype">Option</span>[T]) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[P]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="format">format: <span name="sbinary.Format" class="extype">Format</span>[T]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[(<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[P]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildCommon#loadForParserI" data-isabs="false">
+      <a id="loadForParserI[P, T](TaskKey[T])(Initialize[(State, Option[T]) ⇒ Parser[P]])(Format[T]):Initialize[(State) ⇒ Parser[P]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">loadForParserI</span>
+        <span class="tparams">[<span name="P">P</span>, <span name="T">T</span>]</span>
+        <span class="params">(<span name="task">task: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>)</span><span class="params">(<span name="init">init: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[(<a name="sbt.State" class="extype" href="State.html">State</a>, <span name="scala.Option" class="extype">Option</span>[T]) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[P]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="format">format: <span name="sbinary.Format" class="extype">Format</span>[T]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[(<a name="sbt.State" class="extype" href="State.html">State</a>) ⇒ <a name="sbt.complete.Parser" class="extype" href="complete/Parser.html">Parser</a>[P]]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildCommon#loadFromContext" data-isabs="false">
+      <a id="loadFromContext[T](TaskKey[T],sbt.Project.ScopedKey[_],State)(Format[T]):Option[T]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">loadFromContext</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="task">task: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>, <span name="context">context: sbt.Project.ScopedKey[_]</span>, <span name="s">s: <a name="sbt.State" class="extype" href="State.html">State</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="f">f: <span name="sbinary.Format" class="extype">Format</span>[T]</span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[T]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildCommon#loadPrevious" data-isabs="false">
+      <a id="loadPrevious[T](TaskKey[T])(Format[T]):Initialize[Task[Option[T]]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">loadPrevious</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="task">task: <a name="sbt.TaskKey" class="extype" href="TaskKey.html">TaskKey</a>[T]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="f">f: <span name="sbinary.Format" class="extype">Format</span>[T]</span>)</span><span class="result">: <a name="sbt.Init.Initialize" class="extype" href="Init$Initialize.html">Initialize</a>[<a name="sbt.Task" class="extype" href="Task.html">Task</a>[<span name="scala.Option" class="extype">Option</span>[T]]]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">

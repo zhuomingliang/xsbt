@@ -118,13 +118,24 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.Help#apply" data-isabs="false">
-      <a id="apply((String, String),(Set[String], String)):Help"></a>
+      <a id="apply(Seq[(String, String)],Map[String, String]):Help"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">apply</span>
         
-        <span class="params">(<span name="briefHelp">briefHelp: (String, String)</span>, <span name="detailedHelp">detailedHelp: (Set[String], String) = <span class="symbol">(Set.empty, &quot;&quot;)</span></span>)</span><span class="result">: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
+        <span class="params">(<span name="briefHelp">briefHelp: Seq[(String, String)]</span>, <span name="detailedHelp">detailedHelp: Map[String, String]</span>)</span><span class="result">: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.Help#apply" data-isabs="false">
+      <a id="apply((String, String),Map[String, String]):Help"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">apply</span>
+        
+        <span class="params">(<span name="briefHelp">briefHelp: (String, String)</span>, <span name="detailedHelp">detailedHelp: Map[String, String] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
       </span>
       </h4>
       
@@ -150,6 +161,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.Help#briefDetail" data-isabs="false">
+      <a id="briefDetail(Seq[(String, String)]):Help"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">briefDetail</span>
+        
+        <span class="params">(<span name="help">help: Seq[(String, String)]</span>)</span><span class="result">: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.Help#briefOnly" data-isabs="false">
+      <a id="briefOnly(Seq[(String, String)]):Help"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">briefOnly</span>
+        
+        <span class="params">(<span name="help">help: Seq[(String, String)]</span>)</span><span class="result">: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -164,6 +197,28 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="sbt.Help#detailOnly" data-isabs="false">
+      <a id="detailOnly(Seq[(String, String)]):Help"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">detailOnly</span>
+        
+        <span class="params">(<span name="help">help: Seq[(String, String)]</span>)</span><span class="result">: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.Help#empty" data-isabs="false">
+      <a id="empty:Help"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">empty</span>
+        
+        <span class="result">: <a name="sbt.Help" class="extype" href="Help.html">Help</a></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" ></meta>
+        <title>Opts.scala</title>
+        <script type="text/javascript" src="jquery-all.js"></script>
+        <script type="text/javascript" src="linked.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" title="Style"></link>
+    </head>
+    <body>
+        <pre>
+<span class="comment">/* sbt -- Simple Build Tool
+ * Copyright 2011 Mark Harrah, Indrajit Raychaudhuri
+ */</span>
+<span class="keyword">package</span> sbt
+
+<span class="comment">/** Options for well-known tasks. */</span>
+<span class="keyword">object</span> <a title="object sbt.Opts" id="11376">Opts</a> <span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">object</span> <a title="object sbt.Opts.compile" id="390424">compile</a> <span title="ScalaObject" class="delimiter">{</span>
+		<span class="keyword">val</span> <a title="java.lang.String" id="390430">deprecation</a> = <span title="java.lang.String(&quot;-deprecation&quot;)" class="string">&quot;-deprecation&quot;</span>
+		<span class="keyword">def</span> <a title="(enc: String)Seq[String]" id="390432">encoding</a><span class="delimiter">(</span><a title="String" id="390444">enc</a>: <span title="String">String</span><span class="delimiter">)</span> = <span title="(elems: String*)Seq[String]">Seq</span><span class="delimiter">(</span><span title="java.lang.String(&quot;-encoding&quot;)" class="string">&quot;-encoding&quot;</span>, <a href="#390444" title="String">enc</a><span class="delimiter">)</span>
+		<span class="keyword">val</span> <a title="java.lang.String" id="390433">explaintypes</a> = <span title="java.lang.String(&quot;-explaintypes&quot;)" class="string">&quot;-explaintypes&quot;</span>
+		<span class="keyword">val</span> <a title="java.lang.String" id="390435">nowarn</a> = <span title="java.lang.String(&quot;-nowarn&quot;)" class="string">&quot;-nowarn&quot;</span>
+		<span class="keyword">val</span> <a title="java.lang.String" id="390437">optimise</a> = <span title="java.lang.String(&quot;-optimise&quot;)" class="string">&quot;-optimise&quot;</span>
+		<span class="keyword">val</span> <a title="java.lang.String" id="390439">unchecked</a> = <span title="java.lang.String(&quot;-unchecked&quot;)" class="string">&quot;-unchecked&quot;</span>
+		<span class="keyword">val</span> <a title="java.lang.String" id="390441">verbose</a> = <span title="java.lang.String(&quot;-verbose&quot;)" class="string">&quot;-verbose&quot;</span>
+	<span class="delimiter">}</span>
+	<span class="keyword">object</span> <a title="object sbt.Opts.doc" id="390426">doc</a> <span title="ScalaObject" class="delimiter">{</span>
+		<span class="keyword">def</span> <a title="(g: String)Seq[String]" id="390451">generator</a><span class="delimiter">(</span><a title="String" id="390456">g</a>: <span title="String">String</span><span class="delimiter">)</span> = <span title="(elems: String*)Seq[String]">Seq</span><span class="delimiter">(</span><span title="java.lang.String(&quot;-doc-generator&quot;)" class="string">&quot;-doc-generator&quot;</span>, <a href="#390456" title="String">g</a><span class="delimiter">)</span>
+		<span class="keyword">def</span> <a title="(u: String)Seq[String]" id="390452">sourceUrl</a><span class="delimiter">(</span><a title="String" id="390462">u</a>: <span title="String">String</span><span class="delimiter">)</span> = <span title="(elems: String*)Seq[String]">Seq</span><span class="delimiter">(</span><span title="java.lang.String(&quot;-doc-source-url&quot;)" class="string">&quot;-doc-source-url&quot;</span>, <a href="#390462" title="String">u</a><span class="delimiter">)</span>
+		<span class="keyword">def</span> <a title="(t: String)Seq[String]" id="390453">title</a><span class="delimiter">(</span><a title="String" id="390468">t</a>: <span title="String">String</span><span class="delimiter">)</span> = <span title="(elems: String*)Seq[String]">Seq</span><span class="delimiter">(</span><span title="java.lang.String(&quot;-doc-title&quot;)" class="string">&quot;-doc-title&quot;</span>, <a href="#390468" title="String">t</a><span class="delimiter">)</span>
+		<span class="keyword">def</span> <a title="(v: String)Seq[String]" id="390454">version</a><span class="delimiter">(</span><a title="String" id="390474">v</a>: <span title="String">String</span><span class="delimiter">)</span> = <span title="(elems: String*)Seq[String]">Seq</span><span class="delimiter">(</span><span title="java.lang.String(&quot;-doc-version&quot;)" class="string">&quot;-doc-version&quot;</span>, <a href="#390474" title="String">v</a><span class="delimiter">)</span>
+	<span class="delimiter">}</span>
+<span class="delimiter">}</span>
+
+<span class="keyword">object</span> <a title="object sbt.DefaultOptions" id="11378">DefaultOptions</a> <span title="ScalaObject" class="delimiter">{</span>
+	<span class="keyword">import</span> <a href="#11376" title="object sbt.Opts">Opts</a>._
+	<span class="keyword">import</span> <a href="Path.scala.html#12481" title="object sbt.Path">Path</a>._
+	<span class="keyword">def</span> <a title="=&gt; Seq[String]" id="390483">javac</a>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#390424" title="object sbt.Opts.compile">compile</a>.<a href="#390432" title="(enc: String)Seq[String]">encoding</a><span class="delimiter">(</span><span title="java.lang.String(&quot;UTF-8&quot;)" class="string">&quot;UTF-8&quot;</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="=&gt; Seq[String]" id="390484">scalac</a>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#390424" title="object sbt.Opts.compile">compile</a>.<a href="#390432" title="(enc: String)Seq[String]">encoding</a><span class="delimiter">(</span><span title="java.lang.String(&quot;UTF-8&quot;)" class="string">&quot;UTF-8&quot;</span><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="(name: String, version: String)Seq[String]" id="390485">scaladoc</a><span class="delimiter">(</span><a title="String" id="390492">name</a>: <span title="String">String</span>, <a title="String" id="390493">version</a>: <span title="String">String</span><span class="delimiter">)</span>: <span title="Seq[String]">Seq</span><span class="delimiter">[</span>String<span class="delimiter">]</span> = <a href="#390426" title="object sbt.Opts.doc">doc</a>.<a href="#390453" title="(t: String)Seq[String]">title</a><span class="delimiter">(</span><a href="#390492" title="String">name</a><span class="delimiter">)</span> <span title="(that: scala.collection.GenTraversableOnce[String])(implicit bf: scala.collection.generic.CanBuildFrom[Seq[String],String,Seq[String]])Seq[String]">++</span> <a href="#390426" title="object sbt.Opts.doc">doc</a>.<a href="#390454" title="(v: String)Seq[String]">version</a><span class="delimiter">(</span><a href="#390493" title="String">version</a><span class="delimiter">)</span>
+	<span class="keyword">def</span> <a title="=&gt; sbt.Credentials" id="390486">credentials</a>: <a href="Credentials.scala.html#10362" title="sbt.Credentials">Credentials</a> = <a href="Credentials.scala.html#228620" title="(file: java.io.File)sbt.Credentials">Credentials</a><span class="delimiter">(</span><a href="Path.scala.html#12481" title="object sbt.Path">Path</a>.<a href="Path.scala.html#52941" title="implicit sbt.PathExtra.richFile : (file: java.io.File)sbt.RichFile">userHome</a> <a href="Path.scala.html#52941" title="implicit sbt.PathExtra.richFile : (file: java.io.File)sbt.RichFile">/</a> <span title="java.lang.String(&quot;.ivy2&quot;)" class="string">&quot;.ivy2&quot;</span> <a href="Path.scala.html#53005" title="(component: String)java.io.File">/</a> <span title="java.lang.String(&quot;.credentials&quot;)" class="string">&quot;.credentials&quot;</span><span class="delimiter">)</span>
+<span class="delimiter">}</span>
+
+        </pre>
+    </body>
+</html>

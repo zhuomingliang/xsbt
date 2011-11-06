@@ -429,13 +429,13 @@
               
         </dd></dl></div>
     </li><li visbl="pub" name="sbt.complete.ParserMain#completions" data-isabs="false">
-      <a id="completions(sbt.complete.Parser[_],String):Completions"></a>
+      <a id="completions(sbt.complete.Parser[_],String,Int):Completions"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">completions</span>
         
-        <span class="params">(<span name="p">p: sbt.complete.Parser[_]</span>, <span name="s">s: String</span>)</span><span class="result">: <a name="sbt.complete.Completions" class="extype" href="Completions.html">Completions</a></span>
+        <span class="params">(<span name="p">p: sbt.complete.Parser[_]</span>, <span name="s">s: String</span>, <span name="level">level: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <a name="sbt.complete.Completions" class="extype" href="Completions.html">Completions</a></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.complete.ParserMain" class="extype" href="ParserMain.html">ParserMain</a></dd></dl></div>
@@ -806,13 +806,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.complete.Parsers" class="extype" href="Parsers.html">Parsers</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.complete.ParserMain#result" data-isabs="false">
-      <a id="result[T](Parser[T],String):Either[(Seq[String], Int), T]"></a>
+      <a id="result[T](Parser[T],String):Either[() ⇒ (Seq[String], Int), T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">result</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="p">p: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>, <span name="s">s: String</span>)</span><span class="result">: <span name="scala.Either" class="extype">Either</span>[(Seq[String], <span name="scala.Int" class="extype">Int</span>), T]</span>
+        <span class="params">(<span name="p">p: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>, <span name="s">s: String</span>)</span><span class="result">: <span name="scala.Either" class="extype">Either</span>[() ⇒ (Seq[String], <span name="scala.Int" class="extype">Int</span>), T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.complete.ParserMain" class="extype" href="ParserMain.html">ParserMain</a></dd></dl></div>
@@ -916,13 +916,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.complete.ParserMain#token" data-isabs="false">
-      <a id="token[T](Parser[T],String,Boolean,Boolean):Parser[T]"></a>
+      <a id="token[T](Parser[T],String,Boolean,(Int) ⇒ Boolean):Parser[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">token</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="t">t: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>, <span name="seen">seen: String</span>, <span name="track">track: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="hide">hide: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>
+        <span class="params">(<span name="t">t: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>, <span name="seen">seen: String</span>, <span name="track">track: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="hide">hide: (<span name="scala.Int" class="extype">Int</span>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.complete.ParserMain" class="extype" href="ParserMain.html">ParserMain</a></dd></dl></div>
@@ -938,13 +938,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.complete.ParserMain" class="extype" href="ParserMain.html">ParserMain</a></dd></dl></div>
     </li><li visbl="pub" name="sbt.complete.ParserMain#token" data-isabs="false">
-      <a id="token[T](Parser[T],Boolean):Parser[T]"></a>
+      <a id="token[T](Parser[T],(Int) ⇒ Boolean):Parser[T]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">token</span>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="t">t: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>, <span name="hide">hide: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>
+        <span class="params">(<span name="t">t: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>, <span name="hide">hide: (<span name="scala.Int" class="extype">Int</span>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <a name="sbt.complete.Parser" class="extype" href="Parser.html">Parser</a>[T]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.complete.ParserMain" class="extype" href="ParserMain.html">ParserMain</a></dd></dl></div>

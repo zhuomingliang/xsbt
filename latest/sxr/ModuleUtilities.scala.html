@@ -15,13 +15,13 @@
  */</span>
 <span class="keyword">package</span> sbt
 
-<span class="keyword">object</span> <a title="object sbt.ModuleUtilities" id="11957">ModuleUtilities</a>
+<span class="keyword">object</span> <a title="object sbt.ModuleUtilities" id="12003">ModuleUtilities</a>
 <span title="ScalaObject" class="delimiter">{</span>
-	<span class="keyword">def</span> <a title="(className: String, loader: java.lang.ClassLoader)java.lang.Object" id="366634">getObject</a><span class="delimiter">(</span><a title="String" id="366635">className</a>: <span title="String">String</span>, <a title="java.lang.ClassLoader" id="366636">loader</a>: <span title="java.lang.ClassLoader">ClassLoader</span><span class="delimiter">)</span> =
+	<span class="keyword">def</span> <a title="(className: String, loader: java.lang.ClassLoader)java.lang.Object" id="378101">getObject</a><span class="delimiter">(</span><a title="String" id="378102">className</a>: <span title="String">String</span>, <a title="java.lang.ClassLoader" id="378103">loader</a>: <span title="java.lang.ClassLoader">ClassLoader</span><span class="delimiter">)</span> =
 	<span class="delimiter">{</span>
-		<span class="keyword">val</span> <a title="java.lang.Class[_]" id="366639">obj</a> = <span title="object java.lang.Class">Class</span>.<span title="(x$1: java.lang.String, x$2: Boolean, x$3: java.lang.ClassLoader)java.lang.Class[_]">forName</span><span class="delimiter">(</span><a href="#366635" title="String">className</a> <span title="(x$1: Any)java.lang.String">+</span> <span title="java.lang.String(&quot;$&quot;)" class="string">&quot;$&quot;</span>, <span title="Boolean(true)" class="keyword">true</span>, <a href="#366636" title="java.lang.ClassLoader">loader</a><span class="delimiter">)</span>
-		<span class="keyword">val</span> <a title="java.lang.reflect.Field" id="366640">singletonField</a> = <a href="#366639" title="java.lang.Class[_]">obj</a>.<span title="(x$1: java.lang.String)java.lang.reflect.Field">getField</span><span class="delimiter">(</span><span title="java.lang.String(&quot;MODULE$&quot;)" class="string">&quot;MODULE$&quot;</span><span class="delimiter">)</span>
-		<a href="#366640" title="java.lang.reflect.Field">singletonField</a>.<span title="(x$1: Any)java.lang.Object">get</span><span class="delimiter">(</span><span title="Null(null)" class="keyword">null</span><span class="delimiter">)</span>
+		<span class="keyword">val</span> <a title="java.lang.Class[_]" id="378106">obj</a> = <span title="object java.lang.Class">Class</span>.<span title="(x$1: java.lang.String, x$2: Boolean, x$3: java.lang.ClassLoader)java.lang.Class[_]">forName</span><span class="delimiter">(</span><a href="#378102" title="String">className</a> <span title="(x$1: Any)java.lang.String">+</span> <span title="java.lang.String(&quot;$&quot;)" class="string">&quot;$&quot;</span>, <span title="Boolean(true)" class="keyword">true</span>, <a href="#378103" title="java.lang.ClassLoader">loader</a><span class="delimiter">)</span>
+		<span class="keyword">val</span> <a title="java.lang.reflect.Field" id="378107">singletonField</a> = <a href="#378106" title="java.lang.Class[_]">obj</a>.<span title="(x$1: java.lang.String)java.lang.reflect.Field">getField</span><span class="delimiter">(</span><span title="java.lang.String(&quot;MODULE$&quot;)" class="string">&quot;MODULE$&quot;</span><span class="delimiter">)</span>
+		<a href="#378107" title="java.lang.reflect.Field">singletonField</a>.<span title="(x$1: Any)java.lang.Object">get</span><span class="delimiter">(</span><span title="Null(null)" class="keyword">null</span><span class="delimiter">)</span>
 	<span class="delimiter">}</span>
 <span class="delimiter">}</span>
         </pre>

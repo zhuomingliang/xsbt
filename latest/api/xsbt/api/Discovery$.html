@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>sbt.compiler.Discovery</title>
+          <title>xsbt.api.Discovery</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../../lib/template.css" />
@@ -12,15 +12,15 @@
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body class="type">
+        <body class="value">
       <div id="definition">
-        <a title="Go to companion" href="Discovery$.html"><img src="../../lib/class_to_object_big.png" /></a>
-        <p id="owner"><a name="sbt" class="extype" href="../package.html">sbt</a>.<a name="sbt.compiler" class="extype" href="package.html">compiler</a></p>
-        <h1><a title="Go to companion" href="Discovery$.html">Discovery</a></h1>
+        <a title="Go to companion" href="Discovery.html"><img src="../../lib/object_to_class_big.png" /></a>
+        <p id="owner"><a name="xsbt" class="extype" href="../package.html">xsbt</a>.<a name="xsbt.api" class="extype" href="package.html">api</a></p>
+        <h1><a title="Go to companion" href="Discovery.html">Discovery</a></h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">class</span>
+      <span class="kind">object</span>
       <span class="symbol"> 
         <span class="name">Discovery</span>
         
@@ -46,7 +46,7 @@
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall out"><span>Hide All</span></li>
                 <li class="showall in"><span>Show all</span></li></ol>
-                <ol id="linearization"><li name="sbt.compiler.Discovery" class="in"><span>Discovery</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+                <ol id="linearization"><li name="xsbt.api.Discovery" class="in"><span>Discovery</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -54,21 +54,7 @@
             </div>
         </div>
 
-        <div class="members" id="constructors">
-              <h3>Instance Constructors</h3>
-              <ol><li visbl="pub" name="sbt.compiler.Discovery#this" data-isabs="false">
-      <a id="this:Discovery"></a>
-      <h4 class="signature">
-      <span class="kind">new</span>
-      <span class="symbol"> 
-        <span class="name">Discovery</span>
         
-        <span class="params">(<span name="baseClasses">baseClasses: Set[String]</span>, <span name="annotations">annotations: Set[String]</span>)</span>
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
 
         
         
@@ -131,25 +117,25 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovery#apply" data-isabs="false">
-      <a id="apply(Definition):Discovered"></a>
+    </li><li visbl="pub" name="xsbt.api.Discovery#applications" data-isabs="false">
+      <a id="applications(Seq[Definition]):Seq[(Definition, Discovered)]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">apply</span>
+        <span class="name">applications</span>
         
-        <span class="params">(<span name="d">d: <a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a></span>)</span><span class="result">: <a name="sbt.compiler.Discovered" class="extype" href="Discovered.html">Discovered</a></span>
+        <span class="params">(<span name="definitions">definitions: Seq[<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>]</span>)</span><span class="result">: Seq[(<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>, <a name="xsbt.api.Discovered" class="extype" href="Discovered.html">Discovered</a>)]</span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="sbt.compiler.Discovery#apply" data-isabs="false">
-      <a id="apply(Seq[Definition]):Seq[(Definition, Discovered)]"></a>
+    </li><li visbl="pub" name="xsbt.api.Discovery#apply" data-isabs="false">
+      <a id="apply(Set[String],Set[String])(Seq[Definition]):Seq[(Definition, Discovered)]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">apply</span>
         
-        <span class="params">(<span name="s">s: Seq[<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>]</span>)</span><span class="result">: Seq[(<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>, <a name="sbt.compiler.Discovered" class="extype" href="Discovered.html">Discovered</a>)]</span>
+        <span class="params">(<span name="subclasses">subclasses: Set[String]</span>, <span name="annotations">annotations: Set[String]</span>)</span><span class="params">(<span name="definitions">definitions: Seq[<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>]</span>)</span><span class="result">: Seq[(<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>, <a name="xsbt.api.Discovered" class="extype" href="Discovered.html">Discovered</a>)]</span>
       </span>
       </h4>
       
@@ -164,17 +150,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovery#bases" data-isabs="false">
-      <a id="bases(String,Seq[Type]):Set[String]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">bases</span>
-        
-        <span class="params">(<span name="own">own: String</span>, <span name="c">c: Seq[<a name="xsbti.api.Type" class="extype" href="../../xsbti/api/Type.html">Type</a>]</span>)</span><span class="result">: Set[String]</span>
-      </span>
-      </h4>
-      
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -189,25 +164,25 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovery#defAnnotations" data-isabs="false">
-      <a id="defAnnotations(Seq[Definition]):Set[String]"></a>
+    </li><li visbl="pub" name="xsbt.api.Discovery#defAnnotations" data-isabs="false">
+      <a id="defAnnotations(Seq[Definition],(String) ⇒ Boolean):Set[String]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">defAnnotations</span>
         
-        <span class="params">(<span name="defs">defs: Seq[<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>]</span>)</span><span class="result">: Set[String]</span>
+        <span class="params">(<span name="defs">defs: Seq[<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>]</span>, <span name="pred">pred: (String) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: Set[String]</span>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="sbt.compiler.Discovery#discover" data-isabs="false">
-      <a id="discover(ClassLike):Discovered"></a>
+    </li><li visbl="pub" name="xsbt.api.Discovery#defAnnotations" data-isabs="false">
+      <a id="defAnnotations(Structure,(String) ⇒ Boolean):Set[String]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">discover</span>
+        <span class="name">defAnnotations</span>
         
-        <span class="params">(<span name="c">c: <a name="xsbti.api.ClassLike" class="extype" href="../../xsbti/api/ClassLike.html">ClassLike</a></span>)</span><span class="result">: <a name="sbt.compiler.Discovered" class="extype" href="Discovered.html">Discovered</a></span>
+        <span class="params">(<span name="s">s: <a name="xsbti.api.Structure" class="extype" href="../../xsbti/api/Structure.html">Structure</a></span>, <span name="pred">pred: (String) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: Set[String]</span>
       </span>
       </h4>
       
@@ -247,14 +222,14 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovery#findAnnotations" data-isabs="false">
-      <a id="findAnnotations(Seq[Annotation]):Set[String]"></a>
+    </li><li visbl="pub" name="xsbt.api.Discovery#findAnnotations" data-isabs="false">
+      <a id="findAnnotations(Seq[Annotation],(String) ⇒ Boolean):Set[String]"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">findAnnotations</span>
         
-        <span class="params">(<span name="as">as: Seq[<a name="xsbti.api.Annotation" class="extype" href="../../xsbti/api/Annotation.html">Annotation</a>]</span>)</span><span class="result">: Set[String]</span>
+        <span class="params">(<span name="as">as: Seq[<a name="xsbti.api.Annotation" class="extype" href="../../xsbti/api/Annotation.html">Annotation</a>]</span>, <span name="pred">pred: (String) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: Set[String]</span>
       </span>
       </h4>
       
@@ -269,6 +244,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="xsbt.api.Discovery#hasMainMethod" data-isabs="false">
+      <a id="hasMainMethod(Seq[Definition]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">hasMainMethod</span>
+        
+        <span class="params">(<span name="defs">defs: Seq[<a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a>]</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#hasMainMethod" data-isabs="false">
+      <a id="hasMainMethod(ClassLike):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">hasMainMethod</span>
+        
+        <span class="params">(<span name="c">c: <a name="xsbti.api.ClassLike" class="extype" href="../../xsbti/api/ClassLike.html">ClassLike</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#hashCode" data-isabs="false">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
@@ -280,6 +277,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="xsbt.api.Discovery#isConcrete" data-isabs="false">
+      <a id="isConcrete(Modifiers):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isConcrete</span>
+        
+        <span class="params">(<span name="m">m: <a name="xsbti.api.Modifiers" class="extype" href="../../xsbti/api/Modifiers.html">Modifiers</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isConcrete" data-isabs="false">
+      <a id="isConcrete(Definition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isConcrete</span>
+        
+        <span class="params">(<span name="a">a: <a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
@@ -291,6 +310,127 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li visbl="pub" name="xsbt.api.Discovery#isMainMethod" data-isabs="false">
+      <a id="isMainMethod(Definition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isMainMethod</span>
+        
+        <span class="params">(<span name="d">d: <a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isModule" data-isabs="false">
+      <a id="isModule(ClassLike):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isModule</span>
+        
+        <span class="params">(<span name="c">c: <a name="xsbti.api.ClassLike" class="extype" href="../../xsbti/api/ClassLike.html">ClassLike</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isParameterized" data-isabs="false">
+      <a id="isParameterized(Type,String,String*):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isParameterized</span>
+        
+        <span class="params">(<span name="t">t: <a name="xsbti.api.Type" class="extype" href="../../xsbti/api/Type.html">Type</a></span>, <span name="base">base: String</span>, <span name="args">args: String*</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isPublic" data-isabs="false">
+      <a id="isPublic(Access):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isPublic</span>
+        
+        <span class="params">(<span name="a">a: <a name="xsbti.api.Access" class="extype" href="../../xsbti/api/Access.html">Access</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isPublic" data-isabs="false">
+      <a id="isPublic(Definition):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isPublic</span>
+        
+        <span class="params">(<span name="a">a: <a name="xsbti.api.Definition" class="extype" href="../../xsbti/api/Definition.html">Definition</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isStringArray" data-isabs="false">
+      <a id="isStringArray(Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isStringArray</span>
+        
+        <span class="params">(<span name="t">t: <a name="xsbti.api.Type" class="extype" href="../../xsbti/api/Type.html">Type</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isStringArray" data-isabs="false">
+      <a id="isStringArray(MethodParameter):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isStringArray</span>
+        
+        <span class="params">(<span name="p">p: <a name="xsbti.api.MethodParameter" class="extype" href="../../xsbti/api/MethodParameter.html">MethodParameter</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isStringArray" data-isabs="false">
+      <a id="isStringArray(Seq[MethodParameter]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isStringArray</span>
+        
+        <span class="params">(<span name="params">params: Seq[<a name="xsbti.api.MethodParameter" class="extype" href="../../xsbti/api/MethodParameter.html">MethodParameter</a>]</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isStringArray" data-isabs="false">
+      <a id="isStringArray(IndexedSeq[ParameterList]):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isStringArray</span>
+        
+        <span class="params">(<span name="vp">vp: IndexedSeq[<a name="xsbti.api.ParameterList" class="extype" href="../../xsbti/api/ParameterList.html">ParameterList</a>]</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#isUnit" data-isabs="false">
+      <a id="isUnit(Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">isUnit</span>
+        
+        <span class="params">(<span name="t">t: <a name="xsbti.api.Type" class="extype" href="../../xsbti/api/Type.html">Type</a></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#named" data-isabs="false">
+      <a id="named(Type,String):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">named</span>
+        
+        <span class="params">(<span name="t">t: <a name="xsbti.api.Type" class="extype" href="../../xsbti/api/Type.html">Type</a></span>, <span name="nme">nme: String</span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -324,6 +464,28 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li visbl="pub" name="xsbt.api.Discovery#pathName" data-isabs="false">
+      <a id="pathName(Path,String):Option[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">pathName</span>
+        
+        <span class="params">(<span name="p">p: <a name="xsbti.api.Path" class="extype" href="../../xsbti/api/Path.html">Path</a></span>, <span name="id">id: String</span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="xsbt.api.Discovery#simpleName" data-isabs="false">
+      <a id="simpleName(Type):Option[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">simpleName</span>
+        
+        <span class="params">(<span name="t">t: <a name="xsbti.api.Type" class="extype" href="../../xsbti/api/Type.html">Type</a></span>)</span><span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">

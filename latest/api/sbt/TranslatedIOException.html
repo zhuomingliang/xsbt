@@ -2,35 +2,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>sbt.compiler.Discovered</title>
+          <title>sbt.TranslatedIOException</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link type="text/css" media="screen" rel="stylesheet" href="../../lib/template.css" />
-      <script type="text/javascript" src="../../lib/jquery.js"></script>
-      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../lib/template.js"></script>
-      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <link type="text/css" media="screen" rel="stylesheet" href="../lib/template.css" />
+      <script type="text/javascript" src="../lib/jquery.js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
     
         </head>
         <body class="type">
       <div id="definition">
-        <a title="Go to companion" href="Discovered$.html"><img src="../../lib/class_to_object_big.png" /></a>
-        <p id="owner"><a name="sbt" class="extype" href="../package.html">sbt</a>.<a name="sbt.compiler" class="extype" href="package.html">compiler</a></p>
-        <h1><a title="Go to companion" href="Discovered$.html">Discovered</a></h1>
+        <img src="../lib/class_big.png" />
+        <p id="owner"><a name="sbt" class="extype" href="package.html">sbt</a></p>
+        <h1>TranslatedIOException</h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">case class</span>
+      <span class="kind">class</span>
       <span class="symbol"> 
-        <span class="name">Discovered</span>
+        <span class="name">TranslatedIOException</span>
         
-        <span class="params">(<span name="baseClasses">baseClasses: Set[String]</span>, <span name="annotations">annotations: Set[String]</span>, <span name="hasMain">hasMain: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="isModule">isModule: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result"> extends <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
+        <span class="result"> extends <a name="sbt.TranslatedException" class="extype" href="TranslatedException.html">TranslatedException</a></span>
       </span>
       </h4>
       
           <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+          <div class="superTypes hiddenContent"><a name="sbt.TranslatedException" class="extype" href="TranslatedException.html">TranslatedException</a>, <span name="java.lang.RuntimeException" class="extype">RuntimeException</span>, <span name="java.lang.Exception" class="extype">Exception</span>, <span name="java.lang.Throwable" class="extype">Throwable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
         
 
@@ -46,7 +46,7 @@
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall out"><span>Hide All</span></li>
                 <li class="showall in"><span>Show all</span></li></ol>
-                <ol id="linearization"><li name="sbt.compiler.Discovered" class="in"><span>Discovered</span></li><li name="scala.Serializable" class="in"><span>Serializable</span></li><li name="java.io.Serializable" class="in"><span>Serializable</span></li><li name="scala.Product" class="in"><span>Product</span></li><li name="scala.Equals" class="in"><span>Equals</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+                <ol id="linearization"><li name="sbt.TranslatedIOException" class="in"><span>TranslatedIOException</span></li><li name="sbt.TranslatedException" class="in"><span>TranslatedException</span></li><li name="java.lang.RuntimeException" class="in"><span>RuntimeException</span></li><li name="java.lang.Exception" class="in"><span>Exception</span></li><li name="java.lang.Throwable" class="in"><span>Throwable</span></li><li name="java.io.Serializable" class="in"><span>Serializable</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -54,21 +54,7 @@
             </div>
         </div>
 
-        <div class="members" id="constructors">
-              <h3>Instance Constructors</h3>
-              <ol><li visbl="pub" name="sbt.compiler.Discovered#this" data-isabs="false">
-      <a id="this:Discovered"></a>
-      <h4 class="signature">
-      <span class="kind">new</span>
-      <span class="symbol"> 
-        <span class="name">Discovered</span>
         
-        <span class="params">(<span name="baseClasses">baseClasses: Set[String]</span>, <span name="annotations">annotations: Set[String]</span>, <span name="hasMain">hasMain: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="isModule">isModule: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span>
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
 
         
         
@@ -131,17 +117,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#annotations" data-isabs="false">
-      <a id="annotations:Set[String]"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">annotations</span>
-        
-        <span class="result">: Set[String]</span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.Any#asInstanceOf" data-isabs="false">
       <a id="asInstanceOf[T0]:T0"></a>
       <h4 class="signature">
@@ -153,28 +128,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#baseClasses" data-isabs="false">
-      <a id="baseClasses:Set[String]"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">baseClasses</span>
-        
-        <span class="result">: Set[String]</span>
-      </span>
-      </h4>
-      
-    </li><li visbl="pub" name="sbt.compiler.Discovered#canEqual" data-isabs="false">
-      <a id="canEqual(Any):Boolean"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name">canEqual</span>
-        
-        <span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.compiler.Discovered" class="extype" href="">Discovered</a> → Equals</dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -185,7 +138,7 @@
         <span class="params">()</span><span class="result">: AnyRef</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -200,7 +153,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#equals" data-isabs="false">
+    </li><li visbl="pub" name="scala.AnyRef#equals" data-isabs="false">
       <a id="equals(Any):Boolean"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -210,7 +163,18 @@
         <span class="params">(<span name="arg0">arg0: <span name="scala.Any" class="extype">Any</span></span>)</span><span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.compiler.Discovered" class="extype" href="">Discovered</a> → Equals → AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="java.lang.Throwable#fillInStackTrace" data-isabs="false">
+      <a id="fillInStackTrace():Throwable"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">fillInStackTrace</span>
+        
+        <span class="params">()</span><span class="result">: <span name="java.lang.Throwable" class="extype">Throwable</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -221,10 +185,21 @@
         <span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a name="java.lang" class="extype" href="../java/lang/package.html">lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="java.lang.Throwable#getCause" data-isabs="false">
+      <a id="getCause():Throwable"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">getCause</span>
+        
+        <span class="params">()</span><span class="result">: <span name="java.lang.Throwable" class="extype">Throwable</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -236,18 +211,40 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#hasMain" data-isabs="false">
-      <a id="hasMain:Boolean"></a>
+    </li><li visbl="pub" name="java.lang.Throwable#getLocalizedMessage" data-isabs="false">
+      <a id="getLocalizedMessage():String"></a>
       <h4 class="signature">
-      <span class="kind">val</span>
+      <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">hasMain</span>
+        <span class="name">getLocalizedMessage</span>
         
-        <span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="params">()</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
       </span>
       </h4>
-      
-    </li><li visbl="pub" name="sbt.compiler.Discovered#hashCode" data-isabs="false">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li visbl="pub" name="java.lang.Throwable#getMessage" data-isabs="false">
+      <a id="getMessage():String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">getMessage</span>
+        
+        <span class="params">()</span><span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li visbl="pub" name="java.lang.Throwable#getStackTrace" data-isabs="false">
+      <a id="getStackTrace():Array[StackTraceElement]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">getStackTrace</span>
+        
+        <span class="params">()</span><span class="result">: <span name="scala.Array" class="extype">Array</span>[<span name="java.lang.StackTraceElement" class="extype">StackTraceElement</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li visbl="pub" name="scala.AnyRef#hashCode" data-isabs="false">
       <a id="hashCode():Int"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -257,18 +254,18 @@
         <span class="params">()</span><span class="result">: <span name="scala.Int" class="extype">Int</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.compiler.Discovered" class="extype" href="">Discovered</a> → AnyRef → Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#isEmpty" data-isabs="false">
-      <a id="isEmpty:Boolean"></a>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="java.lang.Throwable#initCause" data-isabs="false">
+      <a id="initCause(Throwable):Throwable"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">isEmpty</span>
+        <span class="name">initCause</span>
         
-        <span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
+        <span class="params">(<span name="arg0">arg0: <span name="java.lang.Throwable" class="extype">Throwable</span></span>)</span><span class="result">: <span name="java.lang.Throwable" class="extype">Throwable</span></span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">
@@ -280,17 +277,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#isModule" data-isabs="false">
-      <a id="isModule:Boolean"></a>
-      <h4 class="signature">
-      <span class="kind">val</span>
-      <span class="symbol"> 
-        <span class="name">isModule</span>
-        
-        <span class="result">: <span name="scala.Boolean" class="extype">Boolean</span></span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -324,50 +310,50 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#productArity" data-isabs="false">
-      <a id="productArity:Int"></a>
+    </li><li visbl="pub" name="java.lang.Throwable#printStackTrace" data-isabs="false">
+      <a id="printStackTrace(PrintWriter):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">productArity</span>
+        <span class="name">printStackTrace</span>
         
-        <span class="result">: <span name="scala.Int" class="extype">Int</span></span>
+        <span class="params">(<span name="arg0">arg0: <span name="java.io.PrintWriter" class="extype">PrintWriter</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.compiler.Discovered" class="extype" href="">Discovered</a> → Product</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#productElement" data-isabs="false">
-      <a id="productElement(Int):Any"></a>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li visbl="pub" name="java.lang.Throwable#printStackTrace" data-isabs="false">
+      <a id="printStackTrace(PrintStream):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">productElement</span>
+        <span class="name">printStackTrace</span>
         
-        <span class="params">(<span name="arg0">arg0: <span name="scala.Int" class="extype">Int</span></span>)</span><span class="result">: <span name="scala.Any" class="extype">Any</span></span>
+        <span class="params">(<span name="arg0">arg0: <span name="java.io.PrintStream" class="extype">PrintStream</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.compiler.Discovered" class="extype" href="">Discovered</a> → Product</dd></dl></div>
-    </li><li visbl="pub" name="scala.Product#productIterator" data-isabs="false">
-      <a id="productIterator:Iterator[Any]"></a>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li visbl="pub" name="java.lang.Throwable#printStackTrace" data-isabs="false">
+      <a id="printStackTrace():Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">productIterator</span>
+        <span class="name">printStackTrace</span>
         
-        <span class="result">: Iterator[<span name="scala.Any" class="extype">Any</span>]</span>
+        <span class="params">()</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Product</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#productPrefix" data-isabs="false">
-      <a id="productPrefix:String"></a>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li visbl="pub" name="java.lang.Throwable#setStackTrace" data-isabs="false">
+      <a id="setStackTrace(Array[StackTraceElement]):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
-        <span class="name">productPrefix</span>
+        <span class="name">setStackTrace</span>
         
-        <span class="result">: <span name="java.lang.String" class="extype">String</span></span>
+        <span class="params">(<span name="arg0">arg0: <span name="scala.Array" class="extype">Array</span>[<span name="java.lang.StackTraceElement" class="extype">StackTraceElement</span>]</span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.compiler.Discovered" class="extype" href="">Discovered</a> → Product</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#synchronized" data-isabs="false">
       <a id="synchronized[T0](⇒ T0):T0"></a>
       <h4 class="signature">
@@ -379,7 +365,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li visbl="pub" name="sbt.compiler.Discovered#toString" data-isabs="false">
+    </li><li visbl="pub" name="sbt.TranslatedException#toString" data-isabs="false">
       <a id="toString():String"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -389,7 +375,7 @@
         <span class="params">()</span><span class="result">: String</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.compiler.Discovered" class="extype" href="">Discovered</a> → AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.TranslatedException" class="extype" href="TranslatedException.html">TranslatedException</a> → Throwable → AnyRef → Any</dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">
@@ -435,33 +421,18 @@
     </li></ol>
             </div>
 
-        <div class="values members" id="values">
-              <h3>Deprecated Value Members</h3>
-              <ol><li visbl="pub" name="scala.Product#productElements" data-isabs="false">
-      <a id="productElements:Iterator[Any]"></a>
-      <h4 class="signature">
-      <span class="kind">def</span>
-      <span class="symbol"> 
-        <span class="name deprecated">productElements</span>
         
-        <span class="result">: Iterator[<span name="scala.Any" class="extype">Any</span>]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Product</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p>use productIterator instead</p></dd></dl></div>
-    </li></ol>
-            </div>
 
-        <div name="scala.Serializable" class="parent">
-              <h3>Inherited from <span name="scala.Serializable" class="extype">Serializable</span></h3>
+        <div name="sbt.TranslatedException" class="parent">
+              <h3>Inherited from <a name="sbt.TranslatedException" class="extype" href="TranslatedException.html">TranslatedException</a></h3>
+            </div><div name="java.lang.RuntimeException" class="parent">
+              <h3>Inherited from <span name="java.lang.RuntimeException" class="extype">RuntimeException</span></h3>
+            </div><div name="java.lang.Exception" class="parent">
+              <h3>Inherited from <span name="java.lang.Exception" class="extype">Exception</span></h3>
+            </div><div name="java.lang.Throwable" class="parent">
+              <h3>Inherited from <span name="java.lang.Throwable" class="extype">Throwable</span></h3>
             </div><div name="java.io.Serializable" class="parent">
               <h3>Inherited from <span name="java.io.Serializable" class="extype">Serializable</span></h3>
-            </div><div name="scala.Product" class="parent">
-              <h3>Inherited from <span name="scala.Product" class="extype">Product</span></h3>
-            </div><div name="scala.Equals" class="parent">
-              <h3>Inherited from <span name="scala.Equals" class="extype">Equals</span></h3>
             </div><div name="scala.AnyRef" class="parent">
               <h3>Inherited from AnyRef</h3>
             </div><div name="scala.Any" class="parent">

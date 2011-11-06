@@ -279,6 +279,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.BuildDependencies" data-isabs="false">
+      <a id="BuildDependencies:BuildDependencies"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="BuildDependencies.html"><span class="name">BuildDependencies</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
     </li><li visbl="pub" name="sbt.BuildExtra" data-isabs="true">
       <a id="BuildExtra:BuildExtra"></a>
       <h4 class="signature">
@@ -311,7 +322,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="build">build: URI</span>)</span><span class="result"> extends BuildReference with ResolvedReference with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Uniquely identifies a build by a URI.</p>
     </li><li visbl="pub" name="sbt.BuildReference" data-isabs="true">
       <a id="BuildReference:BuildReference"></a>
       <h4 class="signature">
@@ -322,7 +333,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends Reference</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+      <p class="comment cmt">Identifies a build.</p>
     </li><li visbl="pub" name="sbt.Cache" data-isabs="true">
       <a id="Cache:Cache[I, O]"></a>
       <h4 class="signature">
@@ -495,7 +506,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol"> 
         <a href="ComponentManager.html"><span class="name">ComponentManager</span></a>
         
-        <span class="result"> extends NotNull</span>
+        <span class="result"> extends AnyRef</span>
       </span>
       </h4>
       <p class="comment cmt">A component manager provides access to the pieces of xsbt that are distributed as components.</p>
@@ -774,6 +785,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.EvaluateConfig" data-isabs="false">
+      <a id="EvaluateConfig:EvaluateConfig"></a>
+      <h4 class="signature">
+      <span class="kind">case class</span>
+      <span class="symbol"> 
+        <a href="EvaluateConfig.html"><span class="name">EvaluateConfig</span></a>
+        
+        <span class="params">(<span name="cancelable">cancelable: Boolean</span>, <span name="checkCycles">checkCycles: Boolean</span>, <span name="maxWorkers">maxWorkers: Int</span>)</span><span class="result"> extends Product with Serializable</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
     </li><li visbl="pub" name="sbt.EvaluateSettings" data-isabs="true">
       <a id="EvaluateSettings:EvaluateSettings[Scope]"></a>
       <h4 class="signature">
@@ -796,6 +818,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.ExclusionRule" data-isabs="false">
+      <a id="ExclusionRule:ExclusionRule"></a>
+      <h4 class="signature">
+      <span class="kind">case class</span>
+      <span class="symbol"> 
+        <a href="ExclusionRule.html"><span class="name">ExclusionRule</span></a>
+        
+        <span class="params">(<span name="organization">organization: String</span>, <span name="name">name: String</span>, <span name="artifact">artifact: String</span>, <span name="configurations">configurations: Seq[String]</span>)</span><span class="result"> extends Product with Serializable</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Rule to exclude unwanted dependencies pulled in transitively by a module.</p>
     </li><li visbl="pub" name="sbt.Execute" data-isabs="false">
       <a id="Execute:Execute[A]"></a>
       <h4 class="signature">
@@ -979,7 +1012,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol"> 
         <a href="ForkOptions.html"><span class="name">ForkOptions</span></a>
         
-        <span class="params">(<span name="javaHome">javaHome: Option[File]</span>, <span name="outputStrategy">outputStrategy: Option[OutputStrategy]</span>, <span name="scalaJars">scalaJars: Iterable[File]</span>, <span name="workingDirectory">workingDirectory: Option[File]</span>, <span name="runJVMOptions">runJVMOptions: Seq[String]</span>)</span><span class="result"> extends ForkScalaRun with Product with Serializable</span>
+        <span class="params">(<span name="javaHome">javaHome: Option[File]</span>, <span name="outputStrategy">outputStrategy: Option[OutputStrategy]</span>, <span name="scalaJars">scalaJars: Iterable[File]</span>, <span name="workingDirectory">workingDirectory: Option[File]</span>, <span name="runJVMOptions">runJVMOptions: Seq[String]</span>, <span name="connectInput">connectInput: Boolean</span>)</span><span class="result"> extends ForkScalaRun with Product with Serializable</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
@@ -1060,6 +1093,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+    </li><li visbl="pub" name="sbt.GlobalLogBacking" data-isabs="false">
+      <a id="GlobalLogBacking:GlobalLogBacking"></a>
+      <h4 class="signature">
+      <span class="kind">case class</span>
+      <span class="symbol"> 
+        <a href="GlobalLogBacking.html"><span class="name">GlobalLogBacking</span></a>
+        
+        <span class="params">(<span name="file">file: File</span>, <span name="last">last: Option[File]</span>)</span><span class="result"> extends Product with Serializable</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
     </li><li visbl="pub" name="sbt.GlobalLogging" data-isabs="false">
       <a id="GlobalLogging:GlobalLogging"></a>
       <h4 class="signature">
@@ -1067,7 +1111,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol"> 
         <a href="GlobalLogging.html"><span class="name">GlobalLogging</span></a>
         
-        <span class="params">(<span name="full">full: Logger</span>, <span name="backed">backed: ConsoleLogger</span>, <span name="backing">backing: File</span>)</span><span class="result"> extends Product with Serializable</span>
+        <span class="params">(<span name="full">full: Logger</span>, <span name="backed">backed: ConsoleLogger</span>, <span name="backing">backing: GlobalLogBacking</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
@@ -1114,7 +1158,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+      <p class="comment cmt">A minimal heterogeneous list type.</p>
     </li><li visbl="pub" name="sbt.HListCacheImplicits" data-isabs="true">
       <a id="HListCacheImplicits:HListCacheImplicits"></a>
       <h4 class="signature">
@@ -1243,10 +1287,10 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol"> 
         <a href="Info.html"><span class="name">Info</span></a>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="params">(<span name="attributes">attributes: AttributeMap</span>, <span name="original">original: Option[Task[T]]</span>)</span><span class="result"> extends Product with Serializable</span>
+        <span class="params">(<span name="attributes">attributes: AttributeMap</span>, <span name="post">post: (T) ⇒ AttributeMap</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
-      <p class="comment cmt"><code>original</code> is used during transformation only.</p>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
     </li><li visbl="pub" name="sbt.Init" data-isabs="true">
       <a id="Init:Init[Scope]"></a>
       <h4 class="signature">
@@ -1291,17 +1335,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="sbt.InputKey" data-isabs="false">
+    </li><li visbl="pub" name="sbt.InputKey" data-isabs="true">
       <a id="InputKey:InputKey[T]"></a>
       <h4 class="signature">
-      <span class="kind">class</span>
+      <span class="kind">trait</span>
       <span class="symbol"> 
         <a href="InputKey.html"><span class="name">InputKey</span></a>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends Key[InputTask[T]] with ScopedInput[T]</span>
+        <span class="result"> extends Scoped with KeyedInitialize[InputTask[T]] with ScopingSetting[InputKey[T]] with DefinableSetting[InputTask[T]]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Identifies an input task.</p>
     </li><li visbl="pub" name="sbt.InputTask" data-isabs="true">
       <a id="InputTask:InputTask[T]"></a>
       <h4 class="signature">
@@ -1312,7 +1356,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+      <p class="comment cmt">Parses input and produces a task to run.</p>
     </li><li visbl="pub" name="sbt.InvalidComponent" data-isabs="false">
       <a id="InvalidComponent:InvalidComponent"></a>
       <h4 class="signature">
@@ -1335,6 +1379,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.IvyCache" data-isabs="false">
+      <a id="IvyCache:IvyCache"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="IvyCache.html"><span class="name">IvyCache</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Provides methods for working at the level of a single jar file with the default Ivy cache.</p>
     </li><li visbl="pub" name="sbt.IvyConfiguration" data-isabs="true">
       <a id="IvyConfiguration:IvyConfiguration"></a>
       <h4 class="signature">
@@ -1467,17 +1522,6 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
-    </li><li visbl="pub" name="sbt.Key" data-isabs="true">
-      <a id="Key:Key[T]"></a>
-      <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="Key.html"><span class="name">Key</span></a>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends Scoped</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
     </li><li visbl="pub" name="sbt.KeyIndex" data-isabs="true">
       <a id="KeyIndex:KeyIndex"></a>
       <h4 class="signature">
@@ -1510,7 +1554,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="project">project: String</span>)</span><span class="result"> extends ProjectReference with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Identifies a project in the current build context.</p>
     </li><li visbl="pub" name="sbt.Log" data-isabs="false">
       <a id="Log:Log"></a>
       <h4 class="signature">
@@ -1694,7 +1738,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol"> 
         <a href="ModuleID.html"><span class="name">ModuleID</span></a>
         
-        <span class="params">(<span name="organization">organization: String</span>, <span name="name">name: String</span>, <span name="revision">revision: String</span>, <span name="configurations">configurations: Option[String]</span>, <span name="isChanging">isChanging: Boolean</span>, <span name="isTransitive">isTransitive: Boolean</span>, <span name="explicitArtifacts">explicitArtifacts: Seq[Artifact]</span>, <span name="extraAttributes">extraAttributes: Map[String, String]</span>, <span name="crossVersion">crossVersion: Boolean</span>)</span><span class="result"> extends Product with Serializable</span>
+        <span class="params">(<span name="organization">organization: String</span>, <span name="name">name: String</span>, <span name="revision">revision: String</span>, <span name="configurations">configurations: Option[String]</span>, <span name="isChanging">isChanging: Boolean</span>, <span name="isTransitive">isTransitive: Boolean</span>, <span name="explicitArtifacts">explicitArtifacts: Seq[Artifact]</span>, <span name="exclusions">exclusions: Seq[ExclusionRule]</span>, <span name="extraAttributes">extraAttributes: Map[String, String]</span>, <span name="crossVersion">crossVersion: Boolean</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
@@ -1731,6 +1775,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.MultiHandler" data-isabs="false">
+      <a id="MultiHandler:MultiHandler[S, T]"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="MultiHandler.html"><span class="name">MultiHandler</span></a>
+        <span class="tparams">[<span name="S">S</span>, <span name="T">T</span>]</span>
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
     </li><li visbl="pub" name="sbt.MultiLogger" data-isabs="false">
       <a id="MultiLogger:MultiLogger"></a>
       <h4 class="signature">
@@ -2060,7 +2115,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="build">build: URI</span>, <span name="project">project: String</span>)</span><span class="result"> extends ProjectReference with ResolvedReference with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Uniquely references a project by a URI and a project identifier String.</p>
     </li><li visbl="pub" name="sbt.ProjectReference" data-isabs="true">
       <a id="ProjectReference:ProjectReference"></a>
       <h4 class="signature">
@@ -2071,7 +2126,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends Reference</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+      <p class="comment cmt">Identifies a project.</p>
     </li><li visbl="pub" name="sbt.ProjectResolver" data-isabs="false">
       <a id="ProjectResolver:ProjectResolver"></a>
       <h4 class="signature">
@@ -2148,7 +2203,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+      <p class="comment cmt">Identifies a project or build.</p>
     </li><li visbl="pub" name="sbt.ReflectedCommands" data-isabs="true">
       <a id="ReflectedCommands:ReflectedCommands"></a>
       <h4 class="signature">
@@ -2179,17 +2234,6 @@ to the delegate logger provided in the constructor.</p>
         <a href="ResolveException.html"><span class="name">ResolveException</span></a>
         
         <span class="result"> extends RuntimeException</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.ResolveInfo" data-isabs="false">
-      <a id="ResolveInfo:ResolveInfo"></a>
-      <h4 class="signature">
-      <span class="kind">class</span>
-      <span class="symbol"> 
-        <a href="ResolveInfo.html"><span class="name">ResolveInfo</span></a>
-        
-        <span class="result"> extends AnyRef</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
@@ -2225,7 +2269,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends Reference</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+      <p class="comment cmt">A fully resolved, unique identifier for a project or build.</p>
     </li><li visbl="pub" name="sbt.Resolver" data-isabs="true">
       <a id="Resolver:Resolver"></a>
       <h4 class="signature">
@@ -2313,7 +2357,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="build">build: URI</span>)</span><span class="result"> extends ProjectReference with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Identifies the root project in the specified build.</p>
     </li><li visbl="pub" name="sbt.Run" data-isabs="false">
       <a id="Run:Run"></a>
       <h4 class="signature">
@@ -2402,39 +2446,6 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
-    </li><li visbl="pub" name="sbt.ScopedInput" data-isabs="true">
-      <a id="ScopedInput:ScopedInput[T]"></a>
-      <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ScopedInput.html"><span class="name">ScopedInput</span></a>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends Scoped with KeyedInitialize[InputTask[T]] with ScopingSetting[ScopedInput[T]] with DefinableSetting[InputTask[T]]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
-    </li><li visbl="pub" name="sbt.ScopedSetting" data-isabs="true">
-      <a id="ScopedSetting:ScopedSetting[T]"></a>
-      <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ScopedSetting.html"><span class="name">ScopedSetting</span></a>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends ScopedTaskable[T] with KeyedInitialize[T] with ScopingSetting[ScopedSetting[T]] with DefinableSetting[T] with ListSetting[T, Id]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
-    </li><li visbl="pub" name="sbt.ScopedTask" data-isabs="true">
-      <a id="ScopedTask:ScopedTask[T]"></a>
-      <h4 class="signature">
-      <span class="kind">trait</span>
-      <span class="symbol"> 
-        <a href="ScopedTask.html"><span class="name">ScopedTask</span></a>
-        <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends ScopedTaskable[T] with KeyedInitialize[Task[T]] with ScopingSetting[ScopedTask[T]] with ListSetting[T, Task] with DefinableTask[T]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
     </li><li visbl="pub" name="sbt.ScopedTaskable" data-isabs="true">
       <a id="ScopedTaskable:ScopedTaskable[T]"></a>
       <h4 class="signature">
@@ -2445,7 +2456,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends Scoped</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+      <p class="comment cmt">A common type for SettingKey and TaskKey so that both can be used as inputs to tasks.</p>
     </li><li visbl="pub" name="sbt.ScriptMain" data-isabs="false">
       <a id="ScriptMain:ScriptMain"></a>
       <h4 class="signature">
@@ -2512,17 +2523,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.SettingKey" data-isabs="false">
+    </li><li visbl="pub" name="sbt.SettingKey" data-isabs="true">
       <a id="SettingKey:SettingKey[T]"></a>
       <h4 class="signature">
-      <span class="kind">class</span>
+      <span class="kind">trait</span>
       <span class="symbol"> 
         <a href="SettingKey.html"><span class="name">SettingKey</span></a>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends Key[T] with ScopedSetting[T]</span>
+        <span class="result"> extends ScopedTaskable[T] with KeyedInitialize[T] with ScopingSetting[SettingKey[T]] with DefinableSetting[T] with ListSetting[T, Id]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Identifies a setting.</p>
     </li><li visbl="pub" name="sbt.Settings" data-isabs="true">
       <a id="Settings:Settings[Scope]"></a>
       <h4 class="signature">
@@ -2640,10 +2651,10 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol"> 
         <a href="State.html"><span class="name">State</span></a>
         
-        <span class="params">(<span name="configuration">configuration: AppConfiguration</span>, <span name="definedCommands">definedCommands: Seq[Command]</span>, <span name="exitHooks">exitHooks: Set[ExitHook]</span>, <span name="onFailure">onFailure: Option[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="attributes">attributes: AttributeMap</span>, <span name="result">result: Option[MainResult]</span>)</span><span class="result"> extends Identity with Product with Serializable</span>
+        <span class="params">(<span name="configuration">configuration: AppConfiguration</span>, <span name="definedCommands">definedCommands: Seq[Command]</span>, <span name="exitHooks">exitHooks: Set[ExitHook]</span>, <span name="onFailure">onFailure: Option[String]</span>, <span name="remainingCommands">remainingCommands: Seq[String]</span>, <span name="history">history: History</span>, <span name="attributes">attributes: AttributeMap</span>, <span name="next">next: Next</span>)</span><span class="result"> extends Identity with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Data structure representing all command execution information.</p>
     </li><li visbl="pub" name="sbt.StateOps" data-isabs="true">
       <a id="StateOps:StateOps"></a>
       <h4 class="signature">
@@ -2654,7 +2665,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Convenience methods for State transformations and operations.</p>
     </li><li visbl="pub" name="sbt.SubDepFilter" data-isabs="true">
       <a id="SubDepFilter:SubDepFilter[Arg, Self]"></a>
       <h4 class="signature">
@@ -2688,17 +2699,17 @@ to the delegate logger provided in the constructor.</p>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
-    </li><li visbl="pub" name="sbt.TaskKey" data-isabs="false">
+    </li><li visbl="pub" name="sbt.TaskKey" data-isabs="true">
       <a id="TaskKey:TaskKey[T]"></a>
       <h4 class="signature">
-      <span class="kind">class</span>
+      <span class="kind">trait</span>
       <span class="symbol"> 
         <a href="TaskKey.html"><span class="name">TaskKey</span></a>
         <span class="tparams">[<span name="T">T</span>]</span>
-        <span class="result"> extends Key[T] with ScopedTask[T]</span>
+        <span class="result"> extends ScopedTaskable[T] with KeyedInitialize[Task[T]] with ScopingSetting[TaskKey[T]] with ListSetting[T, Task] with DefinableTask[T]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Identifies a task.</p>
     </li><li visbl="pub" name="sbt.TestDefinition" data-isabs="false">
       <a id="TestDefinition:TestDefinition"></a>
       <h4 class="signature">
@@ -2839,6 +2850,17 @@ to the delegate logger provided in the constructor.</p>
         <a href="TranslatedException.html"><span class="name">TranslatedException</span></a>
         
         <span class="result"> extends RuntimeException</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+    </li><li visbl="pub" name="sbt.TranslatedIOException" data-isabs="false">
+      <a id="TranslatedIOException:TranslatedIOException"></a>
+      <h4 class="signature">
+      <span class="kind">class</span>
+      <span class="symbol"> 
+        <a href="TranslatedIOException.html"><span class="name">TranslatedIOException</span></a>
+        
+        <span class="result"> extends TranslatedException</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
@@ -3163,6 +3185,17 @@ to the delegate logger provided in the constructor.</p>
       <span class="kind">object</span>
       <span class="symbol"> 
         <a href="Build$.html"><span class="name">Build</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.BuildDependencies" data-isabs="false">
+      <a id="BuildDependencies:BuildDependencies"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="BuildDependencies$.html"><span class="name">BuildDependencies</span></a>
         
         <span class="result"> extends AnyRef</span>
       </span>
@@ -3496,6 +3529,17 @@ The InputCaches for a basic data structure is built in two parts.</p>
         <a href="DefaultMavenRepository$.html"><span class="name">DefaultMavenRepository</span></a>
         
         <span class="result"> extends MavenRepository</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="sbt.DefaultOptions" data-isabs="false">
+      <a id="DefaultOptions:DefaultOptions"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="DefaultOptions$.html"><span class="name">DefaultOptions</span></a>
+        
+        <span class="result"> extends AnyRef</span>
       </span>
       </h4>
       
@@ -3905,7 +3949,7 @@ The InputCaches for a basic data structure is built in two parts.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Constructs InputKeys, which are associated with input tasks to define a setting.</p>
     </li><li visbl="pub" name="sbt.InputTask" data-isabs="false">
       <a id="InputTask:InputTask"></a>
       <h4 class="signature">
@@ -3928,17 +3972,6 @@ The InputCaches for a basic data structure is built in two parts.</p>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="sbt.IvyCache" data-isabs="false">
-      <a id="IvyCache:IvyCache"></a>
-      <h4 class="signature">
-      <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="IvyCache$.html"><span class="name">IvyCache</span></a>
-        
-        <span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Provides methods for working at the level of a single jar file with the default Ivy cache.</p>
     </li><li visbl="pub" name="sbt.IvyConfiguration" data-isabs="false">
       <a id="IvyConfiguration:IvyConfiguration"></a>
       <h4 class="signature">
@@ -4070,7 +4103,7 @@ The InputCaches for a basic data structure is built in two parts.</p>
         <span class="result"> extends ProjectReference with Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Identifies the root project in the current build context.</p>
     </li><li visbl="pub" name="sbt.LogManager" data-isabs="false">
       <a id="LogManager:LogManager"></a>
       <h4 class="signature">
@@ -4181,6 +4214,17 @@ The InputCaches for a basic data structure is built in two parts.</p>
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.Opts" data-isabs="false">
+      <a id="Opts:Opts"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="Opts$.html"><span class="name">Opts</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Options for well-known tasks.</p>
     </li><li visbl="pub" name="sbt.Output" data-isabs="false">
       <a id="Output:Output"></a>
       <h4 class="signature">
@@ -4499,7 +4543,7 @@ The InputCaches for a basic data structure is built in two parts.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Methods and types related to constructing settings, including keys, scopes, and initializations.</p>
     </li><li visbl="pub" name="sbt.Script" data-isabs="false">
       <a id="Script:Script"></a>
       <h4 class="signature">
@@ -4533,6 +4577,17 @@ The InputCaches for a basic data structure is built in two parts.</p>
       </span>
       </h4>
       
+    </li><li visbl="pub" name="sbt.SessionVar" data-isabs="false">
+      <a id="SessionVar:SessionVar"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="SessionVar$.html"><span class="name">SessionVar</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.SettingKey" data-isabs="false">
       <a id="SettingKey:SettingKey"></a>
       <h4 class="signature">
@@ -4543,7 +4598,7 @@ The InputCaches for a basic data structure is built in two parts.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Constructs SettingKeys, which are associated with a value to define a basic setting.</p>
     </li><li visbl="pub" name="sbt.SignJar" data-isabs="false">
       <a id="SignJar:SignJar"></a>
       <h4 class="signature">
@@ -4555,6 +4610,17 @@ The InputCaches for a basic data structure is built in two parts.</p>
       </span>
       </h4>
       <p class="comment cmt">This is somewhat of a mess and is not entirely correct.</p>
+    </li><li visbl="pub" name="sbt.Signals" data-isabs="false">
+      <a id="Signals:Signals"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="Signals$.html"><span class="name">Signals</span></a>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="sbt.SimpleReader" data-isabs="false">
       <a id="SimpleReader:SimpleReader"></a>
       <h4 class="signature">
@@ -4643,17 +4709,6 @@ The InputCaches for a basic data structure is built in two parts.</p>
       </span>
       </h4>
       
-    </li><li visbl="pub" name="sbt.TaskData" data-isabs="false">
-      <a id="TaskData:TaskData"></a>
-      <h4 class="signature">
-      <span class="kind">object</span>
-      <span class="symbol"> 
-        <a href="TaskData$.html"><span class="name">TaskData</span></a>
-        
-        <span class="result"> extends AnyRef</span>
-      </span>
-      </h4>
-      
     </li><li visbl="pub" name="sbt.TaskKey" data-isabs="false">
       <a id="TaskKey:TaskKey"></a>
       <h4 class="signature">
@@ -4664,7 +4719,7 @@ The InputCaches for a basic data structure is built in two parts.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Constructs TaskKeys, which are associated with tasks to define a setting.</p>
     </li><li visbl="pub" name="sbt.TestEvent" data-isabs="false">
       <a id="TestEvent:TestEvent"></a>
       <h4 class="signature">
@@ -4752,7 +4807,7 @@ The InputCaches for a basic data structure is built in two parts.</p>
         <span class="result"> extends BuildReference with Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Identifies the build for the current context.</p>
     </li><li visbl="pub" name="sbt.ThisProject" data-isabs="false">
       <a id="ThisProject:ThisProject"></a>
       <h4 class="signature">
@@ -4763,7 +4818,7 @@ The InputCaches for a basic data structure is built in two parts.</p>
         <span class="result"> extends ProjectReference with Product with Serializable</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Identifies the project for the current context.</p>
     </li><li visbl="pub" name="sbt.Tracked" data-isabs="false">
       <a id="Tracked:Tracked"></a>
       <h4 class="signature">
@@ -4965,7 +5020,24 @@ The InputCaches for a basic data structure is built in two parts.</p>
     </li></ol>
             </div>
 
+        <div class="values members" id="values">
+              <h3>Deprecated Value Members</h3>
+              <ol><li visbl="pub" name="sbt.TaskData" data-isabs="false">
+      <a id="TaskData:TaskData"></a>
+      <h4 class="signature">
+      <span class="kind">object</span>
+      <span class="symbol"> 
+        <a href="TaskData$.html"><span class="name deprecated">TaskData</span></a>
         
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>Superseded by task state system.</p></dd></dl></div>
+    </li></ol>
+            </div>
 
         
 
