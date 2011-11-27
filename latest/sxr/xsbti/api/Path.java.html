@@ -16,16 +16,16 @@
 <span class="keyword">import</span> java.util.List;
 public <span class="keyword">class</span> <a title="object xsbti.api.Path" id="10176">Path</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
-	public Path<a href="#10176" title="xsbti.api.Path" class="delimiter">(</a><a href="PathComponent.java.html#10182" title="xsbti.api.PathComponent">PathComponent</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.PathComponent]" id="96279">components</a><span class="delimiter">)</span>
+	public Path<a href="#10176" title="xsbti.api.Path" class="delimiter">(</a><a href="PathComponent.java.html#10182" title="xsbti.api.PathComponent">PathComponent</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.PathComponent]" id="96274">components</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">this</span>.components = components;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="PathComponent.java.html#10182" title="xsbti.api.PathComponent">PathComponent</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.PathComponent]" id="96276">components</a>;
-	public <span class="keyword">final</span> <a href="PathComponent.java.html#10182" title="xsbti.api.PathComponent">PathComponent</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.PathComponent]" id="96277">components</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="PathComponent.java.html#10182" title="xsbti.api.PathComponent">PathComponent</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[xsbti.api.PathComponent]" id="96271">components</a>;
+	public <span class="keyword">final</span> <a href="PathComponent.java.html#10182" title="xsbti.api.PathComponent">PathComponent</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.api.PathComponent]" id="96272">components</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> components;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="96278">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public String <a title="()java.lang.String" id="96273">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="string">&quot;Path(&quot;</span> + <span class="string">&quot;components: &quot;</span> + Arrays.toString<span class="delimiter">(</span>components<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>

@@ -79,7 +79,7 @@
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>sealed </dd></dl></div>
+      <p class="comment cmt">Defines a task compuation</p>
     </li><li visbl="pub" name="sbt.Aggregation" data-isabs="true">
       <a id="Aggregation:Aggregation"></a>
       <h4 class="signature">
@@ -740,7 +740,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="in">in: Task[T]</span>, <span name="deps">deps: Seq[sbt.Task[_]]</span>)</span><span class="result"> extends Action[T] with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">A computation <code>in</code> that requires other tasks <code>deps</code> to be evaluated first.</p>
     </li><li visbl="pub" name="sbt.Difference" data-isabs="false">
       <a id="Difference:Difference"></a>
       <h4 class="signature">
@@ -982,7 +982,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="in">in: Tasks[In]</span>, <span name="f">f: (Results[In]) ⇒ Task[T]</span>)</span><span class="result"> extends Action[T] with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Computes another task to evaluate based on results from evaluating other tasks.</p>
     </li><li visbl="pub" name="sbt.Fn1" data-isabs="true">
       <a id="Fn1:Fn1[A, B]"></a>
       <h4 class="signature">
@@ -1279,7 +1279,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="node">node: Option[AnyRef]</span>, <span name="tpe">tpe: Value</span>, <span name="message">message: Option[String]</span>, <span name="causes">causes: Seq[Incomplete]</span>, <span name="directCause">directCause: Option[Throwable]</span>)</span><span class="result"> extends Exception with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Describes why a task did not complete.</p>
     </li><li visbl="pub" name="sbt.Info" data-isabs="false">
       <a id="Info:Info[T]"></a>
       <h4 class="signature">
@@ -1290,7 +1290,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="attributes">attributes: AttributeMap</span>, <span name="post">post: (T) ⇒ AttributeMap</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Used to provide information about a task, such as the name, description, and tags for controlling concurrent execution.</p>
     </li><li visbl="pub" name="sbt.Init" data-isabs="true">
       <a id="Init:Init[Scope]"></a>
       <h4 class="signature">
@@ -1477,7 +1477,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="in">in: Seq[Task[U]]</span>, <span name="f">f: (Seq[Result[U]]) ⇒ Either[Task[T], T]</span>)</span><span class="result"> extends Action[T] with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">A computation that operates on the results of a homogeneous list of other tasks.</p>
     </li><li visbl="pub" name="sbt.KCons" data-isabs="false">
       <a id="KCons:KCons[H, T, M]"></a>
       <h4 class="signature">
@@ -1650,7 +1650,7 @@ to the delegate logger provided in the constructor.</p>
       <span class="symbol"> 
         <a href="MakePomConfiguration.html"><span class="name">MakePomConfiguration</span></a>
         
-        <span class="params">(<span name="file">file: File</span>, <span name="moduleInfo">moduleInfo: ModuleInfo</span>, <span name="configurations">configurations: Option[Iterable[Configuration]]</span>, <span name="extra">extra: NodeSeq</span>, <span name="process">process: (Node) ⇒ Node</span>, <span name="filterRepositories">filterRepositories: (MavenRepository) ⇒ Boolean</span>, <span name="allRepositories">allRepositories: Boolean</span>)</span><span class="result"> extends Product with Serializable</span>
+        <span class="params">(<span name="file">file: File</span>, <span name="moduleInfo">moduleInfo: ModuleInfo</span>, <span name="configurations">configurations: Option[Seq[Configuration]]</span>, <span name="extra">extra: NodeSeq</span>, <span name="process">process: (Node) ⇒ Node</span>, <span name="filterRepositories">filterRepositories: (MavenRepository) ⇒ Boolean</span>, <span name="allRepositories">allRepositories: Boolean</span>, <span name="includeTypes">includeTypes: Set[String]</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
@@ -1664,7 +1664,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="in">in: Tasks[In]</span>, <span name="f">f: (Results[In]) ⇒ T</span>)</span><span class="result"> extends Action[T] with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Applies a function to the result of evaluating a heterogeneous list of other tasks.</p>
     </li><li visbl="pub" name="sbt.Mapper" data-isabs="true">
       <a id="Mapper:Mapper"></a>
       <h4 class="signature">
@@ -1840,7 +1840,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      
+      <p class="comment cmt">Represents a task node in a format understood by the task evaluation engine Execute.</p>
     </li><li visbl="pub" name="sbt.NotInCache" data-isabs="false">
       <a id="NotInCache:NotInCache"></a>
       <h4 class="signature">
@@ -2159,7 +2159,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="f">f: () ⇒ T</span>)</span><span class="result"> extends Action[T] with Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">A direct computation of a value.</p>
     </li><li visbl="pub" name="sbt.RMap" data-isabs="true">
       <a id="RMap:RMap[K, V]"></a>
       <h4 class="signature">
@@ -2698,7 +2698,7 @@ to the delegate logger provided in the constructor.</p>
         <span class="params">(<span name="info">info: Info[T]</span>, <span name="work">work: Action[T]</span>)</span><span class="result"> extends Product with Serializable</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl></div>
+      <p class="comment cmt">Combines metadata <code>info</code> and a computation <code>work</code> to define a task.</p>
     </li><li visbl="pub" name="sbt.TaskKey" data-isabs="true">
       <a id="TaskKey:TaskKey[T]"></a>
       <h4 class="signature">

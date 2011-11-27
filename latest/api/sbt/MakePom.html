@@ -165,13 +165,13 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd><dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li visbl="pub" name="sbt.MakePom#classifier" data-isabs="false">
-      <a id="classifier(DependencyDescriptor):Seq[Node]"></a>
+      <a id="classifier(DependencyDescriptor,Set[String]):NodeSeq"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">classifier</span>
         
-        <span class="params">(<span name="dependency">dependency: <span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span></span>)</span><span class="result">: Seq[<span name="scala.xml.Node" class="extype">Node</span>]</span>
+        <span class="params">(<span name="dependency">dependency: <span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span></span>, <span name="includeTypes">includeTypes: Set[String]</span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
       </span>
       </h4>
       
@@ -222,6 +222,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.MakePom#exclusions" data-isabs="false">
+      <a id="exclusions(DependencyDescriptor):NodeSeq"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name">exclusions</span>
+        
+        <span class="params">(<span name="dependency">dependency: <span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span></span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
+      </span>
+      </h4>
+      
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -347,24 +358,24 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.MakePom#makeDependencies" data-isabs="false">
-      <a id="makeDependencies(Seq[DependencyDescriptor]):NodeSeq"></a>
+      <a id="makeDependencies(Seq[DependencyDescriptor],Set[String]):NodeSeq"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">makeDependencies</span>
         
-        <span class="params">(<span name="dependencies">dependencies: Seq[<span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span>]</span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
+        <span class="params">(<span name="dependencies">dependencies: Seq[<span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span>]</span>, <span name="includeTypes">includeTypes: Set[String]</span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
       </span>
       </h4>
       
     </li><li visbl="pub" name="sbt.MakePom#makeDependency" data-isabs="false">
-      <a id="makeDependency(DependencyDescriptor):NodeSeq"></a>
+      <a id="makeDependency(DependencyDescriptor,Set[String]):NodeSeq"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">makeDependency</span>
         
-        <span class="params">(<span name="dependency">dependency: <span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span></span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
+        <span class="params">(<span name="dependency">dependency: <span name="org.apache.ivy.core.module.descriptor.DependencyDescriptor" class="extype">DependencyDescriptor</span></span>, <span name="includeTypes">includeTypes: Set[String]</span>)</span><span class="result">: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>
       </span>
       </h4>
       
@@ -600,13 +611,13 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.MakePom#toPom" data-isabs="false">
-      <a id="toPom(Ivy,ModuleDescriptor,ModuleInfo,Option[Iterable[Configuration]],NodeSeq,(MavenRepository) ⇒ Boolean,Boolean):Node"></a>
+      <a id="toPom(Ivy,ModuleDescriptor,ModuleInfo,Option[Iterable[Configuration]],Set[String],NodeSeq,(MavenRepository) ⇒ Boolean,Boolean):Node"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">toPom</span>
         
-        <span class="params">(<span name="ivy">ivy: <span name="org.apache.ivy.Ivy" class="extype">Ivy</span></span>, <span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <span name="scala.xml.Node" class="extype">Node</span></span>
+        <span class="params">(<span name="ivy">ivy: <span name="org.apache.ivy.Ivy" class="extype">Ivy</span></span>, <span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="includeTypes">includeTypes: Set[String]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <span name="scala.xml.Node" class="extype">Node</span></span>
       </span>
       </h4>
       
@@ -697,20 +708,51 @@
       </h4>
       
     </li><li visbl="pub" name="sbt.MakePom#write" data-isabs="false">
-      <a id="write(Ivy,ModuleDescriptor,ModuleInfo,Option[Iterable[Configuration]],NodeSeq,(Node) ⇒ Node,(MavenRepository) ⇒ Boolean,Boolean,File):Unit"></a>
+      <a id="write(Ivy,ModuleDescriptor,ModuleInfo,Option[Iterable[Configuration]],Set[String],NodeSeq,(Node) ⇒ Node,(MavenRepository) ⇒ Boolean,Boolean,File):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol"> 
         <span class="name">write</span>
         
-        <span class="params">(<span name="ivy">ivy: <span name="org.apache.ivy.Ivy" class="extype">Ivy</span></span>, <span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="process">process: (<span name="scala.xml.Node" class="extype">Node</span>) ⇒ <span name="scala.xml.Node" class="extype">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="output">output: <span name="java.io.File" class="extype">File</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+        <span class="params">(<span name="ivy">ivy: <span name="org.apache.ivy.Ivy" class="extype">Ivy</span></span>, <span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="includeTypes">includeTypes: Set[String]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="process">process: (<span name="scala.xml.Node" class="extype">Node</span>) ⇒ <span name="scala.xml.Node" class="extype">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="output">output: <span name="java.io.File" class="extype">File</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
       </span>
       </h4>
       
     </li></ol>
             </div>
 
+        <div class="values members" id="values">
+              <h3>Deprecated Value Members</h3>
+              <ol><li visbl="pub" name="sbt.MakePom#toPom" data-isabs="false">
+      <a id="toPom(Ivy,ModuleDescriptor,ModuleInfo,Option[Iterable[Configuration]],NodeSeq,(MavenRepository) ⇒ Boolean,Boolean):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name deprecated">toPom</span>
         
+        <span class="params">(<span name="ivy">ivy: <span name="org.apache.ivy.Ivy" class="extype">Ivy</span></span>, <span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result">: <span name="scala.xml.Node" class="extype">Node</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>Use <code>toPom(Ivy, ModuleDescriptor, ModuleInfo, Option[Iterable[Configuration]], Set[String], NodeSeq, MavenRepository =&gt; Boolean, Boolean)</code> instead</p></dd></dl></div>
+    </li><li visbl="pub" name="sbt.MakePom#write" data-isabs="false">
+      <a id="write(Ivy,ModuleDescriptor,ModuleInfo,Option[Iterable[Configuration]],NodeSeq,(Node) ⇒ Node,(MavenRepository) ⇒ Boolean,Boolean,File):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol"> 
+        <span class="name deprecated">write</span>
+        
+        <span class="params">(<span name="ivy">ivy: <span name="org.apache.ivy.Ivy" class="extype">Ivy</span></span>, <span name="module">module: <span name="org.apache.ivy.core.module.descriptor.ModuleDescriptor" class="extype">ModuleDescriptor</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="process">process: (<span name="scala.xml.Node" class="extype">Node</span>) ⇒ <span name="scala.xml.Node" class="extype">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="output">output: <span name="java.io.File" class="extype">File</span></span>)</span><span class="result">: <span name="scala.Unit" class="extype">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p>Use <code>write(Ivy, ModuleDescriptor, ModuleInfo, Option[Iterable[Configuration]], Set[String], NodeSeq, XNode =&gt; XNode, MavenRepository =&gt; Boolean, Boolean, File)</code> instead</p></dd></dl></div>
+    </li></ol>
+            </div>
 
         <div name="scala.AnyRef" class="parent">
               <h3>Inherited from AnyRef</h3>

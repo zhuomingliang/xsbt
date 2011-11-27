@@ -21,14 +21,14 @@ public <span class="keyword">abstract</span> <span class="keyword">class</span> 
 	<span class="comment">// private pending Scala bug #3642</span>
 	<span class="keyword">protected</span> Maybe<span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span><span class="delimiter">}</span>
 
-	public static &lt;<a title="Nothing" id="88206">s</a>&gt; <a href="#10008" title="xsbti.Maybe">Maybe</a>&lt;<a href="#88206" title="s">s</a>&gt; <a title="[s](v: s)xsbti.Maybe[s]" id="88204">just</a><span class="delimiter">(</span><span class="keyword">final</span> <a href="#88206" title="s">s</a> <a title="s" id="158655">v</a><span class="delimiter">)</span>
+	public static &lt;<a title="Nothing" id="88201">s</a>&gt; <a href="#10008" title="xsbti.Maybe">Maybe</a>&lt;<a href="#88201" title="s">s</a>&gt; <a title="[s](v: s)xsbti.Maybe[s]" id="88199">just</a><span class="delimiter">(</span><span class="keyword">final</span> <a href="#88201" title="s">s</a> <a title="s" id="158650">v</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="keyword">new</span> Maybe&lt;s&gt;<span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span>
 			public boolean isDefined<span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">return</span> <span class="keyword">true</span>; <span class="delimiter">}</span>
 			public s get<span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">return</span> v; <span class="delimiter">}</span>
 		<span class="delimiter">}</span>;
 	<span class="delimiter">}</span>
-	public static &lt;<a title="Nothing" id="88209">s</a>&gt; <a href="#10008" title="xsbti.Maybe">Maybe</a>&lt;<a href="#88209" title="s">s</a>&gt; <a title="[s]()xsbti.Maybe[s]" id="88207">nothing</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public static &lt;<a title="Nothing" id="88204">s</a>&gt; <a href="#10008" title="xsbti.Maybe">Maybe</a>&lt;<a href="#88204" title="s">s</a>&gt; <a title="[s]()xsbti.Maybe[s]" id="88202">nothing</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="keyword">new</span> Maybe&lt;s&gt;<span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span>
 			public boolean isDefined<span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">return</span> <span class="keyword">false</span>; <span class="delimiter">}</span>
@@ -36,9 +36,9 @@ public <span class="keyword">abstract</span> <span class="keyword">class</span> 
 		<span class="delimiter">}</span>;
 	<span class="delimiter">}</span>
 
-	public <span class="keyword">final</span> boolean <a title="()Boolean" id="88198">isEmpty</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">return</span> !isDefined<span class="delimiter">(</span><span class="delimiter">)</span>; <span class="delimiter">}</span>
-	public <span class="keyword">abstract</span> boolean <a title="()Boolean" id="88199">isDefined</a><span class="delimiter">(</span><span class="delimiter">)</span>;
-	public <span class="keyword">abstract</span> <a href="#10009" title="t">t</a> <a title="()t" id="88200">get</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public <span class="keyword">final</span> boolean <a title="()Boolean" id="88193">isEmpty</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">return</span> !isDefined<span class="delimiter">(</span><span class="delimiter">)</span>; <span class="delimiter">}</span>
+	public <span class="keyword">abstract</span> boolean <a title="()Boolean" id="88194">isDefined</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public <span class="keyword">abstract</span> <a href="#10009" title="t">t</a> <a title="()t" id="88195">get</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 <span class="delimiter">}</span>
         </pre>
     </body>

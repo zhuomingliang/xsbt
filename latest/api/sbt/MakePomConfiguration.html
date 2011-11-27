@@ -24,7 +24,7 @@
       <span class="symbol"> 
         <span class="name">MakePomConfiguration</span>
         
-        <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="process">process: (<span name="scala.xml.Node" class="extype">Node</span>) ⇒ <span name="scala.xml.Node" class="extype">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span><span class="result"> extends <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
+        <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Seq[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="process">process: (<span name="scala.xml.Node" class="extype">Node</span>) ⇒ <span name="scala.xml.Node" class="extype">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="includeTypes">includeTypes: Set[String]</span>)</span><span class="result"> extends <span name="scala.Product" class="extype">Product</span> with <span name="scala.Serializable" class="extype">Serializable</span></span>
       </span>
       </h4>
       
@@ -63,7 +63,7 @@
       <span class="symbol"> 
         <span class="name">MakePomConfiguration</span>
         
-        <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="process">process: (<span name="scala.xml.Node" class="extype">Node</span>) ⇒ <span name="scala.xml.Node" class="extype">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>)</span>
+        <span class="params">(<span name="file">file: <span name="java.io.File" class="extype">File</span></span>, <span name="moduleInfo">moduleInfo: <a name="sbt.ModuleInfo" class="extype" href="ModuleInfo.html">ModuleInfo</a></span>, <span name="configurations">configurations: <span name="scala.Option" class="extype">Option</span>[Seq[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>, <span name="extra">extra: <span name="scala.xml.NodeSeq" class="extype">NodeSeq</span></span>, <span name="process">process: (<span name="scala.xml.Node" class="extype">Node</span>) ⇒ <span name="scala.xml.Node" class="extype">Node</span></span>, <span name="filterRepositories">filterRepositories: (<a name="sbt.MavenRepository" class="extype" href="MavenRepository.html">MavenRepository</a>) ⇒ <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="allRepositories">allRepositories: <span name="scala.Boolean" class="extype">Boolean</span></span>, <span name="includeTypes">includeTypes: Set[String]</span>)</span>
       </span>
       </h4>
       
@@ -179,13 +179,13 @@
               
         </dd></dl></div>
     </li><li visbl="pub" name="sbt.MakePomConfiguration#configurations" data-isabs="false">
-      <a id="configurations:Option[Iterable[Configuration]]"></a>
+      <a id="configurations:Option[Seq[Configuration]]"></a>
       <h4 class="signature">
       <span class="kind">val</span>
       <span class="symbol"> 
         <span class="name">configurations</span>
         
-        <span class="result">: <span name="scala.Option" class="extype">Option</span>[Iterable[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>
+        <span class="result">: <span name="scala.Option" class="extype">Option</span>[Seq[<a name="sbt.Configuration" class="extype" href="Configuration.html">Configuration</a>]]</span>
       </span>
       </h4>
       
@@ -280,6 +280,17 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="sbt.MakePomConfiguration" class="extype" href="">MakePomConfiguration</a> → AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="sbt.MakePomConfiguration#includeTypes" data-isabs="false">
+      <a id="includeTypes:Set[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol"> 
+        <span class="name">includeTypes</span>
+        
+        <span class="result">: Set[String]</span>
+      </span>
+      </h4>
+      
     </li><li visbl="pub" name="scala.Any#isInstanceOf" data-isabs="false">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <h4 class="signature">

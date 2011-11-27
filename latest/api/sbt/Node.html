@@ -28,7 +28,9 @@
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Represents a task node in a format understood by the task evaluation engine Execute.
+Heterogenous inputs (Mixed, tuple) and homogoneous (Uniform, sequence) and defined and consumed separately.
+</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>the task type</p></dd><dt class="tparam">T</dt><dd class="cmt"><p>the type computed by this node</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -117,7 +119,7 @@
         <span class="params">(<span name="mixed">mixed: <a name="sbt.KList" class="extype" href="KList.html">KList</a>[<a name="sbt.Result" class="extype" href="Result.html">Result</a>, Mixed]</span>, <span name="uniform">uniform: Seq[<a name="sbt.Result" class="extype" href="Result.html">Result</a>[Uniform]]</span>)</span><span class="result">: <span name="scala.Either" class="extype">Either</span>[A[T], T]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
+      <p class="shortcomment cmt">Computes the result of this task given the results from the inputs.</p><div class="fullcomment"><div class="comment cmt"><p>Computes the result of this task given the results from the inputs.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>abstract </dd></dl></div>
     </li></ol>
             </div>
 

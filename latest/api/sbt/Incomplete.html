@@ -28,7 +28,8 @@
       </span>
       </h4>
       
-          <div class="fullcommenttop" id="comment"><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
+          <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Describes why a task did not complete.
+</p></div><dl class="paramcmts block"><dt class="param">node</dt><dd class="cmt"><p>the task that did not complete that is described by this Incomplete instance</p></dd><dt class="param">tpe</dt><dd class="cmt"><p>whether the task was incomplete because of an error or because it was skipped.  Only Error is actually used and Skipped may be removed in the future.</p></dd><dt class="param">message</dt><dd class="cmt"><p>an optional error message describing this incompletion</p></dd><dt class="param">causes</dt><dd class="cmt"><p>a list of incompletions that prevented <code>node</code> from completing</p></dd><dt class="param">directCause</dt><dd class="cmt"><p>the exception that caused <code>node</code> to not complete</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>final </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span name="scala.Serializable" class="extype">Serializable</span>, <span name="scala.Product" class="extype">Product</span>, <span name="scala.Equals" class="extype">Equals</span>, <span name="java.lang.Exception" class="extype">Exception</span>, <span name="java.lang.Throwable" class="extype">Throwable</span>, <span name="java.io.Serializable" class="extype">Serializable</span>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
@@ -66,7 +67,7 @@
         <span class="params">(<span name="node">node: <span name="scala.Option" class="extype">Option</span>[AnyRef]</span>, <span name="tpe">tpe: <span name="scala.Enumeration.Value" class="extype">Value</span></span>, <span name="message">message: <span name="scala.Option" class="extype">Option</span>[String]</span>, <span name="causes">causes: Seq[<a name="sbt.Incomplete" class="extype" href="">Incomplete</a>]</span>, <span name="directCause">directCause: <span name="scala.Option" class="extype">Option</span>[Throwable]</span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">node</dt><dd class="cmt"><p>the task that did not complete that is described by this Incomplete instance</p></dd><dt class="param">tpe</dt><dd class="cmt"><p>whether the task was incomplete because of an error or because it was skipped.  Only Error is actually used and Skipped may be removed in the future.</p></dd><dt class="param">message</dt><dd class="cmt"><p>an optional error message describing this incompletion</p></dd><dt class="param">causes</dt><dd class="cmt"><p>a list of incompletions that prevented <code>node</code> from completing</p></dd><dt class="param">directCause</dt><dd class="cmt"><p>the exception that caused <code>node</code> to not complete</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -163,7 +164,7 @@
         <span class="result">: Seq[<a name="sbt.Incomplete" class="extype" href="">Incomplete</a>]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">a list of incompletions that prevented <code>node</code> from completing</p>
     </li><li visbl="prt" name="scala.AnyRef#clone" data-isabs="false">
       <a id="clone():AnyRef"></a>
       <h4 class="signature">
@@ -188,7 +189,7 @@
         <span class="result">: <span name="scala.Option" class="extype">Option</span>[Throwable]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">the exception that caused <code>node</code> to not complete</p>
     </li><li visbl="pub" name="scala.AnyRef#eq" data-isabs="false">
       <a id="eq(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -334,7 +335,7 @@
         <span class="result">: <span name="scala.Option" class="extype">Option</span>[String]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">an optional error message describing this incompletion</p>
     </li><li visbl="pub" name="scala.AnyRef#ne" data-isabs="false">
       <a id="ne(AnyRef):Boolean"></a>
       <h4 class="signature">
@@ -356,7 +357,7 @@
         <span class="result">: <span name="scala.Option" class="extype">Option</span>[AnyRef]</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">the task that did not complete that is described by this Incomplete instance</p>
     </li><li visbl="pub" name="scala.AnyRef#notify" data-isabs="false">
       <a id="notify():Unit"></a>
       <h4 class="signature">
@@ -499,7 +500,7 @@
         <span class="result">: <span name="scala.Enumeration.Value" class="extype">Value</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">whether the task was incomplete because of an error or because it was skipped.</p><div class="fullcomment"><div class="comment cmt"><p>whether the task was incomplete because of an error or because it was skipped.  Only Error is actually used and Skipped may be removed in the future.</p></div></div>
     </li><li visbl="pub" name="scala.AnyRef#wait" data-isabs="false">
       <a id="wait():Unit"></a>
       <h4 class="signature">
