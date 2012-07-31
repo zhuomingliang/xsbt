@@ -17,7 +17,7 @@ object LogManager
 {
 	def construct(data: Settings[Scope], state: State) = (task: ScopedKey[_], to: PrintWriter) =>
 	{
-		val manager = logManager in task.scope get data getOrElse default
+		val manager = logManager in task.scope getValue data getOrElse default
 		manager(data, state, task, to)
 	}
 	lazy val default: LogManager = withLoggers()

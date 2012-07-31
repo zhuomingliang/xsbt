@@ -32,7 +32,10 @@ object EvaluateConfigurations
 	def addOffsetToRange(offset: Int, ranges: Seq[(String,LineRange)]): Seq[(String,LineRange)] =
 		ranges.map { case (s, r) => (s, r shift offset) }
 
-	val SettingsDefinitionName = classOf[SettingsDefinition].getName
+	val SettingsDefinitionName = {
+		val _ = classOf[SettingsDefinition] // this line exists to try to provide a compile-time error when the following line needs to be changed
+		"sbt.Def.SettingsDefinition"
+	}
 	def evaluateSetting(eval: Eval, name: String, imports: Seq[(String,Int)], expression: String, range: LineRange): ClassLoader => Seq[Setting[_]] =
 	{
 		val result = try {
@@ -109,7 +112,7 @@ object Index
 			update(runBefore, value, as get Keys.runBefore)
 			update(triggeredBy, value, as get Keys.triggeredBy)
 		}
-		val onComplete = Keys.onComplete in GlobalScope get ss getOrElse { () => () }
+		val onComplete = Keys.onComplete in GlobalScope getValue ss getOrElse { () => () }
 		new Triggers[Task](runBefore, triggeredBy, map => { onComplete(); map } )
 	}
 	private[this] def update(map: TriggerMap, base: Task[_], tasksOpt: Option[Seq[Task[_]]]): Unit =

@@ -45,14 +45,14 @@ object Cross
 		val x = Project.extract(state)
 			import x._
 		val versions = crossVersions(state)
-		val current = scalaVersion in currentRef get structure.data map(Switch + " " + _) toList;
+		val current = scalaVersion in currentRef getValue structure.data map(Switch + " " + _) toList;
 		if(versions.isEmpty) command :: state else versions.map(Switch + " " + _ + " " + command) ::: current ::: state
 	}
 	def crossVersions(state: State): Seq[String] =
 	{
 		val x = Project.extract(state)
 			import x._
-		crossScalaVersions in currentRef get structure.data getOrElse Nil
+		crossScalaVersions in currentRef getValue structure.data getOrElse Nil
 	}
 	
 	def requireSession[T](p: State => Parser[T]): State => Parser[T] = s =>

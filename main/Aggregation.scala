@@ -63,10 +63,10 @@ final object Aggregation
   def printSuccess(start: Long, stop: Long, extracted: Extracted, success: Boolean, log: Logger)
 	{
 		import extracted._
-		lazy val enabled = showSuccess in extracted.currentRef get extracted.structure.data getOrElse true
+		lazy val enabled = showSuccess in extracted.currentRef getValue extracted.structure.data getOrElse true
 		if(enabled)
 		{
-			val timingEnabled = showTiming in currentRef get structure.data getOrElse true
+			val timingEnabled = showTiming in currentRef getValue structure.data getOrElse true
 			if(timingEnabled)
 			{
 				val msg = timingString(start, stop, "", structure.data, currentRef, log)
@@ -78,7 +78,7 @@ final object Aggregation
 	}
 	private def timingString(startTime: Long, endTime: Long, s: String, data: Settings[Scope], currentRef: ProjectRef, log: Logger): String =
 	{
-		val format = timingFormat in currentRef get data getOrElse defaultFormat
+		val format = timingFormat in currentRef getValue data getOrElse defaultFormat
 		timing(format, startTime, endTime, "", log)
 	}
 	def timing(format: java.text.DateFormat, startTime: Long, endTime: Long, s: String, log: Logger): String =
@@ -154,7 +154,7 @@ final object Aggregation
 		}
 		
 	def aggregationEnabled(key: ScopedKey[_], data: Settings[Scope]): Boolean =
-		Keys.aggregate in Scope.fillTaskAxis(key.scope, key.key) get data getOrElse true
+		Keys.aggregate in Scope.fillTaskAxis(key.scope, key.key) getValue data getOrElse true
 
 	@deprecated("Use BuildUtil.aggregationRelation", "0.13.0")
 	def relation(units: Map[URI, LoadedBuildUnit]): Relation[ProjectRef, ProjectRef] =

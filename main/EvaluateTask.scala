@@ -53,7 +53,7 @@ object EvaluateTask
 	def cancelable(extracted: Extracted, structure: BuildStructure): Boolean =
 		getSetting(Keys.cancelable, false, extracted, structure)
 	def getSetting[T](key: SettingKey[T], default: T, extracted: Extracted, structure: BuildStructure): T =
-		key in extracted.currentRef get structure.data getOrElse default
+		key in extracted.currentRef getValue structure.data getOrElse default
 
 	def injectSettings: Seq[Setting[_]] = Seq(
 		(state in GlobalScope) ::= dummyState,
