@@ -245,7 +245,6 @@ object Scoped
 		def flatFailure[T](f: Seq[Incomplete] => Task[T]): App[T] = onTasks(_ flatFailure f)
 		def mapFailure[T](f: Seq[Incomplete] => T): App[T] = onTasks(_ mapFailure f)
 	}
-	type :@:[H, T <: KList[ScopedTaskable]] = KCons[H, T, ScopedTaskable]
 	type ST[X] = ScopedTaskable[X]
 	final class RichTaskable2[A,B](t2: (ST[A], ST[B])) extends RichTaskables[ AList.T2K[A,B]#l ](t2)(AList.tuple2[A,B])
 	{
