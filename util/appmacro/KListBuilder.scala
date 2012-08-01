@@ -52,7 +52,7 @@ object KListBuilder extends TupleBuilder
 		val representationC = PolyType(tcVariable :: Nil, klistType)
 		val resultType = appliedType(representationC, idTC :: Nil)
 		val input = klist
-		val alistInstance = TypeApply(Select(Ident(alist), "klist"), typeTree(representationC) :: Nil)
+		val alistInstance = TypeApply(Select(Ident(alist), "klist"), TypeTree(representationC) :: Nil)
 		def extract(param: ValDef) = bindKList(param, Nil, inputs.map(_.local))
 	}
 }

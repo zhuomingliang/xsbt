@@ -113,10 +113,9 @@ object Instance
 
 		// constructs a ValDef with a parameter modifier, a unique name, with the provided Type and with an empty rhs
 		def freshMethodParameter(tpe: Type): ValDef =
-			ValDef(parameterModifiers, freshTermName("p"), typeTree(tpe), EmptyTree)
+			ValDef(parameterModifiers, freshTermName("p"), TypeTree(tpe), EmptyTree)
 
 		def freshTermName(prefix: String) = newTermName(c.fresh("$" + prefix))
-		def typeTree(tpe: Type) = TypeTree().setType(tpe)
 
 		// constructs a function that applies f to each subtree of the input tree
 		def visitor(f: Tree => Unit): Tree => Unit =
@@ -160,7 +159,7 @@ object Instance
 		// no inputs, so construct M[T] via Instance.pure or pure+flatten
 		def pure(body: Tree): Tree =
 		{
-			val typeApplied = TypeApply(Select(instance, PureName), typeTree(treeType) :: Nil)
+			val typeApplied = TypeApply(Select(instance, PureName), TypeTree(treeType) :: Nil)
 			val p = ApplyTree(typeApplied, Function(Nil, body) :: Nil)
 			if(t.isLeft) p else flatten(p)
 		}
@@ -168,7 +167,7 @@ object Instance
 		// the returned Tree will have type M[T]
 		def flatten(m: Tree): Tree =
 		{
-			val typedFlatten = TypeApply(Select(instance, FlattenName), typeTree(tt.tpe) :: Nil)
+			val typedFlatten = TypeApply(Select(instance, FlattenName), TypeTree(tt.tpe) :: Nil)
 			ApplyTree(typedFlatten, m :: Nil)
 		}
 
@@ -177,7 +176,7 @@ object Instance
 		{
 			val variable = input.local
 			val param = ValDef(parameterModifiers, variable.name, variable.tpt, EmptyTree)
-			val typeApplied = TypeApply(Select(instance, MapName), variable.tpt :: typeTree(treeType) :: Nil)
+			val typeApplied = TypeApply(Select(instance, MapName), variable.tpt :: TypeTree(treeType) :: Nil)
 			val mapped = ApplyTree(typeApplied, input.expr :: Function(param :: Nil, body) :: Nil)
 			if(t.isLeft) mapped else flatten(mapped)
 		}
@@ -189,8 +188,8 @@ object Instance
 			val param = freshMethodParameter( appliedType(result.representationC, util.idTC :: Nil) )
 			val bindings = result.extract(param)
 			val f = Function(param :: Nil, Block(bindings, body))
-			val ttt = typeTree(treeType)
-			val typedApp = TypeApply(Select(instance, ApplyName), typeTree(result.representationC) :: ttt :: Nil)
+			val ttt = TypeTree(treeType)
+			val typedApp = TypeApply(Select(instance, ApplyName), TypeTree(result.representationC) :: ttt :: Nil)
 			val app = ApplyTree(ApplyTree(typedApp, result.input :: f :: Nil), result.alistInstance :: Nil)
 			if(t.isLeft) app else flatten(app)
 		}

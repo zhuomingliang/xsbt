@@ -31,13 +31,11 @@ final class ContextUtil[C <: Context with Singleton](val ctx: C)
 	* (The current implementation uses Context.fresh, which increments*/
 	def freshTermName(prefix: String) = newTermName(ctx.fresh("$" + prefix))
 
-	def typeTree(tpe: Type) = TypeTree().setType(tpe)
-
 	/** Constructs a new, local ValDef with the given Type, a unique name, 
 	* the same position as `sym`, and an empty implementation (no rhs). */
 	def freshValDef(tpe: Type, sym: Symbol): ValDef =
 	{
-		val vd = localValDef(typeTree(tpe), EmptyTree)
+		val vd = localValDef(TypeTree(tpe), EmptyTree)
 		vd setPos getPos(sym)
 		vd
 	}
