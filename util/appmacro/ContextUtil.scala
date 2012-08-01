@@ -14,7 +14,7 @@ object ContextUtil {
 /** Utility methods for macros.  Several methods assume that the context's universe is a full compiler (`scala.tools.nsc.Global`).
 * This is not thread safe due to the underlying Context and related data structures not being thread safe.
 * Use `ContextUtil[c.type](c)` to construct. */
-final class ContextUtil[C <: Context with Singleton](val ctx: C) 
+final class ContextUtil[C <: Context](val ctx: C) 
 {
 		import ctx.universe.{Apply=>ApplyTree,_}
 
