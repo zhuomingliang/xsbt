@@ -144,7 +144,7 @@ object Project extends ProjectExtra
 		onLoad(updateCurrent( newState ))
 	}
 	def orIdentity[T](opt: Option[T => T]): T => T = opt getOrElse idFun
-	def getHook[T](key: SettingKey[T => T], data: Settings[Scope]): T => T  =  orIdentity(key in GlobalScope getValue data)
+	def getHook[T](key: SettingKey[T => T], data: Settings[Scope]): T => T  =  orIdentity(key in GlobalScope get data)
 	def getHooks(data: Settings[Scope]): (State => State, State => State)  =  (getHook(Keys.onLoad, data), getHook(Keys.onUnload, data))
 
 	def current(state: State): ProjectRef = session(state).current
@@ -153,12 +153,12 @@ object Project extends ProjectExtra
 		val structure = Project.structure(s)
 		val ref = Project.current(s)
 		val project = Load.getProject(structure.units, ref.build, ref.project)
-		val msg = Keys.onLoadMessage in ref getValue structure.data getOrElse ""
+		val msg = Keys.onLoadMessage in ref get structure.data getOrElse ""
 		if(!msg.isEmpty) s.log.info(msg)
-		def get[T](k: SettingKey[T]): Option[T] = k in ref getValue structure.data
-		def commandsIn(axis: ResolvedReference) = commands in axis getValue structure.data toList ;
+		def get[T](k: SettingKey[T]): Option[T] = k in ref get structure.data
+		def commandsIn(axis: ResolvedReference) = commands in axis get structure.data toList ;
 
-		val allCommands = commandsIn(ref) ++ commandsIn(BuildRef(ref.build)) ++ (commands in Global getValue structure.data toList )
+		val allCommands = commandsIn(ref) ++ commandsIn(BuildRef(ref.build)) ++ (commands in Global get structure.data toList )
 		val history = get(historyPath) flatMap idFun
 		val prompt = get(shellPrompt)
 		val watched = get(watch)

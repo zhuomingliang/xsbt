@@ -246,7 +246,7 @@ object Defaults extends BuildCommon
 		val structure = Project structure state
 		val configurations = Project.getProject(ref, structure).toList.flatMap(_.configurations)
 		configurations.flatMap { conf =>
-			key in (ref, conf) getValue structure.data
+			key in (ref, conf) get structure.data
 		} join
 	}
 	def watchTransitiveSourcesTask: Initialize[Task[Seq[File]]] =
@@ -995,7 +995,7 @@ object Classpaths
 
 	def projectDependenciesTask: Initialize[Task[Seq[ModuleID]]] =
 		(thisProjectRef, settings, buildDependencies) map { (ref, data, deps) =>
-			deps.classpath(ref) flatMap { dep => (projectID in dep.project) getValue data map { _.copy(configurations = dep.configuration) } }
+			deps.classpath(ref) flatMap { dep => (projectID in dep.project) get data map { _.copy(configurations = dep.configuration) } }
 		}
 
 	def depMap: Initialize[Task[Map[ModuleRevisionId, ModuleDescriptor]]] =
@@ -1004,7 +1004,7 @@ object Classpaths
 		}
 
 	def depMap(projects: Seq[ProjectRef], data: Settings[Scope], log: Logger): Task[Map[ModuleRevisionId, ModuleDescriptor]] =
-		projects.flatMap( ivyModule in _ getValue data).join.map { mod =>
+		projects.flatMap( ivyModule in _ get data).join.map { mod =>
 			mod map { _.dependencyMapping(log) } toMap ;
 		}
 
@@ -1121,7 +1121,7 @@ object Classpaths
 		Dag.topologicalSort(conf)(_.extendsConfigs)
 
 	def getConfigurations(p: ResolvedReference, data: Settings[Scope]): Seq[Configuration] =
-		ivyConfigurations in p getValue data getOrElse Nil
+		ivyConfigurations in p get data getOrElse Nil
 	def confOpt(configurations: Seq[Configuration], conf: String): Option[Configuration] =
 		configurations.find(_.name == conf)
 	def productsTask(dep: ResolvedReference, conf: String, data: Settings[Scope]): Task[Classpath] =
@@ -1129,9 +1129,9 @@ object Classpaths
 	def unmanagedLibs(dep: ResolvedReference, conf: String, data: Settings[Scope]): Task[Classpath] =
 		getClasspath(unmanagedJars, dep, conf, data)
 	def getClasspath(key: TaskKey[Classpath], dep: ResolvedReference, conf: String, data: Settings[Scope]): Task[Classpath] =
-		( key in (dep, ConfigKey(conf)) ) getValue data getOrElse constant(Nil)
+		( key in (dep, ConfigKey(conf)) ) get data getOrElse constant(Nil)
 	def defaultConfigurationTask(p: ResolvedReference, data: Settings[Scope]): Configuration =
-		flatten(defaultConfiguration in p getValue data) getOrElse Configurations.Default
+		flatten(defaultConfiguration in p get data) getOrElse Configurations.Default
 	def flatten[T](o: Option[Option[T]]): Option[T] = o flatMap idFun
 
 	lazy val typesafeReleases = Resolver.typesafeIvyRepo("releases")

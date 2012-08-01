@@ -107,7 +107,7 @@ object Scoped
 		final def ~= (f: S => S): Setting[S]  =  Def.update(scopedKey)(f)
 		final def <<= (app: Initialize[S]): Setting[S]  =  set(app)
 		final def set (app: Initialize[S]): Setting[S]  =  setting(scopedKey, app)
-		final def getValue(settings: Settings[Scope]): Option[S] = settings.get(scopedKey.scope, scopedKey.key)
+		final def get(settings: Settings[Scope]): Option[S] = settings.get(scopedKey.scope, scopedKey.key)
 		final def ? : Initialize[Option[S]] = Def.optional(scopedKey)(idFun)
 		final def or[T >: S](i: Initialize[T]): Initialize[T] = (this.?, i)(_ getOrElse _ )
 		final def ??[T >: S](or: => T): Initialize[T] = Def.optional(scopedKey)(_ getOrElse or )
@@ -130,7 +130,7 @@ object Scoped
 		def set(app: Initialize[Task[S]]): Setting[Task[S]]  =  Def.setting(scopedKey, app)
 
 		def task: SettingKey[Task[S]] = scopedSetting(scope, key)
-		def getValue(settings: Settings[Scope]): Option[Task[S]] = settings.get(scope, key)
+		def get(settings: Settings[Scope]): Option[Task[S]] = settings.get(scope, key)
 
 		def ? : Initialize[Task[Option[S]]] = Def.optional(scopedKey) { case None => mktask { None }; case Some(t) => t map some.fn }
 		def ??[T >: S](or: => T): Initialize[Task[T]] = Def.optional(scopedKey)( _ getOrElse mktask(or) )
