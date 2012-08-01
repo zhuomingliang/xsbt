@@ -14,19 +14,25 @@
 
 	<span class="keyword">import</span> java.io.File;
 
-public interface <a title="object xsbti.Launcher" id="284250">Launcher</a>
+public interface <a title="object xsbti.Launcher" id="303475">Launcher</a>
 <span class="delimiter">{</span>
-	public static <span class="keyword">final</span> int <a title="Int" id="284514">InterfaceVersion</a> = <span class="int">1</span>;
-	public <a href="ScalaProvider.java.html#11038" title="xsbti.ScalaProvider">ScalaProvider</a> <a title="(version: java.lang.String)xsbti.ScalaProvider" id="284251">getScala</a><span class="delimiter">(</span>String <a title="java.lang.String" id="284515">version</a><span class="delimiter">)</span>;
-	public <a href="ScalaProvider.java.html#11038" title="xsbti.ScalaProvider">ScalaProvider</a> <a title="(version: java.lang.String, reason: java.lang.String)xsbti.ScalaProvider" id="284252">getScala</a><span class="delimiter">(</span>String <a title="java.lang.String" id="284511">version</a>, String <a title="java.lang.String" id="284512">reason</a><span class="delimiter">)</span>;
-	public ClassLoader <a title="()java.lang.ClassLoader" id="284253">topLoader</a><span class="delimiter">(</span><span class="delimiter">)</span>;
-	public <a href="GlobalLock.java.html#10989" title="xsbti.GlobalLock">GlobalLock</a> <a title="()xsbti.GlobalLock" id="284254">globalLock</a><span class="delimiter">(</span><span class="delimiter">)</span>;
-	public File <a title="()java.io.File" id="284255">bootDirectory</a><span class="delimiter">(</span><span class="delimiter">)</span>;
-	public xsbti.<a href="Repository.java.html#11029" title="xsbti.Repository">Repository</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.Repository]" id="284256">ivyRepositories</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public static <span class="keyword">final</span> int <a title="Int" id="303783">InterfaceVersion</a> = <span class="int">1</span>;
+	public <a href="ScalaProvider.java.html#11231" title="xsbti.ScalaProvider">ScalaProvider</a> <a title="(version: java.lang.String)xsbti.ScalaProvider" id="303476">getScala</a><span class="delimiter">(</span>String <a title="java.lang.String" id="304612">version</a><span class="delimiter">)</span>;
+	public <a href="ScalaProvider.java.html#11231" title="xsbti.ScalaProvider">ScalaProvider</a> <a title="(version: java.lang.String, reason: java.lang.String)xsbti.ScalaProvider" id="303477">getScala</a><span class="delimiter">(</span>String <a title="java.lang.String" id="304610">version</a>, String <a title="java.lang.String" id="304611">reason</a><span class="delimiter">)</span>;
+	public <a href="ScalaProvider.java.html#11231" title="xsbti.ScalaProvider">ScalaProvider</a> <a title="(version: java.lang.String, reason: java.lang.String, scalaOrg: java.lang.String)xsbti.ScalaProvider" id="303478">getScala</a><span class="delimiter">(</span>String <a title="java.lang.String" id="304607">version</a>, String <a title="java.lang.String" id="304608">reason</a>, String <a title="java.lang.String" id="304609">scalaOrg</a><span class="delimiter">)</span>;
+	public <a href="AppProvider.java.html#11154" title="xsbti.AppProvider">AppProvider</a> <a title="(id: xsbti.ApplicationID, version: java.lang.String)xsbti.AppProvider" id="303479">app</a><span class="delimiter">(</span><a href="ApplicationID.java.html#11159" title="xsbti.ApplicationID">ApplicationID</a> <a title="xsbti.ApplicationID" id="303780">id</a>, String <a title="java.lang.String" id="303781">version</a><span class="delimiter">)</span>;
+	public ClassLoader <a title="()java.lang.ClassLoader" id="303480">topLoader</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public <a href="GlobalLock.java.html#11182" title="xsbti.GlobalLock">GlobalLock</a> <a title="()xsbti.GlobalLock" id="303481">globalLock</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public File <a title="()java.io.File" id="303482">bootDirectory</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+  <span class="comment">/** Configured launcher repositories. */</span>
+	public xsbti.<a href="Repository.java.html#11222" title="xsbti.Repository">Repository</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.Repository]" id="303483">ivyRepositories</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	<span class="comment">/** The user has configured the launcher with the only repositories it wants to use for this applciation. */</span>
+	public boolean <a title="()Boolean" id="303484">isOverrideRepositories</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">// null if none set</span>
-	public File <a title="()java.io.File" id="284257">ivyHome</a><span class="delimiter">(</span><span class="delimiter">)</span>;
-	public String<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[java.lang.String]" id="284258">checksums</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public File <a title="()java.io.File" id="303485">ivyHome</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public String<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[java.lang.String]" id="303486">checksums</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 <span class="delimiter">}</span>
+
         </pre>
     </body>
 </html>

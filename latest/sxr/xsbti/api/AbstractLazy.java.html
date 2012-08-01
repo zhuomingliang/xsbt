@@ -17,13 +17,13 @@
 
 	<span class="keyword">import</span> java.io.ObjectStreamException;
 
-public <span class="keyword">abstract</span> <span class="keyword">class</span> <a title="object xsbti.api.AbstractLazy" id="10032">AbstractLazy</a>&lt;<a title="Nothing" id="10033">T</a>&gt; implements <a href="Lazy.java.html#10037" title="xsbti.api.Lazy">Lazy</a>&lt;<a href="#10033" title="T">T</a>&gt;, java.io.<span title="java.io.Serializable">Serializable</span>
+public <span class="keyword">abstract</span> <span class="keyword">class</span> <a title="object xsbti.api.AbstractLazy" id="10119">AbstractLazy</a>&lt;<a title="Nothing" id="10120">T</a>&gt; implements <a href="Lazy.java.html#10124" title="xsbti.api.Lazy">Lazy</a>&lt;<a href="#10120" title="T">T</a>&gt;, java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
-	<span class="keyword">private</span> Object <a title="()java.lang.Object" id="107029">writeReplace</a><span class="delimiter">(</span><span class="delimiter">)</span> throws ObjectStreamException
+	<span class="keyword">private</span> Object <a title="()java.lang.Object" id="110768">writeReplace</a><span class="delimiter">(</span><span class="delimiter">)</span> throws ObjectStreamException
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> <span class="keyword">new</span> StrictLazy&lt;T&gt;<span class="delimiter">(</span>get<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> static <span class="keyword">final</span> <span class="keyword">class</span> <a title="object xsbti.api.AbstractLazy.StrictLazy" id="1389613">StrictLazy</a>&lt;<a id="1389614">T</a>&gt; implements Lazy&lt;T&gt;, java.io.Serializable
+	<span class="keyword">private</span> static <span class="keyword">final</span> <span class="keyword">class</span> <a title="object xsbti.api.AbstractLazy.StrictLazy" id="2219092">StrictLazy</a>&lt;<a id="2219093">T</a>&gt; implements Lazy&lt;T&gt;, java.io.Serializable
 	<span class="delimiter">{</span>
 		<span class="keyword">private</span> <span class="keyword">final</span> T value;
 		StrictLazy<span class="delimiter">(</span>T t<span class="delimiter">)</span>

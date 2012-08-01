@@ -12,19 +12,21 @@
         <pre>
 <span class="keyword">package</span> xsbti;
 
-public enum <a title="object xsbti.Predefined" id="11016">Predefined</a> 
+public enum <a title="object xsbti.Predefined" id="11209">Predefined</a> 
 <span class="delimiter">{</span>
-	<a href="#11016" title="xsbti.Predefined" id="288038">Local</a><span class="delimiter">(</span><span class="string">&quot;local&quot;</span><span class="delimiter">)</span>,
-	<a href="#11016" title="xsbti.Predefined" id="288039">MavenLocal</a><span class="delimiter">(</span><span class="string">&quot;maven-local&quot;</span><span class="delimiter">)</span>,
-	<a href="#11016" title="xsbti.Predefined" id="288040">MavenCentral</a><span class="delimiter">(</span><span class="string">&quot;maven-central&quot;</span><span class="delimiter">)</span>,
-	<a href="#11016" title="xsbti.Predefined" id="288041">ScalaToolsReleases</a><span class="delimiter">(</span><span class="string">&quot;scala-tools-releases&quot;</span><span class="delimiter">)</span>,
-	<a href="#11016" title="xsbti.Predefined" id="288042">ScalaToolsSnapshots</a><span class="delimiter">(</span><span class="string">&quot;scala-tools-snapshots&quot;</span><span class="delimiter">)</span>;
+	<a href="#11209" title="xsbti.Predefined" id="308382">Local</a><span class="delimiter">(</span><span class="string">&quot;local&quot;</span><span class="delimiter">)</span>,
+	<a href="#11209" title="xsbti.Predefined" id="308383">MavenLocal</a><span class="delimiter">(</span><span class="string">&quot;maven-local&quot;</span><span class="delimiter">)</span>,
+	<a href="#11209" title="xsbti.Predefined" id="308384">MavenCentral</a><span class="delimiter">(</span><span class="string">&quot;maven-central&quot;</span><span class="delimiter">)</span>,
+	<a href="#11209" title="xsbti.Predefined" id="308385">ScalaToolsReleases</a><span class="delimiter">(</span><span class="string">&quot;scala-tools-releases&quot;</span><span class="delimiter">)</span>,
+	<a href="#11209" title="xsbti.Predefined" id="308386">ScalaToolsSnapshots</a><span class="delimiter">(</span><span class="string">&quot;scala-tools-snapshots&quot;</span><span class="delimiter">)</span>,
+	<a href="#11209" title="xsbti.Predefined" id="308387">SonatypeOSSReleases</a><span class="delimiter">(</span><span class="string">&quot;sonatype-oss-releases&quot;</span><span class="delimiter">)</span>,
+	<a href="#11209" title="xsbti.Predefined" id="308388">SonatypeOSSSnapshots</a><span class="delimiter">(</span><span class="string">&quot;sonatype-oss-snapshots&quot;</span><span class="delimiter">)</span>;
 
-	<span class="keyword">private</span> <span class="keyword">final</span> String <a title="java.lang.String" id="280510">label</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> String <a title="java.lang.String" id="299720">label</a>;
 	<span class="keyword">private</span> Predefined<span class="delimiter">(</span>String label<span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">this</span>.label = label; <span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="280512">toString</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">return</span> label; <span class="delimiter">}</span>
+	public String <a title="()java.lang.String" id="299722">toString</a><span class="delimiter">(</span><span class="delimiter">)</span> <span class="delimiter">{</span> <span class="keyword">return</span> label; <span class="delimiter">}</span>
 
-	public static <a href="#11016" title="xsbti.Predefined">Predefined</a> <a title="(s: java.lang.String)xsbti.Predefined" id="288043">toValue</a><span class="delimiter">(</span>String <a title="java.lang.String" id="288046">s</a><span class="delimiter">)</span>
+	public static <a href="#11209" title="xsbti.Predefined">Predefined</a> <a title="(s: java.lang.String)xsbti.Predefined" id="308389">toValue</a><span class="delimiter">(</span>String <a title="java.lang.String" id="308392">s</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">for</span><span class="delimiter">(</span>Predefined p : values<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span>
 			<span class="keyword">if</span><span class="delimiter">(</span>s.equals<span class="delimiter">(</span>p.toString<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span><span class="delimiter">)</span>

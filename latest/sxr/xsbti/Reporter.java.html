@@ -15,20 +15,20 @@
  */</span>
 <span class="keyword">package</span> xsbti;
 
-public interface <a title="object xsbti.Reporter" id="53359">Reporter</a>
+public interface <a title="object xsbti.Reporter" id="53815">Reporter</a>
 <span class="delimiter">{</span>
 	<span class="comment">/** Resets logging, including any accumulated errors, warnings, messages, and counts.*/</span>
-	public void <a title="()Unit" id="53360">reset</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public void <a title="()Unit" id="53816">reset</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">/** Returns true if this logger has seen any errors since the last call to reset.*/</span>
-	public boolean <a title="()Boolean" id="53361">hasErrors</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public boolean <a title="()Boolean" id="53817">hasErrors</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">/** Returns true if this logger has seen any warnings since the last call to reset.*/</span>
-	public boolean <a title="()Boolean" id="53362">hasWarnings</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public boolean <a title="()Boolean" id="53818">hasWarnings</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">/** Logs a summary of logging since the last reset.*/</span>
-	public void <a title="()Unit" id="53363">printSummary</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public void <a title="()Unit" id="53819">printSummary</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">/** Returns a list of warnings and errors since the last reset.*/</span>
-	public <a href="Problem.java.html#10017" title="xsbti.Problem">Problem</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.Problem]" id="53364">problems</a><span class="delimiter">(</span><span class="delimiter">)</span>;
+	public <a href="Problem.java.html#10104" title="xsbti.Problem">Problem</a><span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[xsbti.Problem]" id="53820">problems</a><span class="delimiter">(</span><span class="delimiter">)</span>;
 	<span class="comment">/** Logs a message.*/</span>
-	public void <a title="(pos: xsbti.Position, msg: java.lang.String, sev: xsbti.Severity)Unit" id="53365">log</a><span class="delimiter">(</span><a href="Position.java.html#10013" title="xsbti.Position">Position</a> <a title="xsbti.Position" id="88971">pos</a>, String <a title="java.lang.String" id="88972">msg</a>, <a href="Severity.java.html#10025" title="xsbti.Severity">Severity</a> <a title="xsbti.Severity" id="88973">sev</a><span class="delimiter">)</span>;
+	public void <a title="(pos: xsbti.Position, msg: java.lang.String, sev: xsbti.Severity)Unit" id="53821">log</a><span class="delimiter">(</span><a href="Position.java.html#10100" title="xsbti.Position">Position</a> <a title="xsbti.Position" id="90127">pos</a>, String <a title="java.lang.String" id="90128">msg</a>, <a href="Severity.java.html#10112" title="xsbti.Severity">Severity</a> <a title="xsbti.Severity" id="90129">sev</a><span class="delimiter">)</span>;
 <span class="delimiter">}</span>
         </pre>
     </body>

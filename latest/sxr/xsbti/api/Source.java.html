@@ -14,38 +14,44 @@
 
 <span class="keyword">import</span> java.util.Arrays;
 <span class="keyword">import</span> java.util.List;
-public <span class="keyword">class</span> <a title="object xsbti.api.Source" id="10242">Source</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
+public <span class="keyword">class</span> <a title="object xsbti.api.Source" id="10411">Source</a> implements java.io.<span title="java.io.Serializable">Serializable</span>
 <span class="delimiter">{</span>
-	public Source<a href="#10242" title="xsbti.api.Source" class="delimiter">(</a><a href="Compilation.java.html#10078" title="xsbti.api.Compilation">Compilation</a> <a title="xsbti.api.Compilation" id="118025">compilation</a>, byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[Byte]" id="118026">hash</a>, <a href="SourceAPI.java.html#10248" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="xsbti.api.SourceAPI" id="118027">api</a>, int <a title="Int" id="118028">apiHash</a><span class="delimiter">)</span>
+	public Source<a href="#10411" title="xsbti.api.Source" class="delimiter">(</a><a href="Compilation.java.html#10247" title="xsbti.api.Compilation">Compilation</a> <a title="xsbti.api.Compilation" id="120299">compilation</a>, byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[Byte]" id="120300">hash</a>, <a href="SourceAPI.java.html#10417" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="xsbti.api.SourceAPI" id="120301">api</a>, int <a title="Int" id="120302">apiHash</a>, boolean <a title="Boolean" id="120303">hasMacro</a><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">this</span>.compilation = compilation;
 		<span class="keyword">this</span>.hash = hash;
 		<span class="keyword">this</span>.api = api;
 		<span class="keyword">this</span>.apiHash = apiHash;
+		<span class="keyword">this</span>.hasMacro = hasMacro;
 	<span class="delimiter">}</span>
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Compilation.java.html#10078" title="xsbti.api.Compilation">Compilation</a> <a title="xsbti.api.Compilation" id="107346">compilation</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[Byte]" id="107347">hash</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> <a href="SourceAPI.java.html#10248" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="xsbti.api.SourceAPI" id="107348">api</a>;
-	<span class="keyword">private</span> <span class="keyword">final</span> int <a title="Int" id="107349">apiHash</a>;
-	public <span class="keyword">final</span> <a href="Compilation.java.html#10078" title="xsbti.api.Compilation">Compilation</a> <a title="()xsbti.api.Compilation" id="107350">compilation</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="Compilation.java.html#10247" title="xsbti.api.Compilation">Compilation</a> <a title="xsbti.api.Compilation" id="111085">compilation</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="Array[Byte]" id="111086">hash</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> <a href="SourceAPI.java.html#10417" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="xsbti.api.SourceAPI" id="111087">api</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> int <a title="Int" id="111088">apiHash</a>;
+	<span class="keyword">private</span> <span class="keyword">final</span> boolean <a title="Boolean" id="111089">hasMacro</a>;
+	public <span class="keyword">final</span> <a href="Compilation.java.html#10247" title="xsbti.api.Compilation">Compilation</a> <a title="()xsbti.api.Compilation" id="111090">compilation</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> compilation;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[Byte]" id="107351">hash</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> byte<span class="delimiter">[</span><span title="Array" class="delimiter">]</span> <a title="()Array[Byte]" id="111091">hash</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> hash;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> <a href="SourceAPI.java.html#10248" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="()xsbti.api.SourceAPI" id="107352">api</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> <a href="SourceAPI.java.html#10417" title="xsbti.api.SourceAPI">SourceAPI</a> <a title="()xsbti.api.SourceAPI" id="111092">api</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> api;
 	<span class="delimiter">}</span>
-	public <span class="keyword">final</span> int <a title="()Int" id="107353">apiHash</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> int <a title="()Int" id="111093">apiHash</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
 		<span class="keyword">return</span> apiHash;
 	<span class="delimiter">}</span>
-	public String <a title="()java.lang.String" id="107354">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	public <span class="keyword">final</span> boolean <a title="()Boolean" id="111094">hasMacro</a><span class="delimiter">(</span><span class="delimiter">)</span>
 	<span class="delimiter">{</span>
-		<span class="keyword">return</span> <span class="string">&quot;Source(&quot;</span> + <span class="string">&quot;compilation: &quot;</span> + compilation<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;hash: &quot;</span> + Arrays.toString<span class="delimiter">(</span>hash<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;api: &quot;</span> + api<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;apiHash: &quot;</span> + apiHash<span class="delimiter">(</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
+		<span class="keyword">return</span> hasMacro;
+	<span class="delimiter">}</span>
+	public String <a title="()java.lang.String" id="111095">toString</a><span class="delimiter">(</span><span class="delimiter">)</span>
+	<span class="delimiter">{</span>
+		<span class="keyword">return</span> <span class="string">&quot;Source(&quot;</span> + <span class="string">&quot;compilation: &quot;</span> + compilation<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;hash: &quot;</span> + Arrays.toString<span class="delimiter">(</span>hash<span class="delimiter">(</span><span class="delimiter">)</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;api: &quot;</span> + api<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;apiHash: &quot;</span> + apiHash<span class="delimiter">(</span><span class="delimiter">)</span> + <span class="string">&quot;, &quot;</span> + <span class="string">&quot;hasMacro: &quot;</span> + hasMacro<span class="delimiter">(</span><span class="delimiter">)</span>+ <span class="string">&quot;)&quot;</span>;
 	<span class="delimiter">}</span>
 <span class="delimiter">}</span>
 

@@ -15,8 +15,20 @@
  */</span>
 <span class="keyword">package</span> sbt
 
-<span class="keyword">final</span> <span class="keyword">class</span> <a title="class MessageOnlyException extends java.lang.RuntimeException with ScalaObject" id="12349">MessageOnlyException</a><a href="#12349" title="ScalaObject" class="delimiter">(</a><span class="keyword">override</span> <span class="keyword">val</span> <a title="String" id="308686">toString</a>: <span title="String">String</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="java.lang.RuntimeException">RuntimeException</span><span class="delimiter">(</span><a href="#308686" title="String">toString</a><span class="delimiter">)</span>
-<span class="keyword">final</span> <span class="keyword">class</span> <a title="class NoMessageException extends java.lang.RuntimeException with ScalaObject" id="12350">NoMessageException</a> <a href="#12350" title="ScalaObject" class="keyword">extends</a> <span title="java.lang.RuntimeException">RuntimeExceptio</span>n
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class MessageOnlyException extends java.lang.RuntimeException with ScalaObject" id="12728">MessageOnlyException</a><a href="#12728" title="ScalaObject" class="delimiter">(</a><span class="keyword">override</span> <span class="keyword">val</span> <a title="String" id="332117">toString</a>: <span title="String">String</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="java.lang.RuntimeException">RuntimeException</span><span class="delimiter">(</span><a href="#332117" title="String">toString</a><span class="delimiter">)</span>
+
+<span class="comment">/** A dummy exception for the top-level exception handler to know that an exception
+* has been handled, but is being passed further up to indicate general failure. */</span>
+<span class="keyword">final</span> <span class="keyword">class</span> <a title="class AlreadyHandledException extends java.lang.RuntimeException with ScalaObject" id="12729">AlreadyHandledException</a><a href="#12729" title="ScalaObject" class="delimiter">(</a><span class="keyword">val</span> <a title="Throwable" id="2192636">underlying</a>: <span title="Throwable">Throwable</span><span class="delimiter">)</span> <span class="keyword">extends</span> <span title="java.lang.RuntimeException">RuntimeException</span>
+
+<span class="comment">/** A marker trait for a top-level exception handler to know that this exception
+* doesn't make sense to display. */</span>
+<span class="keyword">trait</span> <a title="trait UnprintableException extends java.lang.Throwable" id="12730">UnprintableException</a> <span class="keyword">extends</span> <span title="java.lang.Throwable">Throwable</span>
+
+<span class="comment">/** A marker trait that refines UnprintableException to indicate to a top-level exception handler
+* that the code throwing this exception has already provided feedback to the user about the error condition. */</span>
+<span class="keyword">trait</span> <a title="trait FeedbackProvidedException extends java.lang.Throwable with sbt.UnprintableException" id="12731">FeedbackProvidedException</a> <span class="keyword">extends</span> <a href="#12730" title="sbt.UnprintableException">UnprintableException</a>
+
         </pre>
     </body>
 </html>
