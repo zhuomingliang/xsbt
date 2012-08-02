@@ -28,7 +28,7 @@ object KListBuilder extends TupleBuilder
 
 		/** Instantiates KCons[h, t <: KList[L], L], where L is the type constructor variable */
 		def kconsType(h: Type, t: Type): Type =
-			appliedType(kconsTC, h :: t :: tcVariable.asType :: Nil)
+			appliedType(kconsTC, h :: t :: refVar(tcVariable) :: Nil)
 
 		def bindKList(prev: ValDef, revBindings: List[ValDef], params: List[ValDef]): List[ValDef] =
 			params match

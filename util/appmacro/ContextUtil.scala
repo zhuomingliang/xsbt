@@ -61,8 +61,10 @@ final class ContextUtil[C <: Context](val ctx: C)
 	val idTC: Type =
 	{
 		val tvar = newTypeVariable(NoSymbol)
-		polyType(tvar :: Nil, tvar.asType)
+		polyType(tvar :: Nil, refVar(tvar))
 	}
+	/** A Type that references the given type variable. */
+	def refVar(variable: TypeSymbol): Type = variable.asTypeConstructor
 	/** Constructs a new, synthetic type variable that is a type constructor. For example, in type Y[L[x]], L is such a type variable. */
 	def newTCVariable(owner: Symbol): TypeSymbol =
 	{
