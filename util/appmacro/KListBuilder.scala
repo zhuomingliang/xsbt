@@ -24,11 +24,11 @@ object KListBuilder extends TupleBuilder
 		val kconsTC: Type = kconsTpe.typeConstructor
 
 		/** This is the L in the type function [L[x]] ...  */
-		val tcVariable: Symbol = newTCVariable(NoSymbol)
+		val tcVariable: TypeSymbol = newTCVariable(NoSymbol)
 
 		/** Instantiates KCons[h, t <: KList[L], L], where L is the type constructor variable */
 		def kconsType(h: Type, t: Type): Type =
-			appliedType(kconsTC, h :: t :: refVar(tcVariable) :: Nil)
+			appliedType(kconsTC, h :: t :: tcVariable.asType :: Nil)
 
 		def bindKList(prev: ValDef, revBindings: List[ValDef], params: List[ValDef]): List[ValDef] =
 			params match
